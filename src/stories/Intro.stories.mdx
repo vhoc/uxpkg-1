@@ -1,6 +1,12 @@
+import { Meta } from '@storybook/addon-docs';
 
+<!-- Custom-MDX-Documentation.mdx -->
 # Procyon UI Library
 ## Quick Start Guide.
+
+<Meta title="Introduction" />
+  
+
 
 ### Installation.
 Run the following command to install the library in your react project:  
@@ -13,6 +19,17 @@ Some components require icons, Procyon UI is compatible with FontAwesome icons.
 You can follow these instructions to install them in your project:  
 ```
 https://fontawesome.com/v6/docs/web/use-with/react/
+```
+
+### Using Vite?
+Developers using vite are required to install tslib
+```
+npm install tslib
+```
+And also, import the UI theme font into their app entry file:
+```
+// App.tsx, or main.tsx, or index.js :
+import '@fontsource/ibm-plex-sans'
 ```
 
 ### Importing Components.
