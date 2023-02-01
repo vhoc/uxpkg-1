@@ -20,6 +20,11 @@ export type TVariant = {
     popoverMenuItemBgColor?: string
     popoverMenuItemBgColorHover?: string
     popoverMenuItemTextColor?: string
+    sideBarMenuItemBgColor?: string
+    sideBarMenuItemBgColorHover?: string
+    sideBarMenuItemTextColor?: string
+    sideBarMenuItemIconColor?: string
+    sideBarMenuItemIconColorHover?: string
 }
 
 export interface IVariant {
@@ -237,6 +242,11 @@ export const variants: IVariant = {
         popoverMenuItemBgColor: colors.white,
         popoverMenuItemBgColorHover: colors.blue[5],
         popoverMenuItemTextColor: colors.gray[90],
+        sideBarMenuItemBgColor: colors.white,
+        sideBarMenuItemIconColor: colors.gray[90],
+        sideBarMenuItemIconColorHover: colors.blue[60],
+        sideBarMenuItemBgColorHover: colors.blue[10],
+        sideBarMenuItemTextColor: colors.gray[90],
     },
     secondary: {
         buttonBgColor: 'rgba(50, 103, 214, 0.04)',
