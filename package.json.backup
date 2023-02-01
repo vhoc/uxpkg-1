@@ -1,0 +1,100 @@
+{
+  "name": "procyon-ui",
+  "version": "1.0.3",
+  "exports": {
+    "require": "./dist/cjs/index.js",
+    "import": "./dist/esm/index.js"
+  },
+  "types": "./dist/esm/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "author": "Victor Olvera",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/preset-typescript": "^7.18.6",
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@storybook/addon-actions": "^6.5.15",
+    "@storybook/addon-essentials": "^6.5.15",
+    "@storybook/addon-interactions": "^6.5.15",
+    "@storybook/addon-links": "^6.5.15",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/builder-webpack4": "^6.5.15",
+    "@storybook/builder-webpack5": "^6.5.15",
+    "@storybook/manager-webpack4": "^6.5.15",
+    "@storybook/manager-webpack5": "^6.5.15",
+    "@storybook/react": "^6.5.15",
+    "@storybook/testing-library": "^0.0.13",
+    "@types/react": "^18.0.26",
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
+    "autoprefixer": "^10.4.13",
+    "babel-loader": "^8.3.0",
+    "concurrently": "^7.6.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.31.0",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "postcss": "^8.4.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^3.9.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^4.9.4"
+  },
+  "resolutions": {
+    "postcss": "^8.4.21"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-sans": "^4.5.13",
+    "@fortawesome/fontawesome-pro": "^6.2.1",
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-regular-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/pro-duotone-svg-icons": "^6.2.1",
+    "@fortawesome/pro-light-svg-icons": "^6.2.1",
+    "@fortawesome/pro-regular-svg-icons": "^6.2.1",
+    "@fortawesome/pro-solid-svg-icons": "^6.2.1",
+    "@fortawesome/pro-thin-svg-icons": "^6.2.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@fortawesome/sharp-solid-svg-icons": "^6.2.1",
+    "babel-preset-react-app": "^10.0.1"
+  },
+  "scripts": {
+    "//": "New scripts to run and build Storybook with Tailwind",
+    "storybook": "concurrently 'yarn:watch:*'",
+    "build:storybook": "start-storybook build",
+    "build:tailwind": "npx tailwindcss -i ./src/assets/styles/tailwind.css -o ./src/assets/styles/main.css",
+    "build-storybook": "yarn build:tailwind && build-storybook",
+    "watch:storybook": "start-storybook dev -p 6006",
+    "watch:tailwind": "npx tailwindcss -i ./src/assets/styles/tailwind.css -o ./src/assets/styles/main.css --watch",
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\""
+  },
+  "eslint.packageManager": "yarn",
+  "babel": {
+    "presets": [
+      [
+        "react-app",
+        {
+          "absoluteRuntime": false
+        }
+      ]
+    ]
+  },
+  "private": false
+}
