@@ -60,11 +60,13 @@ export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, b
         paddingLeft: '24px',
         width: 'fit-content',
         minWidth: '304px',
+        maxWidth: '304px',
     })
 
     return (
         <View
             style={componentStyle()}
+            width={'304px'}
             padding={'16px 16px 16px 24px'}
             {...props}
         >
@@ -96,11 +98,35 @@ export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, b
             
 
             {/** Row 2: Resource name, Resource type , Account name, Region */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '14px' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                    <div style={{...theme.font.title.regular, marginBottom: '4px'}}>{resourceName}</div>
-                    <div style={{...theme.font.body.regular, marginBottom: '1px'}}>{resourceType}</div>
-                    <div style={theme.font.caption.regular}>{accountName} / {region}</div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '14px', width: '100%' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', width: '100%' }}>
+                    <div
+                        style={{...theme.font.title.regular,
+                            marginBottom: '4px',
+                            whiteSpace: 'nowrap',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            width: '100%',
+                        }}
+                    >
+                        {resourceName}
+                    </div>
+                    <div
+                        style={{...theme.font.body.regular,
+                            marginBottom: '1px',
+                            whiteSpace: 'nowrap',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            width: '100%',
+                        }}
+                    >
+                        {resourceType}
+                    </div>
+                    <div
+                        style={theme.font.caption.regular}
+                    >
+                        {accountName} / {region}
+                    </div>
                 </div>
             </div>
 
