@@ -1,18 +1,20 @@
 import React from "react"
-import { HTMLAttributes, ReactNode, useState } from "react";
+import { HTMLAttributes, useState } from "react";
 import { IconProp } from "@fortawesome/fontawesome-svg-core"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { variants, theme } from '../../theme'
 
 export interface SideMenuItemProps extends HTMLAttributes<HTMLButtonElement> {
-    children?: ReactNode | null
     style?: React.CSSProperties
     variant?: 'primary'
+    selected?: boolean
     collapsed?: boolean
     icon?: IconProp | null
     disabled?: boolean
+    label?: string | null
 }
 
-export const SideMenuItem = ({ children, style, variant = 'primary', collapsed = false, icon, disabled = false, ...props }: SideMenuItemProps): JSX.Element => {
+export const SideMenuItem = ({ style, variant = 'primary', selected = false, collapsed = false, icon, disabled = false, label, ...props }: SideMenuItemProps): JSX.Element => {
 
     const [hover, setHover] = useState<boolean>(false)
     const [active, setActive] = useState<boolean>(false)
@@ -27,23 +29,22 @@ export const SideMenuItem = ({ children, style, variant = 'primary', collapsed =
          * disabled ? (true, false) : active ? (true false) : hover ? (true false) : rest (default)
          * Otherwise, the states get messed up.
          */
-        backgroundColor: disabled ? variants[selectedVariant].buttonBgColorDisabled : active ? variants[selectedVariant].buttonBgColorActive : hover ? variants[selectedVariant].buttonBgColorHover : variants[selectedVariant].buttonBgColor,
-        color: disabled ? variants[selectedVariant].buttonTextColorDisabled : active ? variants[selectedVariant].buttonTextColorActive : hover ? variants[selectedVariant].buttonTextColorHover : variants[selectedVariant].buttonTextColor,
+        backgroundColor: (selected || hover) ? variants[selectedVariant].sideBarMenuItemBgColorHover : variants[selectedVariant].sideBarMenuItemBgColor,
+        color: (selected || hover) ? variants[selectedVariant].sideBarMenuItemTextColor : variants[selectedVariant].sideBarMenuItemTextColor,
         textTransform: 'capitalize',
-        //width: width ||sizes.iconButton[selectedSize].width,
-        paddingLeft: '12px',
-        paddingRight: '12px',
+        paddingLeft: '15px',
+        paddingRight: '15px',
         height: '34px',
         fontFamily: theme.font.buttonLabel.regular.fontFamily,
+        fontSize: '14px',
         borderRadius: '4px',
         cursor: disabled ? 'not-allowed' : 'pointer',
         border: 'none',
-        outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',
-        outlineStyle: 'auto',
-        outlineWidth: focus ? '2px' : '0px',
         display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
+        justifyContent: 'start',
+        alignItems: 'center',
+        width: collapsed ? 'fit-content' : '266px',
+        gap: '15px'
     })
 
     return <button
@@ -57,6 +58,24 @@ export const SideMenuItem = ({ children, style, variant = 'primary', collapsed =
         onBlur={() => setFocus(false)}
         {...props}
     >
-        {children}
+        <div>
+            <FontAwesomeIcon icon={icon as IconProp} color={selected ? variants[selectedVariant].sideBarMenuItemIconColorHover : variants[selectedVariant].sideBarMenuItemIconColor} />
+        </div>
+        {
+            !collapsed ?
+                <div
+                    style={{
+                        textAlign: 'left',
+                        whiteSpace: 'nowrap',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                        width: '100%',
+                    }}
+                >
+                    {label}
+                </div>
+            :
+                null
+        }
     </button>
 }
