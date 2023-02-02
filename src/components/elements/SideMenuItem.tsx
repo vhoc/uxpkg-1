@@ -79,3 +79,5 @@ export const SideMenuItem = ({ style, variant = 'primary', selected = false, col
         }
     </button>
 }
+
+export default SideMenuItem
