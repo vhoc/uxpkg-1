@@ -13,6 +13,7 @@ export default {
 export const Primary = {
     args: {
         icon: faBookmark,
+        itemType: 'item',
         variant: 'primary',
         collapsed: false,
         selected: false,

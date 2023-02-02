@@ -20,6 +20,7 @@ export type TVariant = {
     popoverMenuItemBgColor?: string
     popoverMenuItemBgColorHover?: string
     popoverMenuItemTextColor?: string
+    sideBarBgColor?: string
     sideBarMenuItemBgColor?: string
     sideBarMenuItemBgColorHover?: string
     sideBarMenuItemTextColor?: string
@@ -242,6 +243,7 @@ export const variants: IVariant = {
         popoverMenuItemBgColor: colors.white,
         popoverMenuItemBgColorHover: colors.blue[5],
         popoverMenuItemTextColor: colors.gray[90],
+        sideBarBgColor: colors.white,
         sideBarMenuItemBgColor: colors.white,
         sideBarMenuItemIconColor: colors.gray[90],
         sideBarMenuItemIconColorHover: colors.blue[60],
