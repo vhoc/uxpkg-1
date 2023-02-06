@@ -7,7 +7,7 @@ import { variants, sizes, theme } from '../../theme'
 //import '../../assets/styles/dropdown.css'
 
 
-export interface DropDownButtonProps extends HTMLAttributes<HTMLUListElement> {
+export interface ImageDropDownButtonProps extends HTMLAttributes<HTMLUListElement> {
     /** Array of objects with the following scructure:
      * [{ icon?, title, style?, action?, submenu?  }]  
      * - icon: [Optional], Type: IconDefinition (FontAwesome)
@@ -17,7 +17,7 @@ export interface DropDownButtonProps extends HTMLAttributes<HTMLUListElement> {
      * - submenu: [Optional], Properties[] (Recursive)
      */
     menuItems?: IDropDownItem[]
-    variant?: 'primary' | 'gray' | 'grayBlue' | 'grayRed' | 'clear'
+    variant?: 'clear'
     disabled?: boolean
     size?: 'sm'
     height?: string
@@ -25,7 +25,7 @@ export interface DropDownButtonProps extends HTMLAttributes<HTMLUListElement> {
 }
 
 /** A Navigation bar with a multilevel dynamic dropdown menu. */
-export const DropDownButton = ({menuItems = [{ icon: faTimes, title: `No menus found` }], variant = 'primary', size = 'sm', height, disabled, hasDownArrow = true, ...DropDownButtonProps}: DropDownButtonProps) : JSX.Element => {
+export const ImageDropDownButton = ({menuItems = [{ icon: faTimes, title: `No menus found` }], variant = 'clear', size = 'sm', height, disabled, hasDownArrow = true, ...ImageDropDownButtonProps}: ImageDropDownButtonProps) : JSX.Element => {
 
     //console.warn(menuItems)
     const depthLevel = 0
@@ -53,7 +53,7 @@ export const DropDownButton = ({menuItems = [{ icon: faTimes, title: `No menus f
         paddingRight: sizes.button[selectedSize].paddingRight,
         paddingTop: sizes.button[selectedSize].paddingTop,
         paddingBottom: sizes.button[selectedSize].paddingBottom,
-        borderRadius: variant === 'clear' ? '0px' : '4px',
+        borderRadius: '0px',
         cursor: disabled ? 'not-allowed' : 'pointer',
         border: 'none', 
         marginBlockStart: '0',
@@ -76,7 +76,7 @@ export const DropDownButton = ({menuItems = [{ icon: faTimes, title: `No menus f
                 height: height,
             }}
             //className='menus'
-            {...DropDownButtonProps}
+            {...ImageDropDownButtonProps}
         >
         {
             menuItems.map((menu, index) => {
@@ -95,6 +95,8 @@ export const DropDownButton = ({menuItems = [{ icon: faTimes, title: `No menus f
                         disabled={disabled || false}
                         variant={variant}
                         hasDownArrow={hasDownArrow}
+                        isImageDropDown={true}
+                        height={'32px'}
                     />
                 )
             })
@@ -102,3 +104,5 @@ export const DropDownButton = ({menuItems = [{ icon: faTimes, title: `No menus f
         </ul>
     )
 }
+
+export default ImageDropDownButton

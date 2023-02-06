@@ -2,6 +2,7 @@ import React, { HTMLAttributes, useState } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconProp } from "@fortawesome/fontawesome-svg-core"
 import { theme, colors, variants, sizes } from '../../theme'
+import Badge from "./Badge"
 
 export interface IconButtonProps extends HTMLAttributes<HTMLButtonElement> {
     /** 
@@ -10,7 +11,7 @@ export interface IconButtonProps extends HTMLAttributes<HTMLButtonElement> {
      * Then, you would use 'faBookmark' on the icon property when using the component.
      */
     icon: IconProp
-    variant: 'primary' | 'tertiary' | 'gray' | 'grayBlue' | 'grayRed'
+    variant: 'primary' | 'tertiary' | 'gray' | 'grayBlue' | 'grayRed' | 'clear'
     disabled?: boolean
     textColor?: string
     size?: 'sm'
@@ -20,9 +21,11 @@ export interface IconButtonProps extends HTMLAttributes<HTMLButtonElement> {
     
     /** Override standard sizes' width */
     width?: string,
+    badge?: string,
+    onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
 }
 
-export const IconButton = ({icon, size = 'sm', variant = 'primary', disabled = false, textColor = colors.white, width, height, ...IconButtonProps}: IconButtonProps): JSX.Element => {
+export const IconButton = ({icon, size = 'sm', variant = 'primary', disabled = false, onClick, textColor = colors.white, width, height, badge, ...IconButtonProps}: IconButtonProps): JSX.Element => {
 
     const [hover, setHover] = useState<boolean>(false)
     const [active, setActive] = useState<boolean>(false)
@@ -57,7 +60,9 @@ export const IconButton = ({icon, size = 'sm', variant = 'primary', disabled = f
         outlineWidth: focus ? '2px' : '0px',
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        zIndex: '500',
+        position: 'relative',
     })
 
     return (
@@ -69,10 +74,20 @@ export const IconButton = ({icon, size = 'sm', variant = 'primary', disabled = f
                 onMouseUp={() => setActive(false)}
                 onFocus={() => setFocus(true)}
                 onBlur={() => setFocus(false)}
+                onClick={onClick}
                 {...IconButtonProps}
             >
                 <FontAwesomeIcon icon={icon as IconProp} />
+                
+                {
+                    badge ?
+                        <Badge label={badge}/>
+                    :
+                        null
+                }
             </button>
     )
 
 }
+
+export default IconButton

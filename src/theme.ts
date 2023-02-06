@@ -270,6 +270,16 @@ export const variants: IVariant = {
         buttonTextColorActive: colors.gray[30],
         buttonTextColorDisabled: colors.gray[30],
     },
+    clear: {
+        buttonBgColor: colors.white,
+        buttonBgColorHover: colors.white,
+        buttonBgColorActive: colors.white,
+        buttonBgColorDisabled: colors.white,
+        buttonTextColor: colors.gray[70],
+        buttonTextColorHover: colors.gray[70],
+        buttonTextColorActive: colors.gray[70],
+        buttonTextColorDisabled: colors.gray[70],
+    },
     warning: {
         buttonBgColor: '#f59f03',
         buttonBgColorHover: '#d97706',

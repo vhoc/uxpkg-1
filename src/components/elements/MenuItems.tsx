@@ -21,7 +21,7 @@ export interface MenuItemProps extends HTMLAttributes<HTMLLIElement> {
     },
     depthLevel: number
     disabled?: boolean
-    variant?: 'primary' | 'gray' | 'grayBlue' | 'grayRed'
+    variant?: 'primary' | 'gray' | 'grayBlue' | 'grayRed' | 'clear'
     size?: 'sm' | 'md'
     /** Override standard sizes' height */
     height?: string,
@@ -29,9 +29,10 @@ export interface MenuItemProps extends HTMLAttributes<HTMLLIElement> {
     /** Override standard sizes' width */
     width?: string,
     hasDownArrow?: boolean
+    isImageDropDown?: boolean
 }
 
-export const MenuItems = ({style, items, depthLevel, disabled = false, variant, size = 'sm', height, width, hasDownArrow, ...MenuItemProps}: MenuItemProps): JSX.Element => {
+export const MenuItems = ({style, items, depthLevel, disabled = false, variant, size = 'sm', height, width, isImageDropDown = false, hasDownArrow, ...MenuItemProps}: MenuItemProps): JSX.Element => {
 
     type VariantKey = keyof typeof variants
     const selectedVariant = variant as VariantKey
@@ -56,19 +57,21 @@ export const MenuItems = ({style, items, depthLevel, disabled = false, variant, 
         color: !items.submenu ? colors.gray[90] : disabled ? variants[selectedVariant].buttonTextColorDisabled : active ? variants[selectedVariant].buttonTextColorActive : hover ? variants[selectedVariant].buttonTextColorHover : variants[selectedVariant].buttonTextColor,
         textTransform: 'capitalize',
         width: 'fit-content',
+        height: height,
         minWidth: items.submenu ? '0px' : '150px',
         fontFamily: theme.font.buttonLabel.regular.fontFamily,
         fontSize: sizes.button[selectedSize].fontSize,
-        paddingLeft: sizes.popOverMenuItem[selectedSize].paddingLeft,
+        paddingLeft: isImageDropDown ? '0px' : sizes.popOverMenuItem[selectedSize].paddingLeft,
         paddingRight: sizes.popOverMenuItem[selectedSize].paddingRight,
-        paddingTop: items.submenu ? sizes.popOverMenuItem[selectedSize].paddingTop : '5px',
-        paddingBottom: items.submenu ? sizes.popOverMenuItem[selectedSize].paddingBottom : '5px',
-        borderRadius: '4px',
+        paddingTop: isImageDropDown ? '0px' : items.submenu ? sizes.popOverMenuItem[selectedSize].paddingTop : '5px',
+        paddingBottom: isImageDropDown ? '0px' : items.submenu ? sizes.popOverMenuItem[selectedSize].paddingBottom : '5px',
+        borderRadius: (isImageDropDown || variant === 'clear') ? '0px' : '4px',
         cursor: disabled ? 'not-allowed' : 'pointer',
         border: 'none',
         outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',
-        outlineStyle: 'auto',
+        outlineStyle: isImageDropDown ? 'none' : 'auto',
         outlineWidth: focus ? '2px' : '0px',
+        textAlign: 'left',
     })
 
     useEffect(()=> {
@@ -88,7 +91,16 @@ export const MenuItems = ({style, items, depthLevel, disabled = false, variant, 
     }, [dropdown])
 
     return (
-        <li className='menu-items' {...MenuItemProps} ref={ref} >
+        <li
+            className='menu-items'
+            {...MenuItemProps}
+            ref={ref}
+            style={{
+                position: 'relative',
+                fontSize: '14px',
+                width: 'fit-content',
+            }}
+        >
         {
             items.submenu ? (
                 <>
@@ -134,9 +146,26 @@ export const MenuItems = ({style, items, depthLevel, disabled = false, variant, 
                             </div>
 
                             
-                            <span>
-                            { depthLevel > 0 ? <span><FontAwesomeIcon icon={faCaretRight} style={{ marginLeft: '10px' }}/></span> : hasDownArrow ? <span><FontAwesomeIcon icon={faCaretDown} style={{ marginLeft: '10px' }}/></span> : null }
-                            </span>
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                }}
+                            >
+                            {
+                                depthLevel > 0 ?
+                                    <span>
+                                        <FontAwesomeIcon icon={faCaretRight} style={{ marginLeft: '10px' }}/>
+                                    </span>
+                                :
+                                    hasDownArrow ?
+                                        <span>
+                                            <FontAwesomeIcon icon={faCaretDown} style={{ marginLeft: '10px'}}/>
+                                        </span>
+                                    :
+                                        null
+                            }
+                            </div>
 
                         </div>
                     </button>

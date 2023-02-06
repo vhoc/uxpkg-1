@@ -15,7 +15,7 @@ interface IMenuItems {
     selected: boolean
     disabled: boolean
     label: string
-    onClick: React.MouseEventHandler<HTMLButtonElement> | undefined
+    onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
 }
 
 export interface SideMenuProps extends HTMLAttributes<HTMLDivElement> {
