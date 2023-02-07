@@ -7,7 +7,7 @@ export interface DropDownProps extends HTMLAttributes<HTMLUListElement> {
     submenus: any
     dropdown: boolean
     depthLevel: number
-    variant?: 'primary' | 'gray' | 'grayBlue' | 'grayRed'
+    variant?: 'primary' | 'gray' | 'grayBlue' | 'grayRed' | 'clear'
     disabled?: boolean
     size?: 'sm' | 'md'
     height?: string

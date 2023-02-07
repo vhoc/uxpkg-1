@@ -14,7 +14,7 @@ export interface MenuItemProps extends HTMLAttributes<HTMLLIElement> {
      */
     items: {
         icon?: any
-        title: string
+        title: string | JSX.Element
         style?: object
         submenu?: any
         action?: any
