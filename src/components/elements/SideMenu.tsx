@@ -22,7 +22,7 @@ const SideMenu = ({variant = 'primary', menuItems, ...props}:SideMenuProps): JSX
     return (
         <div
             style={{
-                width: (collapsed && !keepExtended) ? 'fit-content' : '289px',
+                width: (collapsed && !keepExtended) ? '70px' : '289px',
                 minHeight: '100%',
                 height: '100%',
                 backgroundColor: variants[selectedVariant].sideBarBgColor,
@@ -33,8 +33,8 @@ const SideMenu = ({variant = 'primary', menuItems, ...props}:SideMenuProps): JSX
                 display: 'flex',
                 flexDirection: 'column',
             }}
-            onMouseOver={() => setCollapsed(false)}
-            onMouseOut={() => setCollapsed(true)}
+            //onMouseOver={() => setCollapsed(false)}
+            //onMouseOut={() => setCollapsed(true)}
             {...props}        
         >
             {
@@ -48,6 +48,7 @@ const SideMenu = ({variant = 'primary', menuItems, ...props}:SideMenuProps): JSX
                                 variant={item.variant}
                                 disabled={item.disabled}
                                 collapsed={collapsed}
+                                setCollapsed={setCollapsed}
                                 selected={item.selected}
                                 label={item.label}
                                 onClick={item.onClick}
@@ -73,6 +74,13 @@ const SideMenu = ({variant = 'primary', menuItems, ...props}:SideMenuProps): JSX
                     paddingTop: '13px',
                     paddingLeft: '15px',
                     paddingRight: '15px',
+                    width: (collapsed && !keepExtended) ? '46px' : '266px',
+                }}
+                onMouseEnter={() => {
+                    setCollapsed(false)
+                }}
+                onMouseLeave={() => {
+                    setCollapsed(true)
                 }}
                 onClick={() => setKeepExtended(prevState => (!prevState))}
             >

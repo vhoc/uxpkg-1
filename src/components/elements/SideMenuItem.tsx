@@ -16,9 +16,10 @@ export interface SideMenuItemProps extends HTMLAttributes<HTMLButtonElement> {
     label?: string | null
     onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
     keepExtended?: boolean
+    setCollapsed?: (state: boolean) => void
 }
 
-export const SideMenuItem = ({ style, variant = 'primary', itemType, selected = false, collapsed = false, icon, disabled = false, label, onClick, keepExtended,...props }: SideMenuItemProps): JSX.Element => {
+export const SideMenuItem = ({ style, variant = 'primary', itemType, selected = false, collapsed = false, setCollapsed, icon, disabled = false, label, onClick, keepExtended,...props }: SideMenuItemProps): JSX.Element => {
 
     const [hover, setHover] = useState<boolean>(false)
     //const [active, setActive] = useState<boolean>(false)
@@ -29,7 +30,17 @@ export const SideMenuItem = ({ style, variant = 'primary', itemType, selected = 
 
     if ( itemType === 'section' ) {
         return (
-            <SideMenuSectionName label={label} collapsed={collapsed} keepExtended={keepExtended}/>
+            <SideMenuSectionName
+                label={label}
+                collapsed={collapsed}
+                keepExtended={keepExtended}
+                onMouseEnter={() => {
+                    setCollapsed?.(false)
+                }}
+                onMouseLeave={() => {
+                    setCollapsed?.(true)
+                }}
+            />
         )
     } else {
         return <button
@@ -54,11 +65,18 @@ export const SideMenuItem = ({ style, variant = 'primary', itemType, selected = 
             display: 'flex',
             justifyContent: 'start',
             alignItems: 'center',
-            width: (collapsed && !keepExtended) ? 'fit-content' : '266px',
+            width: (collapsed && !keepExtended) ? '46px' : '266px',
+            //width: '100%',
             gap: '15px'
         }}
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
+        onMouseEnter={() => {
+            setHover(true)
+            setCollapsed?.(false)
+        }}
+        onMouseLeave={() => {
+            setHover(false)
+            setCollapsed?.(true)
+        }}
         onClick={onClick}
         //onMouseDown={() => setActive(true)}
         //onMouseUp={() => setActive(false)}
