@@ -1,26 +1,14 @@
-import { IconProp } from "@fortawesome/fontawesome-svg-core"
 import React, { useState } from "react"
 import { HTMLAttributes } from "react"
 import { colors, variants } from "../../theme"
 import SideMenuItem from "./SideMenuItem"
 import { faSignOutAlt } from "@fortawesome/sharp-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-
-interface IMenuItems {
-    menuSection: string
-    icon: IconProp
-    itemType: 'item' | 'section'
-    variant: 'primary'
-    collapsed: boolean
-    selected: boolean
-    disabled: boolean
-    label: string
-    onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
-}
+import { SideMenuItemProps } from "./SideMenuItem"
 
 export interface SideMenuProps extends HTMLAttributes<HTMLDivElement> {
     variant?: 'primary'
-    menuItems?: IMenuItems[]
+    menuItems?: SideMenuItemProps[]
 }
 
 const SideMenu = ({variant = 'primary', menuItems, ...props}:SideMenuProps): JSX.Element => {
