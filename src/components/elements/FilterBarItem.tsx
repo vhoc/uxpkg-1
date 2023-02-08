@@ -1,6 +1,6 @@
 import React, { HTMLAttributes } from "react"
 import { FormControlLabel, Checkbox, ThemeProvider } from "@mui/material"
-import { theme, colors } from "../../theme"
+import { colors } from "../../theme"
 import { mtheme } from "../../theme"
 import "@fontsource/ibm-plex-sans"
 
