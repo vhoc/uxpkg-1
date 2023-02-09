@@ -1,7 +1,24 @@
 "use strict";
 exports.__esModule = true;
-exports.variants = exports.sizes = exports.theme = exports.colors = void 0;
+exports.variants = exports.sizes = exports.theme = exports.colors = exports.mtheme = void 0;
 require("@fontsource/ibm-plex-sans");
+var material_1 = require("@mui/material");
+exports.mtheme = (0, material_1.createTheme)({
+    typography: {
+        fontFamily: [
+            'IBM Plex Sans',
+            '-apple-system',
+            'BlinkMacSystemFont',
+            '"Segoe UI"',
+            '"Helvetica Neue"',
+            'Arial',
+            'sans-serif',
+            '"Apple Color Emoji"',
+            '"Segoe UI Emoji"',
+            '"Segoe UI Symbol"',
+        ].join(',')
+    }
+});
 exports.colors = {
     gray: {
         '5': '#f9fbfc',

@@ -1,4 +1,5 @@
 import "@fontsource/ibm-plex-sans";
+export declare const mtheme: import("@mui/material").Theme;
 export type TVariant = {
     buttonBgColor?: string;
     buttonBgColorHover?: string;

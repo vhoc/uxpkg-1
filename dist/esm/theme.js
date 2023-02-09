@@ -1,4 +1,21 @@
 import "@fontsource/ibm-plex-sans";
+import { createTheme } from "@mui/material";
+export var mtheme = createTheme({
+    typography: {
+        fontFamily: [
+            'IBM Plex Sans',
+            '-apple-system',
+            'BlinkMacSystemFont',
+            '"Segoe UI"',
+            '"Helvetica Neue"',
+            'Arial',
+            'sans-serif',
+            '"Apple Color Emoji"',
+            '"Segoe UI Emoji"',
+            '"Segoe UI Symbol"',
+        ].join(',')
+    }
+});
 export var colors = {
     gray: {
         '5': '#f9fbfc',

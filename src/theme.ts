@@ -1,4 +1,22 @@
 import "@fontsource/ibm-plex-sans"
+import { createTheme } from "@mui/material";
+
+export const mtheme = createTheme({
+    typography: {
+      fontFamily: [
+        'IBM Plex Sans',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        '"Helvetica Neue"',
+        'Arial',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(','),
+    },
+  });
 
 export type TVariant = {
     buttonBgColor?: string
@@ -86,6 +104,7 @@ export const colors = {
 }
 
 export const theme = {
+
     font: {
         title: {
             regular: {

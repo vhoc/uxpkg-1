@@ -29,3 +29,6 @@ tslib_1.__exportStar(require("./components/elements/SideMenuItem"), exports);
 tslib_1.__exportStar(require("./components/elements/SideMenuSectionName"), exports);
 tslib_1.__exportStar(require("./components/elements/UserPicture"), exports);
 tslib_1.__exportStar(require("./components/elements/AlertModal"), exports);
+tslib_1.__exportStar(require("./components/elements/FilterBarCategory"), exports);
+tslib_1.__exportStar(require("./components/elements/FilterBarItem"), exports);
+tslib_1.__exportStar(require("./components/elements/FilterBarResources"), exports);
