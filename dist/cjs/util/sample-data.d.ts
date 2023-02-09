@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 export declare const testAlert: () => void;
 export interface IDropDownItem {

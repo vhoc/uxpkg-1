@@ -28,3 +28,4 @@ tslib_1.__exportStar(require("./components/elements/SideMenu"), exports);
 tslib_1.__exportStar(require("./components/elements/SideMenuItem"), exports);
 tslib_1.__exportStar(require("./components/elements/SideMenuSectionName"), exports);
 tslib_1.__exportStar(require("./components/elements/UserPicture"), exports);
+tslib_1.__exportStar(require("./components/elements/AlertModal"), exports);
