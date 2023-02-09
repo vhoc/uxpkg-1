@@ -5,11 +5,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { variants, theme } from '../../theme';
 import SideMenuSectionName from "./SideMenuSectionName";
 export var SideMenuItem = function (_a) {
-    var style = _a.style, _b = _a.variant, variant = _b === void 0 ? 'primary' : _b, itemType = _a.itemType, _c = _a.selected, selected = _c === void 0 ? false : _c, _d = _a.collapsed, collapsed = _d === void 0 ? false : _d, icon = _a.icon, _e = _a.disabled, disabled = _e === void 0 ? false : _e, label = _a.label, onClick = _a.onClick, keepExtended = _a.keepExtended, props = __rest(_a, ["style", "variant", "itemType", "selected", "collapsed", "icon", "disabled", "label", "onClick", "keepExtended"]);
+    var style = _a.style, _b = _a.variant, variant = _b === void 0 ? 'primary' : _b, itemType = _a.itemType, _c = _a.selected, selected = _c === void 0 ? false : _c, _d = _a.collapsed, collapsed = _d === void 0 ? false : _d, setCollapsed = _a.setCollapsed, icon = _a.icon, _e = _a.disabled, disabled = _e === void 0 ? false : _e, label = _a.label, onClick = _a.onClick, keepExtended = _a.keepExtended, props = __rest(_a, ["style", "variant", "itemType", "selected", "collapsed", "setCollapsed", "icon", "disabled", "label", "onClick", "keepExtended"]);
     var _f = useState(false), hover = _f[0], setHover = _f[1];
     var selectedVariant = variant;
     if (itemType === 'section') {
-        return (React.createElement(SideMenuSectionName, { label: label, collapsed: collapsed, keepExtended: keepExtended }));
+        return (React.createElement(SideMenuSectionName, { label: label, collapsed: collapsed, keepExtended: keepExtended, onMouseEnter: function () {
+                setCollapsed === null || setCollapsed === void 0 ? void 0 : setCollapsed(false);
+            }, onMouseLeave: function () {
+                setCollapsed === null || setCollapsed === void 0 ? void 0 : setCollapsed(true);
+            } }));
     }
     else {
         return React.createElement("button", __assign({ type: "button", style: {
@@ -32,9 +36,16 @@ export var SideMenuItem = function (_a) {
                 display: 'flex',
                 justifyContent: 'start',
                 alignItems: 'center',
-                width: (collapsed && !keepExtended) ? 'fit-content' : '266px',
+                width: (collapsed && !keepExtended) ? '46px' : '266px',
+                //width: '100%',
                 gap: '15px'
-            }, onMouseEnter: function () { return setHover(true); }, onMouseLeave: function () { return setHover(false); }, onClick: onClick }, props),
+            }, onMouseEnter: function () {
+                setHover(true);
+                setCollapsed === null || setCollapsed === void 0 ? void 0 : setCollapsed(false);
+            }, onMouseLeave: function () {
+                setHover(false);
+                setCollapsed === null || setCollapsed === void 0 ? void 0 : setCollapsed(true);
+            }, onClick: onClick }, props),
             React.createElement("div", null,
                 React.createElement(FontAwesomeIcon, { icon: icon, color: selected ? variants[selectedVariant].sideBarMenuItemIconColorHover : variants[selectedVariant].sideBarMenuItemIconColor })),
             (!collapsed || keepExtended) ?

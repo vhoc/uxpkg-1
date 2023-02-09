@@ -12,6 +12,7 @@ export interface SideMenuItemProps extends HTMLAttributes<HTMLButtonElement> {
     label?: string | null;
     onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
     keepExtended?: boolean;
+    setCollapsed?: (state: boolean) => void;
 }
-export declare const SideMenuItem: ({ style, variant, itemType, selected, collapsed, icon, disabled, label, onClick, keepExtended, ...props }: SideMenuItemProps) => JSX.Element;
+export declare const SideMenuItem: ({ style, variant, itemType, selected, collapsed, setCollapsed, icon, disabled, label, onClick, keepExtended, ...props }: SideMenuItemProps) => JSX.Element;
 export default SideMenuItem;

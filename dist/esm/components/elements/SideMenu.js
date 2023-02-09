@@ -10,7 +10,7 @@ var SideMenu = function (_a) {
     var _d = useState(false), keepExtended = _d[0], setKeepExtended = _d[1];
     var selectedVariant = variant;
     return (React.createElement("div", __assign({ style: {
-            width: (collapsed && !keepExtended) ? 'fit-content' : '289px',
+            width: (collapsed && !keepExtended) ? '70px' : '289px',
             minHeight: '100%',
             height: '100%',
             backgroundColor: variants[selectedVariant].sideBarBgColor,
@@ -20,10 +20,10 @@ var SideMenu = function (_a) {
             paddingRight: '13px',
             display: 'flex',
             flexDirection: 'column'
-        }, onMouseOver: function () { return setCollapsed(false); }, onMouseOut: function () { return setCollapsed(true); } }, props),
+        } }, props),
         menuItems && menuItems.length >= 1 ?
             menuItems.map(function (item, index) {
-                return (React.createElement(SideMenuItem, { key: index, itemType: item.itemType, icon: item.icon, variant: item.variant, disabled: item.disabled, collapsed: collapsed, selected: item.selected, label: item.label, onClick: item.onClick, keepExtended: keepExtended }));
+                return (React.createElement(SideMenuItem, { key: index, itemType: item.itemType, icon: item.icon, variant: item.variant, disabled: item.disabled, collapsed: collapsed, setCollapsed: setCollapsed, selected: item.selected, label: item.label, onClick: item.onClick, keepExtended: keepExtended }));
             })
             :
                 null,
@@ -39,7 +39,12 @@ var SideMenu = function (_a) {
                 alignItems: 'center',
                 paddingTop: '13px',
                 paddingLeft: '15px',
-                paddingRight: '15px'
+                paddingRight: '15px',
+                width: (collapsed && !keepExtended) ? '46px' : '266px'
+            }, onMouseEnter: function () {
+                setCollapsed(false);
+            }, onMouseLeave: function () {
+                setCollapsed(true);
             }, onClick: function () { return setKeepExtended(function (prevState) { return (!prevState); }); } },
             React.createElement(FontAwesomeIcon, { icon: faSignOutAlt }),
             (!collapsed || keepExtended) ?

@@ -13,8 +13,8 @@ export var SideMenuSectionName = function (_a) {
             backgroundColor: variants[selectedVariant].sideBarMenuItemBgColor,
             color: colors.gray[30],
             textTransform: 'uppercase',
-            marginTop: '5px',
-            marginBottom: '5px',
+            paddingTop: '10px',
+            paddingBottom: '10px',
             paddingLeft: '15px',
             paddingRight: '15px',
             height: '34px',
@@ -25,8 +25,11 @@ export var SideMenuSectionName = function (_a) {
             display: 'flex',
             justifyContent: 'start',
             alignItems: 'center',
-            width: (collapsed && !keepExtended) ? 'fit-content' : '266px'
+            width: (collapsed && !keepExtended) ? '50px' : '266px'
         } }, props),
-        React.createElement("div", null, (collapsed && !keepExtended) ? '' : label));
+        React.createElement("div", { style: {
+                width: (collapsed && !keepExtended) ? '50px' : '266px',
+                textAlign: 'left'
+            } }, (collapsed && !keepExtended) ? '' : label));
 };
 export default SideMenuSectionName;
