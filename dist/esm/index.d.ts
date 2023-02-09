@@ -13,6 +13,7 @@ export * from './components/elements/SideMenu';
 export * from './components/elements/SideMenuItem';
 export * from './components/elements/SideMenuSectionName';
 export * from './components/elements/UserPicture';
+export * from './components/elements/AlertModal';
 export * from './components/elements/FilterBarCategory';
 export * from './components/elements/FilterBarItem';
 export * from './components/elements/FilterBarResources';
