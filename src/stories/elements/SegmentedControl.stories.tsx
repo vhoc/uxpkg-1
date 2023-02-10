@@ -3,7 +3,7 @@ import SegmentedControl from "../../components/elements/SegmentedControl";
 import { library, IconDefinition } from '@fortawesome/fontawesome-svg-core'
 import { faAddressBook, faTable, faGrid } from "@fortawesome/sharp-solid-svg-icons";
 import { faAmazon, faGoogle, faMicrosoft } from '@fortawesome/free-brands-svg-icons'
-import React from "react";
+//import React from "react";
 
 export default {
     title: 'Composite/SegmentedControl',
@@ -35,4 +35,5 @@ export const Default = {
 }
 
 library.add(faAddressBook, faTable, faGrid)
+//@ts-ignore
 library.add(faAmazon, faGoogle, faMicrosoft as IconDefinition)

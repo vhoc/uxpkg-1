@@ -5,6 +5,10 @@ export declare const Default: {
     args: {
         multiSelect: boolean;
         ariaLabel: string;
-        children: JSX.Element;
+        items: {
+            value: string;
+            ariaLabel: string;
+            icon: import("@fortawesome/free-brands-svg-icons").IconDefinition;
+        }[];
     };
 };

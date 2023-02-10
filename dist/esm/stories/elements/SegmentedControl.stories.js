@@ -1,7 +1,7 @@
-import React from "react";
 import SegmentedControl from "../../components/elements/SegmentedControl";
-import SegmentedControlButton from "../../components/elements/SegmentedControlButton";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faAddressBook, faTable, faGrid } from "@fortawesome/sharp-solid-svg-icons";
+import { faAmazon, faGoogle, faMicrosoft } from '@fortawesome/free-brands-svg-icons';
 export default {
     title: 'Composite/SegmentedControl',
     component: SegmentedControl
@@ -10,8 +10,24 @@ export var Default = {
     args: {
         multiSelect: false,
         ariaLabel: 'cloud-service',
-        children: React.createElement(React.Fragment, null,
-            React.createElement(SegmentedControlButton, { value: "aws", ariaLabel: "cloud-service-aws" },
-                React.createElement(FontAwesomeIcon, { icon: 'fa-brands fa-react' })))
+        items: [
+            {
+                value: 'amazon',
+                ariaLabel: 'cloud-service-amazon',
+                icon: faAmazon
+            },
+            {
+                value: 'google',
+                ariaLabel: 'cloud-service-google',
+                icon: faGoogle
+            },
+            {
+                value: 'azure',
+                ariaLabel: 'cloud-service-azure',
+                icon: faMicrosoft
+            },
+        ]
     }
 };
+library.add(faAddressBook, faTable, faGrid);
+library.add(faAmazon, faGoogle, faMicrosoft);

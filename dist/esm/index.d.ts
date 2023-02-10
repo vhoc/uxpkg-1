@@ -18,3 +18,4 @@ export * from './components/elements/FilterBarCategory';
 export * from './components/elements/FilterBarItem';
 export * from './components/elements/FilterBarResources';
 export * from './components/elements/TabGroup';
+export * from './components/elements/SegmentedControl';
