@@ -67,6 +67,7 @@ const TabGroup = ({tabs}: any) => {
         return {
             marginRight: '4px',
             minHeight: '41px',
+            fontWeight: value === currentValue ? 'bold' : 'regular',
             textTransform: 'capitalize',
             paddingRight: '25px',
             paddingLeft: '25px',
@@ -117,7 +118,7 @@ const TabGroup = ({tabs}: any) => {
                                 maxHeight: '41px',
                             },
                             bgcolor: colors.white,
-                            //  borderBottom: `1px solid ${colors.white}`,
+                            borderBottom: `1px solid ${colors.blue[30]}`,
                         }}
                     >
                     {

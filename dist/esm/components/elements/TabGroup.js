@@ -35,6 +35,7 @@ var TabGroup = function (_a) {
         return {
             marginRight: '4px',
             minHeight: '41px',
+            fontWeight: value === currentValue ? 'bold' : 'regular',
             textTransform: 'capitalize',
             paddingRight: '25px',
             paddingLeft: '25px',
@@ -72,7 +73,8 @@ var TabGroup = function (_a) {
                             minHeight: '41px',
                             maxHeight: '41px'
                         },
-                        bgcolor: colors.white
+                        bgcolor: colors.white,
+                        borderBottom: "1px solid ".concat(colors.blue[30])
                     } }, tabs.map(function (tab, index) {
                     return (React.createElement(Tab, __assign({ key: index, sx: tabStyles(index), label: tab.label }, a11yProps(index))));
                 }))

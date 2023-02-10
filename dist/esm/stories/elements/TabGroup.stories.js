@@ -8,7 +8,7 @@ export var Default = {
     args: {
         tabs: [
             {
-                label: "First tabg",
+                label: "First tab",
                 tabContent: React.createElement(React.Fragment, null,
                     React.createElement("h1", null, "Tab 1"),
                     React.createElement("p", null, "This is Tab 1's content. You can insert any kind of React components here as long as they have only one parent. This container can be styled freely as the application requires."))

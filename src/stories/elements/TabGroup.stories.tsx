@@ -11,7 +11,7 @@ export const Default = {
     args: {
         tabs: [
             {
-                label: "First tabg",
+                label: "First tab",
                 tabContent: <>
                         <h1>Tab 1</h1>
                         <p>This is Tab 1&apos;s content. You can insert any kind of React components here as long as they have only one parent. This container can be styled freely as the application requires.</p>

@@ -59,16 +59,19 @@
     "postcss": "^8.4.21"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "@mui/material": "^5.11.8"
+    "@fortawesome/free-brands-svg-icons": "^6.3.0",
+    "@mui/material": "^5.11.8",
+    "@types/styled-components": "^5.1.26",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "dependencies": {
     "@fontsource/ibm-plex-sans": "^4.5.13",
-    "@fortawesome/fontawesome-pro": "^6.2.1",
+    "@fortawesome/fontawesome-pro": "^6.3.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-brands-svg-icons": "^6.3.0",
     "@fortawesome/free-regular-svg-icons": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "@fortawesome/pro-duotone-svg-icons": "^6.2.1",
