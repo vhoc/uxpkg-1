@@ -34,9 +34,9 @@ export var SideMenuItem = function (_a) {
                 cursor: disabled ? 'not-allowed' : 'pointer',
                 border: 'none',
                 display: 'flex',
-                justifyContent: 'start',
+                justifyContent: 'flex-start',
                 alignItems: 'center',
-                width: (collapsed && !keepExtended) ? '46px' : '266px',
+                width: (collapsed && !keepExtended) ? 'fit-content' : '266px',
                 //width: '100%',
                 gap: '15px'
             }, onMouseEnter: function () {
@@ -46,8 +46,8 @@ export var SideMenuItem = function (_a) {
                 setHover(false);
                 setCollapsed === null || setCollapsed === void 0 ? void 0 : setCollapsed(true);
             }, onClick: onClick }, props),
-            React.createElement("div", null,
-                React.createElement(FontAwesomeIcon, { icon: icon, color: selected ? variants[selectedVariant].sideBarMenuItemIconColorHover : variants[selectedVariant].sideBarMenuItemIconColor })),
+            React.createElement("div", { style: { textAlign: 'center', width: '24px', alignSelf: 'center' } },
+                React.createElement(FontAwesomeIcon, { style: { alignSelf: 'center' }, icon: icon, color: selected ? variants[selectedVariant].sideBarMenuItemIconColorHover : variants[selectedVariant].sideBarMenuItemIconColor })),
             (!collapsed || keepExtended) ?
                 React.createElement("div", { style: {
                         textAlign: 'left',

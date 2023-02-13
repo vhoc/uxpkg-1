@@ -37,9 +37,9 @@ var SideMenuItem = function (_a) {
                 cursor: disabled ? 'not-allowed' : 'pointer',
                 border: 'none',
                 display: 'flex',
-                justifyContent: 'start',
+                justifyContent: 'flex-start',
                 alignItems: 'center',
-                width: (collapsed && !keepExtended) ? '46px' : '266px',
+                width: (collapsed && !keepExtended) ? 'fit-content' : '266px',
                 //width: '100%',
                 gap: '15px'
             }, onMouseEnter: function () {
@@ -49,8 +49,8 @@ var SideMenuItem = function (_a) {
                 setHover(false);
                 setCollapsed === null || setCollapsed === void 0 ? void 0 : setCollapsed(true);
             }, onClick: onClick }, props),
-            react_1["default"].createElement("div", null,
-                react_1["default"].createElement(react_fontawesome_1.FontAwesomeIcon, { icon: icon, color: selected ? theme_1.variants[selectedVariant].sideBarMenuItemIconColorHover : theme_1.variants[selectedVariant].sideBarMenuItemIconColor })),
+            react_1["default"].createElement("div", { style: { textAlign: 'center', width: '24px', alignSelf: 'center' } },
+                react_1["default"].createElement(react_fontawesome_1.FontAwesomeIcon, { style: { alignSelf: 'center' }, icon: icon, color: selected ? theme_1.variants[selectedVariant].sideBarMenuItemIconColorHover : theme_1.variants[selectedVariant].sideBarMenuItemIconColor })),
             (!collapsed || keepExtended) ?
                 react_1["default"].createElement("div", { style: {
                         textAlign: 'left',

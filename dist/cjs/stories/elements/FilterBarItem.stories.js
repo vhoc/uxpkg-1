@@ -9,7 +9,7 @@ exports["default"] = {
 };
 exports.Default = {
     args: {
-        name: 'Granteg',
+        name: 'Granted',
         checked: true,
         amount: 2,
         onClick: function () { return alert('Trigger something.'); }

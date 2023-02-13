@@ -12,16 +12,17 @@ var SideMenu = function (_a) {
     var _d = (0, react_1.useState)(false), keepExtended = _d[0], setKeepExtended = _d[1];
     var selectedVariant = variant;
     return (react_1["default"].createElement("div", tslib_1.__assign({ style: {
-            width: (collapsed && !keepExtended) ? '70px' : '289px',
+            width: (collapsed && !keepExtended) ? 'fit-content' : '289px',
             minHeight: '100%',
             height: '100%',
             backgroundColor: theme_1.variants[selectedVariant].sideBarBgColor,
             paddingTop: '16px',
             paddingBottom: '16px',
             paddingLeft: '8px',
-            paddingRight: '13px',
+            paddingRight: '8px',
             display: 'flex',
-            flexDirection: 'column'
+            flexDirection: 'column',
+            alignItems: 'center'
         } }, props),
         menuItems && menuItems.length >= 1 ?
             menuItems.map(function (item, index) {
@@ -37,7 +38,7 @@ var SideMenu = function (_a) {
                 borderTopWidth: '1px',
                 color: keepExtended ? theme_1.colors.gray[70] : theme_1.colors.gray[30],
                 display: 'flex',
-                justifyContent: 'flex-start',
+                justifyContent: 'center',
                 alignItems: 'center',
                 paddingTop: '13px',
                 paddingLeft: '15px',
