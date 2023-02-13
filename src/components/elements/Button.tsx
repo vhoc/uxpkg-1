@@ -47,9 +47,10 @@ export const Button = ({children, size = 'sm', variant = 'primary', disabled = f
         borderRadius: '4px',
         cursor: disabled ? 'not-allowed' : 'pointer',
         border: 'none',
-        outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',
-        outlineStyle: 'auto',
-        outlineWidth: focus ? '2px' : '0px'
+        //outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',
+        //outlineStyle: 'auto',
+        //outlineWidth: focus ? '2px' : '0px'
+        outlineWidth: '0px',
     })
 
     return (
