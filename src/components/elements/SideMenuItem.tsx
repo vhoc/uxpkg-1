@@ -63,9 +63,9 @@ export const SideMenuItem = ({ style, variant = 'primary', itemType, selected = 
             cursor: disabled ? 'not-allowed' : 'pointer',
             border: 'none',
             display: 'flex',
-            justifyContent: 'start',
+            justifyContent: 'flex-start',
             alignItems: 'center',
-            width: (collapsed && !keepExtended) ? '46px' : '266px',
+            width: (collapsed && !keepExtended) ? 'fit-content' : '266px',
             //width: '100%',
             gap: '15px'
         }}
@@ -84,8 +84,8 @@ export const SideMenuItem = ({ style, variant = 'primary', itemType, selected = 
         //onBlur={() => setFocus(false)}
         {...props}
     >
-        <div>
-            <FontAwesomeIcon icon={icon as IconProp} color={selected ? variants[selectedVariant].sideBarMenuItemIconColorHover : variants[selectedVariant].sideBarMenuItemIconColor} />
+        <div style={{ textAlign: 'center', width: '24px', alignSelf: 'center', }}>
+            <FontAwesomeIcon style={{ alignSelf: 'center' }} icon={icon as IconProp} color={selected ? variants[selectedVariant].sideBarMenuItemIconColorHover : variants[selectedVariant].sideBarMenuItemIconColor} />
         </div>
         {
             (!collapsed || keepExtended) ?

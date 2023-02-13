@@ -8,7 +8,7 @@ export default {
 
 export const Default = {
     args: {
-        name: 'Granteg',
+        name: 'Granted',
         checked: true,
         amount: 2,
         onClick: () => alert('Trigger something.')

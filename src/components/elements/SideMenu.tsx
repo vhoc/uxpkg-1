@@ -22,16 +22,17 @@ const SideMenu = ({variant = 'primary', menuItems, ...props}:SideMenuProps): JSX
     return (
         <div
             style={{
-                width: (collapsed && !keepExtended) ? '70px' : '289px',
+                width: (collapsed && !keepExtended) ? 'fit-content' : '289px',
                 minHeight: '100%',
                 height: '100%',
                 backgroundColor: variants[selectedVariant].sideBarBgColor,
                 paddingTop: '16px',
                 paddingBottom: '16px',
                 paddingLeft: '8px',
-                paddingRight: '13px',
+                paddingRight: '8px',
                 display: 'flex',
                 flexDirection: 'column',
+                alignItems: 'center',
             }}
             //onMouseOver={() => setCollapsed(false)}
             //onMouseOut={() => setCollapsed(true)}
@@ -69,7 +70,7 @@ const SideMenu = ({variant = 'primary', menuItems, ...props}:SideMenuProps): JSX
                     borderTopWidth: '1px',
                     color: keepExtended ? colors.gray[70] : colors.gray[30],
                     display: 'flex',
-                    justifyContent: 'flex-start',
+                    justifyContent: 'center',
                     alignItems: 'center',
                     paddingTop: '13px',
                     paddingLeft: '15px',

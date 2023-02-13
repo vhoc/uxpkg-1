@@ -4,11 +4,11 @@ import { colors } from "../../theme"
 import { mtheme } from "../../theme"
 import "@fontsource/ibm-plex-sans"
 
-interface FilterBarItemProps extends HTMLAttributes<HTMLDivElement> {
+interface FilterBarItemProps extends HTMLAttributes<HTMLElement> {
     name?: string
     checked?: boolean
     amount?: number
-    onClick?: React.MouseEventHandler<HTMLDivElement> | undefined
+    onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
 }
 
 
@@ -21,16 +21,17 @@ const FilterBarItem = ({ name = '', checked = false, amount, onClick, ...props }
                 width: 'fit-content',
             }}
             {...props}
-            onClick={ onClick }
         >
             <ThemeProvider theme={mtheme}>
                 <FormControlLabel
+                    
                     control={
                         <Checkbox
                             checked={checked}
                             sx={{
                                 color: colors.gray[30],
                             }}
+                            onClick={ onClick }
                         />
                     }
                     label={ `${name} ${ amount ? '('+amount+')' : ''}` }                
