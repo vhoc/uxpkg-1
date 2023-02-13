@@ -19,7 +19,6 @@ export const Button = ({children, size = 'sm', variant = 'primary', disabled = f
 
     const [hover, setHover] = useState<boolean>(false)
     const [active, setActive] = useState<boolean>(false)
-    const [focus, setFocus] = useState<boolean>(false)
 
     type VariantKey = keyof typeof variants
     const selectedVariant = variant as VariantKey
@@ -60,8 +59,6 @@ export const Button = ({children, size = 'sm', variant = 'primary', disabled = f
                 onMouseLeave={() => setHover(false)}
                 onMouseDown={() => setActive(true)}
                 onMouseUp={() => setActive(false)}
-                onFocus={() => setFocus(true)}
-                onBlur={() => setFocus(false)}
                 {...ButtonProps}
             >
                 {children}
