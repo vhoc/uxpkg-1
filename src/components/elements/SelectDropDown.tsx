@@ -62,18 +62,18 @@ const SelectDropDown = ({menuItems, value, onChange, disabled = false, ...props}
 
 
     return (
-            <FormControl sx={{
-                fontFamily: 'IBM Plex Sans',
-                p: 0,
-                height: '40px',
-                '&:hover fieldset' : {
-                    borderColor: colors.gray[20] + ' !important',
-                    borderWidth: '1px',
-                    //border: 'inherited',
-                    boxShadow: 'none',
-                },
-                
-            }}
+            <FormControl
+                sx={{
+                    fontFamily: 'IBM Plex Sans',
+                    p: 0,
+                    height: '40px',
+                    '&:hover fieldset' : {
+                        borderColor: colors.gray[20] + ' !important',
+                        borderWidth: '1px',
+                        //border: 'inherited',
+                        boxShadow: 'none',
+                    },                
+                }}
             size={'small'}
             disabled={disabled}
             >
