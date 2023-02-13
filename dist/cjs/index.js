@@ -34,3 +34,4 @@ tslib_1.__exportStar(require("./components/elements/FilterBarItem"), exports);
 tslib_1.__exportStar(require("./components/elements/FilterBarResources"), exports);
 tslib_1.__exportStar(require("./components/elements/TabGroup"), exports);
 tslib_1.__exportStar(require("./components/elements/SegmentedControl"), exports);
+tslib_1.__exportStar(require("./components/elements/SelectDropDown"), exports);
