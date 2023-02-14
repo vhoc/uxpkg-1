@@ -1,4 +1,6 @@
 import { Label } from '../../components/elements/Label';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCircleMinus } from '@fortawesome/sharp-solid-svg-icons';
 export default {
     title: 'Elements/Labels/Label',
     component: Label
@@ -33,3 +35,12 @@ export var Warning = {
         text: 'Label'
     }
 };
+export var WithIcon = {
+    args: {
+        variant: 'grayBlue',
+        text: 'Label with a button',
+        iconButton: faCircleMinus,
+        onClick: function () { alert('Label button pressed!'); }
+    }
+};
+library.add(faCircleMinus);

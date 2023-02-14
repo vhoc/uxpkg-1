@@ -31,3 +31,11 @@ export declare const Warning: {
         text: string;
     };
 };
+export declare const WithIcon: {
+    args: {
+        variant: string;
+        text: string;
+        iconButton: import("@fortawesome/fontawesome-common-types").IconDefinition;
+        onClick: () => void;
+    };
+};

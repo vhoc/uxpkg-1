@@ -3,7 +3,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { theme, variants } from '../../theme';
 export var Label = function (_a) {
-    var _b = _a.variant, variant = _b === void 0 ? 'gray' : _b, text = _a.text, icon = _a.icon, height = _a.height, width = _a.width, LabelProps = __rest(_a, ["variant", "text", "icon", "height", "width"]);
+    var _b = _a.variant, variant = _b === void 0 ? 'gray' : _b, text = _a.text, iconButton = _a.iconButton, height = _a.height, width = _a.width, onClick = _a.onClick, LabelProps = __rest(_a, ["variant", "text", "iconButton", "height", "width", "onClick"]);
     var selectedVariant = variant;
     var componentStyle = function () { return ({
         backgroundColor: variants[selectedVariant].labelBgColor,
@@ -21,12 +21,16 @@ export var Label = function (_a) {
         paddingRight: '8px',
         display: 'flex',
         justifyContent: 'space-between',
+        gap: '6px',
         alignItems: 'center'
     }); };
     return (React.createElement("div", __assign({ style: componentStyle() }, LabelProps),
         React.createElement("span", null, text),
-        icon ?
-            React.createElement(FontAwesomeIcon, { icon: icon })
+        iconButton ?
+            React.createElement("div", { style: {
+                    cursor: 'pointer'
+                }, onClick: onClick },
+                React.createElement(FontAwesomeIcon, { icon: iconButton }))
             :
                 null));
 };

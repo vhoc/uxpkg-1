@@ -6,7 +6,7 @@ var react_1 = tslib_1.__importDefault(require("react"));
 var react_fontawesome_1 = require("@fortawesome/react-fontawesome");
 var theme_1 = require("../../theme");
 var Label = function (_a) {
-    var _b = _a.variant, variant = _b === void 0 ? 'gray' : _b, text = _a.text, icon = _a.icon, height = _a.height, width = _a.width, LabelProps = tslib_1.__rest(_a, ["variant", "text", "icon", "height", "width"]);
+    var _b = _a.variant, variant = _b === void 0 ? 'gray' : _b, text = _a.text, iconButton = _a.iconButton, height = _a.height, width = _a.width, onClick = _a.onClick, LabelProps = tslib_1.__rest(_a, ["variant", "text", "iconButton", "height", "width", "onClick"]);
     var selectedVariant = variant;
     var componentStyle = function () { return ({
         backgroundColor: theme_1.variants[selectedVariant].labelBgColor,
@@ -24,12 +24,16 @@ var Label = function (_a) {
         paddingRight: '8px',
         display: 'flex',
         justifyContent: 'space-between',
+        gap: '6px',
         alignItems: 'center'
     }); };
     return (react_1["default"].createElement("div", tslib_1.__assign({ style: componentStyle() }, LabelProps),
         react_1["default"].createElement("span", null, text),
-        icon ?
-            react_1["default"].createElement(react_fontawesome_1.FontAwesomeIcon, { icon: icon })
+        iconButton ?
+            react_1["default"].createElement("div", { style: {
+                    cursor: 'pointer'
+                }, onClick: onClick },
+                react_1["default"].createElement(react_fontawesome_1.FontAwesomeIcon, { icon: iconButton }))
             :
                 null));
 };

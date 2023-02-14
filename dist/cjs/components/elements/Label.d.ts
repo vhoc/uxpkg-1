@@ -1,10 +1,11 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, MouseEventHandler } from 'react';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 export interface LabelProps extends HTMLAttributes<HTMLDivElement> {
     variant?: 'grayBlue' | 'gray' | 'success' | 'danger' | 'warning';
     text: string;
-    icon?: IconProp;
+    iconButton?: IconProp;
     width?: string;
     height?: string;
+    onClick?: MouseEventHandler<HTMLDivElement> | undefined;
 }
-export declare const Label: ({ variant, text, icon, height, width, ...LabelProps }: LabelProps) => JSX.Element;
+export declare const Label: ({ variant, text, iconButton, height, width, onClick, ...LabelProps }: LabelProps) => JSX.Element;
