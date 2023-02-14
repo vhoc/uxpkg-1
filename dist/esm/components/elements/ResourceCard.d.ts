@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from "react";
+import React, { CSSProperties, HTMLAttributes } from "react";
 import { IDropDownItem } from '../../util/sample-data';
 export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     variant?: 'primary';
@@ -14,5 +14,7 @@ export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     region: string;
     dropDownItems?: IDropDownItem[] | undefined;
     dotMenuItems?: IDropDownItem[] | undefined;
+    width?: string | undefined;
+    style?: CSSProperties | undefined;
 }
-export declare const ResourceCard: ({ variant, accessState, resourceIcon, bookmarked, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onBookmarkClick, onMoreInfoClick, onAccessClick, ...props }: ResourceCardProps) => JSX.Element;
+export declare const ResourceCard: ({ variant, accessState, resourceIcon, bookmarked, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onBookmarkClick, onMoreInfoClick, onAccessClick, width, style, ...props }: ResourceCardProps) => JSX.Element;

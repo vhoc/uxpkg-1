@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from "react"
+import React, { CSSProperties, HTMLAttributes } from "react"
 import { View } from "../layout/View"
 import { IconButton } from "./IconButton"
 import { DropDownButton } from "./DropDownButton"
@@ -22,9 +22,11 @@ export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     region: string,
     dropDownItems?: IDropDownItem[] | undefined
     dotMenuItems?: IDropDownItem[] | undefined
+    width?: string | undefined
+    style?: CSSProperties | undefined
 }
 
-export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, bookmarked, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onBookmarkClick, onMoreInfoClick, onAccessClick, ...props }: ResourceCardProps): JSX.Element => {
+export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, bookmarked, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onBookmarkClick, onMoreInfoClick, onAccessClick, width, style, ...props }: ResourceCardProps): JSX.Element => {
 
     // Exclusive accessState styles for this component:
     const accessStateStyles: IVariant = {
@@ -58,15 +60,16 @@ export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, b
         paddingBottom: '16px',
         paddingRight: '16px',
         paddingLeft: '24px',
-        width: 'fit-content',
-        minWidth: '304px',
-        maxWidth: '304px',
+        width: width || 'fit-content' ,
+        minWidth: 'fit-content',
+        maxWidth: '100%',
+        ...style,
     })
 
     return (
         <View
             style={componentStyle()}
-            width={'304px'}
+            //width={'304px'}
             padding={'16px 16px 16px 24px'}
             {...props}
         >

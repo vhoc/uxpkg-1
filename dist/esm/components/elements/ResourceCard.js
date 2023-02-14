@@ -8,7 +8,7 @@ import { Button } from "./Button";
 import { faBookmark } from "@fortawesome/sharp-solid-svg-icons";
 import { theme, colors } from "../../theme";
 export var ResourceCard = function (_a) {
-    var _b = _a.variant, variant = _b === void 0 ? 'primary' : _b, accessState = _a.accessState, resourceIcon = _a.resourceIcon, bookmarked = _a.bookmarked, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, dropDownItems = _a.dropDownItems, dotMenuItems = _a.dotMenuItems, onBookmarkClick = _a.onBookmarkClick, onMoreInfoClick = _a.onMoreInfoClick, onAccessClick = _a.onAccessClick, props = __rest(_a, ["variant", "accessState", "resourceIcon", "bookmarked", "resourceName", "resourceType", "accountName", "region", "dropDownItems", "dotMenuItems", "onBookmarkClick", "onMoreInfoClick", "onAccessClick"]);
+    var _b = _a.variant, variant = _b === void 0 ? 'primary' : _b, accessState = _a.accessState, resourceIcon = _a.resourceIcon, bookmarked = _a.bookmarked, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, dropDownItems = _a.dropDownItems, dotMenuItems = _a.dotMenuItems, onBookmarkClick = _a.onBookmarkClick, onMoreInfoClick = _a.onMoreInfoClick, onAccessClick = _a.onAccessClick, width = _a.width, style = _a.style, props = __rest(_a, ["variant", "accessState", "resourceIcon", "bookmarked", "resourceName", "resourceType", "accountName", "region", "dropDownItems", "dotMenuItems", "onBookmarkClick", "onMoreInfoClick", "onAccessClick", "width", "style"]);
     // Exclusive accessState styles for this component:
     var accessStateStyles = {
         access: {
@@ -25,24 +25,10 @@ export var ResourceCard = function (_a) {
         }
     };
     var selectedAccessState = accessState;
-    var componentStyle = function () { return ({
-        backgroundColor: accessStateStyles[selectedAccessState].backgroundColor,
-        color: colors.gray[90],
-        fontFamily: theme.font.body.regular.fontFamily,
-        fontSize: theme.font.body.regular.fontSize,
-        borderRadius: '4px',
-        borderWidth: '1px',
-        borderStyle: 'solid',
-        borderColor: accessStateStyles[selectedAccessState].borderColor,
-        paddingTop: '16px',
-        paddingBottom: '16px',
-        paddingRight: '16px',
-        paddingLeft: '24px',
-        width: 'fit-content',
-        minWidth: '304px',
-        maxWidth: '304px'
-    }); };
-    return (React.createElement(View, __assign({ style: componentStyle(), width: '304px', padding: '16px 16px 16px 24px' }, props),
+    var componentStyle = function () { return (__assign({ backgroundColor: accessStateStyles[selectedAccessState].backgroundColor, color: colors.gray[90], fontFamily: theme.font.body.regular.fontFamily, fontSize: theme.font.body.regular.fontSize, borderRadius: '4px', borderWidth: '1px', borderStyle: 'solid', borderColor: accessStateStyles[selectedAccessState].borderColor, paddingTop: '16px', paddingBottom: '16px', paddingRight: '16px', paddingLeft: '24px', width: width || 'fit-content', minWidth: 'fit-content', maxWidth: '100%' }, style)); };
+    return (React.createElement(View, __assign({ style: componentStyle(), 
+        //width={'304px'}
+        padding: '16px 16px 16px 24px' }, props),
         accessState !== 'requested' ?
             React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', marginBottom: '16px' } },
                 React.createElement("div", null, resourceIcon),
