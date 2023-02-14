@@ -8,4 +8,8 @@ export interface ISegmentedControlItem {
     value: string;
     ariaLabel: string;
     icon: IconProp | ReactNode;
+    selected?: boolean;
+    onClick?: (event: React.MouseEvent<HTMLElement>, value: any) => void;
+    onChange?: (event: React.MouseEvent<HTMLElement>, value: any) => void;
+    disabled?: boolean;
 }

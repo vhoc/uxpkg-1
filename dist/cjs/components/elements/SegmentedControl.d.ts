@@ -1,11 +1,18 @@
 import { ISegmentedControlItem } from '../../types';
 export interface SegmentedControlProps {
     /**
-     * items' icon can be either a ReactNode or an IconProp.
+     * Item object Props:
+     * - value: string
+     * - ariaLabel: string
+     * - icon: IconProp | ReactNode
+     * - selected: boolean
+     * - onClick: (event: React.MouseEvent<HTMLElement>, value: any) => void
+     * - onChange: (event: React.MouseEvent<HTMLElement>, value: any) => void
+     * - disabled: boolean
      */
     items: ISegmentedControlItem[];
     multiSelect?: boolean;
     ariaLabel: string;
 }
-declare const SegmentedControl: ({ items, multiSelect, ariaLabel }: SegmentedControlProps) => JSX.Element;
+declare const SegmentedControl: ({ items, multiSelect, ariaLabel, }: SegmentedControlProps) => JSX.Element;
 export default SegmentedControl;

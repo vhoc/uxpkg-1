@@ -15,7 +15,7 @@ var SegmentedControl = function (_a) {
         return (react_1["default"].createElement(material_1.ToggleButtonGroup, { value: value, exclusive: !multiSelect, onChange: handleChange, "aria-label": ariaLabel, sx: {
                 borderWidth: '0px'
             } }, items.map(function (item, index) {
-            return (react_1["default"].createElement(material_1.ToggleButton, { key: index, value: item.value, "aria-label": item.ariaLabel, sx: {
+            return (react_1["default"].createElement(material_1.ToggleButton, { key: index, value: item.value, "aria-label": item.ariaLabel, selected: item.selected, onClick: item.onClick, onChange: item.onChange, disabled: item.disabled || false, sx: {
                     backgroundColor: theme_1.colors.gray[10],
                     paddingLeft: '14px',
                     paddingRight: '14px',

@@ -7,7 +7,7 @@ import { faAmazon, faGoogle, faMicrosoft } from '@fortawesome/free-brands-svg-ic
 
 export default {
     title: 'Composite/SegmentedControl',
-    component: SegmentedControl
+    component: SegmentedControl,
 } as Meta
 
 export const Default = {

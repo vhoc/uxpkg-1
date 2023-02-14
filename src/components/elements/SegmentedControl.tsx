@@ -7,14 +7,21 @@ import { colors } from '../../theme'
 export interface SegmentedControlProps {
     //children: ReactNode
     /**
-     * items' icon can be either a ReactNode or an IconProp.
+     * Item object Props:  
+     * - value: string  
+     * - ariaLabel: string  
+     * - icon: IconProp | ReactNode  
+     * - selected: boolean  
+     * - onClick: (event: React.MouseEvent<HTMLElement>, value: any) => void  
+     * - onChange: (event: React.MouseEvent<HTMLElement>, value: any) => void  
+     * - disabled: boolean  
      */
     items: ISegmentedControlItem[]
     multiSelect?: boolean
     ariaLabel: string
 }
 
-const SegmentedControl = ({ items, multiSelect = false, ariaLabel = 'segmented control' }: SegmentedControlProps): JSX.Element => {
+const SegmentedControl = ({ items, multiSelect = false, ariaLabel = 'segmented control', }: SegmentedControlProps): JSX.Element => {
 
     const [value, setValue] = useState<string | null>('')
 
@@ -43,6 +50,10 @@ const SegmentedControl = ({ items, multiSelect = false, ariaLabel = 'segmented c
                             key={index}
                             value={item.value}
                             aria-label={item.ariaLabel}
+                            selected={item.selected}
+                            onClick={item.onClick}
+                            onChange={item.onChange}
+                            disabled={item.disabled || false}
                             sx={{
                                 backgroundColor: colors.gray[10],
                                 paddingLeft: '14px',
