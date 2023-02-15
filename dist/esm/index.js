@@ -33,3 +33,4 @@ export * from './components/elements/TabGroup';
 export * from './components/elements/SegmentedControl';
 export * from './components/elements/SelectDropDown';
 export * from './components/elements/TextInput';
+export * from './components/elements/RoundedToggleButton';

@@ -60,9 +60,9 @@ export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, b
         paddingBottom: '16px',
         paddingRight: '16px',
         paddingLeft: '24px',
-        width: width || 'fit-content' ,
-        minWidth: 'fit-content',
-        maxWidth: '100%',
+        width: width || '240px' ,
+        minWidth: '240px',
+        maxWidth: width,
         ...style,
     })
 
