@@ -1,9 +1,9 @@
 import { __assign, __rest } from "tslib";
 import { Select, MenuItem, FormControl } from "@mui/material";
+import { mtheme, colors } from "../../theme";
 import React from "react";
 //import { styled } from '@mui/system';
-import { styled } from '@mui/material/styles';
-import { colors } from "../../theme";
+import { styled, ThemeProvider } from '@mui/material/styles';
 var MySelect = styled(Select)({
     backgroundColor: colors.white,
     fontFamily: 'IBM Plex Sans',
@@ -45,14 +45,15 @@ var SelectDropDown = function (_a) {
                 boxShadow: 'none'
             }
         }, size: 'small', disabled: disabled },
-        React.createElement(MySelect, __assign({ value: value, onChange: onChange, displayEmpty: true, inputProps: { 'aria-label': 'Without label' } }, props),
-            React.createElement(MyMenuItem, { value: "" },
-                React.createElement("em", null, "Select an option...")),
-            menuItems && menuItems.length >= 1 ?
-                menuItems.map(function (item, index) {
-                    return (React.createElement(MyMenuItem, { key: index, value: item.value, selected: item.selected || false, disabled: item.disabled || false }, item.label));
-                })
-                :
-                    React.createElement(MyMenuItem, { value: "", disabled: true }, "No hay elementos"))));
+        React.createElement(ThemeProvider, { theme: mtheme },
+            React.createElement(MySelect, __assign({ value: value, onChange: onChange, displayEmpty: true, inputProps: { 'aria-label': 'Without label' } }, props),
+                React.createElement(MyMenuItem, { value: "" },
+                    React.createElement("em", null, "Select an option...")),
+                menuItems && menuItems.length >= 1 ?
+                    menuItems.map(function (item, index) {
+                        return (React.createElement(MyMenuItem, { key: index, value: item.value, selected: item.selected || false, disabled: item.disabled || false }, item.label));
+                    })
+                    :
+                        React.createElement(MyMenuItem, { value: "", disabled: true }, "No hay elementos")))));
 };
 export default SelectDropDown;

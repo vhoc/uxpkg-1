@@ -1,5 +1,6 @@
 import "@fontsource/ibm-plex-sans"
 import { createTheme } from "@mui/material";
+import { enUS } from '@mui/material/locale';
 
 export const mtheme = createTheme({
     typography: {
@@ -16,7 +17,7 @@ export const mtheme = createTheme({
         '"Segoe UI Symbol"',
       ].join(','),
     },
-  });
+  }, enUS);
 
 export type TVariant = {
     buttonBgColor?: string

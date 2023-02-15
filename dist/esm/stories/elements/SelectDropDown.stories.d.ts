@@ -15,3 +15,9 @@ export declare const Default: {
         })[];
     };
 };
+export declare const NoItems: {
+    args: {
+        value: string;
+        menuItems: never[];
+    };
+};

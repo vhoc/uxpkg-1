@@ -28,3 +28,10 @@ export const Default = {
         ]
     }
 }
+
+export const NoItems = {
+    args: {
+        value: "",
+        menuItems: [],
+    }
+}

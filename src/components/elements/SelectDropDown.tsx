@@ -1,8 +1,9 @@
 import { Select, MenuItem, MenuItemProps, FormControl, SelectProps } from "@mui/material";
+import { mtheme, colors } from "../../theme";
 import React from "react";
 //import { styled } from '@mui/system';
-import { styled } from '@mui/material/styles';
-import { colors } from "../../theme";
+import { styled, ThemeProvider } from '@mui/material/styles';
+
 
 interface SelectDropDownItemProps extends MenuItemProps {
     value?: string | undefined
@@ -62,6 +63,7 @@ const SelectDropDown = ({menuItems, value, onChange, disabled = false, ...props}
 
 
     return (
+        
             <FormControl
                 sx={{
                     fontFamily: 'IBM Plex Sans',
@@ -77,6 +79,7 @@ const SelectDropDown = ({menuItems, value, onChange, disabled = false, ...props}
             size={'small'}
             disabled={disabled}
             >
+                <ThemeProvider theme={mtheme}>
                 <MySelect
                     value={value}
                     onChange={onChange}
@@ -98,6 +101,7 @@ const SelectDropDown = ({menuItems, value, onChange, disabled = false, ...props}
                         <MyMenuItem value="" disabled={true}>No hay elementos</MyMenuItem>
                 }
                 </MySelect>
+                </ThemeProvider>
             </FormControl>
     )
 

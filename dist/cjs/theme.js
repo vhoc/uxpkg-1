@@ -3,6 +3,7 @@ exports.__esModule = true;
 exports.variants = exports.sizes = exports.theme = exports.colors = exports.mtheme = void 0;
 require("@fontsource/ibm-plex-sans");
 var material_1 = require("@mui/material");
+var locale_1 = require("@mui/material/locale");
 exports.mtheme = (0, material_1.createTheme)({
     typography: {
         fontFamily: [
@@ -18,7 +19,7 @@ exports.mtheme = (0, material_1.createTheme)({
             '"Segoe UI Symbol"',
         ].join(',')
     }
-});
+}, locale_1.enUS);
 exports.colors = {
     gray: {
         '5': '#f9fbfc',

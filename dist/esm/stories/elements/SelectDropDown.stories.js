@@ -25,3 +25,9 @@ export var Default = {
         ]
     }
 };
+export var NoItems = {
+    args: {
+        value: "",
+        menuItems: []
+    }
+};

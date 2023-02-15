@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.Default = void 0;
+exports.NoItems = exports.Default = void 0;
 var tslib_1 = require("tslib");
 var SelectDropDown_1 = tslib_1.__importDefault(require("../../components/elements/SelectDropDown"));
 var material_1 = require("@mui/material");
@@ -27,5 +27,11 @@ exports.Default = {
                 label: 'Third item'
             },
         ]
+    }
+};
+exports.NoItems = {
+    args: {
+        value: "",
+        menuItems: []
     }
 };
