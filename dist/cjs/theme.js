@@ -2,9 +2,9 @@
 exports.__esModule = true;
 exports.variants = exports.sizes = exports.theme = exports.colors = exports.mtheme = void 0;
 require("@fontsource/ibm-plex-sans");
-var material_1 = require("@mui/material");
+var styles_1 = require("@mui/material/styles");
 var locale_1 = require("@mui/material/locale");
-exports.mtheme = (0, material_1.createTheme)({
+exports.mtheme = (0, styles_1.createTheme)({
     typography: {
         fontFamily: [
             'IBM Plex Sans',

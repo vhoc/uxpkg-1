@@ -98,7 +98,7 @@ const SelectDropDown = ({menuItems, value, onChange, disabled = false, ...props}
                             )
                         })
                     :
-                        <MyMenuItem value="" disabled={true}>No hay elementos</MyMenuItem>
+                        <MyMenuItem value="" disabled={true}>No elements</MyMenuItem>
                 }
                 </MySelect>
                 </ThemeProvider>

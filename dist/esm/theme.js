@@ -1,5 +1,5 @@
 import "@fontsource/ibm-plex-sans";
-import { createTheme } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
 import { enUS } from '@mui/material/locale';
 export var mtheme = createTheme({
     typography: {

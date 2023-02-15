@@ -54,6 +54,6 @@ var SelectDropDown = function (_a) {
                         return (React.createElement(MyMenuItem, { key: index, value: item.value, selected: item.selected || false, disabled: item.disabled || false }, item.label));
                     })
                     :
-                        React.createElement(MyMenuItem, { value: "", disabled: true }, "No hay elementos")))));
+                        React.createElement(MyMenuItem, { value: "", disabled: true }, "No elements")))));
 };
 export default SelectDropDown;
