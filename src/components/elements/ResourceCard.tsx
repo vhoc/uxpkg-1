@@ -1,6 +1,6 @@
 import React, { CSSProperties, HTMLAttributes } from "react"
 import { View } from "../layout/View"
-import { IconButton } from "./IconButton"
+import IconButton from "./IconButton"
 import { DropDownButton } from "./DropDownButton"
 import { Label } from "./Label"
 import { IDropDownItem } from '../../util/sample-data'

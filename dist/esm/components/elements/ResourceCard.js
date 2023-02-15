@@ -1,7 +1,7 @@
 import { __assign, __rest } from "tslib";
 import React from "react";
 import { View } from "../layout/View";
-import { IconButton } from "./IconButton";
+import IconButton from "./IconButton";
 import { DropDownButton } from "./DropDownButton";
 import { Label } from "./Label";
 import { Button } from "./Button";
