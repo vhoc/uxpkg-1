@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from "react";
+import React, { CSSProperties, HTMLAttributes } from "react";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 export interface IconButtonProps extends HTMLAttributes<HTMLButtonElement> {
     /**
@@ -6,6 +6,7 @@ export interface IconButtonProps extends HTMLAttributes<HTMLButtonElement> {
      * import { faBookmark } from "@fortawesome/sharp-solid-svg-icons";
      * Then, you would use 'faBookmark' on the icon property when using the component.
      */
+    style?: CSSProperties | undefined;
     icon: IconProp;
     variant: 'primary' | 'tertiary' | 'gray' | 'grayBlue' | 'grayRed' | 'clear';
     disabled?: boolean;
@@ -18,5 +19,5 @@ export interface IconButtonProps extends HTMLAttributes<HTMLButtonElement> {
     badge?: string;
     onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 }
-export declare const IconButton: ({ icon, size, variant, disabled, onClick, textColor, width, height, badge, ...IconButtonProps }: IconButtonProps) => JSX.Element;
+export declare const IconButton: ({ style, icon, size, variant, disabled, onClick, textColor, width, height, badge, ...IconButtonProps }: IconButtonProps) => JSX.Element;
 export default IconButton;

@@ -37,3 +37,4 @@ tslib_1.__exportStar(require("./components/elements/SegmentedControl"), exports)
 tslib_1.__exportStar(require("./components/elements/SelectDropDown"), exports);
 tslib_1.__exportStar(require("./components/elements/TextInput"), exports);
 tslib_1.__exportStar(require("./components/elements/RoundedToggleButton"), exports);
+tslib_1.__exportStar(require("./components/elements/IamRolesCard"), exports);

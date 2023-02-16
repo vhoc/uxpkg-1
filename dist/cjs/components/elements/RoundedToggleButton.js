@@ -5,7 +5,7 @@ var react_1 = tslib_1.__importDefault(require("react"));
 var react_fontawesome_1 = require("@fortawesome/react-fontawesome");
 var theme_1 = require("../../theme");
 var RoundedToggleButton = function (_a) {
-    var _b = _a.active, active = _b === void 0 ? false : _b, iconOn = _a.iconOn, iconOff = _a.iconOff, onClick = _a.onClick, labelOn = _a.labelOn, labelOff = _a.labelOff, props = tslib_1.__rest(_a, ["active", "iconOn", "iconOff", "onClick", "labelOn", "labelOff"]);
+    var icon = _a.icon, onClick = _a.onClick, label = _a.label, props = tslib_1.__rest(_a, ["icon", "onClick", "label"]);
     return (react_1["default"].createElement("button", tslib_1.__assign({ style: {
             display: 'flex',
             justifyContent: 'space-between',
@@ -21,7 +21,7 @@ var RoundedToggleButton = function (_a) {
             backgroundColor: theme_1.colors.gray[10],
             borderRadius: '11px'
         }, onClick: onClick }, props),
-        react_1["default"].createElement("span", { style: { fontFamily: 'IBM Plex Sans' } }, active ? labelOn : labelOff),
-        react_1["default"].createElement(react_fontawesome_1.FontAwesomeIcon, { icon: active ? iconOn : iconOff })));
+        react_1["default"].createElement("span", { style: { fontFamily: 'IBM Plex Sans' } }, label),
+        react_1["default"].createElement(react_fontawesome_1.FontAwesomeIcon, { icon: icon })));
 };
 exports["default"] = RoundedToggleButton;

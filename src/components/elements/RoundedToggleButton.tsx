@@ -4,23 +4,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { colors } from "../../theme"
 
 export interface RoundedToggleButtonProps extends HTMLAttributes<HTMLButtonElement> {
-    /**
-     * Whether the toggle button is in active state or not.
-     */
-    active?: boolean
-    /** Icon to show when the toggle button is in active state. */
-    iconOn: IconProp
-    /** Icon to show when the toggle button is not in active state. */
-    iconOff: IconProp
+    /** Icon to show on the side of the label */
+    icon: IconProp    
     /** Callback to run when pressing the button, it can be used to handle its active state. */
     onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
-    /** Icon to show when the toggle button is in active state. */
-    labelOn?: string | undefined
-    /** Icon to show when the toggle button is in active state. */
-    labelOff?: string | undefined
+    /** Text label in the button. */
+    label?: string | undefined
 }
 
-const RoundedToggleButton = ({active = false, iconOn, iconOff, onClick, labelOn, labelOff, ...props}: RoundedToggleButtonProps): JSX.Element => {
+const RoundedToggleButton = ({icon, onClick, label, ...props}: RoundedToggleButtonProps): JSX.Element => {
 
     return (
         <button
@@ -42,8 +34,8 @@ const RoundedToggleButton = ({active = false, iconOn, iconOff, onClick, labelOn,
             onClick={onClick}
             {...props}
         >
-            <span style={{fontFamily: 'IBM Plex Sans',}}>{ active ? labelOn : labelOff }</span>
-            <FontAwesomeIcon icon={ active ? iconOn : iconOff }/>
+            <span style={{fontFamily: 'IBM Plex Sans',}}>{ label }</span>
+            <FontAwesomeIcon icon={ icon }/>
         </button>
     )
 

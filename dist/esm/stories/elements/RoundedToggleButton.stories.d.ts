@@ -4,10 +4,9 @@ export default _default;
 export declare const Default: {
     args: {
         active: boolean;
-        iconOn: import("@fortawesome/fontawesome-common-types").IconDefinition;
-        iconOff: import("@fortawesome/fontawesome-common-types").IconDefinition;
-        labelOn: string;
-        labelOff: string;
+        assigned: boolean;
+        icon: import("@fortawesome/fontawesome-common-types").IconDefinition;
+        label: string;
         onClick: () => void;
     };
 };
