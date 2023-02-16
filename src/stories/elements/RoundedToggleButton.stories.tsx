@@ -12,11 +12,10 @@ export const Default = {
     
     args: {
         active: false,
-        iconOn: faCaretUp,
-        iconOff: faCaretDown,
-        labelOn: 'Less',
-        labelOff: 'More',
-        onClick: () => {alert(`Button pressed, from here you can handle the active state.`)}
+        assigned: false,
+        icon: faCaretUp,
+        label: 'More',
+        onClick: () => {alert(`Button pressed, from here you can handle the active state.`)},
     }
 }
 

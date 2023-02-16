@@ -8,10 +8,9 @@ export default {
 export var Default = {
     args: {
         active: false,
-        iconOn: faCaretUp,
-        iconOff: faCaretDown,
-        labelOn: 'Less',
-        labelOff: 'More',
+        assigned: false,
+        icon: faCaretUp,
+        label: 'More',
         onClick: function () { alert("Button pressed, from here you can handle the active state."); }
     }
 };

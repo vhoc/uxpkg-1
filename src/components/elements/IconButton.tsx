@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, useState } from "react"
+import React, { CSSProperties, HTMLAttributes, useState } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconProp } from "@fortawesome/fontawesome-svg-core"
 import { theme, colors, variants, sizes } from '../../theme'
@@ -10,6 +10,7 @@ export interface IconButtonProps extends HTMLAttributes<HTMLButtonElement> {
      * import { faBookmark } from "@fortawesome/sharp-solid-svg-icons";
      * Then, you would use 'faBookmark' on the icon property when using the component.
      */
+    style?: CSSProperties | undefined
     icon: IconProp
     variant: 'primary' | 'tertiary' | 'gray' | 'grayBlue' | 'grayRed' | 'clear'
     disabled?: boolean
@@ -25,7 +26,7 @@ export interface IconButtonProps extends HTMLAttributes<HTMLButtonElement> {
     onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
 }
 
-export const IconButton = ({icon, size = 'sm', variant = 'primary', disabled = false, onClick, textColor = colors.white, width, height, badge, ...IconButtonProps}: IconButtonProps): JSX.Element => {
+export const IconButton = ({style, icon, size = 'sm', variant = 'primary', disabled = false, onClick, textColor = colors.white, width, height, badge, ...IconButtonProps}: IconButtonProps): JSX.Element => {
 
     const [hover, setHover] = useState<boolean>(false)
     const [active, setActive] = useState<boolean>(false)
@@ -63,6 +64,7 @@ export const IconButton = ({icon, size = 'sm', variant = 'primary', disabled = f
         alignItems: 'center',
         zIndex: '500',
         position: 'relative',
+        ...style,
     })
 
     return (

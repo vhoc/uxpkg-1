@@ -3,7 +3,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { colors } from "../../theme";
 var RoundedToggleButton = function (_a) {
-    var _b = _a.active, active = _b === void 0 ? false : _b, iconOn = _a.iconOn, iconOff = _a.iconOff, onClick = _a.onClick, labelOn = _a.labelOn, labelOff = _a.labelOff, props = __rest(_a, ["active", "iconOn", "iconOff", "onClick", "labelOn", "labelOff"]);
+    var icon = _a.icon, onClick = _a.onClick, label = _a.label, props = __rest(_a, ["icon", "onClick", "label"]);
     return (React.createElement("button", __assign({ style: {
             display: 'flex',
             justifyContent: 'space-between',
@@ -19,7 +19,7 @@ var RoundedToggleButton = function (_a) {
             backgroundColor: colors.gray[10],
             borderRadius: '11px'
         }, onClick: onClick }, props),
-        React.createElement("span", { style: { fontFamily: 'IBM Plex Sans' } }, active ? labelOn : labelOff),
-        React.createElement(FontAwesomeIcon, { icon: active ? iconOn : iconOff })));
+        React.createElement("span", { style: { fontFamily: 'IBM Plex Sans' } }, label),
+        React.createElement(FontAwesomeIcon, { icon: icon })));
 };
 export default RoundedToggleButton;

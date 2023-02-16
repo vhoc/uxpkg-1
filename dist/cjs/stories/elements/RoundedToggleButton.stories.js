@@ -12,10 +12,9 @@ exports["default"] = {
 exports.Default = {
     args: {
         active: false,
-        iconOn: sharp_solid_svg_icons_1.faCaretUp,
-        iconOff: sharp_solid_svg_icons_1.faCaretDown,
-        labelOn: 'Less',
-        labelOff: 'More',
+        assigned: false,
+        icon: sharp_solid_svg_icons_1.faCaretUp,
+        label: 'More',
         onClick: function () { alert("Button pressed, from here you can handle the active state."); }
     }
 };

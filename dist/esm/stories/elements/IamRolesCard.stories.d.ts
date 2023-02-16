@@ -4,8 +4,11 @@ export default _default;
 export declare const Default: {
     args: {
         selected: boolean;
-        expanded: boolean;
+        assigned: boolean;
         title: string;
         description: string;
+        onClickButtonTopRight: () => void;
+        onClickButtonBottomLeft: () => void;
+        children: JSX.Element;
     };
 };
