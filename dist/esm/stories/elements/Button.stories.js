@@ -31,3 +31,10 @@ export var GrayRed = {
         children: 'GrayRed button'
     }
 };
+export var Success = {
+    args: {
+        variant: 'success',
+        size: 'sm',
+        children: 'Success button'
+    }
+};

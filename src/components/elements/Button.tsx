@@ -2,7 +2,7 @@ import React, { HTMLAttributes, ReactNode, useState } from "react"
 import { theme, colors, variants, sizes } from '../../theme'
 
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
-    variant: 'primary' | 'gray' | 'grayBlue' | 'grayRed'
+    variant: 'primary' | 'gray' | 'grayBlue' | 'grayRed' | 'success'
     children?: ReactNode
     disabled?: boolean
     textColor?: string

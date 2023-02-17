@@ -23,3 +23,4 @@ export * from './components/elements/SelectDropDown';
 export * from './components/elements/TextInput';
 export * from './components/elements/RoundedToggleButton';
 export * from './components/elements/IamRolesCard';
+export * from './components/elements/AccessRequestModal';
