@@ -10,7 +10,7 @@ var free_solid_svg_icons_1 = require("@fortawesome/free-solid-svg-icons");
 var material_1 = require("@mui/material");
 var IconButton_1 = tslib_1.__importDefault(require("@mui/material/IconButton"));
 var AccessRequestModal = function (_a) {
-    var variant = _a.variant, requestCount = _a.requestCount, leftIcon = _a.leftIcon, textMessage = _a.textMessage, menuItems = _a.menuItems, continueButtonOnClick = _a.continueButtonOnClick;
+    var variant = _a.variant, requestCount = _a.requestCount, leftIcon = _a.leftIcon, textMessage = _a.textMessage, menuItems = _a.menuItems, continueButtonOnClick = _a.continueButtonOnClick, sx = _a.sx;
     var _b = react_1["default"].useState(null), anchorEl = _b[0], setAnchorEl = _b[1];
     var open = Boolean(anchorEl);
     var handleClick = function (event) {
@@ -57,9 +57,6 @@ var AccessRequestModal = function (_a) {
         } },
         react_1["default"].createElement(react_fontawesome_1.FontAwesomeIcon, { icon: leftIcon }),
         react_1["default"].createElement("span", null, "".concat(requestCount ? requestCount.toString() + ' ' : '').concat(textMessage))));
-    return (react_1["default"].createElement(SnackbarContent_1["default"], { sx: {
-            height: '50px',
-            backgroundColor: variant === 'queued' ? '#274A7F' : theme_1.colors.green[50]
-        }, message: message, action: action }));
+    return (react_1["default"].createElement(SnackbarContent_1["default"], { sx: tslib_1.__assign({ height: '50px', backgroundColor: variant === 'queued' ? '#274A7F' : theme_1.colors.green[50] }, sx), message: message, action: action }));
 };
 exports["default"] = AccessRequestModal;

@@ -163,6 +163,24 @@ exports.theme = {
                 fontWeight: 'normal',
                 color: exports.colors.gray[90]
             }
+        },
+        breadcrumb: {
+            fontFamily: 'IBM Plex Sans',
+            fontSize: '13px',
+            fontWeight: '400',
+            color: exports.colors.gray[70],
+            hover: {
+                fontFamily: 'IBM Plex Sans',
+                fontSize: '13px',
+                fontWeight: '400',
+                color: exports.colors.blue[60]
+            },
+            pressed: {
+                fontFamily: 'IBM Plex Sans',
+                fontSize: '13px',
+                fontWeight: '400',
+                color: exports.colors.blue[50]
+            }
         }
     }
 };

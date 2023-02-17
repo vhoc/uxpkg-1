@@ -174,6 +174,24 @@ export declare const theme: {
                 color: string;
             };
         };
+        breadcrumb: {
+            fontFamily: string;
+            fontSize: string;
+            fontWeight: string;
+            color: string;
+            hover: {
+                fontFamily: string;
+                fontSize: string;
+                fontWeight: string;
+                color: string;
+            };
+            pressed: {
+                fontFamily: string;
+                fontSize: string;
+                fontWeight: string;
+                color: string;
+            };
+        };
     };
 };
 export declare const sizes: {

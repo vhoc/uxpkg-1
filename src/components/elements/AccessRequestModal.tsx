@@ -1,5 +1,5 @@
 import React from "react"
-import SnackbarContent, { SnackbarContentProps } from '@mui/material/SnackbarContent';
+import SnackbarContent from '@mui/material/SnackbarContent';
 import { Button } from "./Button";
 import { colors } from "../../theme";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

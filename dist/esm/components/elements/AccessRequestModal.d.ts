@@ -1,5 +1,6 @@
 import React from "react";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { SxProps, Theme } from "@mui/material";
 import { SelectDropDownItemProps } from "./SelectDropDown";
 export interface AccessRequestModalProps {
     /** The state of the request */
@@ -14,6 +15,8 @@ export interface AccessRequestModalProps {
     menuItems?: SelectDropDownItemProps[] | undefined;
     /** Function to be triggered by the "Continue Button" */
     continueButtonOnClick?: React.MouseEventHandler<HTMLButtonElement>;
+    /** Styling object */
+    sx?: SxProps<Theme> | undefined;
 }
-declare const AccessRequestModal: ({ variant, requestCount, leftIcon, textMessage, menuItems, continueButtonOnClick }: AccessRequestModalProps) => JSX.Element;
+declare const AccessRequestModal: ({ variant, requestCount, leftIcon, textMessage, menuItems, continueButtonOnClick, sx, }: AccessRequestModalProps) => JSX.Element;
 export default AccessRequestModal;
