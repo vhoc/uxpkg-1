@@ -5,11 +5,12 @@ import React from "react";
 import { styled, ThemeProvider } from '@mui/material/styles';
 
 
-interface SelectDropDownItemProps extends MenuItemProps {
+export interface SelectDropDownItemProps extends MenuItemProps {
     value?: string | undefined
     label: string
-    selected: boolean | undefined
+    selected?: boolean | undefined
     disabled: boolean | undefined
+    onClick?: React.MouseEventHandler<HTMLLIElement> | undefined
 }
 
 interface SelectDropDownProps extends SelectProps {

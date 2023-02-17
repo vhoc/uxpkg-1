@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.GrayRed = exports.GrayBlue = exports.Gray = exports.Primary = void 0;
+exports.Success = exports.GrayRed = exports.GrayBlue = exports.Gray = exports.Primary = void 0;
 var Button_1 = require("../../components/elements/Button");
 exports["default"] = {
     title: 'Elements/Buttons/Button',
@@ -32,5 +32,12 @@ exports.GrayRed = {
         variant: 'grayRed',
         size: 'sm',
         children: 'GrayRed button'
+    }
+};
+exports.Success = {
+    args: {
+        variant: 'success',
+        size: 'sm',
+        children: 'Success button'
     }
 };

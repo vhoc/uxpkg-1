@@ -37,3 +37,11 @@ export const GrayRed = {
         children: 'GrayRed button'
     }
 }
+
+export const Success = {
+    args: {
+        variant: 'success',
+        size: 'sm',
+        children: 'Success button'
+    }
+}

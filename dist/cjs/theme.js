@@ -48,7 +48,7 @@ exports.colors = {
         '50': '#e02a47'
     },
     green: {
-        '50': '#5e9a5a'
+        '50': '#5e9b5a'
     },
     darkBlue: '#2e3955',
     button: {
@@ -283,10 +283,13 @@ exports.variants = {
     success: {
         alertIconBgColor: '#AFE1AF',
         alertIconFgColor: '#097969',
-        buttonBgColor: '#AFE1AF',
-        buttonBgColorHover: '#097969',
-        buttonTextColor: '#000',
-        buttonBorderColor: '#AFE1AF',
+        buttonBgColor: '#5b9557',
+        buttonBgColorHover: '#75B271',
+        buttonBgColorActive: exports.colors.green[50],
+        buttonTextColor: exports.colors.white,
+        buttonTextColorHover: exports.colors.white,
+        buttonTextColorActive: exports.colors.white,
+        buttonBorderColor: 'transparent',
         labelBgColor: 'rgba(94, 154, 90, 0.1)',
         labelTextColor: exports.colors.green[50],
         borderColor: exports.colors.green[50]

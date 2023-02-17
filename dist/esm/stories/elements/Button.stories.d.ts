@@ -29,3 +29,10 @@ export declare const GrayRed: {
         children: string;
     };
 };
+export declare const Success: {
+    args: {
+        variant: string;
+        size: string;
+        children: string;
+    };
+};
