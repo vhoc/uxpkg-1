@@ -1,11 +1,11 @@
 import React from "react"
-import SnackbarContent from '@mui/material/SnackbarContent';
+import SnackbarContent, { SnackbarContentProps } from '@mui/material/SnackbarContent';
 import { Button } from "./Button";
 import { colors } from "../../theme";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { Menu, MenuItem } from "@mui/material";
+import { Menu, MenuItem, SxProps, Theme } from "@mui/material";
 import { SelectDropDownItemProps } from "./SelectDropDown";
 import IconButton from "@mui/material/IconButton";
 
@@ -22,10 +22,12 @@ export interface AccessRequestModalProps {
     menuItems?: SelectDropDownItemProps[] | undefined,
     /** Function to be triggered by the "Continue Button" */
     continueButtonOnClick?: React.MouseEventHandler<HTMLButtonElement>
+    /** Styling object */
+    sx?: SxProps<Theme> | undefined
 
 }
 
-const AccessRequestModal = ({ variant, requestCount, leftIcon, textMessage, menuItems, continueButtonOnClick }: AccessRequestModalProps): JSX.Element => {
+const AccessRequestModal = ({ variant, requestCount, leftIcon, textMessage, menuItems, continueButtonOnClick, sx, }: AccessRequestModalProps): JSX.Element => {
 
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
@@ -124,6 +126,7 @@ const AccessRequestModal = ({ variant, requestCount, leftIcon, textMessage, menu
             sx={{
                 height: '50px',
                 backgroundColor: variant === 'queued' ? '#274A7F' : colors.green[50],
+                ...sx
             }}
             message={ message }
             action={ action }
