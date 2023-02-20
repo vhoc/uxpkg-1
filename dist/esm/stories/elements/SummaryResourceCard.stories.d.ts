@@ -15,3 +15,17 @@ export declare const Default: {
         onClickDeleteButton: () => void;
     };
 };
+export declare const ManyRoles: {
+    args: {
+        resourceIcon: string;
+        resourceName: string;
+        resourceType: string;
+        accountName: string;
+        region: string;
+        children: JSX.Element;
+        isEditButtonEnabled: boolean;
+        isDeleteButtonEnabled: boolean;
+        onClickEditButton: () => void;
+        onClickDeleteButton: () => void;
+    };
+};

@@ -16,7 +16,34 @@ export const Default = {
         resourceType: 'AWS EC2 Network Interface',
         accountName: 'StagingAWSAcc',
         region: 'US-west',
-        children: <>
+        children: <>            
+            <Label variant={'grayBlue'} text={'AmazonAugmentedAIIntegratedAPIAccess'} />
+            <Label variant={'grayBlue'} text={'AdministratorAccess-Amplify'} />
+        </>,
+        isEditButtonEnabled: false,
+        isDeleteButtonEnabled: true,
+        onClickEditButton: () => alert(`Edit button clicked!`),
+        onClickDeleteButton: () => alert(`Delete button clicked!`),
+    }
+}
+
+export const ManyRoles = {
+    args: {
+        resourceIcon: '[Icon]',
+        resourceName: 'eni-03a9ab07d4c9111c5',
+        resourceType: 'AWS EC2 Network Interface',
+        accountName: 'StagingAWSAcc',
+        region: 'US-west',
+        children: <>            
+            <Label variant={'grayBlue'} text={'AmazonAugmentedAIIntegratedAPIAccess'} />
+            <Label variant={'grayBlue'} text={'AdministratorAccess-Amplify'} />
+            <Label variant={'grayBlue'} text={'AdministratorAccess-Amplify'} />
+            <Label variant={'grayBlue'} text={'AmazonAugmentedAIIntegratedAPIAccess'} />
+            <Label variant={'grayBlue'} text={'AmazonAugmentedAIIntegratedAPIAccess'} />
+            <Label variant={'grayBlue'} text={'AdministratorAccess-AmplifyAdministratorAccess-Amplify'} />
+            <Label variant={'grayBlue'} text={'AdministratorAccess-Amplify'} />
+            <Label variant={'grayBlue'} text={'AmazonAugmentedAIIntegratedAPIAccess'} />
+            <Label variant={'grayBlue'} text={'AdministratorAccess-Amplify'} />
             <Label variant={'grayBlue'} text={'AdministratorAccess-Amplify'} />
             <Label variant={'grayBlue'} text={'AmazonAugmentedAIIntegratedAPIAccess'} />
         </>,

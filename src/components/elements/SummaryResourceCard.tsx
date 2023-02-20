@@ -3,6 +3,7 @@ import { colors } from "../../theme";
 import { Typography } from "./Typography";
 import { IconButton } from "./IconButton";
 import { faTrash, faPen } from "@fortawesome/pro-solid-svg-icons";
+import { styled } from '@mui/material/styles';
 
 export interface SummaryResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     resourceIcon?: any,
@@ -18,15 +19,24 @@ export interface SummaryResourceCardProps extends HTMLAttributes<HTMLDivElement>
 }
 
 export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, accountName, region, children, isEditButtonEnabled = true, isDeleteButtonEnabled = true, onClickEditButton, onClickDeleteButton, ...props}: SummaryResourceCardProps): JSX.Element => {
-/**
- * TODO:
- * Roles children implementation and story
- * Edit and Delete buttons
- * Responsiveness, set min-max width of the whole component
- * Set max height of the component
- * Set overflow for the children roles
- * Set ellipsis no-wrap for resourceName and resourceTye
- */
+
+    const MyDiv = styled('div')({
+        overflowY: 'auto',
+        '&::-webkit-scrollbar' : {
+            width: '4px',
+        },
+        '&::-webkit-scrollbar-track': {
+            backgroundColor: colors.gray[10],
+            borderRadius: '3px',
+            //'-webkit-box-shadow': 'inset 0 0 6px rgba(0,0,0,0.00)'
+        },
+        '&::-webkit-scrollbar-thumb': {
+            backgroundColor: colors.gray[50],
+            borderRadius: '3px',
+            //outline: '1px solid slategrey'
+        }
+    })
+    
     return (
         <div
             style={{
@@ -34,6 +44,7 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
                 justifyContent: 'space-between',
                 padding: '16px',
                 width: '688px',
+                maxWidth: '778px',
                 minHeight: '88px',
                 border: `1px solid ${colors.gray[20]}`,
                 borderRadius: '4px',
@@ -56,9 +67,41 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
                         flexDirection: 'column',
                     }}
                 >
-                    <Typography variant={'title-regular'}>{resourceName}</Typography>
-                    <Typography variant={'body-regular'}>{resourceType}</Typography>
-                    <Typography variant={'caption-regular'}>{`${accountName} / ${region}`}</Typography>
+                    <Typography
+                        variant={'title-regular'}
+                        style={{
+                            whiteSpace: 'nowrap',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            maxWidth: '210px',
+                        }}
+                    >
+                        {resourceName}
+                    </Typography>
+
+                    <Typography
+                        variant={'body-regular'}
+                        style={{
+                            whiteSpace: 'nowrap',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            maxWidth: '210px',
+                        }}
+                    >
+                        {resourceType}
+                    </Typography>
+
+                    <Typography
+                        variant={'caption-regular'}
+                        style={{
+                            whiteSpace: 'nowrap',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            maxWidth: '210px',
+                        }}
+                    >
+                        {`${accountName} / ${region}`}
+                    </Typography>
                 </div>
 
             </div>
@@ -67,11 +110,18 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
             <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '14px', }}>
 
                 {/** CHILDREN: Roles */}
-                <div
-                    style={{ display: 'flex', flexDirection: 'column', gap: '4px', }}
+                <MyDiv
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '4px',
+                        width: '280px',
+                        maxHeight: '245px',
+                        paddingRight: '4px',
+                    }}
                 >
                     {children}
-                </div>
+                </MyDiv>
 
 
                 {/** Edit and Delete buttons */}
@@ -82,8 +132,24 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
                         gap: '4px'
                     }}
                 >
-                    <IconButton variant={'gray'} icon={faTrash} disabled={!isEditButtonEnabled} onClick={ isEditButtonEnabled ? onClickEditButton : undefined}/>
-                    <IconButton variant={'gray'} icon={faPen} disabled={!isDeleteButtonEnabled} onClick={ isDeleteButtonEnabled ? onClickDeleteButton : undefined}/>
+                    <IconButton
+                        variant={'gray'}
+                        icon={faTrash}
+                        disabled={!isEditButtonEnabled}
+                        onClick={ isEditButtonEnabled ? onClickEditButton : undefined}
+                        style={{
+                            color : !isEditButtonEnabled ? '#8d94a1' : '#545b71'
+                        }}
+                    />
+                    <IconButton
+                        variant={'gray'}
+                        icon={faPen}
+                        disabled={!isDeleteButtonEnabled}
+                        onClick={ isDeleteButtonEnabled ? onClickDeleteButton : undefined}
+                        style={{
+                            color : !isDeleteButtonEnabled ? '#8d94a1' : '#545b71'
+                        }}
+                    />
                 </div>
 
             </div>
