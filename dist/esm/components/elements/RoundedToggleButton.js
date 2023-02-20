@@ -18,7 +18,9 @@ var RoundedToggleButton = function (_a) {
             textTransform: 'capitalize',
             backgroundColor: colors.gray[10],
             borderRadius: '11px',
-            outlineWidth: '0px'
+            outlineWidth: '0px',
+            border: 'none',
+            borderWidth: '0px'
         }, onClick: onClick }, props),
         React.createElement("span", { style: { fontFamily: 'IBM Plex Sans' } }, label),
         React.createElement(FontAwesomeIcon, { icon: icon })));
