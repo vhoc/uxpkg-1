@@ -42,7 +42,7 @@ const MyDiv = styled('div')({
     }
 })
 
-const IamRolesCard = ({selected = false, assigned = false, title, description, onClickButtonTopRight, onClickButtonBottomLeft, style, children, ...props}: IamRolesCardProps): JSX.Element => {
+export const IamRolesCard = ({selected = false, assigned = false, title, description, onClickButtonTopRight, onClickButtonBottomLeft, style, children, ...props}: IamRolesCardProps): JSX.Element => {
 
     const [ expanded, setExpanded ] = useState<boolean>(false)
 
@@ -232,5 +232,3 @@ const IamRolesCard = ({selected = false, assigned = false, title, description, o
     )
 
 }
-
-export default IamRolesCard
