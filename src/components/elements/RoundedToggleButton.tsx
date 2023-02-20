@@ -31,6 +31,8 @@ const RoundedToggleButton = ({icon, onClick, label, ...props}: RoundedToggleButt
                 backgroundColor: colors.gray[10],
                 borderRadius: '11px',
                 outlineWidth: '0px',
+                border: 'none',
+                borderWidth: '0px',
             }}
             onClick={onClick}
             {...props}
