@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/react/types-6-0'
-import AppHeaderUserInfo from '../../components/elements/AppHeaderUserInfo'
+import { AppHeaderUserInfo } from '../../components/elements/AppHeaderUserInfo'
 
 export default {
     title: 'Elements/AppHeader/AppHeaderUserInfo',

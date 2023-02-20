@@ -1,8 +1,8 @@
 import { Meta } from '@storybook/react/types-6-0'
 import React from 'react'
-import FilterBarResources from '../../components/elements/FilterBarResources'
-import FilterBarCategory from '../../components/elements/FilterBarCategory'
-import FilterBarItem from '../../components/elements/FilterBarItem'
+import { FilterBarResources } from '../../components/elements/FilterBarResources'
+import { FilterBarCategory } from '../../components/elements/FilterBarCategory'
+import { FilterBarItem } from '../../components/elements/FilterBarItem'
 
 export default {
     title: 'Composite/FilterBarResources',

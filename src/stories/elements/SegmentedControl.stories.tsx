@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/react/types-6-0";
-import SegmentedControl from "../../components/elements/SegmentedControl";
+import { SegmentedControl } from "../../components/elements/SegmentedControl";
 import { library, IconDefinition } from '@fortawesome/fontawesome-svg-core'
 import { faAddressBook, faTable, faGrid } from "@fortawesome/sharp-solid-svg-icons";
 import { faAmazon, faGoogle, faMicrosoft } from '@fortawesome/free-brands-svg-icons'

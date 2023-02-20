@@ -50,5 +50,3 @@ export const SideMenuSectionName = ({ variant = 'primary', keepExtended, collaps
         </div>
     </button>
 }
-
-export default SideMenuSectionName

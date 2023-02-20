@@ -7,7 +7,7 @@ interface FilterBarCategoryProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 
-const FilterBarCategory = ({ name = '', children, ...props }: FilterBarCategoryProps): JSX.Element => {
+export const FilterBarCategory = ({ name = '', children, ...props }: FilterBarCategoryProps): JSX.Element => {
 
     return (
         <div
@@ -36,5 +36,3 @@ const FilterBarCategory = ({ name = '', children, ...props }: FilterBarCategoryP
     )
 
 }
-
-export default FilterBarCategory

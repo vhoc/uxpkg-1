@@ -3,7 +3,7 @@ import { HTMLAttributes, useState } from "react";
 import { IconProp } from "@fortawesome/fontawesome-svg-core"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { variants, theme } from '../../theme'
-import SideMenuSectionName from "./SideMenuSectionName";
+import { SideMenuSectionName } from "./SideMenuSectionName";
 
 export interface SideMenuItemProps extends HTMLAttributes<HTMLButtonElement> {
     style?: React.CSSProperties
@@ -106,5 +106,3 @@ export const SideMenuItem = ({ style, variant = 'primary', itemType, selected = 
     </button>
     }
 }
-
-export default SideMenuItem

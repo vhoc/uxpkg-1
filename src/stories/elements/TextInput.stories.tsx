@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/react/types-6-0";
-import TextInput from "../../components/elements/TextInput";
+import { TextInput } from "../../components/elements/TextInput";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faMagnifyingGlass } from "@fortawesome/sharp-solid-svg-icons";
 

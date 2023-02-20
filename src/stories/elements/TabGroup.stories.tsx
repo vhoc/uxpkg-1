@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react/types-6-0'
 import React from 'react'
-import TabGroup from '../../components/elements/TabGroup'
+import { TabGroup } from '../../components/elements/TabGroup'
 
 export default {
     title: 'Composite/TabGroup',

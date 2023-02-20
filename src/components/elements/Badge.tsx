@@ -6,7 +6,7 @@ export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
     label: string
 }
 
-const Badge = ({ label, ...props }: BadgeProps): JSX.Element => {
+export const Badge = ({ label, ...props }: BadgeProps): JSX.Element => {
 
     return (
         <span
@@ -32,5 +32,3 @@ const Badge = ({ label, ...props }: BadgeProps): JSX.Element => {
     )
 
 }
-
-export default Badge

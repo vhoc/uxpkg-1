@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/react/types-6-0";
-import RoundedToggleButton from "../../components/elements/RoundedToggleButton";
+import { RoundedToggleButton } from "../../components/elements/RoundedToggleButton";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faCaretUp, faCaretDown } from "@fortawesome/sharp-solid-svg-icons";
 

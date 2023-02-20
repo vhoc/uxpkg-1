@@ -27,7 +27,7 @@ export interface AccessRequestModalProps {
 
 }
 
-const AccessRequestModal = ({ variant, requestCount, leftIcon, textMessage, menuItems, continueButtonOnClick, sx, }: AccessRequestModalProps): JSX.Element => {
+export const AccessRequestModal = ({ variant, requestCount, leftIcon, textMessage, menuItems, continueButtonOnClick, sx, }: AccessRequestModalProps): JSX.Element => {
 
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
@@ -133,5 +133,3 @@ const AccessRequestModal = ({ variant, requestCount, leftIcon, textMessage, menu
         />
     )
 }
-
-export default AccessRequestModal

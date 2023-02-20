@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/react/types-6-0";
-import SummaryResourceCard from "../../components/elements/SummaryResourceCard";
+import { SummaryResourceCard } from "../../components/elements/SummaryResourceCard";
 import { Label } from "../../components/elements/Label";
 import React from "react";
 

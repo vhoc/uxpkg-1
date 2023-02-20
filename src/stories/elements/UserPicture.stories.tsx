@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/react/types-6-0'
-import UserPicture from '../../components/elements/UserPicture'
+import { UserPicture } from '../../components/elements/UserPicture'
 
 export default {
     title: 'Elements/Graphical/UserPicture',

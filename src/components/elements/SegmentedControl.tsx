@@ -21,7 +21,7 @@ export interface SegmentedControlProps {
     ariaLabel: string
 }
 
-const SegmentedControl = ({ items, multiSelect = false, ariaLabel = 'segmented control', }: SegmentedControlProps): JSX.Element => {
+export const SegmentedControl = ({ items, multiSelect = false, ariaLabel = 'segmented control', }: SegmentedControlProps): JSX.Element => {
 
     const [value, setValue] = useState<string | null>('')
 
@@ -86,5 +86,3 @@ const SegmentedControl = ({ items, multiSelect = false, ariaLabel = 'segmented c
     
 
 }
-
-export default SegmentedControl

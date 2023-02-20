@@ -12,7 +12,7 @@ interface FilterBarItemProps extends HTMLAttributes<HTMLElement> {
 }
 
 
-const FilterBarItem = ({ name = '', checked = false, amount, onClick, ...props }: FilterBarItemProps): JSX.Element => {
+export const FilterBarItem = ({ name = '', checked = false, amount, onClick, ...props }: FilterBarItemProps): JSX.Element => {
 
     return (
         <div
@@ -48,5 +48,3 @@ const FilterBarItem = ({ name = '', checked = false, amount, onClick, ...props }
     )
 
 }
-
-export default FilterBarItem

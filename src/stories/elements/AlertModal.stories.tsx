@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/react/types-6-0";
-import AlertModal from "../../components/elements/AlertModal";
+import { AlertModal } from "../../components/elements/AlertModal";
 import { Button } from "../../components/elements/Button";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faTriangleExclamation } from "@fortawesome/sharp-solid-svg-icons";

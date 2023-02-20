@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/react/types-6-0";
-import Typography from "../../components/elements/Typography";
+import { Typography } from "../../components/elements/Typography";
 
 export default {
     title: 'elements/Typography',

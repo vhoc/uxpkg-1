@@ -26,7 +26,7 @@ export interface TypographyProps extends HTMLAttributes<HTMLDivElement> {
     style?: CSSProperties | undefined,
 }
 
-const Typography = ({ children, variant, style, ...props }: TypographyProps): JSX.Element => {
+export const Typography = ({ children, variant, style, ...props }: TypographyProps): JSX.Element => {
 
     const stylesTable = {
         'body-regular': theme.font.body.regular,
@@ -62,5 +62,3 @@ const Typography = ({ children, variant, style, ...props }: TypographyProps): JS
     )
 
 }
-
-export default Typography

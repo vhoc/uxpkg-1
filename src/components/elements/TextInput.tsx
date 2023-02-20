@@ -124,7 +124,7 @@ const MyInput = styled(OutlinedInput)({
     },
 })
 
-const TextInput = ({ autoComplete, autoFocus, classes, defaultValue, disabled = false, error, id, icon, name, onChange, placeholder, iconPosition = 'start', fullWidth = false, multiline = false, readOnly = false, required = false, rows, sx, type, value, ...props }: TextInputProps): JSX.Element => {
+export const TextInput = ({ autoComplete, autoFocus, classes, defaultValue, disabled = false, error, id, icon, name, onChange, placeholder, iconPosition = 'start', fullWidth = false, multiline = false, readOnly = false, required = false, rows, sx, type, value, ...props }: TextInputProps): JSX.Element => {
 
     return (
         <FormControl
@@ -181,5 +181,3 @@ const TextInput = ({ autoComplete, autoFocus, classes, defaultValue, disabled = 
     )
 
 }
-
-export default TextInput

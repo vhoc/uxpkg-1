@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/react/types-6-0";
-import SelectDropDown from "../../components/elements/SelectDropDown";
+import { SelectDropDown } from "../../components/elements/SelectDropDown";
 import { MenuItem } from "@mui/material";
 
 export default {

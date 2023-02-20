@@ -2,7 +2,7 @@ import React, { CSSProperties, HTMLAttributes, useState } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconProp } from "@fortawesome/fontawesome-svg-core"
 import { theme, colors, variants, sizes } from '../../theme'
-import Badge from "./Badge"
+import { Badge } from "./Badge"
 
 export interface IconButtonProps extends HTMLAttributes<HTMLButtonElement> {
     /** 
@@ -92,5 +92,3 @@ export const IconButton = ({style, icon, size = 'sm', variant = 'primary', disab
     )
 
 }
-
-export default IconButton

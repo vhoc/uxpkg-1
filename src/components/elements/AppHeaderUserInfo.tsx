@@ -7,7 +7,7 @@ export interface AppHeaderUserInfoProps extends HTMLAttributes<HTMLDivElement> {
     userRole: string
 }
 
-const AppHeaderUserInfo = ({ userName, userRole, ...props }:AppHeaderUserInfoProps): JSX.Element => {
+export const AppHeaderUserInfo = ({ userName, userRole, ...props }:AppHeaderUserInfoProps): JSX.Element => {
 
     return (
         <div
@@ -55,5 +55,3 @@ const AppHeaderUserInfo = ({ userName, userRole, ...props }:AppHeaderUserInfoPro
     )
 
 }
-
-export default AppHeaderUserInfo

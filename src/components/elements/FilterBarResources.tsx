@@ -6,7 +6,7 @@ interface FilterBarResourcesProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 
-const FilterBarResources = ({ children, ...props }: FilterBarResourcesProps): JSX.Element => {
+export const FilterBarResources = ({ children, ...props }: FilterBarResourcesProps): JSX.Element => {
 
     return (
         <div
@@ -52,5 +52,3 @@ const FilterBarResources = ({ children, ...props }: FilterBarResourcesProps): JS
     )
 
 }
-
-export default FilterBarResources

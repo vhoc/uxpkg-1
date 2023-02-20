@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { HTMLAttributes } from "react"
 import { colors, variants } from "../../theme"
-import SideMenuItem from "./SideMenuItem"
+import { SideMenuItem } from "./SideMenuItem"
 import { faSignOutAlt } from "@fortawesome/sharp-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { SideMenuItemProps } from "./SideMenuItem"
@@ -11,7 +11,7 @@ export interface SideMenuProps extends HTMLAttributes<HTMLDivElement> {
     menuItems?: SideMenuItemProps[]
 }
 
-const SideMenu = ({variant = 'primary', menuItems, ...props}:SideMenuProps): JSX.Element => {
+export const SideMenu = ({variant = 'primary', menuItems, ...props}:SideMenuProps): JSX.Element => {
 
     const [collapsed, setCollapsed] = useState<boolean>(true)
     const [keepExtended, setKeepExtended] = useState<boolean>(false)
@@ -103,5 +103,3 @@ const SideMenu = ({variant = 'primary', menuItems, ...props}:SideMenuProps): JSX
         </div>
     )
 }
-
-export default SideMenu

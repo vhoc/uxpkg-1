@@ -13,7 +13,7 @@ export interface SelectDropDownItemProps extends MenuItemProps {
     onClick?: React.MouseEventHandler<HTMLLIElement> | undefined
 }
 
-interface SelectDropDownProps extends SelectProps {
+export interface SelectDropDownProps extends SelectProps {
     /**
      * The default selected value if any.
      */
@@ -60,7 +60,7 @@ const MyMenuItem = styled(MenuItem)({
     fontSize: '14px',
 })
 
-const SelectDropDown = ({menuItems, value, onChange, disabled = false, ...props}: SelectDropDownProps): JSX.Element => {
+export const SelectDropDown = ({menuItems, value, onChange, disabled = false, ...props}: SelectDropDownProps): JSX.Element => {
 
 
     return (
@@ -107,5 +107,3 @@ const SelectDropDown = ({menuItems, value, onChange, disabled = false, ...props}
     )
 
 }
-
-export default SelectDropDown

@@ -12,7 +12,7 @@ export interface RoundedToggleButtonProps extends HTMLAttributes<HTMLButtonEleme
     label?: string | undefined
 }
 
-const RoundedToggleButton = ({icon, onClick, label, ...props}: RoundedToggleButtonProps): JSX.Element => {
+export const RoundedToggleButton = ({icon, onClick, label, ...props}: RoundedToggleButtonProps): JSX.Element => {
 
     return (
         <button
@@ -43,5 +43,3 @@ const RoundedToggleButton = ({icon, onClick, label, ...props}: RoundedToggleButt
     )
 
 }
-
-export default RoundedToggleButton

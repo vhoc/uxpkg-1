@@ -19,8 +19,6 @@ Note that the Pro icons require setting up the license key in your project.
 ### Importing Components.
 Import individual components before using them in your render code, like so:
 ```
-import IconButton from 'procyon-ui/dist/esm/components/elements/IconButton';
-// or
 import { IconButton } from 'procyon-ui';
 ```
 This is how the complete code would look and this is how you would use icon components:

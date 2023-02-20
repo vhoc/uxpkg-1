@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/react/types-6-0";
-import AppHeader from "../../components/elements/AppHeader";
+import { AppHeader } from "../../components/elements/AppHeader";
 import { menu3Items } from '../../util/sample-data'
 
 export default {

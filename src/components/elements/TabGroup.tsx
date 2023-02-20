@@ -13,7 +13,7 @@ export interface TabPanelProps extends HTMLAttributes<HTMLDivElement> {
     value: number
 }
 
-const TabPanel = ({ children, index, value, ...props}: TabPanelProps) => {
+export const TabPanel = ({ children, index, value, ...props}: TabPanelProps) => {
 
     return (
         <div
@@ -56,7 +56,7 @@ const a11yProps = (index: number) => {
     }
 }
 
-const TabGroup = ({tabs}: any) => {
+export const TabGroup = ({tabs}: any) => {
     const [value, setValue] = useState(0)
 
     const handleChange = ( event: React.SyntheticEvent, newValue: number ) => {
@@ -166,5 +166,3 @@ const TabGroup = ({tabs}: any) => {
         </ThemeProvider>
     )
 }
-
-export default TabGroup

@@ -1,7 +1,7 @@
 import React, { HTMLAttributes, ReactNode } from "react";
 import { colors } from "../../theme";
-import Typography from "./Typography";
-import IconButton from "./IconButton";
+import { Typography } from "./Typography";
+import { IconButton } from "./IconButton";
 import { faTrash, faPen } from "@fortawesome/pro-solid-svg-icons";
 
 export interface SummaryResourceCardProps extends HTMLAttributes<HTMLDivElement> {
@@ -17,7 +17,7 @@ export interface SummaryResourceCardProps extends HTMLAttributes<HTMLDivElement>
     isDeleteButtonEnabled: boolean
 }
 
-const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, accountName, region, children, isEditButtonEnabled = true, isDeleteButtonEnabled = true, onClickEditButton, onClickDeleteButton, ...props}: SummaryResourceCardProps): JSX.Element => {
+export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, accountName, region, children, isEditButtonEnabled = true, isDeleteButtonEnabled = true, onClickEditButton, onClickDeleteButton, ...props}: SummaryResourceCardProps): JSX.Element => {
 /**
  * TODO:
  * Roles children implementation and story
@@ -92,6 +92,4 @@ const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, accountN
     )
 
 }
-
-export default SummaryResourceCard
 

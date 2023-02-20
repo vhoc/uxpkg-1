@@ -1,10 +1,10 @@
 import React, { HTMLAttributes } from "react";
 import { colors } from "../../theme";
-import AppHeaderUserInfo from "./AppHeaderUserInfo";
-import ImageDropDownButton from "./ImageDropDownButton";
+import { AppHeaderUserInfo } from "./AppHeaderUserInfo";
+import { ImageDropDownButton } from "./ImageDropDownButton";
 import { IDropDownItem } from "../../util/sample-data";
 import { faBell } from "@fortawesome/sharp-solid-svg-icons";
-import IconButton from "./IconButton";
+import { IconButton } from "./IconButton";
 
 export interface AppHeaderProps extends HTMLAttributes<HTMLDivElement>{
     variant?: 'default'
@@ -15,7 +15,7 @@ export interface AppHeaderProps extends HTMLAttributes<HTMLDivElement>{
     onClickNotificationButton?: React.MouseEventHandler<HTMLButtonElement> | undefined
 }
 
-const AppHeader = ({variant = 'default', imgUrl, userName, userRole, dropDownMenuItems, onClickNotificationButton, ...props}: AppHeaderProps): JSX.Element => {
+export const AppHeader = ({variant = 'default', imgUrl, userName, userRole, dropDownMenuItems, onClickNotificationButton, ...props}: AppHeaderProps): JSX.Element => {
 
     return (
         <div
@@ -68,5 +68,3 @@ const AppHeader = ({variant = 'default', imgUrl, userName, userRole, dropDownMen
     )
 
 }
-
-export default AppHeader

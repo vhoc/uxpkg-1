@@ -9,7 +9,7 @@ export interface UserPictureProps extends HTMLAttributes<HTMLDivElement> {
     src?: string
 }
 
-const UserPicture = ({width = 32, height = 32, src, ...props}: UserPictureProps): JSX.Element => {
+export const UserPicture = ({width = 32, height = 32, src, ...props}: UserPictureProps): JSX.Element => {
 
     return  <div style={{
         width: width,
@@ -24,5 +24,3 @@ const UserPicture = ({width = 32, height = 32, src, ...props}: UserPictureProps)
         
     </div>
 }
-
-export default UserPicture

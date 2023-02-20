@@ -104,5 +104,3 @@ export const ImageDropDownButton = ({menuItems = [{ icon: faTimes, title: `No me
         </ul>
     )
 }
-
-export default ImageDropDownButton
