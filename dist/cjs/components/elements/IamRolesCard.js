@@ -31,7 +31,8 @@ var IamRolesCard = function (_a) {
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 width: '100%',
-                height: '100%'
+                height: '100%',
+                border: '1px solid black'
             } },
             react_1["default"].createElement("div", null,
                 react_1["default"].createElement("div", { style: {
@@ -46,7 +47,7 @@ var IamRolesCard = function (_a) {
                         width: '573px'
                     } },
                     react_1["default"].createElement("div", { style: tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.caption.regular), { width: '509px', maxWidth: '509px', textAlign: 'left' }) }, description),
-                    react_1["default"].createElement(MyDiv, { style: tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.caption.regular), { width: '100%', maxWidth: '509px', height: '280px', paddingRight: '100px', textAlign: 'left' }) }, children))),
+                    react_1["default"].createElement(MyDiv, { style: tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.caption.regular), { width: '100%', maxWidth: '400px', height: '280px', paddingRight: '100px', textAlign: 'left' }) }, children))),
             react_1["default"].createElement("div", { style: {
                     display: 'flex',
                     justifyContent: 'space-between',
