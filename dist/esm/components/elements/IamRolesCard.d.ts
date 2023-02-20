@@ -17,5 +17,4 @@ export interface IamRolesCardProps extends HTMLAttributes<HTMLDivElement> {
     /** The children inside the collapsable card. Anything goes. */
     children?: ReactNode | undefined;
 }
-declare const IamRolesCard: ({ selected, assigned, title, description, onClickButtonTopRight, onClickButtonBottomLeft, style, children, ...props }: IamRolesCardProps) => JSX.Element;
-export default IamRolesCard;
+export declare const IamRolesCard: ({ selected, assigned, title, description, onClickButtonTopRight, onClickButtonBottomLeft, style, children, ...props }: IamRolesCardProps) => JSX.Element;

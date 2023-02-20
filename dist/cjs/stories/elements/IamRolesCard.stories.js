@@ -3,10 +3,10 @@ exports.__esModule = true;
 exports.Default = void 0;
 var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importDefault(require("react"));
-var IamRolesCard_1 = tslib_1.__importDefault(require("../../components/elements/IamRolesCard"));
+var IamRolesCard_1 = require("../../components/elements/IamRolesCard");
 exports["default"] = {
     title: 'composite/IamRolesCard',
-    component: IamRolesCard_1["default"]
+    component: IamRolesCard_1.IamRolesCard
 };
 exports.Default = {
     args: {

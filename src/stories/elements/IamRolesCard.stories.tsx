@@ -1,6 +1,6 @@
 import { Meta } from "@storybook/react/types-6-0";
 import React from "react";
-import IamRolesCard from "../../components/elements/IamRolesCard";
+import { IamRolesCard } from "../../components/elements/IamRolesCard";
 
 export default {
     title: 'composite/IamRolesCard',

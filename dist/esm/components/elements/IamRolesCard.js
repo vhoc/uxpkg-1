@@ -20,7 +20,7 @@ var MyDiv = styled('div')({
         borderRadius: '3px'
     }
 });
-var IamRolesCard = function (_a) {
+export var IamRolesCard = function (_a) {
     var _b = _a.selected, selected = _b === void 0 ? false : _b, _c = _a.assigned, assigned = _c === void 0 ? false : _c, title = _a.title, description = _a.description, onClickButtonTopRight = _a.onClickButtonTopRight, onClickButtonBottomLeft = _a.onClickButtonBottomLeft, style = _a.style, children = _a.children, props = __rest(_a, ["selected", "assigned", "title", "description", "onClickButtonTopRight", "onClickButtonBottomLeft", "style", "children"]);
     var _d = useState(false), expanded = _d[0], setExpanded = _d[1];
     return (React.createElement("div", __assign({ style: __assign({ width: '605px', minHeight: '72px', height: expanded ? '444px' : '72px', backgroundColor: selected ? colors.gray[5] : colors.white, borderWidth: '1px', borderColor: colors.gray[20], borderRadius: '8px', paddingTop: '14px', paddingBottom: expanded ? '16px' : '12px', paddingLeft: '24px', paddingRight: '16px', display: 'flex', justifyContent: 'space-between', fontFamily: theme.font.body.regular.fontFamily, fontSize: theme.font.body.regular.fontSize, fontWeight: theme.font.body.regular.fontWeight, color: theme.font.body.regular.color }, style) }, props), /** EXPANDED RENDER */ expanded ?
@@ -68,4 +68,3 @@ var IamRolesCard = function (_a) {
                     React.createElement(RoundedToggleButton, { icon: expanded ? faCaretUp : faCaretDown, label: expanded ? 'Less' : 'More', onClick: function () { return setExpanded(function (prevState) { return !prevState; }); } }),
                     React.createElement(IconButton, { style: { alignSelf: 'start' }, icon: assigned ? faCircleMinus : faCirclePlus, variant: assigned ? 'gray' : 'grayBlue', size: 'sm', onClick: onClickButtonTopRight })))));
 };
-export default IamRolesCard;

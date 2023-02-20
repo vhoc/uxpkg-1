@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.IamRolesCard = void 0;
 var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importStar(require("react"));
 var theme_1 = require("../../theme");
@@ -70,4 +71,4 @@ var IamRolesCard = function (_a) {
                     react_1["default"].createElement(RoundedToggleButton_1["default"], { icon: expanded ? sharp_solid_svg_icons_1.faCaretUp : sharp_solid_svg_icons_1.faCaretDown, label: expanded ? 'Less' : 'More', onClick: function () { return setExpanded(function (prevState) { return !prevState; }); } }),
                     react_1["default"].createElement(IconButton_1["default"], { style: { alignSelf: 'start' }, icon: assigned ? sharp_solid_svg_icons_1.faCircleMinus : sharp_solid_svg_icons_1.faCirclePlus, variant: assigned ? 'gray' : 'grayBlue', size: 'sm', onClick: onClickButtonTopRight })))));
 };
-exports["default"] = IamRolesCard;
+exports.IamRolesCard = IamRolesCard;
