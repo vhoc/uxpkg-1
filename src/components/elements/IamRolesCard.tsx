@@ -80,12 +80,11 @@ export const IamRolesCard = ({selected = false, assigned = false, title, descrip
                 justifyContent: 'space-between',
                 width: '100%',
                 height: '100%',
-                border: '1px solid black',
                 }}
             >
                 {/** TOP ROW (MAIN) */}
                 
-                <div>
+                <div>                
                     <div
                         style={{
                             display: 'flex',
@@ -138,7 +137,7 @@ export const IamRolesCard = ({selected = false, assigned = false, title, descrip
                             style={{
                                 ...theme.font.caption.regular,
                                 width: '100%',
-                                maxWidth: '400px',
+                                maxWidth: '509px',
                                 height: '280px',
                                 paddingRight: '100px',
                                 textAlign: 'left',
