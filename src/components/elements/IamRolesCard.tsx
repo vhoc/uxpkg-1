@@ -50,6 +50,7 @@ export const IamRolesCard = ({selected = false, assigned = false, title, descrip
         <div
             style={{
                 width: '605px',
+                maxWidth: '605px',
                 minHeight: '72px',
                 height: expanded ? '444px' : '72px',
                 backgroundColor: selected ? colors.gray[5] : colors.white,
@@ -97,6 +98,7 @@ export const IamRolesCard = ({selected = false, assigned = false, title, descrip
                                 overflow: 'hidden',
                                 textOverflow: 'ellipsis',
                                 width: '400px',
+                                textAlign: 'left',
                             }}
                         >
                             { title }
@@ -123,6 +125,8 @@ export const IamRolesCard = ({selected = false, assigned = false, title, descrip
                             style={{
                                 ...theme.font.caption.regular,
                                 width: '509px',
+                                maxWidth: '509px',
+                                textAlign: 'left',
                             }}
                         >
                             { description }
@@ -133,8 +137,10 @@ export const IamRolesCard = ({selected = false, assigned = false, title, descrip
                             style={{
                                 ...theme.font.caption.regular,
                                 width: '100%',
+                                maxWidth: '509px',
                                 height: '280px',
                                 paddingRight: '100px',
+                                textAlign: 'left',
                             }}
                         >
                             { children }                            
@@ -188,6 +194,7 @@ export const IamRolesCard = ({selected = false, assigned = false, title, descrip
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
                             width: '400px',
+                            textAlign: 'left',
                         }}
                     >
                         { title }
@@ -199,6 +206,7 @@ export const IamRolesCard = ({selected = false, assigned = false, title, descrip
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
                             width: '400px',
+                            textAlign: 'left',
                         }}
                     >
                         { description }
