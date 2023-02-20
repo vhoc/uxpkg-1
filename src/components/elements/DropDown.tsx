@@ -20,7 +20,7 @@ export const DropDown = ({ submenus, dropdown, depthLevel, variant = 'primary', 
 
   const [hover, setHover] = useState<boolean>(false)
   const [active, setActive] = useState<boolean>(false)
-  const [focus, setFocus] = useState<boolean>(false)
+  //const [focus, setFocus] = useState<boolean>(false)
 
   type VariantKey = keyof typeof variants
     const selectedVariant = variant as VariantKey
@@ -47,9 +47,10 @@ export const DropDown = ({ submenus, dropdown, depthLevel, variant = 'primary', 
     border: 'none', 
     marginBlockStart: '0',
     marginBlockEnd: '0',
-    outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',
-    outlineStyle: 'auto',
-    outlineWidth: focus ? '2px' : '0px',
+    //outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',
+    //outlineStyle: 'auto',
+    //outlineWidth: focus ? '2px' : '0px',
+    outlineWidth: '0px',
 })
 
   return (
@@ -69,8 +70,8 @@ export const DropDown = ({ submenus, dropdown, depthLevel, variant = 'primary', 
               onMouseLeave={() => setHover(false)}
               onMouseDown={() => setActive(true)}
               onMouseUp={() => setActive(false)}
-              onFocus={() => setFocus(true)}
-              onBlur={() => setFocus(false)}
+              //onFocus={() => setFocus(true)}
+              //onBlur={() => setFocus(false)}
               items={submenu}
               key={index}
               depthLevel={depthLevel}

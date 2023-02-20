@@ -30,6 +30,7 @@ const RoundedToggleButton = ({icon, onClick, label, ...props}: RoundedToggleButt
                 textTransform: 'capitalize',
                 backgroundColor: colors.gray[10],
                 borderRadius: '11px',
+                outlineWidth: '0px',
             }}
             onClick={onClick}
             {...props}

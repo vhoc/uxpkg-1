@@ -10,7 +10,6 @@ export var DropDownButton = function (_a) {
     var depthLevel = 0;
     var _f = useState(false), hover = _f[0], setHover = _f[1];
     var _g = useState(false), active = _g[0], setActive = _g[1];
-    var _h = useState(false), focus = _h[0], setFocus = _h[1];
     var selectedVariant = variant;
     var selectedSize = size;
     var componentStyle = function (hover, active) { return ({
@@ -32,9 +31,10 @@ export var DropDownButton = function (_a) {
         border: 'none',
         marginBlockStart: '0',
         marginBlockEnd: '0',
-        outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',
-        outlineStyle: 'auto',
-        outlineWidth: focus ? '2px' : '0px'
+        //outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',
+        //outlineStyle: 'auto',
+        //outlineWidth: focus ? '2px' : '0px',
+        outlineWidth: '0px'
     }); };
     return (React.createElement("ul", __assign({ style: {
             listStyle: 'none',
@@ -45,6 +45,9 @@ export var DropDownButton = function (_a) {
             width: 'fit-content',
             height: height
         } }, DropDownButtonProps), menuItems.map(function (menu, index) {
-        return (React.createElement(MenuItems, { style: componentStyle(hover, active), onMouseEnter: function () { return setHover(true); }, onMouseLeave: function () { return setHover(false); }, onMouseDown: function () { return setActive(true); }, onMouseUp: function () { return setActive(false); }, onFocus: function () { return setFocus(true); }, onBlur: function () { return setFocus(false); }, items: menu, key: index, depthLevel: depthLevel, disabled: disabled || false, variant: variant, hasDownArrow: hasDownArrow }));
+        return (React.createElement(MenuItems, { style: componentStyle(hover, active), onMouseEnter: function () { return setHover(true); }, onMouseLeave: function () { return setHover(false); }, onMouseDown: function () { return setActive(true); }, onMouseUp: function () { return setActive(false); }, 
+            //onFocus={() => setFocus(true)}
+            //onBlur={() => setFocus(false)}
+            items: menu, key: index, depthLevel: depthLevel, disabled: disabled || false, variant: variant, hasDownArrow: hasDownArrow }));
     })));
 };

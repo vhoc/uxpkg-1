@@ -31,7 +31,7 @@ export const DropDownButton = ({menuItems = [{ icon: faTimes, title: `No menus f
     const depthLevel = 0
     const [hover, setHover] = useState<boolean>(false)
     const [active, setActive] = useState<boolean>(false)
-    const [focus, setFocus] = useState<boolean>(false)
+    //const [focus, setFocus] = useState<boolean>(false)
 
     type VariantKey = keyof typeof variants
     const selectedVariant = variant as VariantKey
@@ -58,9 +58,10 @@ export const DropDownButton = ({menuItems = [{ icon: faTimes, title: `No menus f
         border: 'none', 
         marginBlockStart: '0',
         marginBlockEnd: '0',
-        outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',
-        outlineStyle: 'auto',
-        outlineWidth: focus ? '2px' : '0px',
+        //outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',
+        //outlineStyle: 'auto',
+        //outlineWidth: focus ? '2px' : '0px',
+        outlineWidth: '0px',
     })
 
 
@@ -87,8 +88,8 @@ export const DropDownButton = ({menuItems = [{ icon: faTimes, title: `No menus f
                         onMouseLeave={() => setHover(false)}
                         onMouseDown={() => setActive(true)}
                         onMouseUp={() => setActive(false)}
-                        onFocus={() => setFocus(true)}
-                        onBlur={() => setFocus(false)}
+                        //onFocus={() => setFocus(true)}
+                        //onBlur={() => setFocus(false)}
                         items={menu}
                         key={index}
                         depthLevel={depthLevel}

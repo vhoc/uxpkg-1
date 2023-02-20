@@ -12,7 +12,6 @@ var DropDown = function (_a) {
     var dropdownClass = depthLevel > 1 ? "dropdown-submenu" : "";
     var _d = (0, react_1.useState)(false), hover = _d[0], setHover = _d[1];
     var _e = (0, react_1.useState)(false), active = _e[0], setActive = _e[1];
-    var _f = (0, react_1.useState)(false), focus = _f[0], setFocus = _f[1];
     var selectedVariant = variant;
     var selectedSize = size;
     var componentStyle = function (hover, active) { return ({
@@ -34,14 +33,18 @@ var DropDown = function (_a) {
         border: 'none',
         marginBlockStart: '0',
         marginBlockEnd: '0',
-        outlineColor: focus ? theme_1.variants[selectedVariant].buttonBgColor : 'transparent',
-        outlineStyle: 'auto',
-        outlineWidth: focus ? '2px' : '0px'
+        //outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',
+        //outlineStyle: 'auto',
+        //outlineWidth: focus ? '2px' : '0px',
+        outlineWidth: '0px'
     }); };
     return (react_1["default"].createElement("ul", tslib_1.__assign({ className: "dropdown ".concat(dropdownClass, " ").concat(dropdown ? 'show' : ''), style: {
             backgroundColor: theme_1.colors.white
         } }, DropDownProps), submenus.map(function (submenu, index) {
-        return (react_1["default"].createElement(MenuItems_1.MenuItems, { style: componentStyle(hover, active), onMouseEnter: function () { return setHover(true); }, onMouseLeave: function () { return setHover(false); }, onMouseDown: function () { return setActive(true); }, onMouseUp: function () { return setActive(false); }, onFocus: function () { return setFocus(true); }, onBlur: function () { return setFocus(false); }, items: submenu, key: index, depthLevel: depthLevel, disabled: disabled || false, variant: variant }));
+        return (react_1["default"].createElement(MenuItems_1.MenuItems, { style: componentStyle(hover, active), onMouseEnter: function () { return setHover(true); }, onMouseLeave: function () { return setHover(false); }, onMouseDown: function () { return setActive(true); }, onMouseUp: function () { return setActive(false); }, 
+            //onFocus={() => setFocus(true)}
+            //onBlur={() => setFocus(false)}
+            items: submenu, key: index, depthLevel: depthLevel, disabled: disabled || false, variant: variant }));
     })));
 };
 exports.DropDown = DropDown;

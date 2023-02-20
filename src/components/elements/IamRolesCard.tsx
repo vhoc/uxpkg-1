@@ -102,7 +102,7 @@ const IamRolesCard = ({selected = false, assigned = false, title, description, o
                             { title }
                         </div>
                         <IconButton
-                            style={{ alignSelf: 'start' }}
+                            style={{alignSelf: 'start' }}
                             icon={assigned ? faCircleMinus : faCirclePlus}
                             variant={assigned ? 'gray' : 'grayBlue'}
                             size={'sm'}

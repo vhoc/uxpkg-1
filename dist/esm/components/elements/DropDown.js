@@ -9,7 +9,6 @@ export var DropDown = function (_a) {
     var dropdownClass = depthLevel > 1 ? "dropdown-submenu" : "";
     var _d = useState(false), hover = _d[0], setHover = _d[1];
     var _e = useState(false), active = _e[0], setActive = _e[1];
-    var _f = useState(false), focus = _f[0], setFocus = _f[1];
     var selectedVariant = variant;
     var selectedSize = size;
     var componentStyle = function (hover, active) { return ({
@@ -31,13 +30,17 @@ export var DropDown = function (_a) {
         border: 'none',
         marginBlockStart: '0',
         marginBlockEnd: '0',
-        outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',
-        outlineStyle: 'auto',
-        outlineWidth: focus ? '2px' : '0px'
+        //outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',
+        //outlineStyle: 'auto',
+        //outlineWidth: focus ? '2px' : '0px',
+        outlineWidth: '0px'
     }); };
     return (React.createElement("ul", __assign({ className: "dropdown ".concat(dropdownClass, " ").concat(dropdown ? 'show' : ''), style: {
             backgroundColor: colors.white
         } }, DropDownProps), submenus.map(function (submenu, index) {
-        return (React.createElement(MenuItems, { style: componentStyle(hover, active), onMouseEnter: function () { return setHover(true); }, onMouseLeave: function () { return setHover(false); }, onMouseDown: function () { return setActive(true); }, onMouseUp: function () { return setActive(false); }, onFocus: function () { return setFocus(true); }, onBlur: function () { return setFocus(false); }, items: submenu, key: index, depthLevel: depthLevel, disabled: disabled || false, variant: variant }));
+        return (React.createElement(MenuItems, { style: componentStyle(hover, active), onMouseEnter: function () { return setHover(true); }, onMouseLeave: function () { return setHover(false); }, onMouseDown: function () { return setActive(true); }, onMouseUp: function () { return setActive(false); }, 
+            //onFocus={() => setFocus(true)}
+            //onBlur={() => setFocus(false)}
+            items: submenu, key: index, depthLevel: depthLevel, disabled: disabled || false, variant: variant }));
     })));
 };

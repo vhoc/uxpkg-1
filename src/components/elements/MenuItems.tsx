@@ -45,7 +45,7 @@ export const MenuItems = ({style, items, depthLevel, disabled = false, variant, 
     const [dropdown, setDropdown] = useState<boolean>(false)
     const [ hover, setHover ] = useState<boolean>(false)
     const [active, setActive] = useState<boolean>(false)
-    const [focus, setFocus] = useState<boolean>(false)
+    //const [focus, setFocus] = useState<boolean>(false)
     
     /**
      * The proper order is:
@@ -68,9 +68,10 @@ export const MenuItems = ({style, items, depthLevel, disabled = false, variant, 
         borderRadius: (isImageDropDown || variant === 'clear') ? '0px' : '4px',
         cursor: disabled ? 'not-allowed' : 'pointer',
         border: 'none',
-        outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',
-        outlineStyle: isImageDropDown ? 'none' : 'auto',
-        outlineWidth: focus ? '2px' : '0px',
+        //outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',
+        //outlineStyle: isImageDropDown ? 'none' : 'auto',
+        //outlineWidth: focus ? '2px' : '0px',
+        outlineWidth: '0px',
         textAlign: 'left',
     })
 
@@ -113,8 +114,8 @@ export const MenuItems = ({style, items, depthLevel, disabled = false, variant, 
                         onMouseLeave={() => setHover(false)}
                         onMouseDown={() => setActive(true)}
                         onMouseUp={() => setActive(false)}
-                        onFocus={() => setFocus(true)}
-                        onBlur={() => setFocus(false)}
+                        //onFocus={() => setFocus(true)}
+                        //onBlur={() => setFocus(false)}
                         onClick={() => {
                             if (!disabled) {
                                 setDropdown((prev) => !prev)

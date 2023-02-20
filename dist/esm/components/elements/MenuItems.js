@@ -14,7 +14,7 @@ export var MenuItems = function (_a) {
     var _e = useState(false), dropdown = _e[0], setDropdown = _e[1];
     var _f = useState(false), hover = _f[0], setHover = _f[1];
     var _g = useState(false), active = _g[0], setActive = _g[1];
-    var _h = useState(false), focus = _h[0], setFocus = _h[1];
+    //const [focus, setFocus] = useState<boolean>(false)
     /**
      * The proper order is:
      * disabled ? (true, false) : active ? (true false) : hover ? (true false) : rest (default)
@@ -36,9 +36,10 @@ export var MenuItems = function (_a) {
         borderRadius: (isImageDropDown || variant === 'clear') ? '0px' : '4px',
         cursor: disabled ? 'not-allowed' : 'pointer',
         border: 'none',
-        outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',
-        outlineStyle: isImageDropDown ? 'none' : 'auto',
-        outlineWidth: focus ? '2px' : '0px',
+        //outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',
+        //outlineStyle: isImageDropDown ? 'none' : 'auto',
+        //outlineWidth: focus ? '2px' : '0px',
+        outlineWidth: '0px',
         textAlign: 'left'
     }); };
     useEffect(function () {
@@ -59,7 +60,10 @@ export var MenuItems = function (_a) {
             fontSize: '14px',
             width: 'fit-content'
         } }), items.submenu ? (React.createElement(React.Fragment, null,
-        React.createElement("button", { type: 'button', "aria-haspopup": "menu", "aria-expanded": dropdown ? 'true' : 'false', style: componentStyle(hover, active), onMouseEnter: function () { return setHover(true); }, onMouseLeave: function () { return setHover(false); }, onMouseDown: function () { return setActive(true); }, onMouseUp: function () { return setActive(false); }, onFocus: function () { return setFocus(true); }, onBlur: function () { return setFocus(false); }, onClick: function () {
+        React.createElement("button", { type: 'button', "aria-haspopup": "menu", "aria-expanded": dropdown ? 'true' : 'false', style: componentStyle(hover, active), onMouseEnter: function () { return setHover(true); }, onMouseLeave: function () { return setHover(false); }, onMouseDown: function () { return setActive(true); }, onMouseUp: function () { return setActive(false); }, 
+            //onFocus={() => setFocus(true)}
+            //onBlur={() => setFocus(false)}
+            onClick: function () {
                 if (!disabled) {
                     setDropdown(function (prev) { return !prev; });
                 }
