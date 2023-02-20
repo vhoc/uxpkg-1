@@ -1,12 +1,11 @@
 "use strict";
 exports.__esModule = true;
 exports.Default = void 0;
-var tslib_1 = require("tslib");
-var AppHeader_1 = tslib_1.__importDefault(require("../../components/elements/AppHeader"));
+var AppHeader_1 = require("../../components/elements/AppHeader");
 var sample_data_1 = require("../../util/sample-data");
 exports["default"] = {
     title: 'Composite/AppHeader',
-    component: AppHeader_1["default"]
+    component: AppHeader_1.AppHeader
 };
 exports.Default = {
     args: {

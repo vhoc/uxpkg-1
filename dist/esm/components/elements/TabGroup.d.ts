@@ -4,5 +4,5 @@ export interface TabPanelProps extends HTMLAttributes<HTMLDivElement> {
     index: number;
     value: number;
 }
-declare const TabGroup: ({ tabs }: any) => JSX.Element;
-export default TabGroup;
+export declare const TabPanel: ({ children, index, value, ...props }: TabPanelProps) => JSX.Element;
+export declare const TabGroup: ({ tabs }: any) => JSX.Element;

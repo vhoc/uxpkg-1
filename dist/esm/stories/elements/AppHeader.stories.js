@@ -1,4 +1,4 @@
-import AppHeader from "../../components/elements/AppHeader";
+import { AppHeader } from "../../components/elements/AppHeader";
 import { menu3Items } from '../../util/sample-data';
 export default {
     title: 'Composite/AppHeader',

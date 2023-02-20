@@ -1,4 +1,4 @@
-import AppHeaderUserInfo from '../../components/elements/AppHeaderUserInfo';
+import { AppHeaderUserInfo } from '../../components/elements/AppHeaderUserInfo';
 export default {
     title: 'Elements/AppHeader/AppHeaderUserInfo',
     component: AppHeaderUserInfo

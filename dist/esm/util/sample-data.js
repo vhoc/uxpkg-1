@@ -1,5 +1,5 @@
 import React from "react";
-import UserPicture from "../components/elements/UserPicture";
+import { UserPicture } from "../components/elements/UserPicture";
 import { faEllipsisV } from "@fortawesome/sharp-solid-svg-icons";
 export var testAlert = function () {
     alert("Test function.");

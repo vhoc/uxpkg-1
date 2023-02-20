@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.SegmentedControl = void 0;
 var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importStar(require("react"));
 var material_1 = require("@mui/material");
@@ -30,4 +31,4 @@ var SegmentedControl = function (_a) {
     }
     return (react_1["default"].createElement("div", null));
 };
-exports["default"] = SegmentedControl;
+exports.SegmentedControl = SegmentedControl;

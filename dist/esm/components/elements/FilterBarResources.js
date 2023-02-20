@@ -1,7 +1,7 @@
 import { __assign, __rest } from "tslib";
 import React from "react";
 import { theme, colors } from "../../theme";
-var FilterBarResources = function (_a) {
+export var FilterBarResources = function (_a) {
     var children = _a.children, props = __rest(_a, ["children"]);
     return (React.createElement("div", __assign({ style: {
             width: '336px',
@@ -24,4 +24,3 @@ var FilterBarResources = function (_a) {
             } }, "Filters"),
         children));
 };
-export default FilterBarResources;

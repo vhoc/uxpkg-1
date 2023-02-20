@@ -52,4 +52,3 @@ var ImageDropDownButton = function (_a) {
     })));
 };
 exports.ImageDropDownButton = ImageDropDownButton;
-exports["default"] = exports.ImageDropDownButton;

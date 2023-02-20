@@ -1,11 +1,10 @@
 "use strict";
 exports.__esModule = true;
 exports.TitleRegular = exports.InputTextTyped = exports.InputTextHint = exports.H4 = exports.H3 = exports.H2 = exports.CaptionRegular = exports.ButtonLabelMedium = exports.ButtonLabelRegular = exports.BreadcrumbLinkPressed = exports.BreadcrumbLinkHover = exports.BreadcrumbLink = exports.BodySmallRegular = exports.BodySemiBold = exports.BodyRegular = void 0;
-var tslib_1 = require("tslib");
-var Typography_1 = tslib_1.__importDefault(require("../../components/elements/Typography"));
+var Typography_1 = require("../../components/elements/Typography");
 exports["default"] = {
     title: 'elements/Typography',
-    component: Typography_1["default"]
+    component: Typography_1.Typography
 };
 exports.BodyRegular = {
     args: {

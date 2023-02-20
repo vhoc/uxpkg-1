@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.FilterBarResources = void 0;
 var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importDefault(require("react"));
 var theme_1 = require("../../theme");
@@ -26,4 +27,4 @@ var FilterBarResources = function (_a) {
             } }, "Filters"),
         children));
 };
-exports["default"] = FilterBarResources;
+exports.FilterBarResources = FilterBarResources;

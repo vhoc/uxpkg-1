@@ -7,5 +7,4 @@ export interface UserPictureProps extends HTMLAttributes<HTMLDivElement> {
     height?: number;
     src?: string;
 }
-declare const UserPicture: ({ width, height, src, ...props }: UserPictureProps) => JSX.Element;
-export default UserPicture;
+export declare const UserPicture: ({ width, height, src, ...props }: UserPictureProps) => JSX.Element;

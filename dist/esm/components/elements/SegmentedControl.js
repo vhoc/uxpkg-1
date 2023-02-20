@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ToggleButtonGroup, ToggleButton } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { colors } from '../../theme';
-var SegmentedControl = function (_a) {
+export var SegmentedControl = function (_a) {
     var items = _a.items, _b = _a.multiSelect, multiSelect = _b === void 0 ? false : _b, _c = _a.ariaLabel, ariaLabel = _c === void 0 ? 'segmented control' : _c;
     var _d = useState(''), value = _d[0], setValue = _d[1];
     var handleChange = function (event, newValue) {
@@ -27,4 +27,3 @@ var SegmentedControl = function (_a) {
     }
     return (React.createElement("div", null));
 };
-export default SegmentedControl;

@@ -14,5 +14,4 @@ export interface SegmentedControlProps {
     multiSelect?: boolean;
     ariaLabel: string;
 }
-declare const SegmentedControl: ({ items, multiSelect, ariaLabel, }: SegmentedControlProps) => JSX.Element;
-export default SegmentedControl;
+export declare const SegmentedControl: ({ items, multiSelect, ariaLabel, }: SegmentedControlProps) => JSX.Element;

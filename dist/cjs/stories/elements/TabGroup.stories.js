@@ -3,10 +3,10 @@ exports.__esModule = true;
 exports.Default = void 0;
 var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importDefault(require("react"));
-var TabGroup_1 = tslib_1.__importDefault(require("../../components/elements/TabGroup"));
+var TabGroup_1 = require("../../components/elements/TabGroup");
 exports["default"] = {
     title: 'Composite/TabGroup',
-    component: TabGroup_1["default"]
+    component: TabGroup_1.TabGroup
 };
 exports.Default = {
     args: {

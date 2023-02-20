@@ -1,10 +1,10 @@
 import { __assign, __rest } from "tslib";
 import React, { useState } from "react";
 import { colors, variants } from "../../theme";
-import SideMenuItem from "./SideMenuItem";
+import { SideMenuItem } from "./SideMenuItem";
 import { faSignOutAlt } from "@fortawesome/sharp-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-var SideMenu = function (_a) {
+export var SideMenu = function (_a) {
     var _b = _a.variant, variant = _b === void 0 ? 'primary' : _b, menuItems = _a.menuItems, props = __rest(_a, ["variant", "menuItems"]);
     var _c = useState(true), collapsed = _c[0], setCollapsed = _c[1];
     var _d = useState(false), keepExtended = _d[0], setKeepExtended = _d[1];
@@ -57,4 +57,3 @@ var SideMenu = function (_a) {
                 :
                     null)));
 };
-export default SideMenu;

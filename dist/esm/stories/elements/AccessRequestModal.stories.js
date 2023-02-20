@@ -1,4 +1,4 @@
-import AccessRequestModal from "../../components/elements/AccessRequestModal";
+import { AccessRequestModal } from "../../components/elements/AccessRequestModal";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faRightToBracket, faCheck } from "@fortawesome/sharp-solid-svg-icons";
 export default {

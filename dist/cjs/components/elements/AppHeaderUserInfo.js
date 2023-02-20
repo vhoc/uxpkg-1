@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.AppHeaderUserInfo = void 0;
 var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importDefault(require("react"));
 var theme_1 = require("../../theme");
@@ -35,4 +36,4 @@ var AppHeaderUserInfo = function (_a) {
                 width: '100%'
             } }, userRole)));
 };
-exports["default"] = AppHeaderUserInfo;
+exports.AppHeaderUserInfo = AppHeaderUserInfo;

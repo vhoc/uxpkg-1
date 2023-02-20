@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.AccessRequestModal = void 0;
 var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importDefault(require("react"));
 var SnackbarContent_1 = tslib_1.__importDefault(require("@mui/material/SnackbarContent"));
@@ -59,4 +60,4 @@ var AccessRequestModal = function (_a) {
         react_1["default"].createElement("span", null, "".concat(requestCount ? requestCount.toString() + ' ' : '').concat(textMessage))));
     return (react_1["default"].createElement(SnackbarContent_1["default"], { sx: tslib_1.__assign({ height: '50px', backgroundColor: variant === 'queued' ? '#274A7F' : theme_1.colors.green[50] }, sx), message: message, action: action }));
 };
-exports["default"] = AccessRequestModal;
+exports.AccessRequestModal = AccessRequestModal;

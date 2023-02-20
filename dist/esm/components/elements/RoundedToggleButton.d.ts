@@ -8,5 +8,4 @@ export interface RoundedToggleButtonProps extends HTMLAttributes<HTMLButtonEleme
     /** Text label in the button. */
     label?: string | undefined;
 }
-declare const RoundedToggleButton: ({ icon, onClick, label, ...props }: RoundedToggleButtonProps) => JSX.Element;
-export default RoundedToggleButton;
+export declare const RoundedToggleButton: ({ icon, onClick, label, ...props }: RoundedToggleButtonProps) => JSX.Element;

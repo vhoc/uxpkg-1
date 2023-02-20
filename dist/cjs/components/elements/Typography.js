@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.Typography = void 0;
 var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importDefault(require("react"));
 var theme_1 = require("../../theme");
@@ -25,4 +26,4 @@ var Typography = function (_a) {
     var selectedVariant = variant;
     return (react_1["default"].createElement("div", tslib_1.__assign({ style: tslib_1.__assign(tslib_1.__assign({}, stylesTable[selectedVariant]), style) }, props), children));
 };
-exports["default"] = Typography;
+exports.Typography = Typography;

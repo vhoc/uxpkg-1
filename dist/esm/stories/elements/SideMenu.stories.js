@@ -1,4 +1,4 @@
-import SideMenu from '../../components/elements/SideMenu';
+import { SideMenu } from '../../components/elements/SideMenu';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTasks, faGauge, faUser, faUsers, faLaptop, faAddressCard, faCloud, faLayerGroup, faWindowMaximize, faTh } from '@fortawesome/sharp-solid-svg-icons';
 export default {

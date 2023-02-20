@@ -1,7 +1,7 @@
 import { __assign, __rest } from "tslib";
 import React from "react";
 import { theme } from "../../theme";
-var Typography = function (_a) {
+export var Typography = function (_a) {
     var children = _a.children, variant = _a.variant, style = _a.style, props = __rest(_a, ["children", "variant", "style"]);
     var stylesTable = {
         'body-regular': theme.font.body.regular,
@@ -23,4 +23,3 @@ var Typography = function (_a) {
     var selectedVariant = variant;
     return (React.createElement("div", __assign({ style: __assign(__assign({}, stylesTable[selectedVariant]), style) }, props), children));
 };
-export default Typography;

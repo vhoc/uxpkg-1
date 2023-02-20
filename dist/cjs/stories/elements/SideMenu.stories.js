@@ -1,13 +1,12 @@
 "use strict";
 exports.__esModule = true;
 exports.Primary = void 0;
-var tslib_1 = require("tslib");
-var SideMenu_1 = tslib_1.__importDefault(require("../../components/elements/SideMenu"));
+var SideMenu_1 = require("../../components/elements/SideMenu");
 var fontawesome_svg_core_1 = require("@fortawesome/fontawesome-svg-core");
 var sharp_solid_svg_icons_1 = require("@fortawesome/sharp-solid-svg-icons");
 exports["default"] = {
     title: 'Composite/SideMenu',
-    component: SideMenu_1["default"]
+    component: SideMenu_1.SideMenu
 };
 exports.Primary = {
     args: {

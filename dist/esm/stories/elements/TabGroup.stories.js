@@ -1,5 +1,5 @@
 import React from 'react';
-import TabGroup from '../../components/elements/TabGroup';
+import { TabGroup } from '../../components/elements/TabGroup';
 export default {
     title: 'Composite/TabGroup',
     component: TabGroup

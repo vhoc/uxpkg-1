@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.TabGroup = exports.TabPanel = void 0;
 var tslib_1 = require("tslib");
 var React = tslib_1.__importStar(require("react"));
 var react_1 = require("react");
@@ -21,6 +22,7 @@ var TabPanel = function (_a) {
         :
             null));
 };
+exports.TabPanel = TabPanel;
 var a11yProps = function (index) {
     return {
         id: "tab-".concat(index),
@@ -84,9 +86,9 @@ var TabGroup = function (_a) {
                     null),
             tabs && tabs.length >= 1 ?
                 React.createElement(React.Fragment, null, tabs.map(function (tab, index) {
-                    return (React.createElement(TabPanel, { key: index, value: value, index: index }, tab.tabContent));
+                    return (React.createElement(exports.TabPanel, { key: index, value: value, index: index }, tab.tabContent));
                 }))
                 :
                     null)));
 };
-exports["default"] = TabGroup;
+exports.TabGroup = TabGroup;

@@ -8,5 +8,4 @@ export interface TypographyProps extends HTMLAttributes<HTMLDivElement> {
     /** Style override if needed. */
     style?: CSSProperties | undefined;
 }
-declare const Typography: ({ children, variant, style, ...props }: TypographyProps) => JSX.Element;
-export default Typography;
+export declare const Typography: ({ children, variant, style, ...props }: TypographyProps) => JSX.Element;

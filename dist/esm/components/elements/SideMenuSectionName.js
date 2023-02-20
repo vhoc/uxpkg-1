@@ -32,4 +32,3 @@ export var SideMenuSectionName = function (_a) {
                 textAlign: 'left'
             } }, (collapsed && !keepExtended) ? '' : label));
 };
-export default SideMenuSectionName;

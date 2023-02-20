@@ -1,10 +1,10 @@
 import { __assign, __rest } from "tslib";
 import React from "react";
 import { colors } from "../../theme";
-import Typography from "./Typography";
-import IconButton from "./IconButton";
+import { Typography } from "./Typography";
+import { IconButton } from "./IconButton";
 import { faTrash, faPen } from "@fortawesome/pro-solid-svg-icons";
-var SummaryResourceCard = function (_a) {
+export var SummaryResourceCard = function (_a) {
     var resourceIcon = _a.resourceIcon, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, children = _a.children, _b = _a.isEditButtonEnabled, isEditButtonEnabled = _b === void 0 ? true : _b, _c = _a.isDeleteButtonEnabled, isDeleteButtonEnabled = _c === void 0 ? true : _c, onClickEditButton = _a.onClickEditButton, onClickDeleteButton = _a.onClickDeleteButton, props = __rest(_a, ["resourceIcon", "resourceName", "resourceType", "accountName", "region", "children", "isEditButtonEnabled", "isDeleteButtonEnabled", "onClickEditButton", "onClickDeleteButton"]);
     /**
      * TODO:
@@ -43,4 +43,3 @@ var SummaryResourceCard = function (_a) {
                 React.createElement(IconButton, { variant: 'gray', icon: faTrash, disabled: !isEditButtonEnabled, onClick: isEditButtonEnabled ? onClickEditButton : undefined }),
                 React.createElement(IconButton, { variant: 'gray', icon: faPen, disabled: !isDeleteButtonEnabled, onClick: isDeleteButtonEnabled ? onClickDeleteButton : undefined })))));
 };
-export default SummaryResourceCard;

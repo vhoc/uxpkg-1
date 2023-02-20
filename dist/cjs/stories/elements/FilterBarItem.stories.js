@@ -1,11 +1,10 @@
 "use strict";
 exports.__esModule = true;
 exports.Default = void 0;
-var tslib_1 = require("tslib");
-var FilterBarItem_1 = tslib_1.__importDefault(require("../../components/elements/FilterBarItem"));
+var FilterBarItem_1 = require("../../components/elements/FilterBarItem");
 exports["default"] = {
     title: 'Elements/Controls/FilterBarItem',
-    component: FilterBarItem_1["default"]
+    component: FilterBarItem_1.FilterBarItem
 };
 exports.Default = {
     args: {

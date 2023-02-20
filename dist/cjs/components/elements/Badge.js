@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.Badge = void 0;
 var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importDefault(require("react"));
 var theme_1 = require("../../theme");
@@ -21,4 +22,4 @@ var Badge = function (_a) {
             zIndex: '501'
         } }, props), label));
 };
-exports["default"] = Badge;
+exports.Badge = Badge;

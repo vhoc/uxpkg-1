@@ -1,4 +1,4 @@
-import SummaryResourceCard from "../../components/elements/SummaryResourceCard";
+import { SummaryResourceCard } from "../../components/elements/SummaryResourceCard";
 import { Label } from "../../components/elements/Label";
 import React from "react";
 export default {

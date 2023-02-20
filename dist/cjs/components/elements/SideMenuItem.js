@@ -6,13 +6,13 @@ var react_1 = tslib_1.__importDefault(require("react"));
 var react_2 = require("react");
 var react_fontawesome_1 = require("@fortawesome/react-fontawesome");
 var theme_1 = require("../../theme");
-var SideMenuSectionName_1 = tslib_1.__importDefault(require("./SideMenuSectionName"));
+var SideMenuSectionName_1 = require("./SideMenuSectionName");
 var SideMenuItem = function (_a) {
     var style = _a.style, _b = _a.variant, variant = _b === void 0 ? 'primary' : _b, itemType = _a.itemType, _c = _a.selected, selected = _c === void 0 ? false : _c, _d = _a.collapsed, collapsed = _d === void 0 ? false : _d, setCollapsed = _a.setCollapsed, icon = _a.icon, _e = _a.disabled, disabled = _e === void 0 ? false : _e, label = _a.label, onClick = _a.onClick, keepExtended = _a.keepExtended, props = tslib_1.__rest(_a, ["style", "variant", "itemType", "selected", "collapsed", "setCollapsed", "icon", "disabled", "label", "onClick", "keepExtended"]);
     var _f = (0, react_2.useState)(false), hover = _f[0], setHover = _f[1];
     var selectedVariant = variant;
     if (itemType === 'section') {
-        return (react_1["default"].createElement(SideMenuSectionName_1["default"], { label: label, collapsed: collapsed, keepExtended: keepExtended, onMouseEnter: function () {
+        return (react_1["default"].createElement(SideMenuSectionName_1.SideMenuSectionName, { label: label, collapsed: collapsed, keepExtended: keepExtended, onMouseEnter: function () {
                 setCollapsed === null || setCollapsed === void 0 ? void 0 : setCollapsed(false);
             }, onMouseLeave: function () {
                 setCollapsed === null || setCollapsed === void 0 ? void 0 : setCollapsed(true);
@@ -64,4 +64,3 @@ var SideMenuItem = function (_a) {
     }
 };
 exports.SideMenuItem = SideMenuItem;
-exports["default"] = exports.SideMenuItem;

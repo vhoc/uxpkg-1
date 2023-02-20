@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.FilterBarItem = void 0;
 var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importDefault(require("react"));
 var material_1 = require("@mui/material");
@@ -22,4 +23,4 @@ var FilterBarItem = function (_a) {
                     color: '#232529'
                 } }))));
 };
-exports["default"] = FilterBarItem;
+exports.FilterBarItem = FilterBarItem;

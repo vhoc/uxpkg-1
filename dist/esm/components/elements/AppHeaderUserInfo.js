@@ -1,7 +1,7 @@
 import { __assign, __rest } from "tslib";
 import React from "react";
 import { colors } from "../../theme";
-var AppHeaderUserInfo = function (_a) {
+export var AppHeaderUserInfo = function (_a) {
     var userName = _a.userName, userRole = _a.userRole, props = __rest(_a, ["userName", "userRole"]);
     return (React.createElement("div", __assign({ style: {
             display: 'flex',
@@ -33,4 +33,3 @@ var AppHeaderUserInfo = function (_a) {
                 width: '100%'
             } }, userRole)));
 };
-export default AppHeaderUserInfo;

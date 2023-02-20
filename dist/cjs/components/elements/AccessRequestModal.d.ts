@@ -18,5 +18,4 @@ export interface AccessRequestModalProps {
     /** Styling object */
     sx?: SxProps<Theme> | undefined;
 }
-declare const AccessRequestModal: ({ variant, requestCount, leftIcon, textMessage, menuItems, continueButtonOnClick, sx, }: AccessRequestModalProps) => JSX.Element;
-export default AccessRequestModal;
+export declare const AccessRequestModal: ({ variant, requestCount, leftIcon, textMessage, menuItems, continueButtonOnClick, sx, }: AccessRequestModalProps) => JSX.Element;

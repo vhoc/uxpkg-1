@@ -7,5 +7,4 @@ export interface AlertModalProps extends HTMLAttributes<HTMLDivElement> {
     description?: string;
     children?: ReactElement<ButtonProps> | Array<ReactElement<ButtonProps>>;
 }
-declare const AlertModal: ({ icon, title, description, children, ...props }: AlertModalProps) => JSX.Element;
-export default AlertModal;
+export declare const AlertModal: ({ icon, title, description, children, ...props }: AlertModalProps) => JSX.Element;

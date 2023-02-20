@@ -1,12 +1,11 @@
 "use strict";
 exports.__esModule = true;
 exports.NoItems = exports.Default = void 0;
-var tslib_1 = require("tslib");
-var SelectDropDown_1 = tslib_1.__importDefault(require("../../components/elements/SelectDropDown"));
+var SelectDropDown_1 = require("../../components/elements/SelectDropDown");
 var material_1 = require("@mui/material");
 exports["default"] = {
     title: 'elements/Inputs/SelectDropDown',
-    component: SelectDropDown_1["default"],
+    component: SelectDropDown_1.SelectDropDown,
     subcomponents: { MenuItem: material_1.MenuItem }
 };
 exports.Default = {

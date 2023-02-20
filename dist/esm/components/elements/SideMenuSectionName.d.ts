@@ -6,4 +6,3 @@ export interface SideMenuSectionNameProps extends HTMLAttributes<HTMLButtonEleme
     collapsed?: boolean;
 }
 export declare const SideMenuSectionName: ({ variant, keepExtended, collapsed, label, ...props }: SideMenuSectionNameProps) => JSX.Element;
-export default SideMenuSectionName;

@@ -1,4 +1,4 @@
-import UserPicture from '../../components/elements/UserPicture';
+import { UserPicture } from '../../components/elements/UserPicture';
 export default {
     title: 'Elements/Graphical/UserPicture',
     component: UserPicture

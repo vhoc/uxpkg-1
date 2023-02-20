@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.RoundedToggleButton = void 0;
 var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importDefault(require("react"));
 var react_fontawesome_1 = require("@fortawesome/react-fontawesome");
@@ -27,4 +28,4 @@ var RoundedToggleButton = function (_a) {
         react_1["default"].createElement("span", { style: { fontFamily: 'IBM Plex Sans' } }, label),
         react_1["default"].createElement(react_fontawesome_1.FontAwesomeIcon, { icon: icon })));
 };
-exports["default"] = RoundedToggleButton;
+exports.RoundedToggleButton = RoundedToggleButton;

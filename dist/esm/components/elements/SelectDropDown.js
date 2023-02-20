@@ -32,7 +32,7 @@ var MyMenuItem = styled(MenuItem)({
     fontFamily: 'IBM Plex Sans',
     fontSize: '14px'
 });
-var SelectDropDown = function (_a) {
+export var SelectDropDown = function (_a) {
     var menuItems = _a.menuItems, value = _a.value, onChange = _a.onChange, _b = _a.disabled, disabled = _b === void 0 ? false : _b, props = __rest(_a, ["menuItems", "value", "onChange", "disabled"]);
     return (React.createElement(FormControl, { sx: {
             fontFamily: 'IBM Plex Sans',
@@ -56,4 +56,3 @@ var SelectDropDown = function (_a) {
                     :
                         React.createElement(MyMenuItem, { value: "", disabled: true }, "No elements")))));
 };
-export default SelectDropDown;

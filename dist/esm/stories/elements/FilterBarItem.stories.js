@@ -1,4 +1,4 @@
-import FilterBarItem from '../../components/elements/FilterBarItem';
+import { FilterBarItem } from '../../components/elements/FilterBarItem';
 export default {
     title: 'Elements/Controls/FilterBarItem',
     component: FilterBarItem

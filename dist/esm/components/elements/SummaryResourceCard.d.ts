@@ -11,5 +11,4 @@ export interface SummaryResourceCardProps extends HTMLAttributes<HTMLDivElement>
     onClickDeleteButton?: React.MouseEventHandler<HTMLButtonElement> | undefined;
     isDeleteButtonEnabled: boolean;
 }
-declare const SummaryResourceCard: ({ resourceIcon, resourceName, resourceType, accountName, region, children, isEditButtonEnabled, isDeleteButtonEnabled, onClickEditButton, onClickDeleteButton, ...props }: SummaryResourceCardProps) => JSX.Element;
-export default SummaryResourceCard;
+export declare const SummaryResourceCard: ({ resourceIcon, resourceName, resourceType, accountName, region, children, isEditButtonEnabled, isDeleteButtonEnabled, onClickEditButton, onClickDeleteButton, ...props }: SummaryResourceCardProps) => JSX.Element;

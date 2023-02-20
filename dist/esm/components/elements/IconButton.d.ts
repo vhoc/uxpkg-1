@@ -20,4 +20,3 @@ export interface IconButtonProps extends HTMLAttributes<HTMLButtonElement> {
     onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 }
 export declare const IconButton: ({ style, icon, size, variant, disabled, onClick, textColor, width, height, badge, ...IconButtonProps }: IconButtonProps) => JSX.Element;
-export default IconButton;

@@ -1,9 +1,10 @@
 "use strict";
 exports.__esModule = true;
+exports.SideMenu = void 0;
 var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importStar(require("react"));
 var theme_1 = require("../../theme");
-var SideMenuItem_1 = tslib_1.__importDefault(require("./SideMenuItem"));
+var SideMenuItem_1 = require("./SideMenuItem");
 var sharp_solid_svg_icons_1 = require("@fortawesome/sharp-solid-svg-icons");
 var react_fontawesome_1 = require("@fortawesome/react-fontawesome");
 var SideMenu = function (_a) {
@@ -26,7 +27,7 @@ var SideMenu = function (_a) {
         } }, props),
         menuItems && menuItems.length >= 1 ?
             menuItems.map(function (item, index) {
-                return (react_1["default"].createElement(SideMenuItem_1["default"], { key: index, itemType: item.itemType, icon: item.icon, variant: item.variant, disabled: item.disabled, collapsed: collapsed, setCollapsed: setCollapsed, selected: item.selected, label: item.label, onClick: item.onClick, keepExtended: keepExtended }));
+                return (react_1["default"].createElement(SideMenuItem_1.SideMenuItem, { key: index, itemType: item.itemType, icon: item.icon, variant: item.variant, disabled: item.disabled, collapsed: collapsed, setCollapsed: setCollapsed, selected: item.selected, label: item.label, onClick: item.onClick, keepExtended: keepExtended }));
             })
             :
                 null,
@@ -59,4 +60,4 @@ var SideMenu = function (_a) {
                 :
                     null)));
 };
-exports["default"] = SideMenu;
+exports.SideMenu = SideMenu;

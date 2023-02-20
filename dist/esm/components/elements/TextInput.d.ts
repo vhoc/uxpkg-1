@@ -81,5 +81,4 @@ export interface TextInputProps extends InputProps {
     icon?: IconProp;
     iconPosition?: 'start' | 'end' | undefined;
 }
-declare const TextInput: ({ autoComplete, autoFocus, classes, defaultValue, disabled, error, id, icon, name, onChange, placeholder, iconPosition, fullWidth, multiline, readOnly, required, rows, sx, type, value, ...props }: TextInputProps) => JSX.Element;
-export default TextInput;
+export declare const TextInput: ({ autoComplete, autoFocus, classes, defaultValue, disabled, error, id, icon, name, onChange, placeholder, iconPosition, fullWidth, multiline, readOnly, required, rows, sx, type, value, ...props }: TextInputProps) => JSX.Element;

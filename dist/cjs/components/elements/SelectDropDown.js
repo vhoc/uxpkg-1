@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.SelectDropDown = void 0;
 var tslib_1 = require("tslib");
 var material_1 = require("@mui/material");
 var theme_1 = require("../../theme");
@@ -58,4 +59,4 @@ var SelectDropDown = function (_a) {
                     :
                         react_1["default"].createElement(MyMenuItem, { value: "", disabled: true }, "No elements")))));
 };
-exports["default"] = SelectDropDown;
+exports.SelectDropDown = SelectDropDown;

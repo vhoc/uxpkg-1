@@ -6,5 +6,5 @@ interface FilterBarItemProps extends HTMLAttributes<HTMLElement> {
     amount?: number;
     onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 }
-declare const FilterBarItem: ({ name, checked, amount, onClick, ...props }: FilterBarItemProps) => JSX.Element;
-export default FilterBarItem;
+export declare const FilterBarItem: ({ name, checked, amount, onClick, ...props }: FilterBarItemProps) => JSX.Element;
+export {};

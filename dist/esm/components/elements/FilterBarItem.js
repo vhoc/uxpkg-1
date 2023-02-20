@@ -4,7 +4,7 @@ import { FormControlLabel, Checkbox, ThemeProvider } from "@mui/material";
 import { colors } from "../../theme";
 import { mtheme } from "../../theme";
 import "@fontsource/ibm-plex-sans";
-var FilterBarItem = function (_a) {
+export var FilterBarItem = function (_a) {
     var _b = _a.name, name = _b === void 0 ? '' : _b, _c = _a.checked, checked = _c === void 0 ? false : _c, amount = _a.amount, onClick = _a.onClick, props = __rest(_a, ["name", "checked", "amount", "onClick"]);
     return (React.createElement("div", __assign({ style: {
             display: 'flex',
@@ -20,4 +20,3 @@ var FilterBarItem = function (_a) {
                     color: '#232529'
                 } }))));
 };
-export default FilterBarItem;

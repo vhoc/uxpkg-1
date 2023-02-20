@@ -1,11 +1,10 @@
 "use strict";
 exports.__esModule = true;
 exports.Default = void 0;
-var tslib_1 = require("tslib");
-var UserPicture_1 = tslib_1.__importDefault(require("../../components/elements/UserPicture"));
+var UserPicture_1 = require("../../components/elements/UserPicture");
 exports["default"] = {
     title: 'Elements/Graphical/UserPicture',
-    component: UserPicture_1["default"]
+    component: UserPicture_1.UserPicture
 };
 exports.Default = {
     args: {

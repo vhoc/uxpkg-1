@@ -1,4 +1,4 @@
-import TextInput from "../../components/elements/TextInput";
+import { TextInput } from "../../components/elements/TextInput";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faMagnifyingGlass } from "@fortawesome/sharp-solid-svg-icons";
 export default {

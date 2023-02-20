@@ -4,5 +4,4 @@ export interface SideMenuProps extends HTMLAttributes<HTMLDivElement> {
     variant?: 'primary';
     menuItems?: SideMenuItemProps[];
 }
-declare const SideMenu: ({ variant, menuItems, ...props }: SideMenuProps) => JSX.Element;
-export default SideMenu;
+export declare const SideMenu: ({ variant, menuItems, ...props }: SideMenuProps) => JSX.Element;

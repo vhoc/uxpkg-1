@@ -4,9 +4,9 @@ exports.IamRolesCard = void 0;
 var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importStar(require("react"));
 var theme_1 = require("../../theme");
-var RoundedToggleButton_1 = tslib_1.__importDefault(require("./RoundedToggleButton"));
+var RoundedToggleButton_1 = require("./RoundedToggleButton");
 var sharp_solid_svg_icons_1 = require("@fortawesome/sharp-solid-svg-icons");
-var IconButton_1 = tslib_1.__importDefault(require("./IconButton"));
+var IconButton_1 = require("./IconButton");
 var Button_1 = require("./Button");
 var styles_1 = require("@mui/material/styles");
 var MyDiv = (0, styles_1.styled)('div')({
@@ -39,7 +39,7 @@ var IamRolesCard = function (_a) {
                         justifyContent: 'space-between'
                     } },
                     react_1["default"].createElement("div", { style: tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.body.semiBold), { whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', width: '400px', textAlign: 'left' }) }, title),
-                    react_1["default"].createElement(IconButton_1["default"], { style: { alignSelf: 'start' }, icon: assigned ? sharp_solid_svg_icons_1.faCircleMinus : sharp_solid_svg_icons_1.faCirclePlus, variant: assigned ? 'gray' : 'grayBlue', size: 'sm', onClick: onClickButtonTopRight })),
+                    react_1["default"].createElement(IconButton_1.IconButton, { style: { alignSelf: 'start' }, icon: assigned ? sharp_solid_svg_icons_1.faCircleMinus : sharp_solid_svg_icons_1.faCirclePlus, variant: assigned ? 'gray' : 'grayBlue', size: 'sm', onClick: onClickButtonTopRight })),
                 react_1["default"].createElement("div", { style: {
                         display: 'flex',
                         flexDirection: 'column',
@@ -54,7 +54,7 @@ var IamRolesCard = function (_a) {
                     width: '509px'
                 } },
                 react_1["default"].createElement(Button_1.Button, { variant: "grayBlue", size: "sm", onClick: onClickButtonBottomLeft }, "Open in new tab"),
-                react_1["default"].createElement(RoundedToggleButton_1["default"], { icon: expanded ? sharp_solid_svg_icons_1.faCaretUp : sharp_solid_svg_icons_1.faCaretDown, label: expanded ? 'Less' : 'More', onClick: function () { return setExpanded(function (prevState) { return !prevState; }); } })))
+                react_1["default"].createElement(RoundedToggleButton_1.RoundedToggleButton, { icon: expanded ? sharp_solid_svg_icons_1.faCaretUp : sharp_solid_svg_icons_1.faCaretDown, label: expanded ? 'Less' : 'More', onClick: function () { return setExpanded(function (prevState) { return !prevState; }); } })))
         :
             react_1["default"].createElement("div", { style: {
                     width: '605px',
@@ -68,7 +68,7 @@ var IamRolesCard = function (_a) {
                     react_1["default"].createElement("div", { style: tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.body.semiBold), { whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', width: '400px', textAlign: 'left' }) }, title),
                     react_1["default"].createElement("div", { style: tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.caption.regular), { whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', width: '400px', textAlign: 'left' }) }, description)),
                 react_1["default"].createElement("div", { style: { display: 'flex', gap: '16px', alignItems: 'flex-end' } },
-                    react_1["default"].createElement(RoundedToggleButton_1["default"], { icon: expanded ? sharp_solid_svg_icons_1.faCaretUp : sharp_solid_svg_icons_1.faCaretDown, label: expanded ? 'Less' : 'More', onClick: function () { return setExpanded(function (prevState) { return !prevState; }); } }),
-                    react_1["default"].createElement(IconButton_1["default"], { style: { alignSelf: 'start' }, icon: assigned ? sharp_solid_svg_icons_1.faCircleMinus : sharp_solid_svg_icons_1.faCirclePlus, variant: assigned ? 'gray' : 'grayBlue', size: 'sm', onClick: onClickButtonTopRight })))));
+                    react_1["default"].createElement(RoundedToggleButton_1.RoundedToggleButton, { icon: expanded ? sharp_solid_svg_icons_1.faCaretUp : sharp_solid_svg_icons_1.faCaretDown, label: expanded ? 'Less' : 'More', onClick: function () { return setExpanded(function (prevState) { return !prevState; }); } }),
+                    react_1["default"].createElement(IconButton_1.IconButton, { style: { alignSelf: 'start' }, icon: assigned ? sharp_solid_svg_icons_1.faCircleMinus : sharp_solid_svg_icons_1.faCirclePlus, variant: assigned ? 'gray' : 'grayBlue', size: 'sm', onClick: onClickButtonTopRight })))));
 };
 exports.IamRolesCard = IamRolesCard;

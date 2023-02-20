@@ -36,4 +36,3 @@ var SideMenuSectionName = function (_a) {
             } }, (collapsed && !keepExtended) ? '' : label));
 };
 exports.SideMenuSectionName = SideMenuSectionName;
-exports["default"] = exports.SideMenuSectionName;

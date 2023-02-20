@@ -1,7 +1,7 @@
 import { __assign, __rest } from "tslib";
 import React from "react";
 import { colors } from "../../theme";
-var Badge = function (_a) {
+export var Badge = function (_a) {
     var label = _a.label, props = __rest(_a, ["label"]);
     return (React.createElement("span", __assign({ style: {
             display: 'flex',
@@ -19,4 +19,3 @@ var Badge = function (_a) {
             zIndex: '501'
         } }, props), label));
 };
-export default Badge;

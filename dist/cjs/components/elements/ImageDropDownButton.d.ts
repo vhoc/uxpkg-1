@@ -18,4 +18,3 @@ export interface ImageDropDownButtonProps extends HTMLAttributes<HTMLUListElemen
 }
 /** A Navigation bar with a multilevel dynamic dropdown menu. */
 export declare const ImageDropDownButton: ({ menuItems, variant, size, height, disabled, hasDownArrow, ...ImageDropDownButtonProps }: ImageDropDownButtonProps) => JSX.Element;
-export default ImageDropDownButton;

@@ -1,4 +1,4 @@
-import SegmentedControl from "../../components/elements/SegmentedControl";
+import { SegmentedControl } from "../../components/elements/SegmentedControl";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faAddressBook, faTable, faGrid } from "@fortawesome/sharp-solid-svg-icons";
 import { faAmazon, faGoogle, faMicrosoft } from '@fortawesome/free-brands-svg-icons';

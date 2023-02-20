@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.UserPicture = void 0;
 var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importDefault(require("react"));
 var UserPicture = function (_a) {
@@ -14,4 +15,4 @@ var UserPicture = function (_a) {
             clipPath: "circle(50% at 50% 50%)"
         } }, props));
 };
-exports["default"] = UserPicture;
+exports.UserPicture = UserPicture;

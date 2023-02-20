@@ -2,7 +2,7 @@ import { __assign, __rest } from "tslib";
 import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { theme, colors, variants, sizes } from '../../theme';
-import Badge from "./Badge";
+import { Badge } from "./Badge";
 export var IconButton = function (_a) {
     var style = _a.style, icon = _a.icon, _b = _a.size, size = _b === void 0 ? 'sm' : _b, _c = _a.variant, variant = _c === void 0 ? 'primary' : _c, _d = _a.disabled, disabled = _d === void 0 ? false : _d, onClick = _a.onClick, _e = _a.textColor, textColor = _e === void 0 ? colors.white : _e, width = _a.width, height = _a.height, badge = _a.badge, IconButtonProps = __rest(_a, ["style", "icon", "size", "variant", "disabled", "onClick", "textColor", "width", "height", "badge"]);
     var _f = useState(false), hover = _f[0], setHover = _f[1];
@@ -32,4 +32,3 @@ export var IconButton = function (_a) {
             :
                 null));
 };
-export default IconButton;

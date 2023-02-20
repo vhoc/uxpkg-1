@@ -2,7 +2,7 @@ import { __assign, __rest } from "tslib";
 import React from 'react';
 import { colors } from '../../theme';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-var AlertModal = function (_a) {
+export var AlertModal = function (_a) {
     var icon = _a.icon, title = _a.title, description = _a.description, children = _a.children, props = __rest(_a, ["icon", "title", "description", "children"]);
     return (React.createElement("div", __assign({ style: {
             width: '657px',
@@ -50,4 +50,3 @@ var AlertModal = function (_a) {
                 gap: '16px'
             } }, children)));
 };
-export default AlertModal;

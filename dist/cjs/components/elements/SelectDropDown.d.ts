@@ -7,7 +7,7 @@ export interface SelectDropDownItemProps extends MenuItemProps {
     disabled: boolean | undefined;
     onClick?: React.MouseEventHandler<HTMLLIElement> | undefined;
 }
-interface SelectDropDownProps extends SelectProps {
+export interface SelectDropDownProps extends SelectProps {
     /**
      * The default selected value if any.
      */
@@ -23,5 +23,4 @@ interface SelectDropDownProps extends SelectProps {
     menuItems: SelectDropDownItemProps[];
     disabled?: boolean;
 }
-declare const SelectDropDown: ({ menuItems, value, onChange, disabled, ...props }: SelectDropDownProps) => JSX.Element;
-export default SelectDropDown;
+export declare const SelectDropDown: ({ menuItems, value, onChange, disabled, ...props }: SelectDropDownProps) => JSX.Element;

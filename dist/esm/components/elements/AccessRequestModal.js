@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import { Menu, MenuItem } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
-var AccessRequestModal = function (_a) {
+export var AccessRequestModal = function (_a) {
     var variant = _a.variant, requestCount = _a.requestCount, leftIcon = _a.leftIcon, textMessage = _a.textMessage, menuItems = _a.menuItems, continueButtonOnClick = _a.continueButtonOnClick, sx = _a.sx;
     var _b = React.useState(null), anchorEl = _b[0], setAnchorEl = _b[1];
     var open = Boolean(anchorEl);
@@ -57,4 +57,3 @@ var AccessRequestModal = function (_a) {
         React.createElement("span", null, "".concat(requestCount ? requestCount.toString() + ' ' : '').concat(textMessage))));
     return (React.createElement(SnackbarContent, { sx: __assign({ height: '50px', backgroundColor: variant === 'queued' ? '#274A7F' : colors.green[50] }, sx), message: message, action: action }));
 };
-export default AccessRequestModal;

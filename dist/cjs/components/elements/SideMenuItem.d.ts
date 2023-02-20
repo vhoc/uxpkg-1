@@ -15,4 +15,3 @@ export interface SideMenuItemProps extends HTMLAttributes<HTMLButtonElement> {
     setCollapsed?: (state: boolean) => void;
 }
 export declare const SideMenuItem: ({ style, variant, itemType, selected, collapsed, setCollapsed, icon, disabled, label, onClick, keepExtended, ...props }: SideMenuItemProps) => JSX.Element;
-export default SideMenuItem;

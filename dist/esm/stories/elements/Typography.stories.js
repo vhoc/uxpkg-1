@@ -1,4 +1,4 @@
-import Typography from "../../components/elements/Typography";
+import { Typography } from "../../components/elements/Typography";
 export default {
     title: 'elements/Typography',
     component: Typography

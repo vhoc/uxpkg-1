@@ -28,7 +28,7 @@ var MyInput = styled(OutlinedInput)({
         boxShadow: 'none'
     }
 });
-var TextInput = function (_a) {
+export var TextInput = function (_a) {
     var autoComplete = _a.autoComplete, autoFocus = _a.autoFocus, classes = _a.classes, defaultValue = _a.defaultValue, _b = _a.disabled, disabled = _b === void 0 ? false : _b, error = _a.error, id = _a.id, icon = _a.icon, name = _a.name, onChange = _a.onChange, placeholder = _a.placeholder, _c = _a.iconPosition, iconPosition = _c === void 0 ? 'start' : _c, _d = _a.fullWidth, fullWidth = _d === void 0 ? false : _d, _e = _a.multiline, multiline = _e === void 0 ? false : _e, _f = _a.readOnly, readOnly = _f === void 0 ? false : _f, _g = _a.required, required = _g === void 0 ? false : _g, rows = _a.rows, sx = _a.sx, type = _a.type, value = _a.value, props = __rest(_a, ["autoComplete", "autoFocus", "classes", "defaultValue", "disabled", "error", "id", "icon", "name", "onChange", "placeholder", "iconPosition", "fullWidth", "multiline", "readOnly", "required", "rows", "sx", "type", "value"]);
     return (React.createElement(FormControl, { sx: {
             fontFamily: 'IBM Plex Sans',
@@ -51,4 +51,3 @@ var TextInput = function (_a) {
                 :
                     null }, props))));
 };
-export default TextInput;

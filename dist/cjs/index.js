@@ -40,3 +40,4 @@ tslib_1.__exportStar(require("./components/elements/RoundedToggleButton"), expor
 tslib_1.__exportStar(require("./components/elements/IamRolesCard"), exports);
 tslib_1.__exportStar(require("./components/elements/AccessRequestModal"), exports);
 tslib_1.__exportStar(require("./components/elements/Typography"), exports);
+tslib_1.__exportStar(require("./components/elements/SummaryResourceCard"), exports);

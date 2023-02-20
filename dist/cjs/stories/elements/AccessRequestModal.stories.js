@@ -1,13 +1,12 @@
 "use strict";
 exports.__esModule = true;
 exports.AccessRequestSubmitted = exports.AccessRequestQueued = void 0;
-var tslib_1 = require("tslib");
-var AccessRequestModal_1 = tslib_1.__importDefault(require("../../components/elements/AccessRequestModal"));
+var AccessRequestModal_1 = require("../../components/elements/AccessRequestModal");
 var fontawesome_svg_core_1 = require("@fortawesome/fontawesome-svg-core");
 var sharp_solid_svg_icons_1 = require("@fortawesome/sharp-solid-svg-icons");
 exports["default"] = {
     title: 'Elements/Feedback/AccessRequestModal',
-    component: AccessRequestModal_1["default"]
+    component: AccessRequestModal_1.AccessRequestModal
 };
 exports.AccessRequestQueued = {
     args: {

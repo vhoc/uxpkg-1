@@ -37,3 +37,4 @@ export * from './components/elements/RoundedToggleButton';
 export * from './components/elements/IamRolesCard';
 export * from './components/elements/AccessRequestModal';
 export * from './components/elements/Typography';
+export * from './components/elements/SummaryResourceCard';

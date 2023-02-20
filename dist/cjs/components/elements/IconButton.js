@@ -5,7 +5,7 @@ var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importStar(require("react"));
 var react_fontawesome_1 = require("@fortawesome/react-fontawesome");
 var theme_1 = require("../../theme");
-var Badge_1 = tslib_1.__importDefault(require("./Badge"));
+var Badge_1 = require("./Badge");
 var IconButton = function (_a) {
     var style = _a.style, icon = _a.icon, _b = _a.size, size = _b === void 0 ? 'sm' : _b, _c = _a.variant, variant = _c === void 0 ? 'primary' : _c, _d = _a.disabled, disabled = _d === void 0 ? false : _d, onClick = _a.onClick, _e = _a.textColor, textColor = _e === void 0 ? theme_1.colors.white : _e, width = _a.width, height = _a.height, badge = _a.badge, IconButtonProps = tslib_1.__rest(_a, ["style", "icon", "size", "variant", "disabled", "onClick", "textColor", "width", "height", "badge"]);
     var _f = (0, react_1.useState)(false), hover = _f[0], setHover = _f[1];
@@ -31,9 +31,8 @@ var IconButton = function (_a) {
         onClick: onClick }, IconButtonProps),
         react_1["default"].createElement(react_fontawesome_1.FontAwesomeIcon, { icon: icon }),
         badge ?
-            react_1["default"].createElement(Badge_1["default"], { label: badge })
+            react_1["default"].createElement(Badge_1.Badge, { label: badge })
             :
                 null));
 };
 exports.IconButton = IconButton;
-exports["default"] = exports.IconButton;

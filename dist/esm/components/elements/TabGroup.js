@@ -5,7 +5,7 @@ import { Tabs, ThemeProvider } from '@mui/material';
 import { Tab } from '@mui/material';
 import { colors } from '../../theme';
 import { mtheme } from "../../theme";
-var TabPanel = function (_a) {
+export var TabPanel = function (_a) {
     var children = _a.children, index = _a.index, value = _a.value, props = __rest(_a, ["children", "index", "value"]);
     return (React.createElement("div", __assign({ role: 'tabpanel', hidden: value !== index, id: "tabpanel-".concat(index), "aria-labelledby": "tab-".concat(index), style: {
             paddingTop: '14px',
@@ -25,7 +25,7 @@ var a11yProps = function (index) {
         'aria-controls': "tabpanel-".concat(index)
     };
 };
-var TabGroup = function (_a) {
+export var TabGroup = function (_a) {
     var tabs = _a.tabs;
     var _b = useState(0), value = _b[0], setValue = _b[1];
     var handleChange = function (event, newValue) {
@@ -87,4 +87,3 @@ var TabGroup = function (_a) {
                 :
                     null)));
 };
-export default TabGroup;

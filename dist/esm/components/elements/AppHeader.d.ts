@@ -8,5 +8,4 @@ export interface AppHeaderProps extends HTMLAttributes<HTMLDivElement> {
     dropDownMenuItems?: IDropDownItem[];
     onClickNotificationButton?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 }
-declare const AppHeader: ({ variant, imgUrl, userName, userRole, dropDownMenuItems, onClickNotificationButton, ...props }: AppHeaderProps) => JSX.Element;
-export default AppHeader;
+export declare const AppHeader: ({ variant, imgUrl, userName, userRole, dropDownMenuItems, onClickNotificationButton, ...props }: AppHeaderProps) => JSX.Element;

@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.TextInput = void 0;
 var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importDefault(require("react"));
 var material_1 = require("@mui/material");
@@ -53,4 +54,4 @@ var TextInput = function (_a) {
                 :
                     null }, props))));
 };
-exports["default"] = TextInput;
+exports.TextInput = TextInput;

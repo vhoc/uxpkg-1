@@ -1,4 +1,4 @@
-import SelectDropDown from "../../components/elements/SelectDropDown";
+import { SelectDropDown } from "../../components/elements/SelectDropDown";
 import { MenuItem } from "@mui/material";
 export default {
     title: 'elements/Inputs/SelectDropDown',

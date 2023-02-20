@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { variants, theme } from '../../theme';
-import SideMenuSectionName from "./SideMenuSectionName";
+import { SideMenuSectionName } from "./SideMenuSectionName";
 export var SideMenuItem = function (_a) {
     var style = _a.style, _b = _a.variant, variant = _b === void 0 ? 'primary' : _b, itemType = _a.itemType, _c = _a.selected, selected = _c === void 0 ? false : _c, _d = _a.collapsed, collapsed = _d === void 0 ? false : _d, setCollapsed = _a.setCollapsed, icon = _a.icon, _e = _a.disabled, disabled = _e === void 0 ? false : _e, label = _a.label, onClick = _a.onClick, keepExtended = _a.keepExtended, props = __rest(_a, ["style", "variant", "itemType", "selected", "collapsed", "setCollapsed", "icon", "disabled", "label", "onClick", "keepExtended"]);
     var _f = useState(false), hover = _f[0], setHover = _f[1];
@@ -60,4 +60,3 @@ export var SideMenuItem = function (_a) {
                     null);
     }
 };
-export default SideMenuItem;

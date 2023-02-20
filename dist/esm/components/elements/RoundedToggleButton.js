@@ -2,7 +2,7 @@ import { __assign, __rest } from "tslib";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { colors } from "../../theme";
-var RoundedToggleButton = function (_a) {
+export var RoundedToggleButton = function (_a) {
     var icon = _a.icon, onClick = _a.onClick, label = _a.label, props = __rest(_a, ["icon", "onClick", "label"]);
     return (React.createElement("button", __assign({ style: {
             display: 'flex',
@@ -25,4 +25,3 @@ var RoundedToggleButton = function (_a) {
         React.createElement("span", { style: { fontFamily: 'IBM Plex Sans' } }, label),
         React.createElement(FontAwesomeIcon, { icon: icon })));
 };
-export default RoundedToggleButton;

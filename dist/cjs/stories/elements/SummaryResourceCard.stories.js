@@ -2,12 +2,12 @@
 exports.__esModule = true;
 exports.Default = void 0;
 var tslib_1 = require("tslib");
-var SummaryResourceCard_1 = tslib_1.__importDefault(require("../../components/elements/SummaryResourceCard"));
+var SummaryResourceCard_1 = require("../../components/elements/SummaryResourceCard");
 var Label_1 = require("../../components/elements/Label");
 var react_1 = tslib_1.__importDefault(require("react"));
 exports["default"] = {
     title: 'composite/SummaryResourceCard',
-    component: SummaryResourceCard_1["default"]
+    component: SummaryResourceCard_1.SummaryResourceCard
 };
 exports.Default = {
     args: {
