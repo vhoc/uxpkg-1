@@ -137,7 +137,6 @@ export const IamRolesCard = ({selected = false, assigned = false, title, descrip
                             style={{
                                 ...theme.font.caption.regular,
                                 width: '100%',
-                                maxWidth: '509px',
                                 height: '280px',
                                 paddingRight: '100px',
                                 textAlign: 'left',
