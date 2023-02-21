@@ -13,6 +13,17 @@ export const Default = {
         placeholder: 'Search',
         icon: faMagnifyingGlass,
         iconPosition: 'start',
+        endIconOnClick: () => alert(`X button pressed.`),
+    }
+}
+
+export const WithText = {
+    args: {
+        placeholder: 'Search',
+        icon: faMagnifyingGlass,
+        iconPosition: 'end',
+        value: 'This is a sample text!',
+        endIconOnClick: () => alert(`X button pressed.`),
     }
 }
 
