@@ -76,7 +76,7 @@ export interface TextInputProps extends InputProps {
     /**
      * 	Number of rows to display when multiline option is set to true.
      */
-    rows: number
+    rows?: number
 
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
@@ -132,7 +132,7 @@ const MyInput = styled(OutlinedInput)({
     },
 })
 
-export const TextInput = ({ autoComplete, autoFocus, classes, defaultValue, disabled = false, error, id, icon, name, onChange, placeholder, iconPosition = 'start', fullWidth = false, multiline = false, readOnly = false, required = false, rows, sx, type, value, endIconOnClick, ...props }: TextInputProps): JSX.Element => {
+export const TextInput = ({ autoComplete, autoFocus, classes, defaultValue, disabled = false, error, id, icon, name, onChange, placeholder, iconPosition = 'start', fullWidth = false, multiline = false, readOnly = false, required = false, rows = 1, sx, type, value, endIconOnClick, ...props }: TextInputProps): JSX.Element => {
 
     return (
         <FormControl
