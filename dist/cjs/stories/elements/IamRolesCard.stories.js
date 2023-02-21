@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.Default = void 0;
+exports.LessContent = exports.Default = void 0;
 var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importDefault(require("react"));
 var IamRolesCard_1 = require("../../components/elements/IamRolesCard");
@@ -26,5 +26,20 @@ exports.Default = {
             react_1["default"].createElement("p", null, "Sit vehicula volutpat elit potenti fermentum, aptent nostra. Etiam penatibus sollicitudin venenatis felis aliquet et sem adipiscing penatibus. Posuere adipiscing consequat facilisis torquent potenti vivamus lobortis imperdiet ligula. Phasellus pharetra ridiculus imperdiet dis fermentum nam felis cum sodales placerat fames vulputate. Leo feugiat pulvinar penatibus vel lectus erat neque hac. Eget dis aliquet dis mauris."),
             react_1["default"].createElement("p", null, "Dignissim purus ante mollis maecenas tempor gravida lorem! Volutpat rhoncus gravida aliquet primis luctus scelerisque nulla primis elit. Quis, penatibus penatibus et aliquam. A ornare dictumst vivamus tempus lacus curae; primis? Purus malesuada elementum montes sociis feugiat pretium, faucibus mus porta convallis arcu. Magna vehicula inceptos aliquet ac turpis volutpat libero. Duis inceptos odio ornare convallis ligula integer risus eros. Vulputate ridiculus commodo interdum eu cubilia lacinia mus molestie semper interdum. Cras vivamus dictum auctor, lectus sit enim lectus in. Justo aenean dictum eu maecenas fermentum fermentum convallis interdum cras congue. Odio fringilla convallis sodales parturient curae; accumsan nostra. Primis egestas, nisi ut dolor ridiculus posuere eros taciti gravida. Cum quis tortor erat purus eros nullam curae; in malesuada!"),
             react_1["default"].createElement("p", null, "Taciti dapibus litora sed mattis blandit; diam dis fermentum phasellus. Nisi porta, enim fames euismod. Aenean penatibus non nunc, quam penatibus eget sed porttitor taciti. Morbi mauris consectetur gravida pulvinar faucibus mattis quam. Gravida donec pulvinar justo. Aenean ligula condimentum, volutpat ipsum aliquet adipiscing consectetur laoreet. Elit cubilia nisi, erat parturient. Odio nulla penatibus egestas placerat sodales cursus. Cursus ad lorem vulputate. Non aptent vel velit molestie dignissim nulla sit."))
+    }
+};
+exports.LessContent = {
+    args: {
+        selected: false,
+        assigned: false,
+        title: 'AmazonAugmentedAIFullAccess',
+        description: 'Provides access to perform all operations Amazon Augmented AI resources, including FlowDefinitions, HumanTaskUis and HumanLoops. Also provides access to those operations of services that are integrated with Amazon Augmented AI.',
+        onClickButtonTopRight: function () { return alert("Do something."); },
+        onClickButtonBottomLeft: function () { return alert("Do something else."); },
+        children: react_1["default"].createElement("div", null,
+            react_1["default"].createElement("h1", { style: { fontSize: '18px', fontWeight: 'bold' } }, "ReactNode Children here"),
+            react_1["default"].createElement("p", null, "Anything can go in here!"),
+            react_1["default"].createElement("p", null, "This is the default style of this container..."),
+            react_1["default"].createElement("p", { style: { fontSize: '13px', fontWeight: 'bold', color: 'blue', textTransform: 'capitalize' } }, "...but you can override it styling the components you place in here."))
     }
 };

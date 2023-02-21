@@ -24,3 +24,18 @@ export var Default = {
             React.createElement("p", null, "Taciti dapibus litora sed mattis blandit; diam dis fermentum phasellus. Nisi porta, enim fames euismod. Aenean penatibus non nunc, quam penatibus eget sed porttitor taciti. Morbi mauris consectetur gravida pulvinar faucibus mattis quam. Gravida donec pulvinar justo. Aenean ligula condimentum, volutpat ipsum aliquet adipiscing consectetur laoreet. Elit cubilia nisi, erat parturient. Odio nulla penatibus egestas placerat sodales cursus. Cursus ad lorem vulputate. Non aptent vel velit molestie dignissim nulla sit."))
     }
 };
+export var LessContent = {
+    args: {
+        selected: false,
+        assigned: false,
+        title: 'AmazonAugmentedAIFullAccess',
+        description: 'Provides access to perform all operations Amazon Augmented AI resources, including FlowDefinitions, HumanTaskUis and HumanLoops. Also provides access to those operations of services that are integrated with Amazon Augmented AI.',
+        onClickButtonTopRight: function () { return alert("Do something."); },
+        onClickButtonBottomLeft: function () { return alert("Do something else."); },
+        children: React.createElement("div", null,
+            React.createElement("h1", { style: { fontSize: '18px', fontWeight: 'bold' } }, "ReactNode Children here"),
+            React.createElement("p", null, "Anything can go in here!"),
+            React.createElement("p", null, "This is the default style of this container..."),
+            React.createElement("p", { style: { fontSize: '13px', fontWeight: 'bold', color: 'blue', textTransform: 'capitalize' } }, "...but you can override it styling the components you place in here."))
+    }
+};
