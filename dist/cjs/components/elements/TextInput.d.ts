@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import { InputProps } from '@mui/material';
 import { SxProps, Theme } from '@mui/material/styles';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
@@ -79,7 +79,12 @@ export interface TextInputProps extends InputProps {
      * A FontAwesome 6 Icon
      */
     icon?: IconProp;
+    /**
+     * Whether the icon is on the left or right of the input
+     */
     iconPosition?: 'start' | 'end' | undefined;
+    /** Style overrides for the icon */
+    iconStyle?: CSSProperties | undefined;
     /**
      * Function to be assigned to the X icon on the right of the input.
      * This can be used to handle the input value (delete the text inside).
@@ -87,4 +92,4 @@ export interface TextInputProps extends InputProps {
      */
     endIconOnClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
 }
-export declare const TextInput: ({ autoComplete, autoFocus, classes, defaultValue, disabled, error, id, icon, name, onChange, placeholder, iconPosition, fullWidth, multiline, readOnly, required, rows, sx, type, value, endIconOnClick, ...props }: TextInputProps) => JSX.Element;
+export declare const TextInput: ({ autoComplete, autoFocus, classes, defaultValue, disabled, error, id, icon, name, onChange, placeholder, iconPosition, fullWidth, multiline, readOnly, required, rows, sx, type, value, endIconOnClick, iconStyle, ...props }: TextInputProps) => JSX.Element;

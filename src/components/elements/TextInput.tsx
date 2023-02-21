@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import { FormControl, InputAdornment, InputProps, OutlinedInput } from '@mui/material'
 import { colors } from '../../theme'
 import { styled, SxProps, Theme } from '@mui/material/styles';
@@ -96,7 +96,14 @@ export interface TextInputProps extends InputProps {
      * A FontAwesome 6 Icon
      */
     icon?: IconProp
+
+    /**
+     * Whether the icon is on the left or right of the input
+     */
     iconPosition?: 'start' | 'end' | undefined
+
+    /** Style overrides for the icon */
+    iconStyle?: CSSProperties | undefined
 
     /**
      * Function to be assigned to the X icon on the right of the input.
@@ -131,7 +138,7 @@ const MyInput = styled(OutlinedInput)({
     },
 })
 
-export const TextInput = ({ autoComplete, autoFocus, classes, defaultValue, disabled = false, error, id, icon, name, onChange, placeholder, iconPosition = 'start', fullWidth = false, multiline = false, readOnly = false, required = false, rows = 1, sx, type, value, endIconOnClick, ...props }: TextInputProps): JSX.Element => {
+export const TextInput = ({ autoComplete, autoFocus, classes, defaultValue, disabled = false, error, id, icon, name, onChange, placeholder, iconPosition = 'start', fullWidth = false, multiline = false, readOnly = false, required = false, rows = 1, sx, type, value, endIconOnClick, iconStyle, ...props }: TextInputProps): JSX.Element => {
 
     return (
         <FormControl
@@ -178,9 +185,7 @@ export const TextInput = ({ autoComplete, autoFocus, classes, defaultValue, disa
                         <InputAdornment
                             position={ iconPosition }
                             onClick={endIconOnClick}
-                            style={{
-                                cursor: value ? 'pointer' : 'initial',
-                            }}
+                            style={iconStyle}
                         >
                             <FontAwesomeIcon
                                 icon={ icon }
