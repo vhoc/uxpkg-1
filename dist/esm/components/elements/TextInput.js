@@ -1,5 +1,5 @@
 import { __assign, __rest } from "tslib";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FormControl, InputAdornment, OutlinedInput } from '@mui/material';
 import { colors } from '../../theme';
 import { styled } from '@mui/material/styles';
@@ -31,6 +31,10 @@ var MyInput = styled(OutlinedInput)({
 });
 export var TextInput = function (_a) {
     var autoComplete = _a.autoComplete, autoFocus = _a.autoFocus, classes = _a.classes, defaultValue = _a.defaultValue, _b = _a.disabled, disabled = _b === void 0 ? false : _b, error = _a.error, id = _a.id, icon = _a.icon, name = _a.name, onChange = _a.onChange, placeholder = _a.placeholder, _c = _a.iconPosition, iconPosition = _c === void 0 ? 'start' : _c, _d = _a.fullWidth, fullWidth = _d === void 0 ? false : _d, _e = _a.multiline, multiline = _e === void 0 ? false : _e, _f = _a.readOnly, readOnly = _f === void 0 ? false : _f, _g = _a.required, required = _g === void 0 ? false : _g, _h = _a.rows, rows = _h === void 0 ? 1 : _h, sx = _a.sx, type = _a.type, value = _a.value, endIconOnClick = _a.endIconOnClick, props = __rest(_a, ["autoComplete", "autoFocus", "classes", "defaultValue", "disabled", "error", "id", "icon", "name", "onChange", "placeholder", "iconPosition", "fullWidth", "multiline", "readOnly", "required", "rows", "sx", "type", "value", "endIconOnClick"]);
+    var _j = useState(value), stateValue = _j[0], setStateValue = _j[1];
+    useEffect(function () {
+        setStateValue(value);
+    }, [value]);
     return (React.createElement(FormControl, { sx: {
             fontFamily: 'IBM Plex Sans',
             p: 0,
@@ -47,11 +51,11 @@ export var TextInput = function (_a) {
                     React.createElement(FontAwesomeIcon, { icon: icon, style: { color: colors.gray[30] } }))
                 :
                     null, endAdornment: icon && iconPosition === 'end' ?
-                React.createElement(InputAdornment, { position: iconPosition, onClick: value ? endIconOnClick : undefined, style: {
-                        cursor: value ? 'pointer' : 'initial'
+                React.createElement(InputAdornment, { position: iconPosition, onClick: stateValue ? endIconOnClick : undefined, style: {
+                        cursor: stateValue ? 'pointer' : 'initial'
                     } },
-                    React.createElement(FontAwesomeIcon, { icon: value ? faCircleXmark : icon, style: {
-                            color: value ? colors.gray[70] : colors.gray[30]
+                    React.createElement(FontAwesomeIcon, { icon: stateValue ? faCircleXmark : icon, style: {
+                            color: stateValue ? colors.gray[70] : colors.gray[30]
                         } }))
                 :
                     null }, props))));
