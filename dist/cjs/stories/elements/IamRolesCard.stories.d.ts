@@ -12,3 +12,14 @@ export declare const Default: {
         children: JSX.Element;
     };
 };
+export declare const LessContent: {
+    args: {
+        selected: boolean;
+        assigned: boolean;
+        title: string;
+        description: string;
+        onClickButtonTopRight: () => void;
+        onClickButtonBottomLeft: () => void;
+        children: JSX.Element;
+    };
+};

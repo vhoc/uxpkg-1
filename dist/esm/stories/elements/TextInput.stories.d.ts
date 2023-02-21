@@ -6,5 +6,15 @@ export declare const Default: {
         placeholder: string;
         icon: import("@fortawesome/fontawesome-common-types").IconDefinition;
         iconPosition: string;
+        endIconOnClick: () => void;
+    };
+};
+export declare const WithText: {
+    args: {
+        placeholder: string;
+        icon: import("@fortawesome/fontawesome-common-types").IconDefinition;
+        iconPosition: string;
+        value: string;
+        endIconOnClick: () => void;
     };
 };

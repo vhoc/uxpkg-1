@@ -10,7 +10,7 @@ var IconButton_1 = require("./IconButton");
 var Button_1 = require("./Button");
 var styles_1 = require("@mui/material/styles");
 var MyDiv = (0, styles_1.styled)('div')({
-    overflowY: 'scroll',
+    overflowY: 'auto',
     '&::-webkit-scrollbar': {
         width: '4px'
     },
@@ -26,7 +26,7 @@ var MyDiv = (0, styles_1.styled)('div')({
 var IamRolesCard = function (_a) {
     var _b = _a.selected, selected = _b === void 0 ? false : _b, _c = _a.assigned, assigned = _c === void 0 ? false : _c, title = _a.title, description = _a.description, onClickButtonTopRight = _a.onClickButtonTopRight, onClickButtonBottomLeft = _a.onClickButtonBottomLeft, style = _a.style, children = _a.children, props = tslib_1.__rest(_a, ["selected", "assigned", "title", "description", "onClickButtonTopRight", "onClickButtonBottomLeft", "style", "children"]);
     var _d = (0, react_1.useState)(false), expanded = _d[0], setExpanded = _d[1];
-    return (react_1["default"].createElement("div", tslib_1.__assign({ style: tslib_1.__assign({ width: '605px', maxWidth: '605px', minHeight: '72px', height: expanded ? '444px' : '72px', backgroundColor: selected ? theme_1.colors.gray[5] : theme_1.colors.white, borderWidth: '1px', borderColor: theme_1.colors.gray[20], borderRadius: '8px', paddingTop: '14px', paddingBottom: expanded ? '16px' : '12px', paddingLeft: '24px', paddingRight: '16px', display: 'flex', justifyContent: 'space-between', fontFamily: theme_1.theme.font.body.regular.fontFamily, fontSize: theme_1.theme.font.body.regular.fontSize, fontWeight: theme_1.theme.font.body.regular.fontWeight, color: theme_1.theme.font.body.regular.color }, style) }, props), /** EXPANDED RENDER */ expanded ?
+    return (react_1["default"].createElement("div", tslib_1.__assign({ style: tslib_1.__assign({ width: '605px', maxWidth: '605px', minHeight: '72px', height: expanded ? 'fit-content' : '72px', backgroundColor: selected ? theme_1.colors.gray[5] : theme_1.colors.white, borderWidth: '1px', borderColor: theme_1.colors.gray[20], borderRadius: '8px', paddingTop: '14px', paddingBottom: expanded ? '16px' : '12px', paddingLeft: '24px', paddingRight: '16px', display: 'flex', justifyContent: 'space-between', fontFamily: theme_1.theme.font.body.regular.fontFamily, fontSize: theme_1.theme.font.body.regular.fontSize, fontWeight: theme_1.theme.font.body.regular.fontWeight, color: theme_1.theme.font.body.regular.color }, style) }, props), /** EXPANDED RENDER */ expanded ?
         react_1["default"].createElement("div", { style: { display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
@@ -46,7 +46,9 @@ var IamRolesCard = function (_a) {
                         width: '573px'
                     } },
                     react_1["default"].createElement("div", { style: tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.caption.regular), { width: '509px', maxWidth: '509px', textAlign: 'left' }) }, description),
-                    react_1["default"].createElement(MyDiv, { style: tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.caption.regular), { width: '100%', height: '280px', paddingRight: '100px', textAlign: 'left' }) }, children))),
+                    react_1["default"].createElement(MyDiv, { style: tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.caption.regular), { width: '100%', height: 'fit-content', maxHeight: '280px', 
+                            //height: '100px',
+                            paddingRight: '100px', textAlign: 'left' }) }, children))),
             react_1["default"].createElement("div", { style: {
                     display: 'flex',
                     justifyContent: 'space-between',

@@ -62,7 +62,7 @@ export interface TextInputProps extends InputProps {
     /**
      * 	Number of rows to display when multiline option is set to true.
      */
-    rows: number;
+    rows?: number;
     /**
      * The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
      */
@@ -80,5 +80,11 @@ export interface TextInputProps extends InputProps {
      */
     icon?: IconProp;
     iconPosition?: 'start' | 'end' | undefined;
+    /**
+     * Function to be assigned to the X icon on the right of the input.
+     * This can be used to handle the input value (delete the text inside).
+     * It requires the iconPosition prop be set at 'end'.
+     */
+    endIconOnClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
 }
-export declare const TextInput: ({ autoComplete, autoFocus, classes, defaultValue, disabled, error, id, icon, name, onChange, placeholder, iconPosition, fullWidth, multiline, readOnly, required, rows, sx, type, value, ...props }: TextInputProps) => JSX.Element;
+export declare const TextInput: ({ autoComplete, autoFocus, classes, defaultValue, disabled, error, id, icon, name, onChange, placeholder, iconPosition, fullWidth, multiline, readOnly, required, rows, sx, type, value, endIconOnClick, ...props }: TextInputProps) => JSX.Element;

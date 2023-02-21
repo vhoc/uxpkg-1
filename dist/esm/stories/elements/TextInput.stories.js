@@ -9,7 +9,17 @@ export var Default = {
     args: {
         placeholder: 'Search',
         icon: faMagnifyingGlass,
-        iconPosition: 'start'
+        iconPosition: 'start',
+        endIconOnClick: function () { return alert("X button pressed."); }
+    }
+};
+export var WithText = {
+    args: {
+        placeholder: 'Search',
+        icon: faMagnifyingGlass,
+        iconPosition: 'end',
+        value: 'This is a sample text!',
+        endIconOnClick: function () { return alert("X button pressed."); }
     }
 };
 library.add(faMagnifyingGlass);
