@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { FormControl, InputAdornment, InputProps, OutlinedInput } from '@mui/material'
 import { colors } from '../../theme'
 import { styled, SxProps, Theme } from '@mui/material/styles';
@@ -134,6 +134,12 @@ const MyInput = styled(OutlinedInput)({
 
 export const TextInput = ({ autoComplete, autoFocus, classes, defaultValue, disabled = false, error, id, icon, name, onChange, placeholder, iconPosition = 'start', fullWidth = false, multiline = false, readOnly = false, required = false, rows = 1, sx, type, value, endIconOnClick, ...props }: TextInputProps): JSX.Element => {
 
+    const [stateValue, setStateValue] = useState<any>(value)
+
+    useEffect(() => {
+        setStateValue(value)
+    }, [value])
+
     return (
         <FormControl
             sx={{
@@ -178,15 +184,15 @@ export const TextInput = ({ autoComplete, autoFocus, classes, defaultValue, disa
                     endAdornment={ icon && iconPosition === 'end' ?                     
                         <InputAdornment
                             position={ iconPosition }
-                            onClick={value ? endIconOnClick : undefined}
+                            onClick={stateValue ? endIconOnClick : undefined}
                             style={{
-                                cursor: value ? 'pointer' : 'initial',
+                                cursor: stateValue ? 'pointer' : 'initial',
                             }}
                         >
                             <FontAwesomeIcon
-                                icon={ value ? faCircleXmark : icon }
+                                icon={ stateValue ? faCircleXmark : icon }
                                 style={{
-                                    color: value ? colors.gray[70] : colors.gray[30],
+                                    color: stateValue ? colors.gray[70] : colors.gray[30],
 
                                 }}
                             />                    
