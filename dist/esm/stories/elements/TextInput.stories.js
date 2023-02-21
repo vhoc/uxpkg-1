@@ -1,6 +1,7 @@
 import { TextInput } from "../../components/elements/TextInput";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faMagnifyingGlass } from "@fortawesome/sharp-solid-svg-icons";
+import { faCircleXmark } from '@fortawesome/pro-solid-svg-icons';
 export default {
     title: 'elements/Inputs/TextInput',
     component: TextInput
@@ -22,4 +23,4 @@ export var WithText = {
         endIconOnClick: function () { return alert("X button pressed."); }
     }
 };
-library.add(faMagnifyingGlass);
+library.add(faMagnifyingGlass, faCircleXmark);

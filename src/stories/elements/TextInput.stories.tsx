@@ -2,6 +2,7 @@ import { Meta } from "@storybook/react/types-6-0";
 import { TextInput } from "../../components/elements/TextInput";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faMagnifyingGlass } from "@fortawesome/sharp-solid-svg-icons";
+import { faCircleXmark } from '@fortawesome/pro-solid-svg-icons';
 
 export default {
     title: 'elements/Inputs/TextInput',
@@ -27,4 +28,4 @@ export const WithText = {
     }
 }
 
-library.add(faMagnifyingGlass)
+library.add(faMagnifyingGlass, faCircleXmark)
