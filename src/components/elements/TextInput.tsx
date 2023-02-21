@@ -185,14 +185,10 @@ export const TextInput = ({ autoComplete, autoFocus, classes, defaultValue, disa
                         <InputAdornment
                             position={ iconPosition }
                             onClick={endIconOnClick}
-                            style={iconStyle}
                         >
                             <FontAwesomeIcon
                                 icon={ icon }
-                                style={{
-                                    color: value ? colors.gray[70] : colors.gray[30],
-
-                                }}
+                                style={iconStyle}
                             />                    
                         </InputAdornment>
                     :

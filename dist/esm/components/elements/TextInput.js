@@ -46,10 +46,8 @@ export var TextInput = function (_a) {
                     React.createElement(FontAwesomeIcon, { icon: icon, style: { color: colors.gray[30] } }))
                 :
                     null, endAdornment: icon && iconPosition === 'end' ?
-                React.createElement(InputAdornment, { position: iconPosition, onClick: endIconOnClick, style: iconStyle },
-                    React.createElement(FontAwesomeIcon, { icon: icon, style: {
-                            color: value ? colors.gray[70] : colors.gray[30]
-                        } }))
+                React.createElement(InputAdornment, { position: iconPosition, onClick: endIconOnClick },
+                    React.createElement(FontAwesomeIcon, { icon: icon, style: iconStyle }))
                 :
                     null }, props))));
 };

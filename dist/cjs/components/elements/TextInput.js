@@ -49,10 +49,8 @@ var TextInput = function (_a) {
                     react_1["default"].createElement(react_fontawesome_1.FontAwesomeIcon, { icon: icon, style: { color: theme_1.colors.gray[30] } }))
                 :
                     null, endAdornment: icon && iconPosition === 'end' ?
-                react_1["default"].createElement(material_1.InputAdornment, { position: iconPosition, onClick: endIconOnClick, style: iconStyle },
-                    react_1["default"].createElement(react_fontawesome_1.FontAwesomeIcon, { icon: icon, style: {
-                            color: value ? theme_1.colors.gray[70] : theme_1.colors.gray[30]
-                        } }))
+                react_1["default"].createElement(material_1.InputAdornment, { position: iconPosition, onClick: endIconOnClick },
+                    react_1["default"].createElement(react_fontawesome_1.FontAwesomeIcon, { icon: icon, style: iconStyle }))
                 :
                     null }, props))));
 };
