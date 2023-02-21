@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { FormControl, InputAdornment, InputProps, OutlinedInput } from '@mui/material'
 import { colors } from '../../theme'
 import { styled, SxProps, Theme } from '@mui/material/styles';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark } from '@fortawesome/pro-solid-svg-icons';
 
 export interface TextInputProps extends InputProps {
     /**
@@ -134,12 +133,6 @@ const MyInput = styled(OutlinedInput)({
 
 export const TextInput = ({ autoComplete, autoFocus, classes, defaultValue, disabled = false, error, id, icon, name, onChange, placeholder, iconPosition = 'start', fullWidth = false, multiline = false, readOnly = false, required = false, rows = 1, sx, type, value, endIconOnClick, ...props }: TextInputProps): JSX.Element => {
 
-    const [stateValue, setStateValue] = useState<any>(value)
-
-    useEffect(() => {
-        setStateValue(value)
-    }, [value])
-
     return (
         <FormControl
             sx={{
@@ -184,15 +177,15 @@ export const TextInput = ({ autoComplete, autoFocus, classes, defaultValue, disa
                     endAdornment={ icon && iconPosition === 'end' ?                     
                         <InputAdornment
                             position={ iconPosition }
-                            onClick={stateValue ? endIconOnClick : undefined}
+                            onClick={endIconOnClick}
                             style={{
-                                cursor: stateValue ? 'pointer' : 'initial',
+                                cursor: value ? 'pointer' : 'initial',
                             }}
                         >
                             <FontAwesomeIcon
-                                icon={ stateValue ? faCircleXmark : icon }
+                                icon={ icon }
                                 style={{
-                                    color: stateValue ? colors.gray[70] : colors.gray[30],
+                                    color: value ? colors.gray[70] : colors.gray[30],
 
                                 }}
                             />                    
