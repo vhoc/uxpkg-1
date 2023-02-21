@@ -26,7 +26,7 @@ export interface IamRolesCardProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const MyDiv = styled('div')({
-    overflowY: 'scroll',
+    overflowY: 'auto',
     '&::-webkit-scrollbar' : {
         width: '4px',
     },
@@ -52,7 +52,7 @@ export const IamRolesCard = ({selected = false, assigned = false, title, descrip
                 width: '605px',
                 maxWidth: '605px',
                 minHeight: '72px',
-                height: expanded ? '444px' : '72px',
+                height: expanded ? 'fit-content' : '72px',
                 backgroundColor: selected ? colors.gray[5] : colors.white,
                 borderWidth: '1px',
                 borderColor: colors.gray[20],
@@ -137,7 +137,9 @@ export const IamRolesCard = ({selected = false, assigned = false, title, descrip
                             style={{
                                 ...theme.font.caption.regular,
                                 width: '100%',
-                                height: '280px',
+                                height: 'fit-content',
+                                maxHeight: '280px',
+                                //height: '100px',
                                 paddingRight: '100px',
                                 textAlign: 'left',
                             }}

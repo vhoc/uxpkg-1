@@ -4,6 +4,7 @@ import { colors } from '../../theme'
 import { styled, SxProps, Theme } from '@mui/material/styles';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleXmark } from '@fortawesome/pro-solid-svg-icons';
 
 export interface TextInputProps extends InputProps {
     /**
@@ -97,6 +98,13 @@ export interface TextInputProps extends InputProps {
      */
     icon?: IconProp
     iconPosition?: 'start' | 'end' | undefined
+
+    /**
+     * Function to be assigned to the X icon on the right of the input.
+     * This can be used to handle the input value (delete the text inside).  
+     * It requires the iconPosition prop be set at 'end'.
+     */
+    endIconOnClick?: React.MouseEventHandler<HTMLDivElement> | undefined
 }
 
 const MyInput = styled(OutlinedInput)({
@@ -124,7 +132,7 @@ const MyInput = styled(OutlinedInput)({
     },
 })
 
-export const TextInput = ({ autoComplete, autoFocus, classes, defaultValue, disabled = false, error, id, icon, name, onChange, placeholder, iconPosition = 'start', fullWidth = false, multiline = false, readOnly = false, required = false, rows, sx, type, value, ...props }: TextInputProps): JSX.Element => {
+export const TextInput = ({ autoComplete, autoFocus, classes, defaultValue, disabled = false, error, id, icon, name, onChange, placeholder, iconPosition = 'start', fullWidth = false, multiline = false, readOnly = false, required = false, rows, sx, type, value, endIconOnClick, ...props }: TextInputProps): JSX.Element => {
 
     return (
         <FormControl
@@ -143,8 +151,7 @@ export const TextInput = ({ autoComplete, autoFocus, classes, defaultValue, disa
             disabled={disabled}
             >
                 <MyInput
-                    id={id}
-                    
+                    id={id}                    
                     autoComplete={autoComplete}
                     autoFocus={autoFocus}
                     classes={classes}
@@ -169,8 +176,20 @@ export const TextInput = ({ autoComplete, autoFocus, classes, defaultValue, disa
                         null
                     }
                     endAdornment={ icon && iconPosition === 'end' ?                     
-                        <InputAdornment position={ iconPosition }>
-                            <FontAwesomeIcon icon={ icon } style={{ color: colors.gray[30] }} />                            
+                        <InputAdornment
+                            position={ iconPosition }
+                            onClick={value ? endIconOnClick : undefined}
+                            style={{
+                                cursor: value ? 'pointer' : 'initial',
+                            }}
+                        >
+                            <FontAwesomeIcon
+                                icon={ value ? faCircleXmark : icon }
+                                style={{
+                                    color: value ? colors.gray[70] : colors.gray[30],
+
+                                }}
+                            />                    
                         </InputAdornment>
                     :
                         null

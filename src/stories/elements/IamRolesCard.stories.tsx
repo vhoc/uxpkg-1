@@ -39,3 +39,21 @@ export const Default = {
     }
 }
 
+export const LessContent = {
+    args: {
+        selected: false,
+        assigned: false,
+        title: 'AmazonAugmentedAIFullAccess',
+        description: 'Provides access to perform all operations Amazon Augmented AI resources, including FlowDefinitions, HumanTaskUis and HumanLoops. Also provides access to those operations of services that are integrated with Amazon Augmented AI.',
+        onClickButtonTopRight: () => alert(`Do something.`),
+        onClickButtonBottomLeft: () => alert(`Do something else.`),
+        children: <div >
+            <h1 style={{ fontSize: '18px', fontWeight: 'bold' }} >ReactNode Children here</h1>
+            <p>Anything can go in here!</p>
+            <p>This is the default style of this container...</p>
+            <p style={{ fontSize: '13px', fontWeight: 'bold', color: 'blue', textTransform: 'capitalize' }}>...but you can override it styling the components you place in here.</p>
+            
+        </div>
+    }
+}
+
