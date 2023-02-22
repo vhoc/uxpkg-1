@@ -7,10 +7,10 @@ import { styled } from '@mui/material/styles';
 import { colors } from '../../theme'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown } from '@fortawesome/pro-solid-svg-icons'
-import { DatePickerProps } from '@mui/x-date-pickers'
+//import { DatePickerProps } from '@mui/x-date-pickers'
 import { MuiPickersAdapter } from '@mui/x-date-pickers/internals'
 
-export interface SelectDateProps extends DatePickerProps<Date, Date> {
+export interface SelectDateProps {
     /**
      * Callback fired when the value (the selected date) changes @DateIOType.
      * value: The new parsed value.

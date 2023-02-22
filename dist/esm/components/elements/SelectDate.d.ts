@@ -1,8 +1,7 @@
 import React from 'react';
 import { CalendarPickerView, PickersDayProps } from '@mui/x-date-pickers';
-import { DatePickerProps } from '@mui/x-date-pickers';
 import { MuiPickersAdapter } from '@mui/x-date-pickers/internals';
-export interface SelectDateProps extends DatePickerProps<Date, Date> {
+export interface SelectDateProps {
     /**
      * Callback fired when the value (the selected date) changes @DateIOType.
      * value: The new parsed value.
