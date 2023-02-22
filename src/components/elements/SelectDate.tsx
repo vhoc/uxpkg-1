@@ -1,5 +1,6 @@
 import React from 'react'
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment'
+//import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { CalendarPickerView, LocalizationProvider, PickersDayProps } from '@mui/x-date-pickers'
 import { DatePicker } from '@mui/x-date-pickers'
 import { Box } from '@mui/material'
@@ -18,6 +19,9 @@ export interface SelectDateProps {
      */
     onChange: (value: any, keyboardInputValue?: string | undefined) => void,
 
+    /** Placeholder */
+    placeholder?: string | undefined
+
     /** If true the popup or dialog will immediately close after submitting full date. */
     closeOnSelect?: boolean
 
@@ -30,7 +34,10 @@ export interface SelectDateProps {
     /** Formats the day of week displayed in the calendar header. */
     dayOfWeekFormatter?: (say: string) => string
 
-    /** Callback function to run when the component is clicked on */
+    /**
+     * Callback function to run when the component is clicked on.  
+     * It can be used to control the picker open/closed state.
+     */
     onClick?: React.MouseEventHandler<HTMLDivElement> | undefined
 
     /** Default calendar month displayed when value={null}. */
@@ -124,7 +131,7 @@ export interface SelectDateProps {
 
 }
 
-export const SelectDate = ({onChange, closeOnSelect, value, open, dayOfWeekFormatter, onClick, defaultCalendarMonth, disabled=false, disablePast=true, disableFuture=false, disableHighlightToday=false, getOpenDialogAriaText, inputFormat, inputRef, maxDate, minDate, onAccept, onClose, onMonthChange, onOpen, onViewChange, onYearChange, openTo, orientation, readOnly, reduceAnimations, renderDay, renderLoading, shouldDisableDate, shouldDisableMonth, shouldDisableYear, views }: SelectDateProps): JSX.Element => {
+export const SelectDate = ({onChange, placeholder, closeOnSelect, value, open, dayOfWeekFormatter, onClick, defaultCalendarMonth, disabled=false, disablePast=true, disableFuture=false, disableHighlightToday=false, getOpenDialogAriaText, inputFormat, inputRef, maxDate, minDate, onAccept, onClose, onMonthChange, onOpen, onViewChange, onYearChange, openTo, orientation, readOnly, reduceAnimations, renderDay, renderLoading, shouldDisableDate, shouldDisableMonth, shouldDisableYear, views }: SelectDateProps): JSX.Element => {
 
     //const [value, setValue] = useState<any>()
     //const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -217,6 +224,7 @@ export const SelectDate = ({onChange, closeOnSelect, value, open, dayOfWeekForma
                         <MyInput
                             ref={inputRef}
                             {...inputProps}
+                            placeholder={placeholder}
                         />
                         <FontAwesomeIcon icon={faCaretDown} color={colors.gray[70]} />
                     </MyBox>

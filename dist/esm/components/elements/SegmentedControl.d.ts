@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { ISegmentedControlItem } from '../../types';
 export interface SegmentedControlProps {
     /**

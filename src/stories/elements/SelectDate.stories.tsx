@@ -9,6 +9,20 @@ export default {
 export const Default = {
     args: {
         onChange: () => alert(`Date changed!`),
-        onClick: () => alert(`Component clicked`)
+        onClick: () => alert(`Component clicked`),
+        value: () => '2014-08-18T21:11:54',
+        inputFormat: "MM/DD/YYYY",
+        placeholder: 'Select Date',
+    }
+}
+
+export const Open = {
+    args: {
+        onChange: () => alert(`Date changed!`),
+        onClick: () => alert(`Component clicked`),
+        value: () => '2014-08-18T21:11:54',
+        inputFormat: "MM/DD/YYYY",
+        placeholder: 'Select Date',
+        open: true,
     }
 }

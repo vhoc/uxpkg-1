@@ -8,6 +8,8 @@ export interface SelectDateProps {
      * keyboardInputValue: The current value of the keyboard input.
      */
     onChange: (value: any, keyboardInputValue?: string | undefined) => void;
+    /** Placeholder */
+    placeholder?: string | undefined;
     /** If true the popup or dialog will immediately close after submitting full date. */
     closeOnSelect?: boolean;
     /** The value of the picker. */
@@ -16,7 +18,10 @@ export interface SelectDateProps {
     open?: boolean;
     /** Formats the day of week displayed in the calendar header. */
     dayOfWeekFormatter?: (say: string) => string;
-    /** Callback function to run when the component is clicked on */
+    /**
+     * Callback function to run when the component is clicked on.
+     * It can be used to control the picker open/closed state.
+     */
     onClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
     /** Default calendar month displayed when value={null}. */
     defaultCalendarMonth?: any;
@@ -82,4 +87,4 @@ export interface SelectDateProps {
      */
     views?: readonly CalendarPickerView[] | undefined;
 }
-export declare const SelectDate: ({ onChange, closeOnSelect, value, open, dayOfWeekFormatter, onClick, defaultCalendarMonth, disabled, disablePast, disableFuture, disableHighlightToday, getOpenDialogAriaText, inputFormat, inputRef, maxDate, minDate, onAccept, onClose, onMonthChange, onOpen, onViewChange, onYearChange, openTo, orientation, readOnly, reduceAnimations, renderDay, renderLoading, shouldDisableDate, shouldDisableMonth, shouldDisableYear, views }: SelectDateProps) => JSX.Element;
+export declare const SelectDate: ({ onChange, placeholder, closeOnSelect, value, open, dayOfWeekFormatter, onClick, defaultCalendarMonth, disabled, disablePast, disableFuture, disableHighlightToday, getOpenDialogAriaText, inputFormat, inputRef, maxDate, minDate, onAccept, onClose, onMonthChange, onOpen, onViewChange, onYearChange, openTo, orientation, readOnly, reduceAnimations, renderDay, renderLoading, shouldDisableDate, shouldDisableMonth, shouldDisableYear, views }: SelectDateProps) => JSX.Element;
