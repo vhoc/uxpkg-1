@@ -10,11 +10,3 @@ export declare const Default: {
         error: boolean;
     };
 };
-export declare const Open: {
-    args: {
-        onChange: () => Date;
-        value: string;
-        inputFormat: string;
-        placeholder: string;
-    };
-};

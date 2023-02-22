@@ -51,7 +51,7 @@ export interface SelectDateProps {
     /** Callback firing on year change @DateIOType. */
     onYearChange?: ((year: any) => void) | undefined;
     /** First view to show. Must be a valid option from views list. Refer to the MUI-X doocumentation. */
-    openTo?: CalendarPickerView | undefined;
+    openTo?: 'year' | 'month' | 'day';
     /** Force rendering in particular orientation. */
     orientation?: "portrait" | "landscape" | undefined;
     /** Make picker read only. */
@@ -82,4 +82,4 @@ export interface SelectDateProps {
      */
     views?: readonly CalendarPickerView[] | undefined;
 }
-export declare const SelectDate: ({ onChange, placeholder, closeOnSelect, value, open, dayOfWeekFormatter, defaultCalendarMonth, disabled, disablePast, disableFuture, disableHighlightToday, getOpenDialogAriaText, inputFormat, inputRef, maxDate, minDate, onAccept, onClose, onMonthChange, onOpen, onViewChange, onYearChange, openTo, orientation, readOnly, reduceAnimations, renderDay, renderLoading, shouldDisableDate, shouldDisableMonth, shouldDisableYear, views }: SelectDateProps) => JSX.Element;
+export declare const SelectDate: ({ onChange, closeOnSelect, value, open, dayOfWeekFormatter, defaultCalendarMonth, disabled, disablePast, disableFuture, disableHighlightToday, getOpenDialogAriaText, inputFormat, inputRef, maxDate, minDate, onAccept, onClose, onMonthChange, onOpen, onViewChange, onYearChange, openTo, orientation, readOnly, reduceAnimations, renderDay, renderLoading, shouldDisableDate, shouldDisableMonth, shouldDisableYear, views }: SelectDateProps) => JSX.Element;
