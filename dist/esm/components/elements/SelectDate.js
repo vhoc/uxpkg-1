@@ -57,9 +57,7 @@ export var SelectDate = function (_a) {
                 return (React.createElement(MyBox, { sx: {
                         display: 'flex',
                         alignItems: 'center'
-                    }, 
-                    //onClick={() => setIsOpen(prevState => !prevState)}
-                    onClick: onClick },
+                    } },
                     React.createElement(MyInput, __assign({ ref: inputRef }, inputProps, { placeholder: placeholder })),
                     React.createElement(FontAwesomeIcon, { icon: faCaretDown, color: colors.gray[70] })));
             } })));

@@ -4,7 +4,6 @@ export default _default;
 export declare const Default: {
     args: {
         onChange: () => void;
-        onClick: () => void;
         value: () => string;
         inputFormat: string;
         placeholder: string;
@@ -13,10 +12,8 @@ export declare const Default: {
 export declare const Open: {
     args: {
         onChange: () => void;
-        onClick: () => void;
         value: () => string;
         inputFormat: string;
         placeholder: string;
-        open: boolean;
     };
 };

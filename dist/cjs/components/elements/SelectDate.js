@@ -60,9 +60,7 @@ var SelectDate = function (_a) {
                 return (react_1["default"].createElement(MyBox, { sx: {
                         display: 'flex',
                         alignItems: 'center'
-                    }, 
-                    //onClick={() => setIsOpen(prevState => !prevState)}
-                    onClick: onClick },
+                    } },
                     react_1["default"].createElement(MyInput, tslib_1.__assign({ ref: inputRef }, inputProps, { placeholder: placeholder })),
                     react_1["default"].createElement(react_fontawesome_1.FontAwesomeIcon, { icon: pro_solid_svg_icons_1.faCaretDown, color: theme_1.colors.gray[70] })));
             } })));

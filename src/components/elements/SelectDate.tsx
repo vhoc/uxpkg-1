@@ -219,7 +219,7 @@ export const SelectDate = ({onChange, placeholder, closeOnSelect, value, open, d
                             alignItems: 'center',
                         }}
                         //onClick={() => setIsOpen(prevState => !prevState)}
-                        onClick={onClick}
+                        //onClick={onClick}
                     >
                         <MyInput
                             ref={inputRef}
