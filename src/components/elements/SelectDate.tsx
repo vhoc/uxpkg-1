@@ -4,8 +4,8 @@ import { CalendarPickerView, LocalizationProvider, PickersDayProps } from '@mui/
 import { DatePicker } from '@mui/x-date-pickers'
 //import { Box, TextField } from '@mui/material'
 import { TextField } from '@mui/material'
-//import { styled } from '@mui/material/styles';
-//import { colors } from '../../theme'
+import { styled } from '@mui/material/styles';
+import { colors } from '../../theme'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown } from '@fortawesome/pro-solid-svg-icons'
 import { MuiPickersAdapter } from '@mui/x-date-pickers/internals'
@@ -128,7 +128,7 @@ export const SelectDate = ({onChange, placeholder, closeOnSelect, value, open, d
 
     //const [value, setValue] = useState<any>()
     //const [isOpen, setIsOpen] = useState<boolean>(false)
-/*
+    /*
     const MyBox = styled(Box)({
         backgroundColor: colors.white,
         fontFamily: 'IBM Plex Sans',
@@ -158,18 +158,26 @@ export const SelectDate = ({onChange, placeholder, closeOnSelect, value, open, d
             //border: 'inherited',
             boxShadow: 'none',
         },
-    })
+    })*/
 
-    const MyInput = styled('input')({
-        backgroundColor: 'transparent',
+    const MyInput = styled(TextField)({
+        backgroundColor: colors.white,
         //cursor: 'pointer',
         border: 'none',
-        outline: 'none',
+        outline: 'none !important',
+        fontFamily: 'IBM Plex Sans !important',
+        fontSize: '14px',
+        color: colors.gray[90],
+        borderWidth: '1px',
+        borderColor: colors.gray[20],
+        borderRadius: '4px',
+        width: 'fit-content',
+        height: '40px !important',
         '&:focus': {
             border: 'none',
-            outline: 'none',
+            outline: 'none !important',
         },
-    })*/
+    })
 
     return (
         <LocalizationProvider dateAdapter={AdapterMoment}>
@@ -206,7 +214,32 @@ export const SelectDate = ({onChange, placeholder, closeOnSelect, value, open, d
                 shouldDisableYear={shouldDisableYear}
                 views={views}
                 components={{ OpenPickerIcon: () => <FontAwesomeIcon size={'xs'} icon={faCaretDown}/> }} // Goddammit MaterialUI, document THIS PROP!!!
-                renderInput={(params) => <TextField {...params} />}
+                /*
+                renderInput={(params) => {
+                    return (
+                        <MyInput
+                            {...params}
+                            sx={{
+                                height: '40px',
+                            }}
+                        />
+                    )
+                }}*/
+                renderInput={(params) => {
+                    return (
+                        <MyInput
+                            {...params}
+                            size={'small'}
+                            style={{
+                                fontFamily: 'IBM Plex Sans',
+                            }}
+                            sx={{
+                                fontFamily: 'IBM Plex Sans',
+                                height: '40px',
+                            }}
+                        />
+                    )
+                }}
                 /*
                 renderInput={({ inputRef, inputProps, InputProps }) => (
                     <MyBox

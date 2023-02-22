@@ -7,6 +7,7 @@ export declare const Default: {
         value: () => string;
         inputFormat: string;
         placeholder: string;
+        error: boolean;
     };
 };
 export declare const Open: {
