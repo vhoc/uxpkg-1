@@ -1,18 +1,6 @@
 "use strict";
 exports.__esModule = true;
 var tslib_1 = require("tslib");
-//@ts-ignore
-//import * as styles from './assets/styles/dropdown'
-//@ts-ignore
-//import * as icons from './assets/icons'
-//@ts-ignore
-//import * as images from './assets/images'
-/*
-export {
-    styles,
-    icons,
-    images,
-}*/
 tslib_1.__exportStar(require("./components/elements/Button"), exports);
 tslib_1.__exportStar(require("./components/elements/DropDown"), exports);
 tslib_1.__exportStar(require("./components/elements/DropDownButton"), exports);
@@ -41,3 +29,4 @@ tslib_1.__exportStar(require("./components/elements/IamRolesCard"), exports);
 tslib_1.__exportStar(require("./components/elements/AccessRequestModal"), exports);
 tslib_1.__exportStar(require("./components/elements/Typography"), exports);
 tslib_1.__exportStar(require("./components/elements/SummaryResourceCard"), exports);
+tslib_1.__exportStar(require("./components/elements/SelectDate"), exports);

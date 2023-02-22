@@ -1,15 +1,3 @@
-//@ts-ignore
-//import * as styles from './assets/styles/dropdown'
-//@ts-ignore
-//import * as icons from './assets/icons'
-//@ts-ignore
-//import * as images from './assets/images'
-/*
-export {
-    styles,
-    icons,
-    images,
-}*/
 export * from './components/elements/Button';
 export * from './components/elements/DropDown';
 export * from './components/elements/DropDownButton';
@@ -38,3 +26,4 @@ export * from './components/elements/IamRolesCard';
 export * from './components/elements/AccessRequestModal';
 export * from './components/elements/Typography';
 export * from './components/elements/SummaryResourceCard';
+export * from './components/elements/SelectDate';
