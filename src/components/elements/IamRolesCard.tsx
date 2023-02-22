@@ -55,7 +55,7 @@ export const IamRolesCard = ({selected = false, assigned = false, title, descrip
                 height: expanded ? 'fit-content' : '72px',
                 backgroundColor: selected ? colors.gray[5] : colors.white,
                 borderWidth: '1px',
-                borderColor: colors.gray[20],
+                borderColor: colors.gray[20] || '#D8DDE4 !important',
                 borderRadius: '8px',
                 paddingTop: '14px',
                 paddingBottom: expanded ? '16px' : '12px',
