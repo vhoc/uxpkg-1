@@ -12,7 +12,7 @@ export const Default = {
         //onClick: () => alert(`Component clicked`),
         value: () => '2014-08-18T21:11:54',
         inputFormat: "MM/DD/YYYY",
-        placeholder: 'Select Date',
+       placeholder: 'Select Date',
     }
 }
 

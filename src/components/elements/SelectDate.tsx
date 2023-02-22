@@ -1,14 +1,12 @@
 import React from 'react'
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment'
-//import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { CalendarPickerView, LocalizationProvider, PickersDayProps } from '@mui/x-date-pickers'
 import { DatePicker } from '@mui/x-date-pickers'
 import { Box } from '@mui/material'
 import { styled } from '@mui/material/styles';
 import { colors } from '../../theme'
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-//import { faCaretDown } from '@fortawesome/pro-solid-svg-icons'
-//import { DatePickerProps } from '@mui/x-date-pickers'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretDown } from '@fortawesome/pro-solid-svg-icons'
 import { MuiPickersAdapter } from '@mui/x-date-pickers/internals'
 
 export interface SelectDateProps {
@@ -33,12 +31,6 @@ export interface SelectDateProps {
 
     /** Formats the day of week displayed in the calendar header. */
     dayOfWeekFormatter?: (say: string) => string
-
-    /**
-     * Callback function to run when the component is clicked on.  
-     * It can be used to control the picker open/closed state.
-     */
-    onClick?: React.MouseEventHandler<HTMLDivElement> | undefined
 
     /** Default calendar month displayed when value={null}. */
     defaultCalendarMonth?: any
@@ -131,7 +123,7 @@ export interface SelectDateProps {
 
 }
 
-export const SelectDate = ({onChange, placeholder, closeOnSelect, value, open, dayOfWeekFormatter, onClick, defaultCalendarMonth, disabled=false, disablePast=true, disableFuture=false, disableHighlightToday=false, getOpenDialogAriaText, inputFormat, inputRef, maxDate, minDate, onAccept, onClose, onMonthChange, onOpen, onViewChange, onYearChange, openTo, orientation, readOnly, reduceAnimations, renderDay, renderLoading, shouldDisableDate, shouldDisableMonth, shouldDisableYear, views }: SelectDateProps): JSX.Element => {
+export const SelectDate = ({onChange, placeholder, closeOnSelect, value, open, dayOfWeekFormatter, defaultCalendarMonth, disabled=false, disablePast=true, disableFuture=false, disableHighlightToday=false, getOpenDialogAriaText, inputFormat, inputRef, maxDate, minDate, onAccept, onClose, onMonthChange, onOpen, onViewChange, onYearChange, openTo, orientation, readOnly, reduceAnimations, renderDay, renderLoading, shouldDisableDate, shouldDisableMonth, shouldDisableYear, views }: SelectDateProps): JSX.Element => {
 
     //const [value, setValue] = useState<any>()
     //const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -148,7 +140,7 @@ export const SelectDate = ({onChange, placeholder, closeOnSelect, value, open, d
         paddingLeft: '12px',
         paddingRight: '12px',
         height: '40px',
-        cursor: 'pointer',
+        //cursor: 'pointer',
         '&:hover' : {
             backgroundColor: colors.blue[5],
             borderColor: colors.gray[20],
@@ -169,7 +161,7 @@ export const SelectDate = ({onChange, placeholder, closeOnSelect, value, open, d
 
     const MyInput = styled('input')({
         backgroundColor: 'transparent',
-        cursor: 'pointer',
+        //cursor: 'pointer',
         border: 'none',
         outline: 'none',
         '&:focus': {
@@ -212,16 +204,13 @@ export const SelectDate = ({onChange, placeholder, closeOnSelect, value, open, d
                 shouldDisableMonth={shouldDisableMonth}
                 shouldDisableYear={shouldDisableYear}
                 views={views}
-                //renderInput={(params) => <TextField {...params} />}
-                
+                components={{ OpenPickerIcon: () => <FontAwesomeIcon size={'xs'} icon={faCaretDown}/> }} // Goddammit MaterialUI, document THIS PROP!!!
                 renderInput={({ inputRef, inputProps, InputProps }) => (
                     <MyBox
                         sx={{
                             display: 'flex',
                             alignItems: 'center',
                         }}
-                        //onClick={() => setIsOpen(prevState => !prevState)}
-                        //onClick={onClick}
                     >
                         <MyInput
                             ref={inputRef}
