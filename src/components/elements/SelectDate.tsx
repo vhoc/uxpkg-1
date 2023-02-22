@@ -2,9 +2,10 @@ import React from 'react'
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment'
 import { CalendarPickerView, LocalizationProvider, PickersDayProps } from '@mui/x-date-pickers'
 import { DatePicker } from '@mui/x-date-pickers'
-import { Box } from '@mui/material'
-import { styled } from '@mui/material/styles';
-import { colors } from '../../theme'
+//import { Box, TextField } from '@mui/material'
+import { TextField } from '@mui/material'
+//import { styled } from '@mui/material/styles';
+//import { colors } from '../../theme'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown } from '@fortawesome/pro-solid-svg-icons'
 import { MuiPickersAdapter } from '@mui/x-date-pickers/internals'
@@ -127,7 +128,7 @@ export const SelectDate = ({onChange, placeholder, closeOnSelect, value, open, d
 
     //const [value, setValue] = useState<any>()
     //const [isOpen, setIsOpen] = useState<boolean>(false)
-
+/*
     const MyBox = styled(Box)({
         backgroundColor: colors.white,
         fontFamily: 'IBM Plex Sans',
@@ -168,7 +169,7 @@ export const SelectDate = ({onChange, placeholder, closeOnSelect, value, open, d
             border: 'none',
             outline: 'none',
         },
-    })
+    })*/
 
     return (
         <LocalizationProvider dateAdapter={AdapterMoment}>
@@ -205,6 +206,8 @@ export const SelectDate = ({onChange, placeholder, closeOnSelect, value, open, d
                 shouldDisableYear={shouldDisableYear}
                 views={views}
                 components={{ OpenPickerIcon: () => <FontAwesomeIcon size={'xs'} icon={faCaretDown}/> }} // Goddammit MaterialUI, document THIS PROP!!!
+                renderInput={(params) => <TextField {...params} />}
+                /*
                 renderInput={({ inputRef, inputProps, InputProps }) => (
                     <MyBox
                         sx={{
@@ -219,7 +222,7 @@ export const SelectDate = ({onChange, placeholder, closeOnSelect, value, open, d
                         />
                         { InputProps?.endAdornment }
                     </MyBox>
-                )}
+                )}*/
             />
         </LocalizationProvider>
     )

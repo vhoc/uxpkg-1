@@ -8,7 +8,7 @@ exports["default"] = {
 };
 exports.Default = {
     args: {
-        onChange: function () { return alert("Date changed!"); },
+        onChange: function () { return console.log("Date changed"); },
         //onClick: () => alert(`Component clicked`),
         value: function () { return '2014-08-18T21:11:54'; },
         inputFormat: "MM/DD/YYYY",
@@ -17,7 +17,7 @@ exports.Default = {
 };
 exports.Open = {
     args: {
-        onChange: function () { return alert("Date changed!"); },
+        onChange: function () { return console.log("Date changed"); },
         //onClick: () => alert(`Component clicked`),
         value: function () { return '2014-08-18T21:11:54'; },
         inputFormat: "MM/DD/YYYY",
