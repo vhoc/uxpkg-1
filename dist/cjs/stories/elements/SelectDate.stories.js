@@ -6,11 +6,12 @@ exports["default"] = {
     title: 'elements/Inputs/SelectDate',
     component: SelectDate_1.SelectDate
 };
+var date = new Date();
 exports.Default = {
     args: {
         onChange: function () { return console.log("Date changed"); },
         //onClick: () => alert(`Component clicked`),
-        value: function () { return '2014-08-18T21:11:54'; },
+        value: "02/22/2024",
         inputFormat: "MM/DD/YYYY",
         placeholder: 'Select Date',
         error: false
@@ -18,9 +19,9 @@ exports.Default = {
 };
 exports.Open = {
     args: {
-        onChange: function () { return console.log("Date changed"); },
+        onChange: function () { return date; },
         //onClick: () => alert(`Component clicked`),
-        value: function () { return '2014-08-18T21:11:54'; },
+        value: "02/22/2024",
         inputFormat: "MM/DD/YYYY",
         placeholder: 'Select Date'
     }

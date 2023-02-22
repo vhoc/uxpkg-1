@@ -128,8 +128,8 @@ export const SelectDate = ({onChange, placeholder, closeOnSelect, value, open, d
 
     //const [value, setValue] = useState<any>()
     //const [isOpen, setIsOpen] = useState<boolean>(false)
-    /*
-    const MyBox = styled(Box)({
+    
+    const MyDatePicker = styled(DatePicker)({
         backgroundColor: colors.white,
         fontFamily: 'IBM Plex Sans',
         fontSize: '14px',
@@ -138,9 +138,7 @@ export const SelectDate = ({onChange, placeholder, closeOnSelect, value, open, d
         borderColor: colors.gray[20],
         borderRadius: '4px',
         width: 'fit-content',
-        paddingLeft: '12px',
-        paddingRight: '12px',
-        height: '40px',
+        //height: '40px',
         //cursor: 'pointer',
         '&:hover' : {
             backgroundColor: colors.blue[5],
@@ -152,13 +150,13 @@ export const SelectDate = ({onChange, placeholder, closeOnSelect, value, open, d
             borderColor: colors.gray[20],
             color: colors.gray[30],
         },
-        '&.Mui-focused fieldset' : {
+        '&.MuiOutlinedInput-root fieldset' : {
             borderColor: colors.blue[40] + ' !important',
             borderWidth: '1px !important',
             //border: 'inherited',
             boxShadow: 'none',
         },
-    })*/
+    })
 
     const MyInput = styled(TextField)({
         backgroundColor: colors.white,
@@ -172,16 +170,25 @@ export const SelectDate = ({onChange, placeholder, closeOnSelect, value, open, d
         borderColor: colors.gray[20],
         borderRadius: '4px',
         width: 'fit-content',
-        height: '40px !important',
         '&:focus': {
             border: 'none',
             outline: 'none !important',
+        },
+        '&:hover': {
+            border: 'none',
+            outline: 'none !important',
+        },
+        "& .MuiOutlinedInput-input": {
+            fontFamily: 'IBM Plex Sans',
+            color: colors.gray[90],
+            fontSize: '14px',
+            outline: 'none',
         },
     })
 
     return (
         <LocalizationProvider dateAdapter={AdapterMoment}>
-            <DatePicker
+            <MyDatePicker
                 value={value}
                 closeOnSelect={closeOnSelect}
                 onChange={onChange}
@@ -214,48 +221,15 @@ export const SelectDate = ({onChange, placeholder, closeOnSelect, value, open, d
                 shouldDisableYear={shouldDisableYear}
                 views={views}
                 components={{ OpenPickerIcon: () => <FontAwesomeIcon size={'xs'} icon={faCaretDown}/> }} // Goddammit MaterialUI, document THIS PROP!!!
-                /*
-                renderInput={(params) => {
-                    return (
-                        <MyInput
-                            {...params}
-                            sx={{
-                                height: '40px',
-                            }}
-                        />
-                    )
-                }}*/
                 renderInput={(params) => {
                     return (
                         <MyInput
                             {...params}
                             size={'small'}
-                            style={{
-                                fontFamily: 'IBM Plex Sans',
-                            }}
-                            sx={{
-                                fontFamily: 'IBM Plex Sans',
-                                height: '40px',
-                            }}
                         />
                     )
                 }}
-                /*
-                renderInput={({ inputRef, inputProps, InputProps }) => (
-                    <MyBox
-                        sx={{
-                            display: 'flex',
-                            alignItems: 'center',
-                        }}
-                    >
-                        <MyInput
-                            ref={inputRef}
-                            {...inputProps}
-                            placeholder={placeholder}
-                        />
-                        { InputProps?.endAdornment }
-                    </MyBox>
-                )}*/
+                
             />
         </LocalizationProvider>
     )

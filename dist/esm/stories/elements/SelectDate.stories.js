@@ -3,11 +3,12 @@ export default {
     title: 'elements/Inputs/SelectDate',
     component: SelectDate
 };
+var date = new Date();
 export var Default = {
     args: {
         onChange: function () { return console.log("Date changed"); },
         //onClick: () => alert(`Component clicked`),
-        value: function () { return '2014-08-18T21:11:54'; },
+        value: "02/22/2024",
         inputFormat: "MM/DD/YYYY",
         placeholder: 'Select Date',
         error: false
@@ -15,9 +16,9 @@ export var Default = {
 };
 export var Open = {
     args: {
-        onChange: function () { return console.log("Date changed"); },
+        onChange: function () { return date; },
         //onClick: () => alert(`Component clicked`),
-        value: function () { return '2014-08-18T21:11:54'; },
+        value: "02/22/2024",
         inputFormat: "MM/DD/YYYY",
         placeholder: 'Select Date'
     }
