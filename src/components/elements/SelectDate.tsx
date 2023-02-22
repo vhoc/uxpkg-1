@@ -170,6 +170,8 @@ export const SelectDate = ({onChange, placeholder, closeOnSelect, value, open, d
     const MyInput = styled('input')({
         backgroundColor: 'transparent',
         cursor: 'pointer',
+        border: 'none',
+        outline: 'none',
         '&:focus': {
             border: 'none',
             outline: 'none',

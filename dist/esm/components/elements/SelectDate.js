@@ -42,6 +42,8 @@ export var SelectDate = function (_a) {
     var MyInput = styled('input')({
         backgroundColor: 'transparent',
         cursor: 'pointer',
+        border: 'none',
+        outline: 'none',
         '&:focus': {
             border: 'none',
             outline: 'none'
