@@ -6,8 +6,8 @@ import { DatePicker } from '@mui/x-date-pickers'
 import { Box } from '@mui/material'
 import { styled } from '@mui/material/styles';
 import { colors } from '../../theme'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretDown } from '@fortawesome/pro-solid-svg-icons'
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+//import { faCaretDown } from '@fortawesome/pro-solid-svg-icons'
 //import { DatePickerProps } from '@mui/x-date-pickers'
 import { MuiPickersAdapter } from '@mui/x-date-pickers/internals'
 
@@ -212,7 +212,7 @@ export const SelectDate = ({onChange, placeholder, closeOnSelect, value, open, d
                 views={views}
                 //renderInput={(params) => <TextField {...params} />}
                 
-                renderInput={({ inputRef, inputProps }) => (
+                renderInput={({ inputRef, inputProps, InputProps }) => (
                     <MyBox
                         sx={{
                             display: 'flex',
@@ -226,7 +226,7 @@ export const SelectDate = ({onChange, placeholder, closeOnSelect, value, open, d
                             {...inputProps}
                             placeholder={placeholder}
                         />
-                        <FontAwesomeIcon icon={faCaretDown} color={colors.gray[70]} />
+                        { InputProps?.endAdornment }
                     </MyBox>
                 )}
             />

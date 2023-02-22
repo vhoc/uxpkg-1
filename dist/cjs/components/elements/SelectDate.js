@@ -10,8 +10,6 @@ var x_date_pickers_2 = require("@mui/x-date-pickers");
 var material_1 = require("@mui/material");
 var styles_1 = require("@mui/material/styles");
 var theme_1 = require("../../theme");
-var react_fontawesome_1 = require("@fortawesome/react-fontawesome");
-var pro_solid_svg_icons_1 = require("@fortawesome/pro-solid-svg-icons");
 var SelectDate = function (_a) {
     //const [value, setValue] = useState<any>()
     //const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -56,13 +54,13 @@ var SelectDate = function (_a) {
         react_1["default"].createElement(x_date_pickers_2.DatePicker, { value: value, closeOnSelect: closeOnSelect, onChange: onChange, open: open, dayOfWeekFormatter: dayOfWeekFormatter, defaultCalendarMonth: defaultCalendarMonth, disabled: disabled, disableFuture: disableFuture, disablePast: disablePast, disableHighlightToday: disableHighlightToday, getOpenDialogAriaText: getOpenDialogAriaText, inputFormat: inputFormat, inputRef: inputRef, maxDate: maxDate, minDate: minDate, onAccept: onAccept, onClose: onClose, onMonthChange: onMonthChange, onOpen: onOpen, onViewChange: onViewChange, onYearChange: onYearChange, openTo: openTo, orientation: orientation, readOnly: readOnly, reduceAnimations: reduceAnimations, renderDay: renderDay, renderLoading: renderLoading, shouldDisableDate: shouldDisableDate, shouldDisableMonth: shouldDisableMonth, shouldDisableYear: shouldDisableYear, views: views, 
             //renderInput={(params) => <TextField {...params} />}
             renderInput: function (_a) {
-                var inputRef = _a.inputRef, inputProps = _a.inputProps;
+                var inputRef = _a.inputRef, inputProps = _a.inputProps, InputProps = _a.InputProps;
                 return (react_1["default"].createElement(MyBox, { sx: {
                         display: 'flex',
                         alignItems: 'center'
                     } },
-                    react_1["default"].createElement(MyInput, tslib_1.__assign({ ref: inputRef }, inputProps, { placeholder: placeholder })),
-                    react_1["default"].createElement(react_fontawesome_1.FontAwesomeIcon, { icon: pro_solid_svg_icons_1.faCaretDown, color: theme_1.colors.gray[70] })));
+                    react_1["default"].createElement(MyInput, tslib_1.__assign({ ref: inputRef }, inputProps, { placeholder: placeholder })), InputProps === null || InputProps === void 0 ? void 0 :
+                    InputProps.endAdornment));
             } })));
 };
 exports.SelectDate = SelectDate;

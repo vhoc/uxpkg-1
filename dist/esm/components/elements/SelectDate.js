@@ -7,8 +7,6 @@ import { DatePicker } from '@mui/x-date-pickers';
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { colors } from '../../theme';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown } from '@fortawesome/pro-solid-svg-icons';
 export var SelectDate = function (_a) {
     //const [value, setValue] = useState<any>()
     //const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -53,12 +51,12 @@ export var SelectDate = function (_a) {
         React.createElement(DatePicker, { value: value, closeOnSelect: closeOnSelect, onChange: onChange, open: open, dayOfWeekFormatter: dayOfWeekFormatter, defaultCalendarMonth: defaultCalendarMonth, disabled: disabled, disableFuture: disableFuture, disablePast: disablePast, disableHighlightToday: disableHighlightToday, getOpenDialogAriaText: getOpenDialogAriaText, inputFormat: inputFormat, inputRef: inputRef, maxDate: maxDate, minDate: minDate, onAccept: onAccept, onClose: onClose, onMonthChange: onMonthChange, onOpen: onOpen, onViewChange: onViewChange, onYearChange: onYearChange, openTo: openTo, orientation: orientation, readOnly: readOnly, reduceAnimations: reduceAnimations, renderDay: renderDay, renderLoading: renderLoading, shouldDisableDate: shouldDisableDate, shouldDisableMonth: shouldDisableMonth, shouldDisableYear: shouldDisableYear, views: views, 
             //renderInput={(params) => <TextField {...params} />}
             renderInput: function (_a) {
-                var inputRef = _a.inputRef, inputProps = _a.inputProps;
+                var inputRef = _a.inputRef, inputProps = _a.inputProps, InputProps = _a.InputProps;
                 return (React.createElement(MyBox, { sx: {
                         display: 'flex',
                         alignItems: 'center'
                     } },
-                    React.createElement(MyInput, __assign({ ref: inputRef }, inputProps, { placeholder: placeholder })),
-                    React.createElement(FontAwesomeIcon, { icon: faCaretDown, color: colors.gray[70] })));
+                    React.createElement(MyInput, __assign({ ref: inputRef }, inputProps, { placeholder: placeholder })), InputProps === null || InputProps === void 0 ? void 0 :
+                    InputProps.endAdornment));
             } })));
 };
