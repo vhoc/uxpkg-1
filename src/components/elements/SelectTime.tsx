@@ -1,6 +1,4 @@
 import React from 'react'
-import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment'
-import { LocalizationProvider } from '@mui/x-date-pickers'
 import { TimePicker } from '@mui/x-date-pickers'
 //import { Box, TextField } from '@mui/material'
 import { TextField } from '@mui/material'
@@ -134,7 +132,6 @@ export const SelectTime = ({onChange, closeOnSelect, value, open, openTo = 'hour
     })
 
     return (
-        <LocalizationProvider dateAdapter={AdapterMoment}>
             <MyTimePicker
                 value={value}
                 closeOnSelect={closeOnSelect}
@@ -163,7 +160,6 @@ export const SelectTime = ({onChange, closeOnSelect, value, open, openTo = 'hour
                 }}
                 
             />
-        </LocalizationProvider>
     )
 
 }

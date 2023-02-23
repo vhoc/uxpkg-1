@@ -1,7 +1,5 @@
 import { __assign } from "tslib";
 import React from 'react';
-import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
-import { LocalizationProvider } from '@mui/x-date-pickers';
 import { TimePicker } from '@mui/x-date-pickers';
 //import { Box, TextField } from '@mui/material'
 import { TextField } from '@mui/material';
@@ -66,8 +64,7 @@ export var SelectTime = function (_a) {
             outline: 'none'
         }
     });
-    return (React.createElement(LocalizationProvider, { dateAdapter: AdapterMoment },
-        React.createElement(MyTimePicker, { value: value, closeOnSelect: closeOnSelect, onChange: onChange, open: open, disabled: disabled, getOpenDialogAriaText: getOpenDialogAriaText, inputFormat: inputFormat, inputRef: inputRef, onAccept: onAccept, onClose: onClose, openTo: openTo, onOpen: onOpen, orientation: orientation, readOnly: readOnly, components: { OpenPickerIcon: function () { return React.createElement(FontAwesomeIcon, { size: 'xs', icon: faCaretDown }); } }, ampm: ampm, views: views, renderInput: function (params) {
-                return (React.createElement(MyInput, __assign({}, params, { size: 'small' })));
-            } })));
+    return (React.createElement(MyTimePicker, { value: value, closeOnSelect: closeOnSelect, onChange: onChange, open: open, disabled: disabled, getOpenDialogAriaText: getOpenDialogAriaText, inputFormat: inputFormat, inputRef: inputRef, onAccept: onAccept, onClose: onClose, openTo: openTo, onOpen: onOpen, orientation: orientation, readOnly: readOnly, components: { OpenPickerIcon: function () { return React.createElement(FontAwesomeIcon, { size: 'xs', icon: faCaretDown }); } }, ampm: ampm, views: views, renderInput: function (params) {
+            return (React.createElement(MyInput, __assign({}, params, { size: 'small' })));
+        } }));
 };
