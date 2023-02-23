@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from "react";
+import React, { CSSProperties, HTMLAttributes } from "react";
 import { colors } from "../../theme";
 import { AppHeaderUserInfo } from "./AppHeaderUserInfo";
 import { ImageDropDownButton } from "./ImageDropDownButton";
@@ -8,14 +8,21 @@ import { IconButton } from "./IconButton";
 
 export interface AppHeaderProps extends HTMLAttributes<HTMLDivElement>{
     variant?: 'default'
+    /** Image URL for the logo */
     imgUrl?: string
+    /** Styles for the image */
+    imgStyle?: CSSProperties | undefined
+    /** Username to be shown */
     userName?: string
+    /** User's role */
     userRole?: string
+    /** User menu items collection */
     dropDownMenuItems?: IDropDownItem[]
+    /** Function to be assigned to the notification icon button. */
     onClickNotificationButton?: React.MouseEventHandler<HTMLButtonElement> | undefined
 }
 
-export const AppHeader = ({variant = 'default', imgUrl, userName, userRole, dropDownMenuItems, onClickNotificationButton, ...props}: AppHeaderProps): JSX.Element => {
+export const AppHeader = ({variant = 'default', imgUrl, imgStyle, userName, userRole, dropDownMenuItems, onClickNotificationButton, ...props}: AppHeaderProps): JSX.Element => {
 
     return (
         <div
@@ -35,7 +42,7 @@ export const AppHeader = ({variant = 'default', imgUrl, userName, userRole, drop
 
             {/** Left section */}
             <div>
-                <img src={imgUrl}/>
+                <img src={imgUrl} style={imgStyle}/>
             </div>
 
             {/** Right section */}
