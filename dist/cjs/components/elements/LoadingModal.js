@@ -15,6 +15,8 @@ var LoadingModal = function (_a) {
             backgroundColor: theme_1.colors.white,
             boxShadow: '0px 2px 4px RGBA(34, 41, 69, 0.37)',
             borderRadius: '8px',
+            paddingTop: '32px',
+            paddingBottom: '32px',
             paddingLeft: '32px',
             paddingRight: '32px',
             display: 'flex',
