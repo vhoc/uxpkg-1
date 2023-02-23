@@ -8,10 +8,6 @@ exports["default"] = {
 };
 exports.Default = {
     args: {
-        onChange: function () { return console.log("Date changed"); },
-        value: "02/22/2024",
-        inputFormat: "MM/DD/YYYY",
-        placeholder: 'Select Date',
-        error: false
+        value: '2024-02-23'
     }
 };
