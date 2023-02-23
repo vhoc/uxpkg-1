@@ -14,7 +14,7 @@ var SelectTime = function (_a) {
         fontSize: '14px',
         color: theme_1.colors.gray[90],
         borderWidth: '1px',
-        borderColor: focus ? theme_1.colors.blue[50] : theme_1.colors.gray[20],
+        borderColor: focus ? theme_1.colors.blue[20] : theme_1.colors.gray[20],
         borderRadius: '4px',
         borderStyle: 'solid',
         width: 'fit-content',
@@ -23,8 +23,8 @@ var SelectTime = function (_a) {
         paddingRight: '6px',
         position: 'relative',
         '&:focus-visible': {
-            borderColor: theme_1.colors.blue[50] + ' !important',
-            outline: "1px solid ".concat(theme_1.colors.blue[50])
+            borderColor: theme_1.colors.blue[20] + ' !important',
+            outline: "1px solid ".concat(theme_1.colors.blue[20])
         },
         '&::-webkit-calendar-picker-indicator': {
             cursor: 'pointer',
