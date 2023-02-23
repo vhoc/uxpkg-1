@@ -5,9 +5,9 @@ export interface SelectTimeProps extends HTMLAttributes<HTMLInputElement> {
     /** Name for the component */
     name?: string | undefined;
     /** Default initial value */
-    defaultValue: string;
+    defaultValue?: string | undefined;
     /** Value of the component, which is the Date */
-    value: string;
+    value?: string | undefined;
     /** Minimum date */
     min?: string;
     /** Maximum date */
