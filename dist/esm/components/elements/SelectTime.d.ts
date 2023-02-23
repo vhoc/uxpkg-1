@@ -51,7 +51,7 @@ export interface SelectTimeProps {
     /** Callback firing on year change @DateIOType. */
     onYearChange?: ((year: any) => void) | undefined;
     /** First view to show. Must be a valid option from views list. Refer to the MUI-X doocumentation. */
-    openTo?: 'year' | 'month' | 'day';
+    openTo?: 'hours' | 'minutes' | 'seconds';
     /** Force rendering in particular orientation. */
     orientation?: "portrait" | "landscape" | undefined;
     /** Make picker read only. */
@@ -80,7 +80,7 @@ export interface SelectTimeProps {
      * @default
      * ['year', 'day']
      */
-    views?: readonly CalendarPickerView[] | undefined;
+    views?: ('hours' | 'minutes' | 'seconds')[];
     ampm?: boolean | undefined;
 }
-export declare const SelectTime: ({ onChange, closeOnSelect, value, open, disabled, getOpenDialogAriaText, inputFormat, inputRef, onAccept, onClose, onOpen, orientation, readOnly, ampm }: SelectTimeProps) => JSX.Element;
+export declare const SelectTime: ({ onChange, closeOnSelect, value, open, openTo, disabled, getOpenDialogAriaText, inputFormat, inputRef, onAccept, onClose, onOpen, orientation, readOnly, ampm, views }: SelectTimeProps) => JSX.Element;

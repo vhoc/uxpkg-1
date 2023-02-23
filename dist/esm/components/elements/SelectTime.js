@@ -12,7 +12,7 @@ import { faCaretDown } from '@fortawesome/pro-solid-svg-icons';
 export var SelectTime = function (_a) {
     //const [value, setValue] = useState<any>()
     //const [isOpen, setIsOpen] = useState<boolean>(false)
-    var onChange = _a.onChange, closeOnSelect = _a.closeOnSelect, value = _a.value, open = _a.open, _b = _a.disabled, disabled = _b === void 0 ? false : _b, getOpenDialogAriaText = _a.getOpenDialogAriaText, inputFormat = _a.inputFormat, inputRef = _a.inputRef, onAccept = _a.onAccept, onClose = _a.onClose, onOpen = _a.onOpen, orientation = _a.orientation, readOnly = _a.readOnly, _c = _a.ampm, ampm = _c === void 0 ? true : _c;
+    var onChange = _a.onChange, closeOnSelect = _a.closeOnSelect, value = _a.value, open = _a.open, _b = _a.openTo, openTo = _b === void 0 ? 'hours' : _b, _c = _a.disabled, disabled = _c === void 0 ? false : _c, getOpenDialogAriaText = _a.getOpenDialogAriaText, inputFormat = _a.inputFormat, inputRef = _a.inputRef, onAccept = _a.onAccept, onClose = _a.onClose, onOpen = _a.onOpen, orientation = _a.orientation, readOnly = _a.readOnly, _d = _a.ampm, ampm = _d === void 0 ? true : _d, _e = _a.views, views = _e === void 0 ? ['hours', 'minutes'] : _e;
     var MyTimePicker = styled(TimePicker)({
         backgroundColor: colors.white,
         fontFamily: 'IBM Plex Sans',
@@ -67,7 +67,7 @@ export var SelectTime = function (_a) {
         }
     });
     return (React.createElement(LocalizationProvider, { dateAdapter: AdapterMoment },
-        React.createElement(MyTimePicker, { value: value, closeOnSelect: closeOnSelect, onChange: onChange, open: open, disabled: disabled, getOpenDialogAriaText: getOpenDialogAriaText, inputFormat: inputFormat, inputRef: inputRef, onAccept: onAccept, onClose: onClose, onOpen: onOpen, orientation: orientation, readOnly: readOnly, components: { OpenPickerIcon: function () { return React.createElement(FontAwesomeIcon, { size: 'xs', icon: faCaretDown }); } }, ampm: ampm, renderInput: function (params) {
+        React.createElement(MyTimePicker, { value: value, closeOnSelect: closeOnSelect, onChange: onChange, open: open, disabled: disabled, getOpenDialogAriaText: getOpenDialogAriaText, inputFormat: inputFormat, inputRef: inputRef, onAccept: onAccept, onClose: onClose, openTo: openTo, onOpen: onOpen, orientation: orientation, readOnly: readOnly, components: { OpenPickerIcon: function () { return React.createElement(FontAwesomeIcon, { size: 'xs', icon: faCaretDown }); } }, ampm: ampm, views: views, renderInput: function (params) {
                 return (React.createElement(MyInput, __assign({}, params, { size: 'small' })));
             } })));
 };

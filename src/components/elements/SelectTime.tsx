@@ -82,7 +82,7 @@ export interface SelectTimeProps {
     onYearChange?: ((year: any) => void) | undefined
 
     /** First view to show. Must be a valid option from views list. Refer to the MUI-X doocumentation. */
-    openTo?: 'year' | 'month' | 'day'
+    openTo?: 'hours' | 'minutes' | 'seconds'
 
     /** Force rendering in particular orientation. */
     orientation?: "portrait" | "landscape" | undefined
@@ -120,13 +120,13 @@ export interface SelectTimeProps {
      * @default  
      * ['year', 'day']
      */
-    views?: readonly CalendarPickerView[] | undefined
+    views?: ('hours' | 'minutes' | 'seconds')[]
 
     ampm?: boolean | undefined
 
 }
 
-export const SelectTime = ({onChange, closeOnSelect, value, open, disabled=false, getOpenDialogAriaText, inputFormat, inputRef, onAccept, onClose, onOpen, orientation, readOnly, ampm = true }: SelectTimeProps): JSX.Element => {
+export const SelectTime = ({onChange, closeOnSelect, value, open, openTo = 'hours', disabled=false, getOpenDialogAriaText, inputFormat, inputRef, onAccept, onClose, onOpen, orientation, readOnly, ampm = true, views = ['hours', 'minutes'] }: SelectTimeProps): JSX.Element => {
 
     //const [value, setValue] = useState<any>()
     //const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -201,11 +201,13 @@ export const SelectTime = ({onChange, closeOnSelect, value, open, disabled=false
                 inputRef={inputRef}
                 onAccept={onAccept}
                 onClose={onClose}
+                openTo={openTo}
                 onOpen={onOpen}
                 orientation={orientation}
                 readOnly={readOnly}
                 components={{ OpenPickerIcon: () => <FontAwesomeIcon size={'xs'} icon={faCaretDown}/> }} // Goddammit MaterialUI, document THIS PROP!!!
                 ampm={ampm}
+                views={views}
                 renderInput={(params) => {
                     return (
                         <MyInput
