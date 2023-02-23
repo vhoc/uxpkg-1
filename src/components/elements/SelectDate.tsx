@@ -13,9 +13,11 @@ export interface SelectDateProps extends HTMLAttributes<HTMLInputElement> {
     min?: any
     /** Maximum date */
     max?: any
+    /** Function to run when a date is selected */
+    onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined
 }
 
-export const SelectDate = ({value}: SelectDateProps): JSX.Element => {
+export const SelectDate = ({value, onChange}: SelectDateProps): JSX.Element => {
 
     const [focus, setFocus] = useState<boolean>(false)
 
@@ -27,6 +29,7 @@ export const SelectDate = ({value}: SelectDateProps): JSX.Element => {
         borderWidth: '1px',
         borderColor: focus ? colors.blue[50] : colors.gray[20],
         borderRadius: '4px',
+        borderStyle: 'solid',
         width: 'fit-content',
         height: '40px',
         paddingLeft: '12px',
@@ -61,6 +64,7 @@ export const SelectDate = ({value}: SelectDateProps): JSX.Element => {
         <MuInput
             type={'date'}
             value={value}
+            onChange={onChange}
             onFocus={() => setFocus(true)}
             onBlur={() => setFocus(false)}
         />

@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import React, { HTMLAttributes } from 'react';
 export interface SelectDateProps extends HTMLAttributes<HTMLInputElement> {
     /** ID for the component */
     id?: string | undefined;
@@ -10,5 +10,7 @@ export interface SelectDateProps extends HTMLAttributes<HTMLInputElement> {
     min?: any;
     /** Maximum date */
     max?: any;
+    /** Function to run when a date is selected */
+    onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;
 }
-export declare const SelectDate: ({ value }: SelectDateProps) => JSX.Element;
+export declare const SelectDate: ({ value, onChange }: SelectDateProps) => JSX.Element;
