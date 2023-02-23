@@ -4,13 +4,15 @@ export interface SelectDateProps extends HTMLAttributes<HTMLInputElement> {
     id?: string | undefined;
     /** Name for the component */
     name?: string | undefined;
+    /** Default initial value */
+    defaultValue: string;
     /** Value of the component, which is the Date */
-    value: any;
+    value: string;
     /** Minimum date */
-    min?: any;
+    min?: string;
     /** Maximum date */
-    max?: any;
+    max?: string;
     /** Function to run when a date is selected */
     onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;
 }
-export declare const SelectDate: ({ value, onChange }: SelectDateProps) => JSX.Element;
+export declare const SelectDate: ({ value, onChange, defaultValue, }: SelectDateProps) => JSX.Element;

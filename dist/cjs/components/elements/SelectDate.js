@@ -6,7 +6,7 @@ var react_1 = tslib_1.__importStar(require("react"));
 var theme_1 = require("../../theme");
 var styles_1 = require("@mui/material/styles");
 var SelectDate = function (_a) {
-    var value = _a.value, onChange = _a.onChange;
+    var value = _a.value, onChange = _a.onChange, defaultValue = _a.defaultValue;
     var _b = (0, react_1.useState)(false), focus = _b[0], setFocus = _b[1];
     var MuInput = (0, styles_1.styled)('input')({
         backgroundColor: theme_1.colors.white,
@@ -44,6 +44,6 @@ var SelectDate = function (_a) {
             color: theme_1.colors.gray[30]
         }
     });
-    return (react_1["default"].createElement(MuInput, { type: 'date', value: value, onChange: onChange, onFocus: function () { return setFocus(true); }, onBlur: function () { return setFocus(false); } }));
+    return (react_1["default"].createElement(MuInput, { type: 'date', defaultValue: defaultValue, value: value, onChange: onChange, onFocus: function () { return setFocus(true); }, onBlur: function () { return setFocus(false); } }));
 };
 exports.SelectDate = SelectDate;

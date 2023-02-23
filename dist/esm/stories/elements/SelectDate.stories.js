@@ -5,6 +5,7 @@ export default {
 };
 export var Default = {
     args: {
+        defaultValue: '2024-02-23',
         value: '2024-02-23'
     }
 };
