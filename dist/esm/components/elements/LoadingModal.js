@@ -9,11 +9,11 @@ export var LoadingModal = function (_a) {
             minWidth: '344px',
             width: 'fit-content',
             maxWidth: '700px',
-            minHeight: '117px',
             backgroundColor: colors.white,
             boxShadow: '0px 2px 4px RGBA(34, 41, 69, 0.37)',
             borderRadius: '8px',
-            padding: '32px',
+            paddingLeft: '32px',
+            paddingRight: '32px',
             display: 'flex',
             alignItems: 'center',
             cursor: 'wait'
