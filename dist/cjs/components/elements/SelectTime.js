@@ -15,7 +15,7 @@ var pro_solid_svg_icons_1 = require("@fortawesome/pro-solid-svg-icons");
 var SelectTime = function (_a) {
     //const [value, setValue] = useState<any>()
     //const [isOpen, setIsOpen] = useState<boolean>(false)
-    var onChange = _a.onChange, closeOnSelect = _a.closeOnSelect, value = _a.value, open = _a.open, _b = _a.openTo, openTo = _b === void 0 ? 'hours' : _b, _c = _a.disabled, disabled = _c === void 0 ? false : _c, getOpenDialogAriaText = _a.getOpenDialogAriaText, inputFormat = _a.inputFormat, inputRef = _a.inputRef, onAccept = _a.onAccept, onClose = _a.onClose, onOpen = _a.onOpen, orientation = _a.orientation, readOnly = _a.readOnly, _d = _a.ampm, ampm = _d === void 0 ? true : _d, _e = _a.views, views = _e === void 0 ? ['hours', 'minutes'] : _e;
+    var onChange = _a.onChange, closeOnSelect = _a.closeOnSelect, value = _a.value, open = _a.open, openTo = _a.openTo, _b = _a.disabled, disabled = _b === void 0 ? false : _b, getOpenDialogAriaText = _a.getOpenDialogAriaText, inputFormat = _a.inputFormat, inputRef = _a.inputRef, onAccept = _a.onAccept, onClose = _a.onClose, onOpen = _a.onOpen, orientation = _a.orientation, readOnly = _a.readOnly, _c = _a.ampm, ampm = _c === void 0 ? true : _c, _d = _a.views, views = _d === void 0 ? ['hours', 'minutes'] : _d;
     var MyTimePicker = (0, styles_1.styled)(x_date_pickers_2.TimePicker)({
         backgroundColor: theme_1.colors.white,
         fontFamily: 'IBM Plex Sans',
