@@ -30,12 +30,14 @@ export var LoadingModal = function (_a) {
                     whiteSpace: 'nowrap',
                     overflow: 'hidden',
                     textOverflow: 'ellipsis',
-                    width: '100%'
+                    width: '100%',
+                    textAlign: 'left'
                 } }, message),
             React.createElement(Typography, { variant: 'body-regular', style: {
                     whiteSpace: 'normal',
                     overflow: 'hidden',
                     //textOverflow: 'ellipsis',
-                    width: '100%'
+                    width: '100%',
+                    textAlign: 'left'
                 } }, caption))));
 };

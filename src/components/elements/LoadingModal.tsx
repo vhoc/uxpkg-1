@@ -44,6 +44,7 @@ export const LoadingModal = ({ message, caption, ...props }: LoadingModalProps):
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
                         width: '100%',
+                        textAlign: 'left',
                     }}
                 >
                     {message}
@@ -55,6 +56,7 @@ export const LoadingModal = ({ message, caption, ...props }: LoadingModalProps):
                         overflow: 'hidden',
                         //textOverflow: 'ellipsis',
                         width: '100%',
+                        textAlign: 'left',
                     }}
                 >
                     {caption}

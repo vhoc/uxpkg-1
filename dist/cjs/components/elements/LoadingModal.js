@@ -33,13 +33,15 @@ var LoadingModal = function (_a) {
                     whiteSpace: 'nowrap',
                     overflow: 'hidden',
                     textOverflow: 'ellipsis',
-                    width: '100%'
+                    width: '100%',
+                    textAlign: 'left'
                 } }, message),
             react_1["default"].createElement(Typography_1.Typography, { variant: 'body-regular', style: {
                     whiteSpace: 'normal',
                     overflow: 'hidden',
                     //textOverflow: 'ellipsis',
-                    width: '100%'
+                    width: '100%',
+                    textAlign: 'left'
                 } }, caption))));
 };
 exports.LoadingModal = LoadingModal;
