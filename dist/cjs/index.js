@@ -31,3 +31,4 @@ tslib_1.__exportStar(require("./components/elements/Typography"), exports);
 tslib_1.__exportStar(require("./components/elements/SummaryResourceCard"), exports);
 tslib_1.__exportStar(require("./components/elements/SelectDate"), exports);
 tslib_1.__exportStar(require("./components/elements/SelectTime"), exports);
+tslib_1.__exportStar(require("./components/elements/LoadingModal"), exports);
