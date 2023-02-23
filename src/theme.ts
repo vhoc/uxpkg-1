@@ -1,6 +1,6 @@
 import "@fontsource/ibm-plex-sans"
 import { createTheme } from "@mui/material/styles";
-import { enUS } from '@mui/material/locale';
+//import { enUS } from '@mui/material/locale';
 
 export const mtheme = createTheme(
     {
@@ -19,7 +19,7 @@ export const mtheme = createTheme(
             ].join(','),
         },
     },
-  enUS,
+  
 );
 
 export type TVariant = {

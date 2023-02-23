@@ -1,6 +1,6 @@
 import "@fontsource/ibm-plex-sans";
 import { createTheme } from "@mui/material/styles";
-import { enUS } from '@mui/material/locale';
+//import { enUS } from '@mui/material/locale';
 export var mtheme = createTheme({
     typography: {
         fontFamily: [
@@ -16,7 +16,7 @@ export var mtheme = createTheme({
             '"Segoe UI Symbol"',
         ].join(',')
     }
-}, enUS);
+});
 export var colors = {
     gray: {
         '5': '#f9fbfc',
