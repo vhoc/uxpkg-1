@@ -9,7 +9,7 @@ var ImageDropDownButton_1 = require("./ImageDropDownButton");
 var sharp_solid_svg_icons_1 = require("@fortawesome/sharp-solid-svg-icons");
 var IconButton_1 = require("./IconButton");
 var AppHeader = function (_a) {
-    var _b = _a.variant, variant = _b === void 0 ? 'default' : _b, imgUrl = _a.imgUrl, userName = _a.userName, userRole = _a.userRole, dropDownMenuItems = _a.dropDownMenuItems, onClickNotificationButton = _a.onClickNotificationButton, props = tslib_1.__rest(_a, ["variant", "imgUrl", "userName", "userRole", "dropDownMenuItems", "onClickNotificationButton"]);
+    var _b = _a.variant, variant = _b === void 0 ? 'default' : _b, imgUrl = _a.imgUrl, imgStyle = _a.imgStyle, userName = _a.userName, userRole = _a.userRole, dropDownMenuItems = _a.dropDownMenuItems, onClickNotificationButton = _a.onClickNotificationButton, props = tslib_1.__rest(_a, ["variant", "imgUrl", "imgStyle", "userName", "userRole", "dropDownMenuItems", "onClickNotificationButton"]);
     return (react_1["default"].createElement("div", tslib_1.__assign({ style: {
             width: '100%',
             backgroundColor: theme_1.colors.white,
@@ -22,7 +22,7 @@ var AppHeader = function (_a) {
             alignItems: 'center'
         } }, props),
         react_1["default"].createElement("div", null,
-            react_1["default"].createElement("img", { src: imgUrl })),
+            react_1["default"].createElement("img", { src: imgUrl, style: imgStyle })),
         react_1["default"].createElement("div", { style: {
                 display: 'flex',
                 justifyContent: 'flex-end',
