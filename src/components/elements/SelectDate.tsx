@@ -29,7 +29,7 @@ export const SelectDate = ({value, onChange, defaultValue,}: SelectDateProps): J
         fontSize: '14px',
         color: colors.gray[90],
         borderWidth: '1px',
-        borderColor: focus ? colors.blue[50] : colors.gray[20],
+        borderColor: focus ? colors.blue[20] : colors.gray[20],
         borderRadius: '4px',
         borderStyle: 'solid',
         width: 'fit-content',
@@ -38,8 +38,8 @@ export const SelectDate = ({value, onChange, defaultValue,}: SelectDateProps): J
         paddingRight: '6px',
         position: 'relative',
         '&:focus-visible': {
-            borderColor: colors.blue[50] + ' !important',
-            outline: `1px solid ${colors.blue[50]}`,
+            borderColor: colors.blue[20] + ' !important',
+            outline: `1px solid ${colors.blue[20]}`,
         },
         '&::-webkit-calendar-picker-indicator': {
             cursor: 'pointer',
