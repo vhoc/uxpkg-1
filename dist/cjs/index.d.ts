@@ -27,3 +27,4 @@ export * from './components/elements/AccessRequestModal';
 export * from './components/elements/Typography';
 export * from './components/elements/SummaryResourceCard';
 export * from './components/elements/SelectDate';
+export * from './components/elements/SelectTime';
