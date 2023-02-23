@@ -2,29 +2,39 @@
 exports.__esModule = true;
 exports.SelectTime = void 0;
 var tslib_1 = require("tslib");
-var react_1 = tslib_1.__importDefault(require("react"));
-var x_date_pickers_1 = require("@mui/x-date-pickers");
-//import { Box, TextField } from '@mui/material'
-var material_1 = require("@mui/material");
-var styles_1 = require("@mui/material/styles");
+var react_1 = tslib_1.__importStar(require("react"));
 var theme_1 = require("../../theme");
-var react_fontawesome_1 = require("@fortawesome/react-fontawesome");
-var pro_solid_svg_icons_1 = require("@fortawesome/pro-solid-svg-icons");
+var styles_1 = require("@mui/material/styles");
 var SelectTime = function (_a) {
-    //const [value, setValue] = useState<any>()
-    //const [isOpen, setIsOpen] = useState<boolean>(false)
-    var onChange = _a.onChange, closeOnSelect = _a.closeOnSelect, value = _a.value, open = _a.open, _b = _a.openTo, openTo = _b === void 0 ? 'hours' : _b, _c = _a.disabled, disabled = _c === void 0 ? false : _c, getOpenDialogAriaText = _a.getOpenDialogAriaText, inputFormat = _a.inputFormat, inputRef = _a.inputRef, onAccept = _a.onAccept, onClose = _a.onClose, onOpen = _a.onOpen, orientation = _a.orientation, readOnly = _a.readOnly, _d = _a.ampm, ampm = _d === void 0 ? true : _d, _e = _a.views, views = _e === void 0 ? ['hours', 'minutes'] : _e;
-    var MyTimePicker = (0, styles_1.styled)(x_date_pickers_1.TimePicker)({
+    var value = _a.value, onChange = _a.onChange, defaultValue = _a.defaultValue;
+    var _b = (0, react_1.useState)(false), focus = _b[0], setFocus = _b[1];
+    var MuInput = (0, styles_1.styled)('input')({
         backgroundColor: theme_1.colors.white,
         fontFamily: 'IBM Plex Sans',
         fontSize: '14px',
         color: theme_1.colors.gray[90],
         borderWidth: '1px',
-        borderColor: theme_1.colors.gray[20],
+        borderColor: focus ? theme_1.colors.blue[50] : theme_1.colors.gray[20],
         borderRadius: '4px',
-        width: '116px',
-        //height: '40px',
-        //cursor: 'pointer',
+        borderStyle: 'solid',
+        width: 'fit-content',
+        height: '40px',
+        paddingLeft: '12px',
+        paddingRight: '6px',
+        position: 'relative',
+        '&:focus-visible': {
+            borderColor: theme_1.colors.blue[50] + ' !important',
+            outline: "1px solid ".concat(theme_1.colors.blue[50])
+        },
+        '&::-webkit-calendar-picker-indicator': {
+            cursor: 'pointer',
+            textAlign: 'right',
+            backgroundImage: 'url(\'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>\')',
+            opacity: '1'
+        },
+        '&::-webkit-datetime-edit-fields-wrapper': {
+            borderRadius: '4px'
+        },
         '&:hover': {
             backgroundColor: theme_1.colors.blue[5],
             borderColor: theme_1.colors.gray[20]
@@ -32,43 +42,8 @@ var SelectTime = function (_a) {
         '&:disabled': {
             borderColor: theme_1.colors.gray[20],
             color: theme_1.colors.gray[30]
-        },
-        '&.MuiOutlinedInput-root fieldset': {
-            borderColor: theme_1.colors.blue[40] + ' !important',
-            borderWidth: '1px !important',
-            //border: 'inherited',
-            boxShadow: 'none'
         }
     });
-    var MyInput = (0, styles_1.styled)(material_1.TextField)({
-        backgroundColor: theme_1.colors.white,
-        //cursor: 'pointer',
-        border: 'none',
-        outline: 'none !important',
-        fontFamily: 'IBM Plex Sans !important',
-        fontSize: '14px',
-        color: theme_1.colors.gray[90],
-        borderWidth: '1px',
-        borderColor: theme_1.colors.gray[20],
-        borderRadius: '4px',
-        width: 'fit-content',
-        '&:focus': {
-            border: 'none',
-            outline: 'none !important'
-        },
-        '&:hover': {
-            border: 'none',
-            outline: 'none !important'
-        },
-        "& .MuiOutlinedInput-input": {
-            fontFamily: 'IBM Plex Sans',
-            color: theme_1.colors.gray[90],
-            fontSize: '14px',
-            outline: 'none'
-        }
-    });
-    return (react_1["default"].createElement(MyTimePicker, { value: value, closeOnSelect: closeOnSelect, onChange: onChange, open: open, disabled: disabled, getOpenDialogAriaText: getOpenDialogAriaText, inputFormat: inputFormat, inputRef: inputRef, onAccept: onAccept, onClose: onClose, openTo: openTo, onOpen: onOpen, orientation: orientation, readOnly: readOnly, components: { OpenPickerIcon: function () { return react_1["default"].createElement(react_fontawesome_1.FontAwesomeIcon, { size: 'xs', icon: pro_solid_svg_icons_1.faCaretDown }); } }, ampm: ampm, views: views, renderInput: function (params) {
-            return (react_1["default"].createElement(MyInput, tslib_1.__assign({}, params, { size: 'small' })));
-        } }));
+    return (react_1["default"].createElement(MuInput, { type: 'time', defaultValue: defaultValue, value: value, onChange: onChange, onFocus: function () { return setFocus(true); }, onBlur: function () { return setFocus(false); } }));
 };
 exports.SelectTime = SelectTime;
