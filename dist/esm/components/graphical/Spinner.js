@@ -15,7 +15,7 @@ export var Spinner = function () {
             }, className: 'animationSpin' }),
         React.createElement(ProcyonShield, { style: {
                 position: 'relative',
-                top: '16px',
+                top: '11px',
                 left: '-38px'
             } })));
 };

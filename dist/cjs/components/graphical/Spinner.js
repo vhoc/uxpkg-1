@@ -19,7 +19,7 @@ var Spinner = function () {
             }, className: 'animationSpin' }),
         react_1["default"].createElement(ProcyonShield_1.ProcyonShield, { style: {
                 position: 'relative',
-                top: '16px',
+                top: '11px',
                 left: '-38px'
             } })));
 };

@@ -24,7 +24,7 @@ export const Spinner = () => {
             <ProcyonShield
                 style={{
                     position: 'relative',
-                    top: '16px',
+                    top: '11px',
                     left: '-38px',
                 }}
             />
