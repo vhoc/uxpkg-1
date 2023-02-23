@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { colors } from '../../theme';
 import { styled } from '@mui/material/styles';
 export var SelectDate = function (_a) {
-    var value = _a.value;
+    var value = _a.value, onChange = _a.onChange;
     var _b = useState(false), focus = _b[0], setFocus = _b[1];
     var MuInput = styled('input')({
         backgroundColor: colors.white,
@@ -12,6 +12,7 @@ export var SelectDate = function (_a) {
         borderWidth: '1px',
         borderColor: focus ? colors.blue[50] : colors.gray[20],
         borderRadius: '4px',
+        borderStyle: 'solid',
         width: 'fit-content',
         height: '40px',
         paddingLeft: '12px',
@@ -39,5 +40,5 @@ export var SelectDate = function (_a) {
             color: colors.gray[30]
         }
     });
-    return (React.createElement(MuInput, { type: 'date', value: value, onFocus: function () { return setFocus(true); }, onBlur: function () { return setFocus(false); } }));
+    return (React.createElement(MuInput, { type: 'date', value: value, onChange: onChange, onFocus: function () { return setFocus(true); }, onBlur: function () { return setFocus(false); } }));
 };
