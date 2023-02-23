@@ -1,90 +1,55 @@
-import React from 'react'
-import { TimePicker } from '@mui/x-date-pickers'
-//import { Box, TextField } from '@mui/material'
-import { TextField } from '@mui/material'
-import { styled } from '@mui/material/styles';
+import React, { HTMLAttributes, useState } from 'react'
 import { colors } from '../../theme'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretDown } from '@fortawesome/pro-solid-svg-icons'
-import { MuiPickersAdapter } from '@mui/x-date-pickers/internals'
+import { styled } from '@mui/material/styles';
 
-export interface SelectTimeProps {
-    /**
-     * Callback fired when the value (the selected date) changes @DateIOType.
-     * value: The new parsed value.
-     * keyboardInputValue: The current value of the keyboard input.
-     */
-    onChange: (value: any, keyboardInputValue?: string | undefined) => void,
-
-    /** Placeholder */
-    placeholder?: string | undefined
-
-    /** If true the popup or dialog will immediately close after submitting full time. */
-    closeOnSelect?: boolean
-
-    /** The value of the picker. */
-    value: any
-
-    /** Control the popup or dialog open state. */
-    open?: boolean
-
-    /** If true, the picker and text field are disabled. */
-    disabled?: boolean
-
-    /** Get aria-label text for control that opens picker dialog. Aria-label text must include selected date. @DateIOType */
-    getOpenDialogAriaText?: ((date: any, utils: MuiPickersAdapter<any>) => string) | undefined
-
-    /** Format string. */
-    inputFormat?: string
-
-    /** Pass a ref to the input element. */
-    inputRef?: React.Ref<HTMLInputElement> | undefined
-
-    /** Callback fired when date is accepted @DateIOType. */
-    onAccept?: ((value: any) => void) | undefined
-
-    /** Callback fired when the popup requests to be closed. Use in controlled mode (see open). */
-    onClose?: (() => void) | undefined
-
-    /** Callback fired when the popup requests to be opened. Use in controlled mode (see open). */
-    onOpen?: (() => void) | undefined
-
-    /** First view to show. Must be a valid option from views list. Refer to the MUI-X documentation. */
-    openTo?: 'hours' | 'minutes' | 'seconds'
-
-    /** Force rendering in particular orientation. */
-    orientation?: "portrait" | "landscape" | undefined
-
-    /** Make picker read only. */
-    readOnly?: boolean | undefined
-
-    /**
-     * Array of views to show.  
-     * @default  
-     * ['year', 'day']
-     */
-    views?: ('hours' | 'minutes' | 'seconds')[]
-
-    ampm?: boolean | undefined
-
+export interface SelectTimeProps extends HTMLAttributes<HTMLInputElement> {
+    /** ID for the component */
+    id?: string | undefined
+    /** Name for the component */
+    name?: string | undefined
+    /** Default initial value */
+    defaultValue: string
+    /** Value of the component, which is the Date */
+    value: string
+    /** Minimum date */
+    min?: string
+    /** Maximum date */
+    max?: string
+    /** Function to run when a date is selected */
+    onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined
 }
 
-export const SelectTime = ({onChange, closeOnSelect, value, open, openTo = 'hours', disabled=false, getOpenDialogAriaText, inputFormat, inputRef, onAccept, onClose, onOpen, orientation, readOnly, ampm = true, views = ['hours', 'minutes'] }: SelectTimeProps): JSX.Element => {
+export const SelectTime = ({value, onChange, defaultValue,}: SelectTimeProps): JSX.Element => {
 
-    //const [value, setValue] = useState<any>()
-    //const [isOpen, setIsOpen] = useState<boolean>(false)
-    
-    const MyTimePicker = styled(TimePicker)({
+    const [focus, setFocus] = useState<boolean>(false)
+
+    const MuInput = styled('input')({
         backgroundColor: colors.white,
         fontFamily: 'IBM Plex Sans',
         fontSize: '14px',
         color: colors.gray[90],
         borderWidth: '1px',
-        borderColor: colors.gray[20],
+        borderColor: focus ? colors.blue[50] : colors.gray[20],
         borderRadius: '4px',
-        width: '116px',
-        //height: '40px',
-        //cursor: 'pointer',
+        borderStyle: 'solid',
+        width: 'fit-content',
+        height: '40px',
+        paddingLeft: '12px',
+        paddingRight: '6px',
+        position: 'relative',
+        '&:focus-visible': {
+            borderColor: colors.blue[50] + ' !important',
+            outline: `1px solid ${colors.blue[50]}`,
+        },
+        '&::-webkit-calendar-picker-indicator': {
+            cursor: 'pointer',
+            textAlign: 'right',
+            backgroundImage: 'url(\'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>\')',
+            opacity: '1',
+        },
+        '&::-webkit-datetime-edit-fields-wrapper': {
+            borderRadius: '4px',
+        },
         '&:hover' : {
             backgroundColor: colors.blue[5],
             borderColor: colors.gray[20],
@@ -95,71 +60,17 @@ export const SelectTime = ({onChange, closeOnSelect, value, open, openTo = 'hour
             borderColor: colors.gray[20],
             color: colors.gray[30],
         },
-        '&.MuiOutlinedInput-root fieldset' : {
-            borderColor: colors.blue[40] + ' !important',
-            borderWidth: '1px !important',
-            //border: 'inherited',
-            boxShadow: 'none',
-        },
-    })
-
-    const MyInput = styled(TextField)({
-        backgroundColor: colors.white,
-        //cursor: 'pointer',
-        border: 'none',
-        outline: 'none !important',
-        fontFamily: 'IBM Plex Sans !important',
-        fontSize: '14px',
-        color: colors.gray[90],
-        borderWidth: '1px',
-        borderColor: colors.gray[20],
-        borderRadius: '4px',
-        width: 'fit-content',
-        '&:focus': {
-            border: 'none',
-            outline: 'none !important',
-        },
-        '&:hover': {
-            border: 'none',
-            outline: 'none !important',
-        },
-        "& .MuiOutlinedInput-input": {
-            fontFamily: 'IBM Plex Sans',
-            color: colors.gray[90],
-            fontSize: '14px',
-            outline: 'none',
-        },
     })
 
     return (
-            <MyTimePicker
-                value={value}
-                closeOnSelect={closeOnSelect}
-                onChange={onChange}
-                open={open}
-                disabled={disabled}
-                getOpenDialogAriaText={getOpenDialogAriaText}
-                inputFormat={inputFormat}
-                inputRef={inputRef}
-                onAccept={onAccept}
-                onClose={onClose}
-                openTo={openTo}
-                onOpen={onOpen}
-                orientation={orientation}
-                readOnly={readOnly}
-                components={{ OpenPickerIcon: () => <FontAwesomeIcon size={'xs'} icon={faCaretDown}/> }} // Goddammit MaterialUI, document THIS PROP!!!
-                ampm={ampm}
-                views={views}
-                renderInput={(params) => {
-                    return (
-                        <MyInput
-                            {...params}
-                            size={'small'}
-                        />
-                    )
-                }}
-                
-            />
+        <MuInput
+            type={'time'}
+            defaultValue={defaultValue}
+            value={value}
+            onChange={onChange}
+            onFocus={() => setFocus(true)}
+            onBlur={() => setFocus(false)}
+        />
     )
 
 }

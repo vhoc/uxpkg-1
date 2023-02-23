@@ -7,5 +7,8 @@ exports["default"] = {
     component: SelectTime_1.SelectTime
 };
 exports.Default = {
-    args: {}
+    args: {
+        defaultValue: '10:10',
+        value: '10:10'
+    }
 };

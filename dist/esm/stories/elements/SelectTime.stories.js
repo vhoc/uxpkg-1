@@ -4,5 +4,8 @@ export default {
     component: SelectTime
 };
 export var Default = {
-    args: {}
+    args: {
+        defaultValue: '10:10',
+        value: '10:10'
+    }
 };
