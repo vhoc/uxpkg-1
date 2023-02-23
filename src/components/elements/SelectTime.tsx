@@ -126,7 +126,7 @@ export interface SelectTimeProps {
 
 }
 
-export const SelectTime = ({onChange, closeOnSelect, value, open, openTo = 'hours', disabled=false, getOpenDialogAriaText, inputFormat, inputRef, onAccept, onClose, onOpen, orientation, readOnly, ampm = true, views = ['hours', 'minutes'] }: SelectTimeProps): JSX.Element => {
+export const SelectTime = ({onChange, closeOnSelect, value, open, openTo, disabled=false, getOpenDialogAriaText, inputFormat, inputRef, onAccept, onClose, onOpen, orientation, readOnly, ampm = true, views = ['hours', 'minutes'] }: SelectTimeProps): JSX.Element => {
 
     //const [value, setValue] = useState<any>()
     //const [isOpen, setIsOpen] = useState<boolean>(false)
