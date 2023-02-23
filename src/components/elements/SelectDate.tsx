@@ -1,145 +1,50 @@
-import React from 'react'
-import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment'
-import { CalendarPickerView, LocalizationProvider, PickersDayProps } from '@mui/x-date-pickers'
-import { DatePicker } from '@mui/x-date-pickers'
-//import { Box, TextField } from '@mui/material'
-import { TextField } from '@mui/material'
-import { styled } from '@mui/material/styles';
+import React, { HTMLAttributes, useState } from 'react'
 import { colors } from '../../theme'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretDown } from '@fortawesome/pro-solid-svg-icons'
-import { MuiPickersAdapter } from '@mui/x-date-pickers/internals'
+import { styled } from '@mui/material/styles';
 
-export interface SelectDateProps {
-    /**
-     * Callback fired when the value (the selected date) changes @DateIOType.
-     * value: The new parsed value.
-     * keyboardInputValue: The current value of the keyboard input.
-     */
-    onChange: (value: any, keyboardInputValue?: string | undefined) => void,
-
-    /** Placeholder */
-    placeholder?: string | undefined
-
-    /** If true the popup or dialog will immediately close after submitting full date. */
-    closeOnSelect?: boolean
-
-    /** The value of the picker. */
+export interface SelectDateProps extends HTMLAttributes<HTMLInputElement> {
+    /** ID for the component */
+    id?: string | undefined
+    /** Name for the component */
+    name?: string | undefined
+    /** Value of the component, which is the Date */
     value: any
-
-    /** Control the popup or dialog open state. */
-    open?: boolean
-
-    /** Formats the day of week displayed in the calendar header. */
-    dayOfWeekFormatter?: (say: string) => string
-
-    /** Default calendar month displayed when value={null}. */
-    defaultCalendarMonth?: any
-
-    /** If true, the picker and text field are disabled. */
-    disabled?: boolean
-
-    /** If true future days are disabled. */
-    disableFuture?: boolean
-
-    /** If true future days are disabled. */
-    disablePast?: boolean
-
-    /** If true, today's date is rendering without highlighting with circle. */
-    disableHighlightToday?: boolean
-
-    /** Get aria-label text for control that opens picker dialog. Aria-label text must include selected date. @DateIOType */
-    getOpenDialogAriaText?: ((date: any, utils: MuiPickersAdapter<any>) => string) | undefined
-
-    /** Format string. */
-    inputFormat?: string
-
-    /** Pass a ref to the input element. */
-    inputRef?: React.Ref<HTMLInputElement> | undefined
-
-    /** Maximal selectable date. @DateIOType */
-    maxDate?: any
-
-    /** Maximal selectable date. @DateIOType */
-    minDate?: any
-
-    /** Callback fired when date is accepted @DateIOType. */
-    onAccept?: ((value: any) => void) | undefined
-
-    /** Callback fired when the popup requests to be closed. Use in controlled mode (see open). */
-    onClose?: (() => void) | undefined
-
-    /** Callback firing on month change @DateIOType. */
-    onMonthChange?: ((month: any) => void | Promise<void>) | undefined
-
-    /** Callback fired when the popup requests to be opened. Use in controlled mode (see open). */
-    onOpen?: (() => void) | undefined
-
-    /** onViewChange?: ((view: CalendarPickerView) => void) | undefined */
-    onViewChange?: ((view: CalendarPickerView) => void) | undefined
-
-    /** Callback firing on year change @DateIOType. */
-    onYearChange?: ((year: any) => void) | undefined
-
-    /** First view to show. Must be a valid option from views list. Refer to the MUI-X doocumentation. */
-    openTo?: 'year' | 'month' | 'day'
-
-    /** Force rendering in particular orientation. */
-    orientation?: "portrait" | "landscape" | undefined
-
-    /** Make picker read only. */
-    readOnly?: boolean | undefined
-
-    /** Disable heavy animations. */
-    reduceAnimations?: boolean | undefined
-
-    /**
-     * Custom renderer for day. Check the PickersDay component.  
-     * @template TDate  
-     * @param day — The day to render.  
-     * @param selectedDays — The days currently selected.  
-     * @param pickersDayProps — The props of the day to render.  
-     * @returns — The element representing the day.  
-     */
-    renderDay?: ((day: any, selectedDays: any[], pickersDayProps: PickersDayProps<any>) => JSX.Element) | undefined
-
-    /** Component displaying when passed loading true. */
-    renderLoading?: (() => React.ReactNode) | undefined
-
-    /** Disable specific date. @DateIOType */
-    shouldDisableDate?: ((day: any) => boolean) | undefined
-
-    /** Disable specific months dynamically. Works like shouldDisableDate but for month selection view @DateIOType. */
-    shouldDisableMonth?: ((month: any) => boolean) | undefined
-
-    /** Disable specific years dynamically. Works like shouldDisableDate but for year selection view @DateIOType. */
-    shouldDisableYear?: ((year: any) => boolean) | undefined
-
-    /**
-     * Array of views to show.  
-     * @default  
-     * ['year', 'day']
-     */
-    views?: readonly CalendarPickerView[] | undefined
-
+    /** Minimum date */
+    min?: any
+    /** Maximum date */
+    max?: any
 }
 
-export const SelectDate = ({onChange, closeOnSelect, value, open, dayOfWeekFormatter, defaultCalendarMonth, disabled=false, disablePast=true, disableFuture=false, disableHighlightToday=false, getOpenDialogAriaText, inputFormat, inputRef, maxDate, minDate, onAccept, onClose, onMonthChange, onOpen, onViewChange, onYearChange, openTo = 'day', orientation, readOnly, reduceAnimations, renderDay, renderLoading, shouldDisableDate, shouldDisableMonth, shouldDisableYear, views }: SelectDateProps): JSX.Element => {
+export const SelectDate = ({value}: SelectDateProps): JSX.Element => {
 
-    //const [value, setValue] = useState<any>()
-    //const [isOpen, setIsOpen] = useState<boolean>(false)
-    
-    const MyDatePicker = styled(DatePicker)({
+    const [focus, setFocus] = useState<boolean>(false)
+
+    const MuInput = styled('input')({
         backgroundColor: colors.white,
         fontFamily: 'IBM Plex Sans',
         fontSize: '14px',
         color: colors.gray[90],
         borderWidth: '1px',
-        borderColor: colors.gray[20],
+        borderColor: focus ? colors.blue[50] : colors.gray[20],
         borderRadius: '4px',
         width: 'fit-content',
-        //height: '40px',
-        //cursor: 'pointer',
+        height: '40px',
+        paddingLeft: '12px',
+        paddingRight: '6px',
+        position: 'relative',
+        '&:focus-visible': {
+            borderColor: colors.blue[50] + ' !important',
+            outline: `1px solid ${colors.blue[50]}`,
+        },
+        '&::-webkit-calendar-picker-indicator': {
+            cursor: 'pointer',
+            textAlign: 'right',
+            backgroundImage: 'url(\'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>\')',
+            opacity: '1',
+        },
+        '&::-webkit-datetime-edit-fields-wrapper': {
+            borderRadius: '4px',
+        },
         '&:hover' : {
             backgroundColor: colors.blue[5],
             borderColor: colors.gray[20],
@@ -150,88 +55,15 @@ export const SelectDate = ({onChange, closeOnSelect, value, open, dayOfWeekForma
             borderColor: colors.gray[20],
             color: colors.gray[30],
         },
-        '&.MuiOutlinedInput-root fieldset' : {
-            borderColor: colors.blue[40] + ' !important',
-            borderWidth: '1px !important',
-            //border: 'inherited',
-            boxShadow: 'none',
-        },
-    })
-
-    const MyInput = styled(TextField)({
-        backgroundColor: colors.white,
-        //cursor: 'pointer',
-        border: 'none',
-        outline: 'none !important',
-        fontFamily: 'IBM Plex Sans !important',
-        fontSize: '14px',
-        color: colors.gray[90],
-        borderWidth: '1px',
-        borderColor: colors.gray[20],
-        borderRadius: '4px',
-        width: 'fit-content',
-        '&:focus': {
-            border: 'none',
-            outline: 'none !important',
-        },
-        '&:hover': {
-            border: 'none',
-            outline: 'none !important',
-        },
-        "& .MuiOutlinedInput-input": {
-            fontFamily: 'IBM Plex Sans',
-            color: colors.gray[90],
-            fontSize: '14px',
-            outline: 'none',
-        },
     })
 
     return (
-        <LocalizationProvider dateAdapter={AdapterMoment}>
-            <MyDatePicker
-                value={value}
-                closeOnSelect={closeOnSelect}
-                onChange={onChange}
-                open={open}
-                dayOfWeekFormatter={dayOfWeekFormatter}
-                defaultCalendarMonth={defaultCalendarMonth}
-                disabled={disabled}
-                disableFuture={disableFuture}
-                disablePast={disablePast}
-                disableHighlightToday={disableHighlightToday}
-                getOpenDialogAriaText={getOpenDialogAriaText}
-                inputFormat={inputFormat}
-                inputRef={inputRef}
-                maxDate={maxDate}
-                minDate={minDate}
-                onAccept={onAccept}
-                onClose={onClose}
-                onMonthChange={onMonthChange}
-                onOpen={onOpen}
-                onViewChange={onViewChange}
-                onYearChange={onYearChange}
-                openTo={openTo}
-                orientation={orientation}
-                readOnly={readOnly}
-                reduceAnimations={reduceAnimations}
-                renderDay={renderDay}
-                renderLoading={renderLoading}
-                shouldDisableDate={shouldDisableDate}
-                shouldDisableMonth={shouldDisableMonth}
-                shouldDisableYear={shouldDisableYear}
-                views={views}
-                components={{ OpenPickerIcon: () => <FontAwesomeIcon size={'xs'} icon={faCaretDown}/> }} // Goddammit MaterialUI, document THIS PROP!!!
-                renderInput={(params) => {
-                    return (
-                        <MyInput
-                            {...params}
-                            size={'small'}
-                        />
-                    )
-                }}
-                
-            />
-        </LocalizationProvider>
+        <MuInput
+            type={'date'}
+            value={value}
+            onFocus={() => setFocus(true)}
+            onBlur={() => setFocus(false)}
+        />
     )
 
 }
