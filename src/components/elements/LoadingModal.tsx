@@ -1,0 +1,65 @@
+import React, {HTMLAttributes} from 'react'
+import { colors } from '../../theme'
+import { Spinner } from '../graphical/Spinner'
+import { Typography } from './Typography'
+
+export interface LoadingModalProps extends HTMLAttributes<HTMLDivElement> {
+    message: string
+    caption?: string | undefined
+}
+
+export const LoadingModal = ({ message, caption, ...props }: LoadingModalProps): JSX.Element => {
+    return (
+        <div
+            style={{
+                minWidth: '344px',
+                width: 'fit-content',
+                maxWidth: '700px',
+                minHeight: '117px',
+                backgroundColor: colors.white,
+                boxShadow: '0px 2px 4px RGBA(34, 41, 69, 0.37)',
+                borderRadius: '8px',
+                padding: '32px',
+                display: 'flex',
+                alignItems: 'center',
+                cursor: 'wait',
+
+            }}
+            {...props}
+        >
+            <Spinner/>
+            <div
+                style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'flex-start',
+                    width: '85%',
+                }}
+            >
+                <Typography
+                    variant={'body-semiBold'}
+                    style={{
+                        whiteSpace: 'nowrap',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                        width: '100%',
+                    }}
+                >
+                    {message}
+                </Typography>
+                <Typography
+                    variant={'body-regular'}                    
+                    style={{
+                        whiteSpace: 'normal',
+                        overflow: 'hidden',
+                        //textOverflow: 'ellipsis',
+                        width: '100%',
+                    }}
+                >
+                    {caption}
+                </Typography>
+            </div>
+        </div>
+    )
+}
