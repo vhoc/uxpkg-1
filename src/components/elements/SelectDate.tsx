@@ -7,17 +7,19 @@ export interface SelectDateProps extends HTMLAttributes<HTMLInputElement> {
     id?: string | undefined
     /** Name for the component */
     name?: string | undefined
+    /** Default initial value */
+    defaultValue: string
     /** Value of the component, which is the Date */
-    value: any
+    value: string
     /** Minimum date */
-    min?: any
+    min?: string
     /** Maximum date */
-    max?: any
+    max?: string
     /** Function to run when a date is selected */
     onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined
 }
 
-export const SelectDate = ({value, onChange}: SelectDateProps): JSX.Element => {
+export const SelectDate = ({value, onChange, defaultValue,}: SelectDateProps): JSX.Element => {
 
     const [focus, setFocus] = useState<boolean>(false)
 
@@ -63,6 +65,7 @@ export const SelectDate = ({value, onChange}: SelectDateProps): JSX.Element => {
     return (
         <MuInput
             type={'date'}
+            defaultValue={defaultValue}
             value={value}
             onChange={onChange}
             onFocus={() => setFocus(true)}

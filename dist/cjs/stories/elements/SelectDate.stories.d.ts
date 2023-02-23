@@ -3,6 +3,7 @@ declare const _default: Meta<import("@storybook/react/types-6-0").Args>;
 export default _default;
 export declare const Default: {
     args: {
+        defaultValue: string;
         value: string;
     };
 };
