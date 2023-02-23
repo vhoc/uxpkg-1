@@ -1,5 +1,6 @@
 import { Meta } from "@storybook/react/types-6-0";
 import { SelectTime } from "../../components/elements/SelectTime";
+import dayjs from "dayjs";
 
 export default {
     title: 'elements/Inputs/SelectTime',
@@ -9,8 +10,8 @@ export default {
 export const Default = {
     args: {
         onChange: () => console.log(`Time changed`),
-        value: "11:00",
-        inputFormat: "hh:mm",
+        value: dayjs('2024-08-18T21:11:54'),
+        inputFormat: "hh:mm A",
         placeholder: 'Select Time',
     }
 }
