@@ -24,7 +24,7 @@ var SelectTime = function (_a) {
         borderWidth: '1px',
         borderColor: theme_1.colors.gray[20],
         borderRadius: '4px',
-        width: 'fit-content',
+        width: '116px',
         //height: '40px',
         //cursor: 'pointer',
         '&:hover': {
