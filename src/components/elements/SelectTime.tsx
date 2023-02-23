@@ -9,13 +9,13 @@ export interface SelectTimeProps extends HTMLAttributes<HTMLInputElement> {
     name?: string | undefined
     /** Default initial value */
     defaultValue?: string | undefined
-    /** Value of the component, which is the Date */
+    /** Value of the component, which is the time */
     value?: string | undefined
-    /** Minimum date */
+    /** Minimum time */
     min?: string
-    /** Maximum date */
+    /** Maximum time */
     max?: string
-    /** Function to run when a date is selected */
+    /** Function to run when a time is selected */
     onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined
 }
 
