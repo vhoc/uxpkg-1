@@ -13,7 +13,7 @@ var MyInput = (0, styles_1.styled)(material_1.OutlinedInput)({
     fontSize: '14px',
     color: theme_1.colors.gray[90],
     borderColor: theme_1.colors.gray[20],
-    height: '40px',
+    minHeight: '40px',
     '&:hover': {
         backgroundColor: theme_1.colors.blue[5],
         borderColor: theme_1.colors.gray[20],
@@ -36,7 +36,7 @@ var TextInput = function (_a) {
     return (react_1["default"].createElement(material_1.FormControl, { sx: {
             fontFamily: 'IBM Plex Sans',
             p: 0,
-            height: '40px',
+            minHeight: '40px',
             '&:hover fieldset': {
                 borderColor: theme_1.colors.gray[20] + ' !important',
                 borderWidth: '1px',
