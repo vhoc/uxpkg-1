@@ -31,3 +31,4 @@ export * from './components/elements/SelectTime';
 export * from './components/elements/LoadingModal';
 export * from './components/elements/Pressable';
 export * from './components/elements/BreadCrumb';
+export * from './components/elements/UserGroupBar';
