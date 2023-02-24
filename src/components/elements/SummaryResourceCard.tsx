@@ -40,6 +40,7 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
     return (
         <div
             style={{
+                backgroundColor: colors.white,
                 display: 'flex',
                 justifyContent: 'space-between',
                 padding: '16px',
