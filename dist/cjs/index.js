@@ -32,3 +32,5 @@ tslib_1.__exportStar(require("./components/elements/SummaryResourceCard"), expor
 tslib_1.__exportStar(require("./components/elements/SelectDate"), exports);
 tslib_1.__exportStar(require("./components/elements/SelectTime"), exports);
 tslib_1.__exportStar(require("./components/elements/LoadingModal"), exports);
+tslib_1.__exportStar(require("./components/elements/Pressable"), exports);
+tslib_1.__exportStar(require("./components/elements/BreadCrumb"), exports);
