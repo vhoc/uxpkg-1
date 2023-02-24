@@ -52,6 +52,7 @@ export const Label = ({ variant = 'gray', text, iconButton, onClick, style, ...L
                     overflow: 'hidden',
                     textOverflow: 'ellipsis',
                     width: '100%',
+                    textAlign: 'left',
                 }}
             >
                 { text }

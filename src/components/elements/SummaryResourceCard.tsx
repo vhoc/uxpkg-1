@@ -75,6 +75,7 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
                             maxWidth: '210px',
+                            textAlign: 'left',
                         }}
                     >
                         {resourceName}
@@ -87,6 +88,7 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
                             maxWidth: '210px',
+                            textAlign: 'left',
                         }}
                     >
                         {resourceType}
@@ -99,6 +101,7 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
                             maxWidth: '210px',
+                            textAlign: 'left',
                         }}
                     >
                         {`${accountName} / ${region}`}
