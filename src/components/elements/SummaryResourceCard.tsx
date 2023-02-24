@@ -122,6 +122,7 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
                         width: '280px',
                         maxHeight: '245px',
                         paddingRight: '4px',
+                        overflowX: 'hidden',
                     }}
                 >
                     {children}

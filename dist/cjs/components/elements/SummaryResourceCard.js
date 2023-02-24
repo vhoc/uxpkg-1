@@ -69,7 +69,8 @@ var SummaryResourceCard = function (_a) {
                     gap: '4px',
                     width: '280px',
                     maxHeight: '245px',
-                    paddingRight: '4px'
+                    paddingRight: '4px',
+                    overflowX: 'hidden'
                 } }, children),
             react_1["default"].createElement("div", { style: {
                     display: 'flex',
