@@ -40,6 +40,7 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
     return (
         <div
             style={{
+                backgroundColor: colors.white,
                 display: 'flex',
                 justifyContent: 'space-between',
                 padding: '16px',
@@ -74,6 +75,7 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
                             maxWidth: '210px',
+                            textAlign: 'left',
                         }}
                     >
                         {resourceName}
@@ -86,6 +88,7 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
                             maxWidth: '210px',
+                            textAlign: 'left',
                         }}
                     >
                         {resourceType}
@@ -98,6 +101,7 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
                             maxWidth: '210px',
+                            textAlign: 'left',
                         }}
                     >
                         {`${accountName} / ${region}`}
@@ -118,6 +122,7 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
                         width: '280px',
                         maxHeight: '245px',
                         paddingRight: '4px',
+                        overflowX: 'hidden',
                     }}
                 >
                     {children}

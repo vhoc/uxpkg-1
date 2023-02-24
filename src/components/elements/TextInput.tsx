@@ -119,7 +119,7 @@ const MyInput = styled(OutlinedInput)({
     fontSize: '14px',
     color: colors.gray[90],
     borderColor: colors.gray[20],
-    height: '40px',
+    minHeight: '40px',
     '&:hover' : {
         backgroundColor: colors.blue[5],
         borderColor: colors.gray[20],
@@ -145,7 +145,7 @@ export const TextInput = ({ autoComplete, autoFocus, classes, defaultValue, disa
             sx={{
                 fontFamily: 'IBM Plex Sans',
                 p: 0,
-                height: '40px',
+                minHeight: '40px',
                 '&:hover fieldset' : {
                     borderColor: colors.gray[20] + ' !important',
                     borderWidth: '1px',

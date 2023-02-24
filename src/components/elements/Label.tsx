@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, MouseEventHandler } from 'react'
+import React, { CSSProperties, HTMLAttributes, MouseEventHandler } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { theme, variants } from '../../theme'
@@ -7,12 +7,13 @@ export interface LabelProps extends HTMLAttributes<HTMLDivElement> {
     variant?: 'grayBlue' | 'gray' | 'success' | 'danger' | 'warning'
     text: string
     iconButton?: IconProp
-    width?: string
-    height?: string
+    //width?: string
+    //height?: string
+    style?: CSSProperties | undefined
     onClick?: MouseEventHandler<HTMLDivElement> | undefined
 }
 
-export const Label = ({ variant = 'gray', text, iconButton, height, width, onClick, ...LabelProps }: LabelProps): JSX.Element => {
+export const Label = ({ variant = 'gray', text, iconButton, onClick, style, ...LabelProps }: LabelProps): JSX.Element => {
 
     type VariantKey = keyof typeof variants
     const selectedVariant = variant as VariantKey
@@ -23,6 +24,7 @@ export const Label = ({ variant = 'gray', text, iconButton, height, width, onCli
         textTransform: 'capitalize',
         //height: height || 'auto',
         width: 'fit-content',
+        maxWidth: '255px',
         fontFamily: theme.font.body.regular.fontFamily,
         fontSize: '13px',
         borderRadius: '4px',
@@ -35,6 +37,8 @@ export const Label = ({ variant = 'gray', text, iconButton, height, width, onCli
         justifyContent: 'space-between',
         gap: '6px',
         alignItems: 'center',
+        height: '32px',
+        ...style,
     })
 
     return (
@@ -42,7 +46,17 @@ export const Label = ({ variant = 'gray', text, iconButton, height, width, onCli
             style={componentStyle()}
             {...LabelProps}
         >
-            <span>{ text }</span>
+            <div
+                style={{
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    width: '100%',
+                    textAlign: 'left',
+                }}
+            >
+                { text }
+            </div>
             {
                 iconButton ?
                     <div

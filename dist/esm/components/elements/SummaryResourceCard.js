@@ -22,6 +22,7 @@ export var SummaryResourceCard = function (_a) {
         }
     });
     return (React.createElement("div", __assign({ style: {
+            backgroundColor: colors.white,
             display: 'flex',
             justifyContent: 'space-between',
             padding: '16px',
@@ -41,19 +42,22 @@ export var SummaryResourceCard = function (_a) {
                         whiteSpace: 'nowrap',
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
-                        maxWidth: '210px'
+                        maxWidth: '210px',
+                        textAlign: 'left'
                     } }, resourceName),
                 React.createElement(Typography, { variant: 'body-regular', style: {
                         whiteSpace: 'nowrap',
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
-                        maxWidth: '210px'
+                        maxWidth: '210px',
+                        textAlign: 'left'
                     } }, resourceType),
                 React.createElement(Typography, { variant: 'caption-regular', style: {
                         whiteSpace: 'nowrap',
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
-                        maxWidth: '210px'
+                        maxWidth: '210px',
+                        textAlign: 'left'
                     } }, "".concat(accountName, " / ").concat(region)))),
         React.createElement("div", { style: { display: 'flex', justifyContent: 'flex-end', gap: '14px' } },
             React.createElement(MyDiv, { style: {
@@ -62,7 +66,8 @@ export var SummaryResourceCard = function (_a) {
                     gap: '4px',
                     width: '280px',
                     maxHeight: '245px',
-                    paddingRight: '4px'
+                    paddingRight: '4px',
+                    overflowX: 'hidden'
                 } }, children),
             React.createElement("div", { style: {
                     display: 'flex',

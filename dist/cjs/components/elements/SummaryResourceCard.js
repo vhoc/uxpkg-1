@@ -25,6 +25,7 @@ var SummaryResourceCard = function (_a) {
         }
     });
     return (react_1["default"].createElement("div", tslib_1.__assign({ style: {
+            backgroundColor: theme_1.colors.white,
             display: 'flex',
             justifyContent: 'space-between',
             padding: '16px',
@@ -44,19 +45,22 @@ var SummaryResourceCard = function (_a) {
                         whiteSpace: 'nowrap',
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
-                        maxWidth: '210px'
+                        maxWidth: '210px',
+                        textAlign: 'left'
                     } }, resourceName),
                 react_1["default"].createElement(Typography_1.Typography, { variant: 'body-regular', style: {
                         whiteSpace: 'nowrap',
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
-                        maxWidth: '210px'
+                        maxWidth: '210px',
+                        textAlign: 'left'
                     } }, resourceType),
                 react_1["default"].createElement(Typography_1.Typography, { variant: 'caption-regular', style: {
                         whiteSpace: 'nowrap',
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
-                        maxWidth: '210px'
+                        maxWidth: '210px',
+                        textAlign: 'left'
                     } }, "".concat(accountName, " / ").concat(region)))),
         react_1["default"].createElement("div", { style: { display: 'flex', justifyContent: 'flex-end', gap: '14px' } },
             react_1["default"].createElement(MyDiv, { style: {
@@ -65,7 +69,8 @@ var SummaryResourceCard = function (_a) {
                     gap: '4px',
                     width: '280px',
                     maxHeight: '245px',
-                    paddingRight: '4px'
+                    paddingRight: '4px',
+                    overflowX: 'hidden'
                 } }, children),
             react_1["default"].createElement("div", { style: {
                     display: 'flex',
