@@ -24,7 +24,7 @@ export const Label = ({ variant = 'gray', text, iconButton, onClick, style, ...L
         textTransform: 'capitalize',
         //height: height || 'auto',
         width: 'fit-content',
-        maxWidth: '300px',
+        maxWidth: '270px',
         fontFamily: theme.font.body.regular.fontFamily,
         fontSize: '13px',
         borderRadius: '4px',

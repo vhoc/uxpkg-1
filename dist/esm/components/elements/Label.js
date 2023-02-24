@@ -7,7 +7,7 @@ export var Label = function (_a) {
     var selectedVariant = variant;
     var componentStyle = function () { return (__assign({ backgroundColor: variants[selectedVariant].labelBgColor, color: variants[selectedVariant].labelTextColor, textTransform: 'capitalize', 
         //height: height || 'auto',
-        width: 'fit-content', maxWidth: '300px', fontFamily: theme.font.body.regular.fontFamily, fontSize: '13px', borderRadius: '4px', border: 'none', paddingTop: '6px', paddingBottom: '6px', paddingLeft: '8px', paddingRight: '8px', display: 'flex', justifyContent: 'space-between', gap: '6px', alignItems: 'center', height: '32px' }, style)); };
+        width: 'fit-content', maxWidth: '270px', fontFamily: theme.font.body.regular.fontFamily, fontSize: '13px', borderRadius: '4px', border: 'none', paddingTop: '6px', paddingBottom: '6px', paddingLeft: '8px', paddingRight: '8px', display: 'flex', justifyContent: 'space-between', gap: '6px', alignItems: 'center', height: '32px' }, style)); };
     return (React.createElement("div", __assign({ style: componentStyle() }, LabelProps),
         React.createElement("div", { style: {
                 whiteSpace: 'nowrap',
