@@ -3,7 +3,7 @@ exports.__esModule = true;
 exports.Group = exports.User = exports.Unselected = exports.Selected = exports.Unssigned = exports.Assigned = exports.Default = void 0;
 var UserGroupBar_1 = require("../../components/elements/UserGroupBar");
 exports["default"] = {
-    title: 'composite/UserGroupBar',
+    title: 'composite/PickList Elements/UserGroupBar',
     component: UserGroupBar_1.UserGroupBar
 };
 exports.Default = {

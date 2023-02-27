@@ -20,4 +20,4 @@ export interface UserGroupBarProps extends HTMLAttributes<HTMLDivElement> {
     /** Style override for the container */
     style?: React.CSSProperties | undefined;
 }
-export declare const UserGroupBar: ({ type, name, leftIcon, caption, selected, assigned, addButtonOnClick, removeButtonOnClick, style, ...props }: UserGroupBarProps) => JSX.Element;
+export declare const UserGroupBar: ({ type, name, leftIcon, caption, selected, assigned, addButtonOnClick, removeButtonOnClick, style, }: UserGroupBarProps) => JSX.Element;

@@ -6,7 +6,7 @@ var react_1 = tslib_1.__importDefault(require("react"));
 var PickListContainer_1 = require("../../components/elements/PickListContainer");
 var UserGroupBar_1 = require("../../components/elements/UserGroupBar");
 exports["default"] = {
-    title: 'elements/PickListContainer',
+    title: 'composite/PickList Elements/PickListContainer',
     component: PickListContainer_1.PickListContainer
 };
 exports.Default = {

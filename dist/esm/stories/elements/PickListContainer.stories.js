@@ -2,7 +2,7 @@ import React from "react";
 import { PickListContainer } from "../../components/elements/PickListContainer";
 import { UserGroupBar } from "../../components/elements/UserGroupBar";
 export default {
-    title: 'elements/PickListContainer',
+    title: 'composite/PickList Elements/PickListContainer',
     component: PickListContainer
 };
 export var Default = {

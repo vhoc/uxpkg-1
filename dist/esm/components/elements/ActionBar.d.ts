@@ -1,12 +1,9 @@
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import React, { HTMLAttributes } from "react";
-export interface UserGroupBarProps extends HTMLAttributes<HTMLDivElement> {
-    /** Whether to show a User or Group item. */
-    type: 'user' | 'group';
+export interface ActionBarProps extends HTMLAttributes<HTMLDivElement> {
     /** Name of the user or the group */
     name: string;
     /** Optional icon override. Normally it will depend on the 'type' prop */
-    leftIcon?: IconProp;
+    leftIcon?: any;
     /** Caption, it will be an email if the type prop is 'user', otherwise will be the amount of users that the group contains. */
     caption?: string | undefined;
     /** Selected state. It affects the background color. */
@@ -20,4 +17,4 @@ export interface UserGroupBarProps extends HTMLAttributes<HTMLDivElement> {
     /** Style override for the container */
     style?: React.CSSProperties | undefined;
 }
-export declare const UserGroupBar: ({ type, name, leftIcon, caption, selected, assigned, addButtonOnClick, removeButtonOnClick, style, }: UserGroupBarProps) => JSX.Element;
+export declare const ActionBar: ({ name, leftIcon, selected, assigned, addButtonOnClick, removeButtonOnClick, style, }: ActionBarProps) => JSX.Element;

@@ -2,7 +2,7 @@ import { Meta } from "@storybook/react/types-6-0";
 import { UserGroupBar } from "../../components/elements/UserGroupBar";
 
 export default {
-    title: 'composite/UserGroupBar',
+    title: 'composite/PickList Elements/UserGroupBar',
     component: UserGroupBar,
 } as Meta
 
