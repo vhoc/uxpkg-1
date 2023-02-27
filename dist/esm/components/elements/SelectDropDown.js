@@ -2,7 +2,6 @@ import { __assign, __rest } from "tslib";
 import { Select, MenuItem, FormControl } from "@mui/material";
 import { mtheme, colors } from "../../theme";
 import React from "react";
-//import { styled } from '@mui/system';
 import { styled, ThemeProvider } from '@mui/material/styles';
 var MySelect = styled(Select)({
     backgroundColor: colors.white,

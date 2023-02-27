@@ -22,7 +22,7 @@ export var PickListContainer = function (_a) {
             borderRadius: '3px'
         }
     });
-    return (React.createElement(MyDiv, { style: __assign({ width: '396px', minHeight: '230px', backgroundColor: colors.gray[5], borderColor: colors.gray[20], borderStyle: 'solid', borderWidth: '1px', borderRadius: '4px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: children ? 'flex-start' : 'center' }, style) }, children ?
+    return (React.createElement(MyDiv, { style: __assign({ width: '396px', minHeight: '230px', backgroundColor: colors.gray[5], borderColor: colors.gray[20], borderStyle: 'solid', borderWidth: '1px', borderTopLeftRadius: '0px', borderTopRightRadius: '0px', borderBottomLeftRadius: '4px', borderBottomRightRadius: '4px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: children ? 'flex-start' : 'center' }, style) }, children ?
         children
         :
             React.createElement("div", { style: {

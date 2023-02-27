@@ -1,11 +1,14 @@
 import { MenuItemProps, SelectProps } from "@mui/material";
 import React from "react";
 export interface SelectDropDownItemProps extends MenuItemProps {
+    /** Value to control the DropDown */
     value?: string | undefined;
     label: string;
     selected?: boolean | undefined;
     disabled: boolean | undefined;
     onClick?: React.MouseEventHandler<HTMLLIElement> | undefined;
+    /** Style overrides */
+    style?: React.CSSProperties | undefined;
 }
 export interface SelectDropDownProps extends SelectProps {
     /**

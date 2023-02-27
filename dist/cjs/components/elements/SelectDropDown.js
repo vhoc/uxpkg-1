@@ -5,7 +5,6 @@ var tslib_1 = require("tslib");
 var material_1 = require("@mui/material");
 var theme_1 = require("../../theme");
 var react_1 = tslib_1.__importDefault(require("react"));
-//import { styled } from '@mui/system';
 var styles_1 = require("@mui/material/styles");
 var MySelect = (0, styles_1.styled)(material_1.Select)({
     backgroundColor: theme_1.colors.white,

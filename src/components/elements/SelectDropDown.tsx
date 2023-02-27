@@ -1,16 +1,18 @@
 import { Select, MenuItem, MenuItemProps, FormControl, SelectProps } from "@mui/material";
 import { mtheme, colors } from "../../theme";
 import React from "react";
-//import { styled } from '@mui/system';
 import { styled, ThemeProvider } from '@mui/material/styles';
 
 
 export interface SelectDropDownItemProps extends MenuItemProps {
+    /** Value to control the DropDown */
     value?: string | undefined
     label: string
     selected?: boolean | undefined
     disabled: boolean | undefined
     onClick?: React.MouseEventHandler<HTMLLIElement> | undefined
+    /** Style overrides */
+    style?: React.CSSProperties | undefined
 }
 
 export interface SelectDropDownProps extends SelectProps {

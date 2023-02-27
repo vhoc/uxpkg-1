@@ -37,3 +37,5 @@ tslib_1.__exportStar(require("./components/elements/BreadCrumb"), exports);
 tslib_1.__exportStar(require("./components/elements/UserGroupBar"), exports);
 tslib_1.__exportStar(require("./components/elements/PickListContainer"), exports);
 tslib_1.__exportStar(require("./components/elements/ActionBar"), exports);
+tslib_1.__exportStar(require("./components/elements/SimpleDropDown"), exports);
+tslib_1.__exportStar(require("./components/elements/PickListHeading"), exports);

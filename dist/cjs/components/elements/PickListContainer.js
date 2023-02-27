@@ -25,7 +25,7 @@ var PickListContainer = function (_a) {
             borderRadius: '3px'
         }
     });
-    return (react_1["default"].createElement(MyDiv, { style: tslib_1.__assign({ width: '396px', minHeight: '230px', backgroundColor: theme_1.colors.gray[5], borderColor: theme_1.colors.gray[20], borderStyle: 'solid', borderWidth: '1px', borderRadius: '4px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: children ? 'flex-start' : 'center' }, style) }, children ?
+    return (react_1["default"].createElement(MyDiv, { style: tslib_1.__assign({ width: '396px', minHeight: '230px', backgroundColor: theme_1.colors.gray[5], borderColor: theme_1.colors.gray[20], borderStyle: 'solid', borderWidth: '1px', borderTopLeftRadius: '0px', borderTopRightRadius: '0px', borderBottomLeftRadius: '4px', borderBottomRightRadius: '4px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: children ? 'flex-start' : 'center' }, style) }, children ?
         children
         :
             react_1["default"].createElement("div", { style: {
