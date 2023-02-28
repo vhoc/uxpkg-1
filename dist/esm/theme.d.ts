@@ -108,6 +108,12 @@ export declare const theme: {
             };
         };
         h4: {
+            regular: {
+                fontFamily: string;
+                fontSize: string;
+                fontWeight: string;
+                color: string;
+            };
             medium: {
                 fontFamily: string;
                 fontSize: string;

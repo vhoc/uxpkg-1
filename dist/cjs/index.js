@@ -39,3 +39,4 @@ tslib_1.__exportStar(require("./components/elements/PickListContainer"), exports
 tslib_1.__exportStar(require("./components/elements/ActionBar"), exports);
 tslib_1.__exportStar(require("./components/elements/SimpleDropDown"), exports);
 tslib_1.__exportStar(require("./components/elements/PickListHeading"), exports);
+tslib_1.__exportStar(require("./components/elements/ResourceDropDownItem"), exports);

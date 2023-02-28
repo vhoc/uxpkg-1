@@ -9,6 +9,15 @@ export declare const Default: {
         endIconOnClick: () => void;
     };
 };
+export declare const WithALabel: {
+    args: {
+        label: string;
+        placeholder: string;
+        icon: import("@fortawesome/fontawesome-common-types").IconDefinition;
+        iconPosition: string;
+        endIconOnClick: () => void;
+    };
+};
 export declare const WithText: {
     args: {
         placeholder: string;

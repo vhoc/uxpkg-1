@@ -18,7 +18,8 @@ var Typography = function (_a) {
         'caption-regular': theme_1.theme.font.caption.regular,
         'h2': theme_1.theme.font.h2.medium,
         'h3': theme_1.theme.font.h3.regular,
-        'h4': theme_1.theme.font.h4.medium,
+        'h4-regular': theme_1.theme.font.h4.regular,
+        'h4-medium': theme_1.theme.font.h4.medium,
         'inputText-hint': theme_1.theme.font.inputText.hint,
         'inputText-typed': theme_1.theme.font.inputText.typed,
         'title-regular': theme_1.theme.font.title.regular

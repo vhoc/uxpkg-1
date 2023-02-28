@@ -14,6 +14,15 @@ export var Default = {
         endIconOnClick: function () { return alert("X button pressed."); }
     }
 };
+export var WithALabel = {
+    args: {
+        label: 'Title',
+        placeholder: 'Search',
+        icon: faMagnifyingGlass,
+        iconPosition: 'start',
+        endIconOnClick: function () { return alert("X button pressed."); }
+    }
+};
 export var WithText = {
     args: {
         placeholder: 'Search',

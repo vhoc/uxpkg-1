@@ -4,6 +4,10 @@ import { SxProps, Theme } from '@mui/material/styles';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 export interface TextInputProps extends InputProps {
     /**
+     * An optional label to be shown at the top of the input.
+     */
+    label?: string | undefined;
+    /**
      * This prop helps users to fill forms faster, especially on mobile devices. The name can be confusing, as it's more like an autofill. You can learn more about it here: https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
      */
     autoComplete?: string | undefined;
@@ -92,4 +96,4 @@ export interface TextInputProps extends InputProps {
      */
     endIconOnClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
 }
-export declare const TextInput: ({ autoComplete, autoFocus, classes, defaultValue, disabled, error, id, icon, name, onChange, placeholder, iconPosition, fullWidth, multiline, readOnly, required, rows, sx, type, value, endIconOnClick, iconStyle, ...props }: TextInputProps) => JSX.Element;
+export declare const TextInput: ({ label, autoComplete, autoFocus, classes, defaultValue, disabled, error, id, icon, name, onChange, placeholder, iconPosition, fullWidth, multiline, readOnly, required, rows, sx, type, value, endIconOnClick, iconStyle, ...props }: TextInputProps) => JSX.Element;

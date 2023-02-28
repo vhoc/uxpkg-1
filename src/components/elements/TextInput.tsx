@@ -4,8 +4,13 @@ import { colors } from '../../theme'
 import { styled, SxProps, Theme } from '@mui/material/styles';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Typography } from './Typography';
 
 export interface TextInputProps extends InputProps {
+    /**
+     * An optional label to be shown at the top of the input.
+     */
+    label?: string | undefined
     /**
      * This prop helps users to fill forms faster, especially on mobile devices. The name can be confusing, as it's more like an autofill. You can learn more about it here: https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
      */
@@ -138,7 +143,7 @@ const MyInput = styled(OutlinedInput)({
     },
 })
 
-export const TextInput = ({ autoComplete, autoFocus, classes, defaultValue, disabled = false, error, id, icon, name, onChange, placeholder, iconPosition = 'start', fullWidth = false, multiline = false, readOnly = false, required = false, rows = 1, sx, type, value, endIconOnClick, iconStyle, ...props }: TextInputProps): JSX.Element => {
+export const TextInput = ({ label, autoComplete, autoFocus, classes, defaultValue, disabled = false, error, id, icon, name, onChange, placeholder, iconPosition = 'start', fullWidth = false, multiline = false, readOnly = false, required = false, rows = 1, sx, type, value, endIconOnClick, iconStyle, ...props }: TextInputProps): JSX.Element => {
 
     return (
         <FormControl
@@ -156,6 +161,19 @@ export const TextInput = ({ autoComplete, autoFocus, classes, defaultValue, disa
             size={'small'}
             disabled={disabled}
             >
+            {
+                label && label.length >= 1 ?
+                    <Typography
+                        variant={'body-regular'}
+                        style={{
+                            marginBottom: '4px',
+                        }}
+                    >
+                        {label}
+                    </Typography>
+                :
+                    null
+            }
                 <MyInput
                     id={id}                    
                     autoComplete={autoComplete}

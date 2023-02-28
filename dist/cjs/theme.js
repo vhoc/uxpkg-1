@@ -98,6 +98,12 @@ exports.theme = {
             }
         },
         h4: {
+            regular: {
+                fontFamily: 'IBM Plex Sans',
+                fontSize: '18px',
+                fontWeight: '400',
+                color: exports.colors.gray[70]
+            },
             medium: {
                 fontFamily: 'IBM Plex Sans',
                 fontSize: '18px',

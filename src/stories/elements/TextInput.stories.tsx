@@ -18,6 +18,16 @@ export const Default = {
     }
 }
 
+export const WithALabel = {
+    args: {
+        label: 'Title',
+        placeholder: 'Search',
+        icon: faMagnifyingGlass,
+        iconPosition: 'start',
+        endIconOnClick: () => alert(`X button pressed.`),
+    }
+}
+
 export const WithText = {
     args: {
         placeholder: 'Search',
