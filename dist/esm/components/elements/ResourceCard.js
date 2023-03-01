@@ -38,7 +38,7 @@ export var ResourceCard = function (_a) {
                 React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', marginBottom: '16px' } },
                     React.createElement("div", { style: { display: 'flex', justifyContent: 'flex-start', gap: '8px' } },
                         React.createElement("div", null, resourceIcon),
-                        React.createElement(Label, { variant: "warning", text: "Request in progress" })),
+                        React.createElement(Label, { variant: "warning", text: "Awaiting for approval" })),
                     React.createElement(IconButton, { variant: bookmarked ? 'grayBlue' : 'tertiary', icon: faBookmark, onClick: onBookmarkClick }))
                 :
                     React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', marginBottom: '16px' } },

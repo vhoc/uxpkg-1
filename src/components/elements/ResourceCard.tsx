@@ -85,7 +85,7 @@ export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, b
                         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '16px' }}>
                             <div style={{ display: 'flex', justifyContent: 'flex-start', gap: '8px', }}>
                             <div>{resourceIcon}</div>
-                            <Label variant="warning" text="Request in progress" />
+                            <Label variant="warning" text="Awaiting for approval" />
                             </div>
                             
                             <IconButton
