@@ -40,3 +40,5 @@ tslib_1.__exportStar(require("./components/elements/ActionBar"), exports);
 tslib_1.__exportStar(require("./components/elements/SimpleDropDown"), exports);
 tslib_1.__exportStar(require("./components/elements/PickListHeading"), exports);
 tslib_1.__exportStar(require("./components/elements/ResourceDropDownItem"), exports);
+tslib_1.__exportStar(require("./components/graphical/Spinner"), exports);
+tslib_1.__exportStar(require("./components/elements/ToggleCloudControl"), exports);

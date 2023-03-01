@@ -37,3 +37,5 @@ export * from './components/elements/ActionBar';
 export * from './components/elements/SimpleDropDown';
 export * from './components/elements/PickListHeading';
 export * from './components/elements/ResourceDropDownItem';
+export * from './components/graphical/Spinner';
+export * from './components/elements/ToggleCloudControl';

@@ -50,7 +50,7 @@ var SideMenuItem = function (_a) {
                 setCollapsed === null || setCollapsed === void 0 ? void 0 : setCollapsed(true);
             }, onClick: onClick }, props),
             react_1["default"].createElement("div", { style: { textAlign: 'center', width: '24px', alignSelf: 'center' } },
-                react_1["default"].createElement(react_fontawesome_1.FontAwesomeIcon, { style: { alignSelf: 'center' }, icon: icon, color: selected ? theme_1.variants[selectedVariant].sideBarMenuItemIconColorHover : theme_1.variants[selectedVariant].sideBarMenuItemIconColor })),
+                react_1["default"].createElement(react_fontawesome_1.FontAwesomeIcon, { style: { alignSelf: 'center' }, icon: icon, color: selected ? theme_1.variants[selectedVariant].sideBarMenuItemIconColorHover : theme_1.colors.gray[70] })),
             (!collapsed || keepExtended) ?
                 react_1["default"].createElement("div", { style: {
                         textAlign: 'left',

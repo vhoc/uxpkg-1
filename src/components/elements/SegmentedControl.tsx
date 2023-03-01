@@ -10,7 +10,7 @@ export interface SegmentedControlProps {
      * Item object Props:  
      * - value: string  
      * - ariaLabel: string  
-     * - icon: IconProp | ReactNode  
+     * - icon: IconProp | ReactNode
      * - selected: boolean  
      * - onClick: (event: React.MouseEvent<HTMLElement>, value: any) => void  
      * - onChange: (event: React.MouseEvent<HTMLElement>, value: any) => void  
@@ -67,7 +67,7 @@ export const SegmentedControl = ({ items, multiSelect = false, ariaLabel = 'segm
                             React.isValidElement(item.icon) ?
                                 ( item.icon )
                             :
-                                <FontAwesomeIcon icon={item.icon}/>
+                                <FontAwesomeIcon icon={item.icon} color={item.selected ? colors.blue[60] : colors.gray[30]}/>
                         }
                             
                         </ToggleButton>

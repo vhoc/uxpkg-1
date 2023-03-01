@@ -22,7 +22,7 @@ export var SegmentedControl = function (_a) {
                 } }, React.isValidElement(item.icon) ?
                 (item.icon)
                 :
-                    React.createElement(FontAwesomeIcon, { icon: item.icon })));
+                    React.createElement(FontAwesomeIcon, { icon: item.icon, color: item.selected ? colors.blue[60] : colors.gray[30] })));
         })));
     }
     return (React.createElement("div", null));

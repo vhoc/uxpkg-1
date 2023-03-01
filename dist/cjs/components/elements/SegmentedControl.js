@@ -26,7 +26,7 @@ var SegmentedControl = function (_a) {
                 } }, react_1["default"].isValidElement(item.icon) ?
                 (item.icon)
                 :
-                    react_1["default"].createElement(react_fontawesome_1.FontAwesomeIcon, { icon: item.icon })));
+                    react_1["default"].createElement(react_fontawesome_1.FontAwesomeIcon, { icon: item.icon, color: item.selected ? theme_1.colors.blue[60] : theme_1.colors.gray[30] })));
         })));
     }
     return (react_1["default"].createElement("div", null));

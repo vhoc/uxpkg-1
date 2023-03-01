@@ -9,9 +9,10 @@ import { SideMenuItemProps } from "./SideMenuItem"
 export interface SideMenuProps extends HTMLAttributes<HTMLDivElement> {
     variant?: 'primary'
     menuItems?: SideMenuItemProps[]
+    style?: React.CSSProperties | undefined
 }
 
-export const SideMenu = ({variant = 'primary', menuItems, ...props}:SideMenuProps): JSX.Element => {
+export const SideMenu = ({variant = 'primary', menuItems, style, ...props}:SideMenuProps): JSX.Element => {
 
     const [collapsed, setCollapsed] = useState<boolean>(true)
     const [keepExtended, setKeepExtended] = useState<boolean>(false)
@@ -33,11 +34,14 @@ export const SideMenu = ({variant = 'primary', menuItems, ...props}:SideMenuProp
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
+                justifyContent: 'space-between',
+                ...style,
             }}
             //onMouseOver={() => setCollapsed(false)}
             //onMouseOut={() => setCollapsed(true)}
             {...props}        
         >
+            <div>
             {
                 menuItems && menuItems.length >= 1 ?
                     menuItems.map((item, index) => {
@@ -60,6 +64,7 @@ export const SideMenu = ({variant = 'primary', menuItems, ...props}:SideMenuProp
                 :
                     null
             }
+            </div>
 
             <button
                 style={{

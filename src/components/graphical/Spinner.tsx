@@ -1,6 +1,6 @@
 import React from "react"
 import { Ring } from "./Ring"
-import { ProcyonShield } from "./ProcyonShield"
+import procyonShield from '../../assets/icons/gray-logo.png'
 import './Spinner.css'
 
 export const Spinner = () => {
@@ -11,22 +11,18 @@ export const Spinner = () => {
                 height: '53px',
                 display: 'flex',
                 justifyContent: 'center',
+                backgroundImage: `url(${procyonShield})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
                 //border: '1px solid red',
             }}
         >
             <Ring
                 style={{
                     position: 'relative',
-                    left: '0',
+                    //left: '0',
                 }}
                 className={'animationSpin'}
-            />
-            <ProcyonShield
-                style={{
-                    position: 'relative',
-                    top: '11px',
-                    left: '-38px',
-                }}
             />
         </div>
     )

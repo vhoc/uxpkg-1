@@ -2,7 +2,7 @@ import React from "react"
 import { HTMLAttributes, useState } from "react";
 import { IconProp } from "@fortawesome/fontawesome-svg-core"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { variants, theme } from '../../theme'
+import { variants, theme, colors } from '../../theme'
 import { SideMenuSectionName } from "./SideMenuSectionName";
 
 export interface SideMenuItemProps extends HTMLAttributes<HTMLButtonElement> {
@@ -85,7 +85,7 @@ export const SideMenuItem = ({ style, variant = 'primary', itemType, selected = 
         {...props}
     >
         <div style={{ textAlign: 'center', width: '24px', alignSelf: 'center', }}>
-            <FontAwesomeIcon style={{ alignSelf: 'center' }} icon={icon as IconProp} color={selected ? variants[selectedVariant].sideBarMenuItemIconColorHover : variants[selectedVariant].sideBarMenuItemIconColor} />
+            <FontAwesomeIcon style={{ alignSelf: 'center' }} icon={icon as IconProp} color={selected ? variants[selectedVariant].sideBarMenuItemIconColorHover : colors.gray[70]} />
         </div>
         {
             (!collapsed || keepExtended) ?

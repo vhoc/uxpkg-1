@@ -1,9 +1,7 @@
 import { Meta } from "@storybook/react/types-6-0";
 import { SegmentedControl } from "../../components/elements/SegmentedControl";
-import { library, IconDefinition } from '@fortawesome/fontawesome-svg-core'
-import { faAddressBook, faTable, faGrid } from "@fortawesome/sharp-solid-svg-icons";
-import { faAmazon, faGoogle, faMicrosoft } from '@fortawesome/free-brands-svg-icons'
-//import React from "react";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faGrid, faTable } from "@fortawesome/pro-solid-svg-icons";
 
 export default {
     title: 'Composite/SegmentedControl',
@@ -13,27 +11,22 @@ export default {
 export const Default = {
     args: {
         multiSelect: false,
-        ariaLabel: 'cloud-service',
+        ariaLabel: 'grid',
         items: [
             {
-                value: 'amazon',
-                ariaLabel: 'cloud-service-amazon',
-                icon: faAmazon
+                value: 'table',
+                ariaLabel: 'mode-table',
+                icon: faTable,
+                selected: true
             },
             {
-                value: 'google',
-                ariaLabel: 'cloud-service-google',
-                icon: faGoogle
-            },
-            {
-                value: 'azure',
-                ariaLabel: 'cloud-service-azure',
-                icon: faMicrosoft
+                value: 'grid',
+                ariaLabel: 'mode-grid',
+                icon: faGrid,
+                selected: false,
             },
         ],
     }
 }
 
-library.add(faAddressBook, faTable, faGrid)
-//@ts-ignore
-library.add(faAmazon, faGoogle, faMicrosoft as IconDefinition)
+library.add(faTable, faGrid)

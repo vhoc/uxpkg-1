@@ -2,7 +2,7 @@ import { __assign, __rest } from "tslib";
 import React from "react";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { variants, theme } from '../../theme';
+import { variants, theme, colors } from '../../theme';
 import { SideMenuSectionName } from "./SideMenuSectionName";
 export var SideMenuItem = function (_a) {
     var style = _a.style, _b = _a.variant, variant = _b === void 0 ? 'primary' : _b, itemType = _a.itemType, _c = _a.selected, selected = _c === void 0 ? false : _c, _d = _a.collapsed, collapsed = _d === void 0 ? false : _d, setCollapsed = _a.setCollapsed, icon = _a.icon, _e = _a.disabled, disabled = _e === void 0 ? false : _e, label = _a.label, onClick = _a.onClick, keepExtended = _a.keepExtended, props = __rest(_a, ["style", "variant", "itemType", "selected", "collapsed", "setCollapsed", "icon", "disabled", "label", "onClick", "keepExtended"]);
@@ -47,7 +47,7 @@ export var SideMenuItem = function (_a) {
                 setCollapsed === null || setCollapsed === void 0 ? void 0 : setCollapsed(true);
             }, onClick: onClick }, props),
             React.createElement("div", { style: { textAlign: 'center', width: '24px', alignSelf: 'center' } },
-                React.createElement(FontAwesomeIcon, { style: { alignSelf: 'center' }, icon: icon, color: selected ? variants[selectedVariant].sideBarMenuItemIconColorHover : variants[selectedVariant].sideBarMenuItemIconColor })),
+                React.createElement(FontAwesomeIcon, { style: { alignSelf: 'center' }, icon: icon, color: selected ? variants[selectedVariant].sideBarMenuItemIconColorHover : colors.gray[70] })),
             (!collapsed || keepExtended) ?
                 React.createElement("div", { style: {
                         textAlign: 'left',

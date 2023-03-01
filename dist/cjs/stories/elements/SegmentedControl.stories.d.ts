@@ -8,7 +8,8 @@ export declare const Default: {
         items: {
             value: string;
             ariaLabel: string;
-            icon: import("@fortawesome/free-brands-svg-icons").IconDefinition;
+            icon: import("@fortawesome/fontawesome-common-types").IconDefinition;
+            selected: boolean;
         }[];
     };
 };
