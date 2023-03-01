@@ -140,19 +140,19 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
                     <IconButton
                         variant={'gray'}
                         icon={faTrash}
-                        disabled={!isEditButtonEnabled}
-                        onClick={ isEditButtonEnabled ? onClickEditButton : undefined}
+                        disabled={!isDeleteButtonEnabled}
+                        onClick={ isDeleteButtonEnabled ? onClickDeleteButton : undefined}
                         style={{
-                            color : !isEditButtonEnabled ? '#8d94a1' : '#545b71'
+                            color : !isDeleteButtonEnabled ? '#8d94a1' : '#545b71'
                         }}
                     />
                     <IconButton
                         variant={'gray'}
                         icon={faPen}
-                        disabled={!isDeleteButtonEnabled}
-                        onClick={ isDeleteButtonEnabled ? onClickDeleteButton : undefined}
+                        disabled={!isEditButtonEnabled}
+                        onClick={ isEditButtonEnabled ? onClickEditButton : undefined}
                         style={{
-                            color : !isDeleteButtonEnabled ? '#8d94a1' : '#545b71'
+                            color : !isEditButtonEnabled ? '#8d94a1' : '#545b71'
                         }}
                     />
                 </div>

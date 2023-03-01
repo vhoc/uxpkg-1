@@ -77,11 +77,11 @@ var SummaryResourceCard = function (_a) {
                     justifyContent: 'flex-end',
                     gap: '4px'
                 } },
-                react_1["default"].createElement(IconButton_1.IconButton, { variant: 'gray', icon: pro_solid_svg_icons_1.faTrash, disabled: !isEditButtonEnabled, onClick: isEditButtonEnabled ? onClickEditButton : undefined, style: {
-                        color: !isEditButtonEnabled ? '#8d94a1' : '#545b71'
-                    } }),
-                react_1["default"].createElement(IconButton_1.IconButton, { variant: 'gray', icon: pro_solid_svg_icons_1.faPen, disabled: !isDeleteButtonEnabled, onClick: isDeleteButtonEnabled ? onClickDeleteButton : undefined, style: {
+                react_1["default"].createElement(IconButton_1.IconButton, { variant: 'gray', icon: pro_solid_svg_icons_1.faTrash, disabled: !isDeleteButtonEnabled, onClick: isDeleteButtonEnabled ? onClickDeleteButton : undefined, style: {
                         color: !isDeleteButtonEnabled ? '#8d94a1' : '#545b71'
+                    } }),
+                react_1["default"].createElement(IconButton_1.IconButton, { variant: 'gray', icon: pro_solid_svg_icons_1.faPen, disabled: !isEditButtonEnabled, onClick: isEditButtonEnabled ? onClickEditButton : undefined, style: {
+                        color: !isEditButtonEnabled ? '#8d94a1' : '#545b71'
                     } })))));
 };
 exports.SummaryResourceCard = SummaryResourceCard;

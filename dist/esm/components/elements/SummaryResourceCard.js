@@ -74,10 +74,10 @@ export var SummaryResourceCard = function (_a) {
                     justifyContent: 'flex-end',
                     gap: '4px'
                 } },
-                React.createElement(IconButton, { variant: 'gray', icon: faTrash, disabled: !isEditButtonEnabled, onClick: isEditButtonEnabled ? onClickEditButton : undefined, style: {
-                        color: !isEditButtonEnabled ? '#8d94a1' : '#545b71'
-                    } }),
-                React.createElement(IconButton, { variant: 'gray', icon: faPen, disabled: !isDeleteButtonEnabled, onClick: isDeleteButtonEnabled ? onClickDeleteButton : undefined, style: {
+                React.createElement(IconButton, { variant: 'gray', icon: faTrash, disabled: !isDeleteButtonEnabled, onClick: isDeleteButtonEnabled ? onClickDeleteButton : undefined, style: {
                         color: !isDeleteButtonEnabled ? '#8d94a1' : '#545b71'
+                    } }),
+                React.createElement(IconButton, { variant: 'gray', icon: faPen, disabled: !isEditButtonEnabled, onClick: isEditButtonEnabled ? onClickEditButton : undefined, style: {
+                        color: !isEditButtonEnabled ? '#8d94a1' : '#545b71'
                     } })))));
 };
