@@ -156,7 +156,8 @@ export const TextInput = ({ label, autoComplete, autoFocus, classes, defaultValu
                     borderWidth: '1px',
                     //border: 'inherited',
                     boxShadow: 'none',
-                },                
+                },
+                ...sx,
             }}
             size={'small'}
             disabled={disabled}
@@ -189,7 +190,7 @@ export const TextInput = ({ label, autoComplete, autoFocus, classes, defaultValu
                     readOnly={readOnly}
                     required={required}
                     rows={rows}
-                    sx={sx}
+                    sx={{ width: '100%', }}
                     type={type}
                     value={value}
                     startAdornment={ icon && iconPosition === 'start' ?                     

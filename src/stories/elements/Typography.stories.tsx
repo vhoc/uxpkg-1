@@ -83,9 +83,16 @@ export const H3 = {
     }
 }
 
-export const H4 = {
+export const H4Regular = {
     args: {
-        variant: 'h4',
+        variant: 'h4-regular',
+        children: 'This is a text',
+    }
+}
+
+export const H4Medium = {
+    args: {
+        variant: 'h4-medium',
         children: 'This is a text',
     }
 }

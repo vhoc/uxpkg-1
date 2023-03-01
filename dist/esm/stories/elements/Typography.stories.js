@@ -69,9 +69,15 @@ export var H3 = {
         children: 'This is a text'
     }
 };
-export var H4 = {
+export var H4Regular = {
     args: {
-        variant: 'h4',
+        variant: 'h4-regular',
+        children: 'This is a text'
+    }
+};
+export var H4Medium = {
+    args: {
+        variant: 'h4-medium',
         children: 'This is a text'
     }
 };

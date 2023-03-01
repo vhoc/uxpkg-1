@@ -18,7 +18,8 @@ export interface TypographyProps extends HTMLAttributes<HTMLDivElement> {
         'caption-regular' |
         'h2' |
         'h3' |
-        'h4' |
+        'h4-regular' |
+        'h4-medium' |
         'inputText-hint' |
         'inputText-typed' |
         'title-regular'

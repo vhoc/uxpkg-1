@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.TitleRegular = exports.InputTextTyped = exports.InputTextHint = exports.H4 = exports.H3 = exports.H2 = exports.CaptionRegular = exports.ButtonLabelMedium = exports.ButtonLabelRegular = exports.BreadcrumbLinkPressed = exports.BreadcrumbLinkHover = exports.BreadcrumbLink = exports.BodySmallRegular = exports.BodySemiBold = exports.BodyRegular = void 0;
+exports.TitleRegular = exports.InputTextTyped = exports.InputTextHint = exports.H4Medium = exports.H4Regular = exports.H3 = exports.H2 = exports.CaptionRegular = exports.ButtonLabelMedium = exports.ButtonLabelRegular = exports.BreadcrumbLinkPressed = exports.BreadcrumbLinkHover = exports.BreadcrumbLink = exports.BodySmallRegular = exports.BodySemiBold = exports.BodyRegular = void 0;
 var Typography_1 = require("../../components/elements/Typography");
 exports["default"] = {
     title: 'elements/Typography',
@@ -72,9 +72,15 @@ exports.H3 = {
         children: 'This is a text'
     }
 };
-exports.H4 = {
+exports.H4Regular = {
     args: {
-        variant: 'h4',
+        variant: 'h4-regular',
+        children: 'This is a text'
+    }
+};
+exports.H4Medium = {
+    args: {
+        variant: 'h4-medium',
         children: 'This is a text'
     }
 };

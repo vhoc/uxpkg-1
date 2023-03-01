@@ -67,7 +67,13 @@ export declare const H3: {
         children: string;
     };
 };
-export declare const H4: {
+export declare const H4Regular: {
+    args: {
+        variant: string;
+        children: string;
+    };
+};
+export declare const H4Medium: {
     args: {
         variant: string;
         children: string;
