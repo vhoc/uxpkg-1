@@ -10,7 +10,7 @@ import { theme, colors, IVariant } from "../../theme"
 
 export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     variant?: 'primary'
-    accessState: 'access' | 'requested' | 'signIn'
+    accessState: 'access' | 'requested' | 'signIn' | 'waiting'
     resourceIcon?: JSX.Element | null
     bookmarked: boolean
     onBookmarkClick?: React.MouseEventHandler
@@ -38,6 +38,10 @@ export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, b
             borderColor: colors.yellow[50],
             backgroundColor: colors.white,
         },
+        waiting: {
+            borderColor: colors.yellow[50],
+            backgroundColor: colors.white,
+        },
         signIn: {
             borderColor: colors.blue[30],
             backgroundColor: colors.blue[5],
@@ -61,7 +65,7 @@ export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, b
         paddingRight: '16px',
         paddingLeft: '24px',
         width: width || '240px' ,
-        minWidth: '240px',
+        minWidth: '280px',
         maxWidth: width,
         ...style,
     })
@@ -77,14 +81,29 @@ export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, b
             {/** Row 1: AWSIcon and Bookmark button */}
             {
                 accessState !== 'requested' ?
-                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '16px' }}>
-                        <div>{resourceIcon}</div>
-                        <IconButton
-                            variant={ bookmarked ? 'grayBlue' : 'tertiary' }
-                            icon={faBookmark}
-                        />
-                    </div>
+                    accessState === 'waiting' ?
+                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '16px' }}>
+                            <div style={{ display: 'flex', justifyContent: 'flex-start', gap: '8px', }}>
+                            <div>{resourceIcon}</div>
+                            <Label variant="warning" text="Request in progress" />
+                            </div>
+                            
+                            <IconButton
+                                variant={ bookmarked ? 'grayBlue' : 'tertiary' }
+                                icon={faBookmark}
+                                onClick={onBookmarkClick}
+                            />
+                        </div>
                     :
+
+                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '16px' }}>
+                            <div>{resourceIcon}</div>
+                            <IconButton
+                                variant={ bookmarked ? 'grayBlue' : 'tertiary' }
+                                icon={faBookmark}
+                            />
+                        </div>
+                :
                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '16px' }}>
                         <div style={{ display: 'flex', justifyContent: 'flex-start', gap: '8px', }}>
                         <div>{resourceIcon}</div>

@@ -19,20 +19,31 @@ export var ResourceCard = function (_a) {
             borderColor: colors.yellow[50],
             backgroundColor: colors.white
         },
+        waiting: {
+            borderColor: colors.yellow[50],
+            backgroundColor: colors.white
+        },
         signIn: {
             borderColor: colors.blue[30],
             backgroundColor: colors.blue[5]
         }
     };
     var selectedAccessState = accessState;
-    var componentStyle = function () { return (__assign({ backgroundColor: accessStateStyles[selectedAccessState].backgroundColor, color: colors.gray[90], fontFamily: theme.font.body.regular.fontFamily, fontSize: theme.font.body.regular.fontSize, borderRadius: '4px', borderWidth: '1px', borderStyle: 'solid', borderColor: accessStateStyles[selectedAccessState].borderColor, paddingTop: '16px', paddingBottom: '16px', paddingRight: '16px', paddingLeft: '24px', width: width || '240px', minWidth: '240px', maxWidth: width }, style)); };
+    var componentStyle = function () { return (__assign({ backgroundColor: accessStateStyles[selectedAccessState].backgroundColor, color: colors.gray[90], fontFamily: theme.font.body.regular.fontFamily, fontSize: theme.font.body.regular.fontSize, borderRadius: '4px', borderWidth: '1px', borderStyle: 'solid', borderColor: accessStateStyles[selectedAccessState].borderColor, paddingTop: '16px', paddingBottom: '16px', paddingRight: '16px', paddingLeft: '24px', width: width || '240px', minWidth: '280px', maxWidth: width }, style)); };
     return (React.createElement(View, __assign({ style: componentStyle(), 
         //width={'304px'}
         padding: '16px 16px 16px 24px' }, props),
         accessState !== 'requested' ?
-            React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', marginBottom: '16px' } },
-                React.createElement("div", null, resourceIcon),
-                React.createElement(IconButton, { variant: bookmarked ? 'grayBlue' : 'tertiary', icon: faBookmark }))
+            accessState === 'waiting' ?
+                React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', marginBottom: '16px' } },
+                    React.createElement("div", { style: { display: 'flex', justifyContent: 'flex-start', gap: '8px' } },
+                        React.createElement("div", null, resourceIcon),
+                        React.createElement(Label, { variant: "warning", text: "Request in progress" })),
+                    React.createElement(IconButton, { variant: bookmarked ? 'grayBlue' : 'tertiary', icon: faBookmark, onClick: onBookmarkClick }))
+                :
+                    React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', marginBottom: '16px' } },
+                        React.createElement("div", null, resourceIcon),
+                        React.createElement(IconButton, { variant: bookmarked ? 'grayBlue' : 'tertiary', icon: faBookmark }))
             :
                 React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', marginBottom: '16px' } },
                     React.createElement("div", { style: { display: 'flex', justifyContent: 'flex-start', gap: '8px' } },

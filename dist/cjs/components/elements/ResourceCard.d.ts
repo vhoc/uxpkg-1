@@ -2,7 +2,7 @@ import React, { CSSProperties, HTMLAttributes } from "react";
 import { IDropDownItem } from '../../util/sample-data';
 export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     variant?: 'primary';
-    accessState: 'access' | 'requested' | 'signIn';
+    accessState: 'access' | 'requested' | 'signIn' | 'waiting';
     resourceIcon?: JSX.Element | null;
     bookmarked: boolean;
     onBookmarkClick?: React.MouseEventHandler;
