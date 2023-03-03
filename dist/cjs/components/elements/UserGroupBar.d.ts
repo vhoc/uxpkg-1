@@ -19,5 +19,7 @@ export interface UserGroupBarProps extends HTMLAttributes<HTMLDivElement> {
     removeButtonOnClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
     /** Style override for the container */
     style?: React.CSSProperties | undefined;
+    /** Toggle the add/remove button */
+    endButton?: boolean;
 }
-export declare const UserGroupBar: ({ type, name, leftIcon, caption, selected, assigned, addButtonOnClick, removeButtonOnClick, style, }: UserGroupBarProps) => JSX.Element;
+export declare const UserGroupBar: ({ type, name, leftIcon, caption, selected, assigned, addButtonOnClick, removeButtonOnClick, style, endButton }: UserGroupBarProps) => JSX.Element;

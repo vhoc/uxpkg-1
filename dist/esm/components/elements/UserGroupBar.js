@@ -6,7 +6,7 @@ import { Typography } from "./Typography";
 import { faCircleMinus, faCirclePlus, faUserGroup, faUser } from "@fortawesome/pro-solid-svg-icons";
 import { IconButton } from "./IconButton";
 export var UserGroupBar = function (_a) {
-    var type = _a.type, name = _a.name, leftIcon = _a.leftIcon, caption = _a.caption, _b = _a.selected, selected = _b === void 0 ? false : _b, _c = _a.assigned, assigned = _c === void 0 ? false : _c, addButtonOnClick = _a.addButtonOnClick, removeButtonOnClick = _a.removeButtonOnClick, style = _a.style;
+    var type = _a.type, name = _a.name, leftIcon = _a.leftIcon, caption = _a.caption, _b = _a.selected, selected = _b === void 0 ? false : _b, _c = _a.assigned, assigned = _c === void 0 ? false : _c, addButtonOnClick = _a.addButtonOnClick, removeButtonOnClick = _a.removeButtonOnClick, style = _a.style, _d = _a.endButton, endButton = _d === void 0 ? true : _d;
     return (React.createElement("div", { style: __assign({ backgroundColor: selected ? colors.blue[5] : colors.white, minWidth: '265px', minHeight: '63px', paddingTop: '12px', paddingBottom: '12px', paddingRight: '12px', paddingLeft: '16px', display: 'flex', justifyContent: 'space-between', boxSizing: 'border-box' }, style) },
         React.createElement("div", { style: {
                 display: 'flex',
@@ -26,10 +26,12 @@ export var UserGroupBar = function (_a) {
                 } },
                 React.createElement(Typography, { variant: 'inputText-typed' }, name),
                 React.createElement(Typography, { variant: 'breadcrumbLink' }, caption))),
-        React.createElement("div", null,
+        React.createElement("div", null, endButton ?
             React.createElement(IconButton
             //style={{alignSelf: 'start' }}
             , { 
                 //style={{alignSelf: 'start' }}
-                icon: assigned ? faCircleMinus : faCirclePlus, variant: assigned ? 'gray' : 'grayBlue', size: 'sm', onClick: assigned ? removeButtonOnClick : addButtonOnClick }))));
+                icon: assigned ? faCircleMinus : faCirclePlus, variant: assigned ? 'gray' : 'grayBlue', size: 'sm', onClick: assigned ? removeButtonOnClick : addButtonOnClick })
+            :
+                null)));
 };

@@ -1,13 +1,15 @@
-import React, { HTMLAttributes } from 'react';
+import React from 'react';
 import { SelectDropDownItemProps } from './SelectDropDown';
-export interface PickListHeadingProps extends HTMLAttributes<HTMLDivElement> {
+export interface PickListHeadingProps {
     /** Number of existing items in the list */
-    existingCount?: number | undefined;
+    title?: string | undefined;
     /** Dropdown of options */
     dropDownItems: SelectDropDownItemProps[];
     /** Dropdown selected value (Controlled component) */
     dropDownValue?: any;
     /** Style overrides */
     style?: React.CSSProperties | undefined;
+    /** onChange event that will be drilled into the internal SimpleDropDown component */
+    onChange?: React.ChangeEventHandler<HTMLSelectElement> | undefined;
 }
-export declare const PickListHeading: ({ existingCount, dropDownItems, dropDownValue, style }: PickListHeadingProps) => JSX.Element;
+export declare const PickListHeading: ({ title, dropDownItems, dropDownValue, style, onChange }: PickListHeadingProps) => JSX.Element;

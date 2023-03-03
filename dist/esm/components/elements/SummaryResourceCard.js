@@ -1,4 +1,4 @@
-import { __assign, __rest } from "tslib";
+import { __assign } from "tslib";
 import React from "react";
 import { colors } from "../../theme";
 import { Typography } from "./Typography";
@@ -6,7 +6,7 @@ import { IconButton } from "./IconButton";
 import { faTrash, faPen } from "@fortawesome/pro-solid-svg-icons";
 import { styled } from '@mui/material/styles';
 export var SummaryResourceCard = function (_a) {
-    var resourceIcon = _a.resourceIcon, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, children = _a.children, _b = _a.isEditButtonEnabled, isEditButtonEnabled = _b === void 0 ? true : _b, _c = _a.isDeleteButtonEnabled, isDeleteButtonEnabled = _c === void 0 ? true : _c, onClickEditButton = _a.onClickEditButton, onClickDeleteButton = _a.onClickDeleteButton, props = __rest(_a, ["resourceIcon", "resourceName", "resourceType", "accountName", "region", "children", "isEditButtonEnabled", "isDeleteButtonEnabled", "onClickEditButton", "onClickDeleteButton"]);
+    var resourceIcon = _a.resourceIcon, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, children = _a.children, _b = _a.isEditButtonEnabled, isEditButtonEnabled = _b === void 0 ? true : _b, _c = _a.isDeleteButtonEnabled, isDeleteButtonEnabled = _c === void 0 ? true : _c, onClickEditButton = _a.onClickEditButton, onClickDeleteButton = _a.onClickDeleteButton, style = _a.style;
     var MyDiv = styled('div')({
         overflowY: 'auto',
         '&::-webkit-scrollbar': {
@@ -21,17 +21,7 @@ export var SummaryResourceCard = function (_a) {
             borderRadius: '3px'
         }
     });
-    return (React.createElement("div", __assign({ style: {
-            backgroundColor: colors.white,
-            display: 'flex',
-            justifyContent: 'space-between',
-            padding: '16px',
-            width: '688px',
-            maxWidth: '778px',
-            minHeight: '88px',
-            border: "1px solid ".concat(colors.gray[20]),
-            borderRadius: '4px'
-        } }, props),
+    return (React.createElement("div", { style: __assign({ backgroundColor: colors.white, display: 'flex', justifyContent: 'space-between', padding: '16px', minWidth: '640px', minHeight: '88px', border: "1px solid ".concat(colors.gray[20]), borderRadius: '4px' }, style) },
         React.createElement("div", { style: { display: 'flex', gap: '12px' } },
             React.createElement("div", { style: { width: '34px', fontSize: '10px', textAlign: 'center' } }, resourceIcon),
             React.createElement("div", { style: {

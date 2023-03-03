@@ -8,7 +8,8 @@ export default {
 
 export const Default = {
     args: {
-        existingCount: 123,
+        title: 'Existing (123)',
+        onChange: () => alert(`SimpleDropDown onChange event!`),
         dropDownItems: [
             {
               label: 'Show: Users & Groups',

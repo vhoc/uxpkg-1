@@ -25,9 +25,11 @@ export interface UserGroupBarProps extends HTMLAttributes<HTMLDivElement> {
     removeButtonOnClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
     /** Style override for the container */
     style?: React.CSSProperties | undefined
+    /** Toggle the add/remove button */
+    endButton?: boolean
 }
 
-export const UserGroupBar = ({ type, name, leftIcon, caption, selected = false, assigned = false, addButtonOnClick, removeButtonOnClick, style, }: UserGroupBarProps) => {
+export const UserGroupBar = ({ type, name, leftIcon, caption, selected = false, assigned = false, addButtonOnClick, removeButtonOnClick, style, endButton = true }: UserGroupBarProps) => {
 
     return (
         <div
@@ -83,13 +85,19 @@ export const UserGroupBar = ({ type, name, leftIcon, caption, selected = false, 
 
             {/** ACTIONBUTTON COLUMN */}
             <div>
-                <IconButton
-                    //style={{alignSelf: 'start' }}
-                    icon={assigned ? faCircleMinus : faCirclePlus}
-                    variant={assigned ? 'gray' : 'grayBlue'}
-                    size={'sm'}
-                    onClick={assigned ? removeButtonOnClick : addButtonOnClick }
-                />
+            {
+                endButton ?
+                    <IconButton
+                        //style={{alignSelf: 'start' }}
+                        icon={assigned ? faCircleMinus : faCirclePlus}
+                        variant={assigned ? 'gray' : 'grayBlue'}
+                        size={'sm'}
+                        onClick={assigned ? removeButtonOnClick : addButtonOnClick }
+                    />
+                :
+                    null
+            }
+                
             </div>
             
         </div>

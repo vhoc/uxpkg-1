@@ -1,21 +1,23 @@
-import React, { HTMLAttributes } from 'react'
+import React from 'react'
 import { SelectDropDownItemProps } from './SelectDropDown'
 import { colors } from '../../theme'
 import { Typography } from './Typography'
 import { SimpleDropDown } from './SimpleDropDown'
 
-export interface PickListHeadingProps extends HTMLAttributes<HTMLDivElement> {
+export interface PickListHeadingProps {
     /** Number of existing items in the list */
-    existingCount?: number | undefined
+    title?: string | undefined
     /** Dropdown of options */
     dropDownItems: SelectDropDownItemProps[]
     /** Dropdown selected value (Controlled component) */
     dropDownValue?: any
     /** Style overrides */
     style?: React.CSSProperties | undefined
+    /** onChange event that will be drilled into the internal SimpleDropDown component */
+    onChange?: React.ChangeEventHandler<HTMLSelectElement> | undefined
 }
 
-export const PickListHeading = ({ existingCount, dropDownItems, dropDownValue, style }: PickListHeadingProps): JSX.Element => {
+export const PickListHeading = ({ title, dropDownItems, dropDownValue, style, onChange }: PickListHeadingProps): JSX.Element => {
 
     return (
         <div
@@ -26,10 +28,10 @@ export const PickListHeading = ({ existingCount, dropDownItems, dropDownValue, s
                 borderStyle: 'solid',
                 borderWidth: '1px',
                 borderColor: colors.gray[20],
-                borderTopLeftRadius: '0px',
-                borderTopRightRadius: '0px',
-                borderBottomLeftRadius: '4px',
-                borderBottomRightRadius: '4px',
+                borderTopLeftRadius: '4px',
+                borderTopRightRadius: '4px',
+                borderBottomLeftRadius: '0px',
+                borderBottomRightRadius: '0px',
                 paddingLeft: '16px',
                 paddingRight: '8px',
                 paddingTop: '4px',
@@ -39,13 +41,14 @@ export const PickListHeading = ({ existingCount, dropDownItems, dropDownValue, s
                 ...style,
             }}
         >
-            <Typography variant={'breadcrumbLink'} >{ `Existing (${existingCount?.toString() || '0'})` }</Typography>
+            <Typography variant={'breadcrumbLink'} >{ title }</Typography>
 
             {
                 dropDownItems && dropDownItems.length >= 1 ?
                     <SimpleDropDown
                         menuItems={dropDownItems}
                         value={dropDownValue}
+                        onChange={onChange}
                     />
                 :
                     null

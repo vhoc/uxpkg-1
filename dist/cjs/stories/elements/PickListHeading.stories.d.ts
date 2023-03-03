@@ -3,7 +3,8 @@ declare const _default: Meta<import("@storybook/react/types-6-0").Args>;
 export default _default;
 export declare const Default: {
     args: {
-        existingCount: number;
+        title: string;
+        onChange: () => void;
         dropDownItems: {
             label: string;
             value: string;

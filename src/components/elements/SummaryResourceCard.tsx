@@ -16,9 +16,10 @@ export interface SummaryResourceCardProps extends HTMLAttributes<HTMLDivElement>
     onClickEditButton?: React.MouseEventHandler<HTMLButtonElement> | undefined
     onClickDeleteButton?: React.MouseEventHandler<HTMLButtonElement> | undefined
     isDeleteButtonEnabled: boolean
+    style?: React.CSSProperties | undefined
 }
 
-export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, accountName, region, children, isEditButtonEnabled = true, isDeleteButtonEnabled = true, onClickEditButton, onClickDeleteButton, ...props}: SummaryResourceCardProps): JSX.Element => {
+export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, accountName, region, children, isEditButtonEnabled = true, isDeleteButtonEnabled = true, onClickEditButton, onClickDeleteButton, style}: SummaryResourceCardProps): JSX.Element => {
 
     const MyDiv = styled('div')({
         overflowY: 'auto',
@@ -44,13 +45,12 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
                 display: 'flex',
                 justifyContent: 'space-between',
                 padding: '16px',
-                width: '688px',
-                maxWidth: '778px',
+                minWidth: '640px',
                 minHeight: '88px',
                 border: `1px solid ${colors.gray[20]}`,
                 borderRadius: '4px',
+                ...style
             }}
-            {...props}
         >
 
             {/** LEFT SECTION */}

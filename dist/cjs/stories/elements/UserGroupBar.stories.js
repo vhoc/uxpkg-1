@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.Group = exports.User = exports.Unselected = exports.Selected = exports.Unssigned = exports.Assigned = exports.Default = void 0;
+exports.WithoutEndButton = exports.Group = exports.User = exports.Unselected = exports.Selected = exports.Unssigned = exports.Assigned = exports.Default = void 0;
 var UserGroupBar_1 = require("../../components/elements/UserGroupBar");
 exports["default"] = {
     title: 'composite/PickList Elements/UserGroupBar',
@@ -106,6 +106,20 @@ exports.Group = {
         assigned: false,
         addButtonOnClick: function () { return alert("Add user/group"); },
         removeButtonOnClick: function () { return alert("Remove user/group"); },
+        style: {
+            width: '394px'
+        }
+    }
+};
+exports.WithoutEndButton = {
+    args: {
+        type: 'user',
+        name: 'Bill Murray',
+        //leftIcon: faUser,
+        caption: 'bill@company.com',
+        selected: false,
+        assigned: false,
+        endButton: false,
         style: {
             width: '394px'
         }

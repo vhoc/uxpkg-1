@@ -25,7 +25,7 @@ export const LoadingModal = ({ message, caption, ...props }: LoadingModalProps):
                 display: 'flex',
                 alignItems: 'center',
                 cursor: 'wait',
-
+                gap: '16px',
             }}
             {...props}
         >

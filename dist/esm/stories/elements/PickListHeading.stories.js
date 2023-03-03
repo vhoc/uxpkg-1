@@ -5,7 +5,8 @@ export default {
 };
 export var Default = {
     args: {
-        existingCount: 123,
+        title: 'Existing (123)',
+        onChange: function () { return alert("SimpleDropDown onChange event!"); },
         dropDownItems: [
             {
                 label: 'Show: Users & Groups',

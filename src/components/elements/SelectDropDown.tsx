@@ -9,7 +9,7 @@ export interface SelectDropDownItemProps extends MenuItemProps {
     value?: string | undefined
     label: string
     selected?: boolean | undefined
-    disabled: boolean | undefined
+    disabled?: boolean | undefined
     onClick?: React.MouseEventHandler<HTMLLIElement> | undefined
     /** Style overrides */
     style?: React.CSSProperties | undefined

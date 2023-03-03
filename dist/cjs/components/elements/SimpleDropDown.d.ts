@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import React, { HTMLAttributes } from 'react';
 import { SelectDropDownItemProps } from './SelectDropDown';
 export interface SimpleDropDownProps extends HTMLAttributes<HTMLSelectElement> {
     /**
@@ -15,5 +15,7 @@ export interface SimpleDropDownProps extends HTMLAttributes<HTMLSelectElement> {
      */
     menuItems: SelectDropDownItemProps[];
     disabled?: boolean;
+    /** On Change event */
+    onChange?: React.ChangeEventHandler<HTMLSelectElement> | undefined;
 }
-export declare const SimpleDropDown: ({ value, menuItems, disabled }: SimpleDropDownProps) => JSX.Element;
+export declare const SimpleDropDown: ({ value, menuItems, disabled, onChange }: SimpleDropDownProps) => JSX.Element;

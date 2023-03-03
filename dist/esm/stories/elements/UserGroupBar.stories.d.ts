@@ -97,3 +97,16 @@ export declare const Group: {
         };
     };
 };
+export declare const WithoutEndButton: {
+    args: {
+        type: string;
+        name: string;
+        caption: string;
+        selected: boolean;
+        assigned: boolean;
+        endButton: boolean;
+        style: {
+            width: string;
+        };
+    };
+};

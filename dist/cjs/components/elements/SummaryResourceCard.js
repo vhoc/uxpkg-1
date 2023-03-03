@@ -9,7 +9,7 @@ var IconButton_1 = require("./IconButton");
 var pro_solid_svg_icons_1 = require("@fortawesome/pro-solid-svg-icons");
 var styles_1 = require("@mui/material/styles");
 var SummaryResourceCard = function (_a) {
-    var resourceIcon = _a.resourceIcon, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, children = _a.children, _b = _a.isEditButtonEnabled, isEditButtonEnabled = _b === void 0 ? true : _b, _c = _a.isDeleteButtonEnabled, isDeleteButtonEnabled = _c === void 0 ? true : _c, onClickEditButton = _a.onClickEditButton, onClickDeleteButton = _a.onClickDeleteButton, props = tslib_1.__rest(_a, ["resourceIcon", "resourceName", "resourceType", "accountName", "region", "children", "isEditButtonEnabled", "isDeleteButtonEnabled", "onClickEditButton", "onClickDeleteButton"]);
+    var resourceIcon = _a.resourceIcon, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, children = _a.children, _b = _a.isEditButtonEnabled, isEditButtonEnabled = _b === void 0 ? true : _b, _c = _a.isDeleteButtonEnabled, isDeleteButtonEnabled = _c === void 0 ? true : _c, onClickEditButton = _a.onClickEditButton, onClickDeleteButton = _a.onClickDeleteButton, style = _a.style;
     var MyDiv = (0, styles_1.styled)('div')({
         overflowY: 'auto',
         '&::-webkit-scrollbar': {
@@ -24,17 +24,7 @@ var SummaryResourceCard = function (_a) {
             borderRadius: '3px'
         }
     });
-    return (react_1["default"].createElement("div", tslib_1.__assign({ style: {
-            backgroundColor: theme_1.colors.white,
-            display: 'flex',
-            justifyContent: 'space-between',
-            padding: '16px',
-            width: '688px',
-            maxWidth: '778px',
-            minHeight: '88px',
-            border: "1px solid ".concat(theme_1.colors.gray[20]),
-            borderRadius: '4px'
-        } }, props),
+    return (react_1["default"].createElement("div", { style: tslib_1.__assign({ backgroundColor: theme_1.colors.white, display: 'flex', justifyContent: 'space-between', padding: '16px', minWidth: '640px', minHeight: '88px', border: "1px solid ".concat(theme_1.colors.gray[20]), borderRadius: '4px' }, style) },
         react_1["default"].createElement("div", { style: { display: 'flex', gap: '12px' } },
             react_1["default"].createElement("div", { style: { width: '34px', fontSize: '10px', textAlign: 'center' } }, resourceIcon),
             react_1["default"].createElement("div", { style: {

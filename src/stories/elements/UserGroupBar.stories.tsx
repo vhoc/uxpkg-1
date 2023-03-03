@@ -117,3 +117,18 @@ export const Group = {
         }
     }
 }
+
+export const WithoutEndButton = {
+    args: {
+        type: 'user',
+        name: 'Bill Murray',
+        //leftIcon: faUser,
+        caption: 'bill@company.com',
+        selected: false,
+        assigned: false,
+        endButton: false,
+        style: {
+            width: '394px',
+        }
+    }
+}

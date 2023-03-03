@@ -18,7 +18,8 @@ export var LoadingModal = function (_a) {
             paddingRight: '32px',
             display: 'flex',
             alignItems: 'center',
-            cursor: 'wait'
+            cursor: 'wait',
+            gap: '16px'
         } }, props),
         React.createElement(Spinner, null),
         React.createElement("div", { style: {
