@@ -22,7 +22,7 @@ export const PickListHeading = ({ title, dropDownItems, dropDownValue, style, on
     return (
         <div
             style={{
-                width: '396px',
+                minWidth: 'fit-content',
                 height: '32px',
                 backgroundColor: colors.gray[10],
                 borderStyle: 'solid',

@@ -1,21 +1,35 @@
-import { __assign, __rest } from "tslib";
+import { __assign } from "tslib";
 import * as React from 'react';
 import { useState } from 'react';
 import { Tabs, ThemeProvider } from '@mui/material';
 import { Tab } from '@mui/material';
 import { colors } from '../../theme';
 import { mtheme } from "../../theme";
+import { styled } from '@mui/material/styles';
 export var TabPanel = function (_a) {
-    var children = _a.children, index = _a.index, value = _a.value, props = __rest(_a, ["children", "index", "value"]);
-    return (React.createElement("div", __assign({ role: 'tabpanel', hidden: value !== index, id: "tabpanel-".concat(index), "aria-labelledby": "tab-".concat(index), style: {
-            paddingTop: '14px',
-            paddingBottom: '14px',
-            paddingLeft: '24px',
-            paddingRight: '24px',
-            backgroundColor: colors.white
-        } }, props), value === index ?
+    var children = _a.children, index = _a.index, value = _a.value, style = _a.style, tabContentHeight = _a.tabContentHeight;
+    var MyDiv = styled('div')({
+        overflowY: 'auto',
+        marginRight: '-12px',
+        '&::-webkit-scrollbar': {
+            width: '4px'
+        },
+        '&::-webkit-scrollbar-track': {
+            backgroundColor: colors.gray[10],
+            borderRadius: '3px'
+        },
+        '&::-webkit-scrollbar-thumb': {
+            backgroundColor: colors.gray[50],
+            borderRadius: '3px'
+        }
+    });
+    return (React.createElement("div", { role: 'tabpanel', hidden: value !== index, id: "tabpanel-".concat(index), "aria-labelledby": "tab-".concat(index), style: __assign({ paddingTop: '14px', paddingBottom: '14px', paddingLeft: '12px', paddingRight: '12px', backgroundColor: colors.white }, style) }, value === index ?
         (React.createElement(ThemeProvider, { theme: mtheme },
-            React.createElement("div", null, children)))
+            React.createElement(MyDiv, { style: {
+                    maxHeight: tabContentHeight,
+                    height: tabContentHeight,
+                    overflowY: 'auto'
+                } }, children)))
         :
             null));
 };
@@ -26,7 +40,7 @@ var a11yProps = function (index) {
     };
 };
 export var TabGroup = function (_a) {
-    var tabs = _a.tabs;
+    var tabs = _a.tabs, tabContentHeight = _a.tabContentHeight;
     var _b = useState(0), value = _b[0], setValue = _b[1];
     var handleChange = function (event, newValue) {
         setValue(newValue);
@@ -82,7 +96,7 @@ export var TabGroup = function (_a) {
                     null),
             tabs && tabs.length >= 1 ?
                 React.createElement(React.Fragment, null, tabs.map(function (tab, index) {
-                    return (React.createElement(TabPanel, { key: index, value: value, index: index }, tab.tabContent));
+                    return (React.createElement(TabPanel, { key: index, value: value, index: index, tabContentHeight: tabContentHeight }, tab.tabContent));
                 }))
                 :
                     null)));

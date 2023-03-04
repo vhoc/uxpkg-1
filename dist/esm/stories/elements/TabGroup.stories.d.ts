@@ -10,3 +10,12 @@ export declare const Default: {
         }[];
     };
 };
+export declare const WithResourceItem: {
+    args: {
+        tabContentHeight: string;
+        tabs: {
+            label: string;
+            tabContent: JSX.Element;
+        }[];
+    };
+};

@@ -6,14 +6,35 @@ import { colors } from '../../theme'
 import { SxProps } from '@mui/material'
 import { mtheme } from "../../theme"
 import { ITab } from '../../types'
+import { styled } from '@mui/material/styles';
 
 export interface TabPanelProps extends HTMLAttributes<HTMLDivElement> {
     children?: ReactNode
     index: number
     value: number
+    style?: React.CSSProperties | undefined
+    tabContentHeight?: string | undefined
 }
 
-export const TabPanel = ({ children, index, value, ...props}: TabPanelProps) => {
+export const TabPanel = ({ children, index, value, style, tabContentHeight }: TabPanelProps) => {
+
+    const MyDiv = styled('div')({
+        overflowY: 'auto',
+        marginRight: '-12px',
+        '&::-webkit-scrollbar' : {
+            width: '4px',
+        },
+        '&::-webkit-scrollbar-track': {
+            backgroundColor: colors.gray[10],
+            borderRadius: '3px',
+            //'-webkit-box-shadow': 'inset 0 0 6px rgba(0,0,0,0.00)'
+        },
+        '&::-webkit-scrollbar-thumb': {
+            backgroundColor: colors.gray[50],
+            borderRadius: '3px',
+            //outline: '1px solid slategrey'
+        }
+    })
 
     return (
         <div
@@ -24,20 +45,26 @@ export const TabPanel = ({ children, index, value, ...props}: TabPanelProps) => 
             style={{
                 paddingTop: '14px',
                 paddingBottom: '14px',
-                paddingLeft: '24px',
-                paddingRight: '24px',
+                paddingLeft: '12px',
+                paddingRight: '12px',
                 backgroundColor: colors.white,
+                ...style,
             }}
-            {...props}
         >
 
         {
             value === index ?
                 (
                     <ThemeProvider theme={mtheme}>
-                    <div>
-                        {children}
-                    </div>
+                        <MyDiv
+                            style={{
+                                maxHeight: tabContentHeight,
+                                height: tabContentHeight,
+                                overflowY: 'auto',
+                            }}
+                        >
+                            {children}
+                        </MyDiv>
                     </ThemeProvider>
                 )
             :
@@ -56,7 +83,12 @@ const a11yProps = (index: number) => {
     }
 }
 
-export const TabGroup = ({tabs}: any) => {
+interface TabGroupProps {
+    tabs: any
+    tabContentHeight?: string | undefined
+}
+
+export const TabGroup = ({tabs, tabContentHeight}: TabGroupProps) => {
     const [value, setValue] = useState(0)
 
     const handleChange = ( event: React.SyntheticEvent, newValue: number ) => {
@@ -149,6 +181,7 @@ export const TabGroup = ({tabs}: any) => {
                                     key={index}
                                     value={value}
                                     index={index}
+                                    tabContentHeight={tabContentHeight}
                                 >
                                     {tab.tabContent}
                                 </TabPanel>
