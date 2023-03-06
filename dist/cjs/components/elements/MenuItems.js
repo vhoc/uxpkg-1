@@ -9,14 +9,14 @@ var sharp_solid_svg_icons_1 = require("@fortawesome/sharp-solid-svg-icons");
 var theme_1 = require("../../theme");
 require("../../assets/styles/dropdown.css");
 var MenuItems = function (_a) {
-    var style = _a.style, items = _a.items, depthLevel = _a.depthLevel, _b = _a.disabled, disabled = _b === void 0 ? false : _b, variant = _a.variant, _c = _a.size, size = _c === void 0 ? 'sm' : _c, height = _a.height, width = _a.width, _d = _a.isImageDropDown, isImageDropDown = _d === void 0 ? false : _d, hasDownArrow = _a.hasDownArrow, MenuItemProps = tslib_1.__rest(_a, ["style", "items", "depthLevel", "disabled", "variant", "size", "height", "width", "isImageDropDown", "hasDownArrow"]);
+    var style = _a.style, items = _a.items, depthLevel = _a.depthLevel, _b = _a.disabled, disabled = _b === void 0 ? false : _b, variant = _a.variant, _c = _a.size, size = _c === void 0 ? 'sm' : _c, height = _a.height, width = _a.width, _d = _a.isImageDropDown, isImageDropDown = _d === void 0 ? false : _d, hasDownArrow = _a.hasDownArrow, _e = _a.mode, mode = _e === void 0 ? 'image' : _e, MenuItemProps = tslib_1.__rest(_a, ["style", "items", "depthLevel", "disabled", "variant", "size", "height", "width", "isImageDropDown", "hasDownArrow", "mode"]);
     var selectedVariant = variant;
     var selectedSize = size;
     //console.log(items)
     var ref = (0, react_1.useRef)(null);
-    var _e = (0, react_1.useState)(false), dropdown = _e[0], setDropdown = _e[1];
-    var _f = (0, react_1.useState)(false), hover = _f[0], setHover = _f[1];
-    var _g = (0, react_1.useState)(false), active = _g[0], setActive = _g[1];
+    var _f = (0, react_1.useState)(false), dropdown = _f[0], setDropdown = _f[1];
+    var _g = (0, react_1.useState)(false), hover = _g[0], setHover = _g[1];
+    var _h = (0, react_1.useState)(false), active = _h[0], setActive = _h[1];
     //const [focus, setFocus] = useState<boolean>(false)
     /**
      * The proper order is:
@@ -32,11 +32,11 @@ var MenuItems = function (_a) {
         minWidth: items.submenu ? '0px' : '150px',
         fontFamily: theme_1.theme.font.buttonLabel.regular.fontFamily,
         fontSize: theme_1.sizes.button[selectedSize].fontSize,
-        paddingLeft: isImageDropDown ? '0px' : theme_1.sizes.popOverMenuItem[selectedSize].paddingLeft,
+        paddingLeft: (isImageDropDown && mode === 'image') ? '0px' : theme_1.sizes.popOverMenuItem[selectedSize].paddingLeft,
         paddingRight: theme_1.sizes.popOverMenuItem[selectedSize].paddingRight,
         paddingTop: isImageDropDown ? '0px' : items.submenu ? theme_1.sizes.popOverMenuItem[selectedSize].paddingTop : '5px',
         paddingBottom: isImageDropDown ? '0px' : items.submenu ? theme_1.sizes.popOverMenuItem[selectedSize].paddingBottom : '5px',
-        borderRadius: (isImageDropDown || variant === 'clear') ? '0px' : '4px',
+        borderRadius: ((isImageDropDown && mode === 'image') || variant === 'clear') ? '0px' : '4px',
         cursor: disabled ? 'not-allowed' : 'pointer',
         border: 'none',
         //outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',

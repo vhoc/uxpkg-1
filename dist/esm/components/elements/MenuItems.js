@@ -6,14 +6,14 @@ import { faCaretDown, faCaretRight } from '@fortawesome/sharp-solid-svg-icons';
 import { variants, theme, sizes, colors } from '../../theme';
 import '../../assets/styles/dropdown.css';
 export var MenuItems = function (_a) {
-    var style = _a.style, items = _a.items, depthLevel = _a.depthLevel, _b = _a.disabled, disabled = _b === void 0 ? false : _b, variant = _a.variant, _c = _a.size, size = _c === void 0 ? 'sm' : _c, height = _a.height, width = _a.width, _d = _a.isImageDropDown, isImageDropDown = _d === void 0 ? false : _d, hasDownArrow = _a.hasDownArrow, MenuItemProps = __rest(_a, ["style", "items", "depthLevel", "disabled", "variant", "size", "height", "width", "isImageDropDown", "hasDownArrow"]);
+    var style = _a.style, items = _a.items, depthLevel = _a.depthLevel, _b = _a.disabled, disabled = _b === void 0 ? false : _b, variant = _a.variant, _c = _a.size, size = _c === void 0 ? 'sm' : _c, height = _a.height, width = _a.width, _d = _a.isImageDropDown, isImageDropDown = _d === void 0 ? false : _d, hasDownArrow = _a.hasDownArrow, _e = _a.mode, mode = _e === void 0 ? 'image' : _e, MenuItemProps = __rest(_a, ["style", "items", "depthLevel", "disabled", "variant", "size", "height", "width", "isImageDropDown", "hasDownArrow", "mode"]);
     var selectedVariant = variant;
     var selectedSize = size;
     //console.log(items)
     var ref = useRef(null);
-    var _e = useState(false), dropdown = _e[0], setDropdown = _e[1];
-    var _f = useState(false), hover = _f[0], setHover = _f[1];
-    var _g = useState(false), active = _g[0], setActive = _g[1];
+    var _f = useState(false), dropdown = _f[0], setDropdown = _f[1];
+    var _g = useState(false), hover = _g[0], setHover = _g[1];
+    var _h = useState(false), active = _h[0], setActive = _h[1];
     //const [focus, setFocus] = useState<boolean>(false)
     /**
      * The proper order is:
@@ -29,11 +29,11 @@ export var MenuItems = function (_a) {
         minWidth: items.submenu ? '0px' : '150px',
         fontFamily: theme.font.buttonLabel.regular.fontFamily,
         fontSize: sizes.button[selectedSize].fontSize,
-        paddingLeft: isImageDropDown ? '0px' : sizes.popOverMenuItem[selectedSize].paddingLeft,
+        paddingLeft: (isImageDropDown && mode === 'image') ? '0px' : sizes.popOverMenuItem[selectedSize].paddingLeft,
         paddingRight: sizes.popOverMenuItem[selectedSize].paddingRight,
         paddingTop: isImageDropDown ? '0px' : items.submenu ? sizes.popOverMenuItem[selectedSize].paddingTop : '5px',
         paddingBottom: isImageDropDown ? '0px' : items.submenu ? sizes.popOverMenuItem[selectedSize].paddingBottom : '5px',
-        borderRadius: (isImageDropDown || variant === 'clear') ? '0px' : '4px',
+        borderRadius: ((isImageDropDown && mode === 'image') || variant === 'clear') ? '0px' : '4px',
         cursor: disabled ? 'not-allowed' : 'pointer',
         border: 'none',
         //outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',

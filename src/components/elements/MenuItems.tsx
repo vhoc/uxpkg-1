@@ -30,9 +30,11 @@ export interface MenuItemProps extends HTMLAttributes<HTMLLIElement> {
     width?: string,
     hasDownArrow?: boolean
     isImageDropDown?: boolean
+    /** Adapts the component for use with an image or a FontAwesomeIcon */
+    mode?: 'image' | 'icon'
 }
 
-export const MenuItems = ({style, items, depthLevel, disabled = false, variant, size = 'sm', height, width, isImageDropDown = false, hasDownArrow, ...MenuItemProps}: MenuItemProps): JSX.Element => {
+export const MenuItems = ({style, items, depthLevel, disabled = false, variant, size = 'sm', height, width, isImageDropDown = false, hasDownArrow, mode = 'image', ...MenuItemProps}: MenuItemProps): JSX.Element => {
 
     type VariantKey = keyof typeof variants
     const selectedVariant = variant as VariantKey
@@ -61,11 +63,11 @@ export const MenuItems = ({style, items, depthLevel, disabled = false, variant, 
         minWidth: items.submenu ? '0px' : '150px',
         fontFamily: theme.font.buttonLabel.regular.fontFamily,
         fontSize: sizes.button[selectedSize].fontSize,
-        paddingLeft: isImageDropDown ? '0px' : sizes.popOverMenuItem[selectedSize].paddingLeft,
+        paddingLeft: (isImageDropDown && mode === 'image') ? '0px' : sizes.popOverMenuItem[selectedSize].paddingLeft,
         paddingRight: sizes.popOverMenuItem[selectedSize].paddingRight,
         paddingTop: isImageDropDown ? '0px' : items.submenu ? sizes.popOverMenuItem[selectedSize].paddingTop : '5px',
         paddingBottom: isImageDropDown ? '0px' : items.submenu ? sizes.popOverMenuItem[selectedSize].paddingBottom : '5px',
-        borderRadius: (isImageDropDown || variant === 'clear') ? '0px' : '4px',
+        borderRadius: ( (isImageDropDown && mode === 'image') || variant === 'clear') ? '0px' : '4px',
         cursor: disabled ? 'not-allowed' : 'pointer',
         border: 'none',
         //outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',

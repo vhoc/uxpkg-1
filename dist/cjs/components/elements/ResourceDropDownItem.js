@@ -7,7 +7,7 @@ var Typography_1 = require("./Typography");
 var theme_1 = require("../../theme");
 var ResourceDropDownItem = function (_a) {
     var resourceName = _a.resourceName, resourceType = _a.resourceType, icon = _a.icon, onClick = _a.onClick, style = _a.style;
-    return (react_1["default"].createElement("div", { style: tslib_1.__assign({ minWidth: '217px', width: '217px', backgroundColor: theme_1.colors.white, paddingTop: '8px', paddingBottom: '8px', paddingLeft: '12px', paddingRight: '12px', display: 'flex', justifyContent: 'space-between', boxSizing: 'border-box' }, style) },
+    return (react_1["default"].createElement("div", { style: tslib_1.__assign({ minWidth: '217px', width: '217px', backgroundColor: theme_1.colors.white, paddingTop: '8px', paddingBottom: '8px', paddingLeft: '12px', paddingRight: '12px', display: 'flex', justifyContent: 'space-between', boxSizing: 'border-box', cursor: 'pointer' }, style), onClick: onClick },
         react_1["default"].createElement("div", { style: {
                 width: '20px',
                 minWidth: '20px',

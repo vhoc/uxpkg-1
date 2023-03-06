@@ -36,3 +36,23 @@ export declare const Success: {
         children: string;
     };
 };
+export declare const WithLeftIcon: {
+    args: {
+        icon: import("@fortawesome/fontawesome-common-types").IconDefinition;
+        iconPosition: string;
+        variant: string;
+        size: string;
+        children: string;
+        iconColor: string;
+    };
+};
+export declare const WithRightIcon: {
+    args: {
+        icon: import("@fortawesome/fontawesome-common-types").IconDefinition;
+        iconPosition: string;
+        variant: string;
+        size: string;
+        children: string;
+        iconColor: string;
+    };
+};

@@ -1,4 +1,6 @@
 import { Button } from '../../components/elements/Button';
+import { faUsers } from '@fortawesome/pro-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
 export default {
     title: 'Elements/Buttons/Button',
     component: Button
@@ -38,3 +40,24 @@ export var Success = {
         children: 'Success button'
     }
 };
+export var WithLeftIcon = {
+    args: {
+        icon: faUsers,
+        iconPosition: 'start',
+        variant: 'grayBlue',
+        size: 'sm',
+        children: 'GrayBlue button',
+        iconColor: '#A6ABB6'
+    }
+};
+export var WithRightIcon = {
+    args: {
+        icon: faUsers,
+        iconPosition: 'end',
+        variant: 'grayBlue',
+        size: 'sm',
+        children: 'GrayBlue button',
+        iconColor: '#A6ABB6'
+    }
+};
+library.add(faUsers);

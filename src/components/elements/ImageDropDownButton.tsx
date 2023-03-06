@@ -17,15 +17,18 @@ export interface ImageDropDownButtonProps extends HTMLAttributes<HTMLUListElemen
      * - submenu: [Optional], Properties[] (Recursive)
      */
     menuItems?: IDropDownItem[]
-    variant?: 'clear'
+    variant?: 'clear' | 'gray'
     disabled?: boolean
     size?: 'sm'
     height?: string
+    /** Whether to show the down arrow or not */
     hasDownArrow?: boolean
+    /** Adapts the component for use with an image or a FontAwesomeIcon */
+    mode?: 'image' | 'icon'
 }
 
 /** A Navigation bar with a multilevel dynamic dropdown menu. */
-export const ImageDropDownButton = ({menuItems = [{ icon: faTimes, title: `No menus found` }], variant = 'clear', size = 'sm', height, disabled, hasDownArrow = true, ...ImageDropDownButtonProps}: ImageDropDownButtonProps) : JSX.Element => {
+export const ImageDropDownButton = ({menuItems = [{ icon: faTimes, title: `No menus found` }], variant = 'clear', size = 'sm', height, disabled, hasDownArrow = true, mode = 'image', ...ImageDropDownButtonProps}: ImageDropDownButtonProps) : JSX.Element => {
 
     //console.warn(menuItems)
     const depthLevel = 0
@@ -74,6 +77,7 @@ export const ImageDropDownButton = ({menuItems = [{ icon: faTimes, title: `No me
                 margin: '0px',
                 width: 'fit-content',
                 height: height,
+                paddingLeft: '12px',
             }}
             //className='menus'
             {...ImageDropDownButtonProps}
@@ -95,6 +99,7 @@ export const ImageDropDownButton = ({menuItems = [{ icon: faTimes, title: `No me
                         disabled={disabled || false}
                         variant={variant}
                         hasDownArrow={hasDownArrow}
+                        mode={mode}
                         isImageDropDown={true}
                         height={'32px'}
                     />

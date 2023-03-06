@@ -1,5 +1,7 @@
+import { IconProp } from "@fortawesome/fontawesome-svg-core"
 import React, { HTMLAttributes, ReactNode, useState } from "react"
-import { theme, colors, variants, sizes } from '../../theme'
+import { theme, variants, sizes } from '../../theme'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
     variant: 'primary' | 'gray' | 'grayBlue' | 'grayRed' | 'success'
@@ -13,9 +15,18 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
     
     /** Override standard sizes' width */
     width?: string,
+
+    /** Enables or disables an icon in the button */
+    icon?: IconProp | undefined
+
+    /** Sets the position of the optional icon */
+    iconPosition?: 'start' | 'end'
+
+    /** Sets the color of the icon */
+    iconColor?: string | undefined
 }
 
-export const Button = ({children, size = 'sm', variant = 'primary', disabled = false, textColor = colors.white, width, height, ...ButtonProps}: ButtonProps): JSX.Element => {
+export const Button = ({children, size = 'sm', variant = 'primary', disabled = false, icon, iconPosition = 'start', iconColor, width, height, ...ButtonProps}: ButtonProps): JSX.Element => {
 
     const [hover, setHover] = useState<boolean>(false)
     const [active, setActive] = useState<boolean>(false)
@@ -50,6 +61,10 @@ export const Button = ({children, size = 'sm', variant = 'primary', disabled = f
         //outlineStyle: 'auto',
         //outlineWidth: focus ? '2px' : '0px'
         outlineWidth: '0px',
+        display: 'flex',
+        justifyContent: iconPosition === 'start' ? 'flex-start' : 'space-between',
+        gap: '8px',
+        alignItems: 'center',
     })
 
     return (
@@ -61,7 +76,27 @@ export const Button = ({children, size = 'sm', variant = 'primary', disabled = f
                 onMouseUp={() => setActive(false)}
                 {...ButtonProps}
             >
+            {
+                iconPosition === 'start' ?
+                    icon ?
+                        <FontAwesomeIcon icon={icon} color={iconColor}/>
+                    :
+                        null
+                :
+                    null
+
+            }
                 {children}
+                {
+                iconPosition === 'end' ?
+                    icon ?
+                        <FontAwesomeIcon icon={icon} color={iconColor}/>
+                    :
+                        null
+                :
+                    null
+
+            }
             </button>
     )
 

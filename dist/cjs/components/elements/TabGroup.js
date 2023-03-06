@@ -53,7 +53,7 @@ var TabGroup = function (_a) {
         return {
             marginRight: '4px',
             minHeight: '41px',
-            fontWeight: value === currentValue ? 'bold' : 'regular',
+            fontWeight: 'regular',
             textTransform: 'capitalize',
             paddingRight: '25px',
             paddingLeft: '25px',

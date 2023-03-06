@@ -42,3 +42,5 @@ tslib_1.__exportStar(require("./components/elements/PickListHeading"), exports);
 tslib_1.__exportStar(require("./components/elements/ResourceDropDownItem"), exports);
 tslib_1.__exportStar(require("./components/graphical/Spinner"), exports);
 tslib_1.__exportStar(require("./components/elements/ToggleCloudControl"), exports);
+tslib_1.__exportStar(require("./components/elements/PolicyCard"), exports);
+tslib_1.__exportStar(require("./components/elements/PolicyModal"), exports);

@@ -4,8 +4,9 @@ exports.Button = void 0;
 var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importStar(require("react"));
 var theme_1 = require("../../theme");
+var react_fontawesome_1 = require("@fortawesome/react-fontawesome");
 var Button = function (_a) {
-    var children = _a.children, _b = _a.size, size = _b === void 0 ? 'sm' : _b, _c = _a.variant, variant = _c === void 0 ? 'primary' : _c, _d = _a.disabled, disabled = _d === void 0 ? false : _d, _e = _a.textColor, textColor = _e === void 0 ? theme_1.colors.white : _e, width = _a.width, height = _a.height, ButtonProps = tslib_1.__rest(_a, ["children", "size", "variant", "disabled", "textColor", "width", "height"]);
+    var children = _a.children, _b = _a.size, size = _b === void 0 ? 'sm' : _b, _c = _a.variant, variant = _c === void 0 ? 'primary' : _c, _d = _a.disabled, disabled = _d === void 0 ? false : _d, icon = _a.icon, _e = _a.iconPosition, iconPosition = _e === void 0 ? 'start' : _e, iconColor = _a.iconColor, width = _a.width, height = _a.height, ButtonProps = tslib_1.__rest(_a, ["children", "size", "variant", "disabled", "icon", "iconPosition", "iconColor", "width", "height"]);
     var _f = (0, react_1.useState)(false), hover = _f[0], setHover = _f[1];
     var _g = (0, react_1.useState)(false), active = _g[0], setActive = _g[1];
     var selectedVariant = variant;
@@ -33,8 +34,27 @@ var Button = function (_a) {
         //outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',
         //outlineStyle: 'auto',
         //outlineWidth: focus ? '2px' : '0px'
-        outlineWidth: '0px'
+        outlineWidth: '0px',
+        display: 'flex',
+        justifyContent: iconPosition === 'start' ? 'flex-start' : 'space-between',
+        gap: '8px',
+        alignItems: 'center'
     }); };
-    return (react_1["default"].createElement("button", tslib_1.__assign({ style: componentStyle(hover, active), onMouseEnter: function () { return setHover(true); }, onMouseLeave: function () { return setHover(false); }, onMouseDown: function () { return setActive(true); }, onMouseUp: function () { return setActive(false); } }, ButtonProps), children));
+    return (react_1["default"].createElement("button", tslib_1.__assign({ style: componentStyle(hover, active), onMouseEnter: function () { return setHover(true); }, onMouseLeave: function () { return setHover(false); }, onMouseDown: function () { return setActive(true); }, onMouseUp: function () { return setActive(false); } }, ButtonProps),
+        iconPosition === 'start' ?
+            icon ?
+                react_1["default"].createElement(react_fontawesome_1.FontAwesomeIcon, { icon: icon, color: iconColor })
+                :
+                    null
+            :
+                null,
+        children,
+        iconPosition === 'end' ?
+            icon ?
+                react_1["default"].createElement(react_fontawesome_1.FontAwesomeIcon, { icon: icon, color: iconColor })
+                :
+                    null
+            :
+                null));
 };
 exports.Button = Button;

@@ -3,7 +3,7 @@ import React, { HTMLAttributes } from "react"
 import { colors } from "../../theme"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Typography } from "./Typography"
-import { faCircleMinus, faCirclePlus, faUserGroup, faUser } from "@fortawesome/pro-solid-svg-icons"
+import { faCircleMinus, faCirclePlus, faUsers, faUser } from "@fortawesome/pro-solid-svg-icons"
 import { IconButton } from "./IconButton"
 
 export interface UserGroupBarProps extends HTMLAttributes<HTMLDivElement> {
@@ -27,9 +27,11 @@ export interface UserGroupBarProps extends HTMLAttributes<HTMLDivElement> {
     style?: React.CSSProperties | undefined
     /** Toggle the add/remove button */
     endButton?: boolean
+    /** onClick for the component */
+    onClick?: React.MouseEventHandler<HTMLDivElement> | undefined
 }
 
-export const UserGroupBar = ({ type, name, leftIcon, caption, selected = false, assigned = false, addButtonOnClick, removeButtonOnClick, style, endButton = true }: UserGroupBarProps) => {
+export const UserGroupBar = ({ type, name, leftIcon, caption, selected = false, assigned = false, addButtonOnClick, removeButtonOnClick, style, endButton = true, onClick, }: UserGroupBarProps) => {
 
     return (
         <div
@@ -50,9 +52,11 @@ export const UserGroupBar = ({ type, name, leftIcon, caption, selected = false, 
 
             {/** ICON COLUMN */}
             <div
+                onClick={onClick}
                 style={{
                     display: 'flex',
                     gap: '8px',
+                    cursor: 'pointer',
                 }}
             >
                 <div
@@ -62,7 +66,7 @@ export const UserGroupBar = ({ type, name, leftIcon, caption, selected = false, 
                 >
                 {
                     type === 'group' ?
-                        <FontAwesomeIcon icon={leftIcon || faUserGroup} color={colors.gray[40]}/>
+                        <FontAwesomeIcon icon={leftIcon || faUsers} color={colors.gray[40]}/>
                     :
                         <FontAwesomeIcon icon={leftIcon || faUser} color={colors.gray[40]}/>
                 }

@@ -32,8 +32,10 @@ export const ResourceDropDownItem = ({ resourceName, resourceType, icon, onClick
                 display: 'flex',
                 justifyContent: 'space-between',
                 boxSizing: 'border-box',
+                cursor: 'pointer',
                 ...style,
             }}
+            onClick={onClick}
         >
             {/** LEFT (Icon Element) */}
             <div

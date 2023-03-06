@@ -10,11 +10,14 @@ export interface ImageDropDownButtonProps extends HTMLAttributes<HTMLUListElemen
      * - submenu: [Optional], Properties[] (Recursive)
      */
     menuItems?: IDropDownItem[];
-    variant?: 'clear';
+    variant?: 'clear' | 'gray';
     disabled?: boolean;
     size?: 'sm';
     height?: string;
+    /** Whether to show the down arrow or not */
     hasDownArrow?: boolean;
+    /** Adapts the component for use with an image or a FontAwesomeIcon */
+    mode?: 'image' | 'icon';
 }
 /** A Navigation bar with a multilevel dynamic dropdown menu. */
-export declare const ImageDropDownButton: ({ menuItems, variant, size, height, disabled, hasDownArrow, ...ImageDropDownButtonProps }: ImageDropDownButtonProps) => JSX.Element;
+export declare const ImageDropDownButton: ({ menuItems, variant, size, height, disabled, hasDownArrow, mode, ...ImageDropDownButtonProps }: ImageDropDownButtonProps) => JSX.Element;
