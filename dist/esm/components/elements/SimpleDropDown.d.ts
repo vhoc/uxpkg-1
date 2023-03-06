@@ -17,5 +17,7 @@ export interface SimpleDropDownProps extends HTMLAttributes<HTMLSelectElement> {
     disabled?: boolean;
     /** On Change event */
     onChange?: React.ChangeEventHandler<HTMLSelectElement> | undefined;
+    /** Optional style overrides. */
+    style?: React.CSSProperties | undefined;
 }
-export declare const SimpleDropDown: ({ value, menuItems, disabled, onChange }: SimpleDropDownProps) => JSX.Element;
+export declare const SimpleDropDown: ({ value, menuItems, disabled, onChange, style }: SimpleDropDownProps) => JSX.Element;

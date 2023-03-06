@@ -46,7 +46,7 @@ var ResourceCard = function (_a) {
                 :
                     react_1["default"].createElement("div", { style: { display: 'flex', justifyContent: 'space-between', marginBottom: '16px' } },
                         react_1["default"].createElement("div", null, resourceIcon),
-                        react_1["default"].createElement(IconButton_1.IconButton, { variant: bookmarked ? 'grayBlue' : 'tertiary', icon: sharp_solid_svg_icons_1.faBookmark }))
+                        react_1["default"].createElement(IconButton_1.IconButton, { variant: bookmarked ? 'grayBlue' : 'tertiary', icon: sharp_solid_svg_icons_1.faBookmark, onClick: onBookmarkClick }))
             :
                 react_1["default"].createElement("div", { style: { display: 'flex', justifyContent: 'space-between', marginBottom: '16px' } },
                     react_1["default"].createElement("div", { style: { display: 'flex', justifyContent: 'flex-start', gap: '8px' } },

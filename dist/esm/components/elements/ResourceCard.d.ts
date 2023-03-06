@@ -5,9 +5,9 @@ export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     accessState: 'access' | 'requested' | 'signIn' | 'waiting';
     resourceIcon?: JSX.Element | null;
     bookmarked: boolean;
-    onBookmarkClick?: React.MouseEventHandler;
-    onMoreInfoClick?: React.MouseEventHandler;
-    onAccessClick?: React.MouseEventHandler;
+    onBookmarkClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+    onMoreInfoClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+    onAccessClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
     resourceName: string;
     resourceType: string;
     accountName: string;

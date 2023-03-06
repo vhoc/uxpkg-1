@@ -20,9 +20,11 @@ export interface SimpleDropDownProps extends HTMLAttributes<HTMLSelectElement> {
     disabled?: boolean
     /** On Change event */
     onChange?: React.ChangeEventHandler<HTMLSelectElement> | undefined
+    /** Optional style overrides. */
+    style?: React.CSSProperties | undefined
 }
 
-export const SimpleDropDown = ({ value, menuItems, disabled, onChange }: SimpleDropDownProps): JSX.Element => {
+export const SimpleDropDown = ({ value, menuItems, disabled, onChange, style }: SimpleDropDownProps): JSX.Element => {
 
     const MySelect = styled('select')({
         ...theme.font.body.regular,
@@ -30,7 +32,8 @@ export const SimpleDropDown = ({ value, menuItems, disabled, onChange }: SimpleD
         paddingRight: '8px',
         '&:focus-visible': {
             outline: 'none',
-        }
+        },
+        ...style,
     })
 
     return (
