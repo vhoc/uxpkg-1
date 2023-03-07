@@ -2,7 +2,7 @@ import React from 'react'
 import { colors } from '../../theme'
 import { Typography } from './Typography'
 
-export interface PickListHeadingProps {
+export interface PickListRowHeadingProps {
     /** Number of existing items in the list */
     title?: string | undefined
     /** Style overrides */
@@ -15,7 +15,7 @@ export interface PickListHeadingProps {
     onClickRemoveAll?: React.MouseEventHandler<HTMLDivElement> | undefined
 }
 
-export const PickListRowHeading = ({ title, style, button = 'add', onClickAddAll, onClickRemoveAll }: PickListHeadingProps): JSX.Element => {
+export const PickListRowHeading = ({ title, style, button = 'add', onClickAddAll, onClickRemoveAll }: PickListRowHeadingProps): JSX.Element => {
 
     return (
         <div

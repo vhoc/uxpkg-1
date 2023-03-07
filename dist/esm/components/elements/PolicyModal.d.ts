@@ -18,4 +18,4 @@ export interface PolicyModalProps extends HTMLAttributes<HTMLDivElement> {
     /** The tabs and their contents */
     tabs: ITab[];
 }
-export declare const PolicyModal: ({ title, caption, onClickFullDetail, onClickClose, style, resourcesAmount, identitiesAmount, tabs, }: PolicyModalProps) => JSX.Element;
+export declare const PolicyModal: ({ title, caption, onClickFullDetail, onClickClose, style, tabs, }: PolicyModalProps) => JSX.Element;

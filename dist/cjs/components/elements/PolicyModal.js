@@ -10,7 +10,7 @@ var pro_regular_svg_icons_1 = require("@fortawesome/pro-regular-svg-icons");
 var TabGroup_1 = require("./TabGroup");
 var PolicyModal = function (_a) {
     //const [selectedElement, setSelectedElement] = useState<any>()
-    var title = _a.title, caption = _a.caption, onClickFullDetail = _a.onClickFullDetail, onClickClose = _a.onClickClose, style = _a.style, _b = _a.resourcesAmount, resourcesAmount = _b === void 0 ? 0 : _b, _c = _a.identitiesAmount, identitiesAmount = _c === void 0 ? 0 : _c, tabs = _a.tabs;
+    var title = _a.title, caption = _a.caption, onClickFullDetail = _a.onClickFullDetail, onClickClose = _a.onClickClose, style = _a.style, tabs = _a.tabs;
     return (react_1["default"].createElement("div", { style: tslib_1.__assign({ backgroundColor: theme_1.colors.white, borderStyle: 'solid', borderWidth: '1px', borderColor: theme_1.colors.gray[20], borderRadius: '8px', width: '626px', height: '540px', paddingTop: '29px', paddingLeft: '32px', paddingRight: '32px', paddingBottom: '16px', display: 'flex', flexDirection: 'column', gap: '24px', boxShadow: '3px 6px 12px 3px rgba(0,0,0,0.24)' }, style) },
         react_1["default"].createElement("div", { style: {
                 display: 'flex', justifyContent: 'space-between'

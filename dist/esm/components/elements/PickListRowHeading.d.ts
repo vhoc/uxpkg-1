@@ -1,5 +1,5 @@
 import React from 'react';
-export interface PickListHeadingProps {
+export interface PickListRowHeadingProps {
     /** Number of existing items in the list */
     title?: string | undefined;
     /** Style overrides */
@@ -11,4 +11,4 @@ export interface PickListHeadingProps {
     /** Callback function to run when clickin the "Remove all" button */
     onClickRemoveAll?: React.MouseEventHandler<HTMLDivElement> | undefined;
 }
-export declare const PickListRowHeading: ({ title, style, button, onClickAddAll, onClickRemoveAll }: PickListHeadingProps) => JSX.Element;
+export declare const PickListRowHeading: ({ title, style, button, onClickAddAll, onClickRemoveAll }: PickListRowHeadingProps) => JSX.Element;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { ToggleButtonGroup, ToggleButton, ToggleButtonGroupProps } from '@mui/material'
 import { colors } from '../../theme'
 import imgAwsColor from '../../assets/icons/aws-color-18px.png'
@@ -11,29 +11,31 @@ import imgAzureGray from '../../assets/icons/azure-gray-18px.png'
 export interface ToggleCloudControlProps extends ToggleButtonGroupProps {
     //value: 'aws' | 'azure' | 'google'
     //multiSelect?: boolean
+    value: string[] | string
     ariaLabel?: string | undefined
     onChange?: ((event: React.MouseEvent<HTMLElement, MouseEvent>, value: any) => void) | undefined
     multiSelect?: boolean
 }
 
-export const ToggleCloudControl = ({ ariaLabel = 'cloud control', multiSelect = false,  }: ToggleCloudControlProps): JSX.Element => {
+export const ToggleCloudControl = ({ ariaLabel = 'cloud control', multiSelect = false, value = [''], onChange  }: ToggleCloudControlProps): JSX.Element => {
 
-    const [values, setValues] = useState<string[] | string>(() => [''])
+    //const [values, setValues] = useState<string[] | string>(() => [''])
 
-    console.log(values)
+    //console.log(values)
 
+    /*
     const handleChange = (
         event: React.MouseEvent<HTMLElement>,
         newValues: string[] | string,
     ) => {
         setValues(newValues)
-    }
+    }*/
 
     return (
         <ToggleButtonGroup
-            value={values}
+            value={value}
             exclusive={!multiSelect}
-            onChange={handleChange}
+            onChange={onChange}
             aria-label={ariaLabel}
             sx={{
                 height: '40px',
@@ -57,7 +59,7 @@ export const ToggleCloudControl = ({ ariaLabel = 'cloud control', multiSelect = 
                 }}
             >
                 <img src={
-                    ( values === 'aws' || (Array.isArray(values) && values.find((value) => value === 'aws')) ) ?
+                    ( value === 'aws' || (Array.isArray(value) && value.find((value) => value === 'aws')) ) ?
                         imgAwsColor
                     :
                         imgAwsGray
@@ -80,7 +82,7 @@ export const ToggleCloudControl = ({ ariaLabel = 'cloud control', multiSelect = 
                     },
                 }}
             >
-                <img src={ ( values === 'google' || (Array.isArray(values) && values.find((value) => value === 'google')) )? imgGoogleColor : imgGoogleGray} alt={'Google'} />
+                <img src={ ( value === 'google' || (Array.isArray(value) && value.find((value) => value === 'google')) )? imgGoogleColor : imgGoogleGray} alt={'Google'} />
             </ToggleButton>
 
             <ToggleButton
@@ -99,7 +101,7 @@ export const ToggleCloudControl = ({ ariaLabel = 'cloud control', multiSelect = 
                     },
                 }}
             >
-                <img src={ ( values === 'azure' || (Array.isArray(values) && values.find((value) => value === 'azure')) ) ? imgAzureColor : imgAzureGray} alt={'Azure'} />
+                <img src={ ( value === 'azure' || (Array.isArray(value) && value.find((value) => value === 'azure')) ) ? imgAzureColor : imgAzureGray} alt={'Azure'} />
             </ToggleButton>
 
         </ToggleButtonGroup>
