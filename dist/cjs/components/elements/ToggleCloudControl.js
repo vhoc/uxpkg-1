@@ -12,16 +12,7 @@ var google_gray_18px_png_1 = tslib_1.__importDefault(require("../../assets/icons
 var azure_color_18px_png_1 = tslib_1.__importDefault(require("../../assets/icons/azure-color-18px.png"));
 var azure_gray_18px_png_1 = tslib_1.__importDefault(require("../../assets/icons/azure-gray-18px.png"));
 var ToggleCloudControl = function (_a) {
-    //const [values, setValues] = useState<string[] | string>(() => [''])
-    var _b = _a.ariaLabel, ariaLabel = _b === void 0 ? 'cloud control' : _b, _c = _a.multiSelect, multiSelect = _c === void 0 ? false : _c, _d = _a.value, value = _d === void 0 ? [''] : _d, onChange = _a.onChange;
-    //console.log(values)
-    /*
-    const handleChange = (
-        event: React.MouseEvent<HTMLElement>,
-        newValues: string[] | string,
-    ) => {
-        setValues(newValues)
-    }*/
+    var _b = _a.ariaLabel, ariaLabel = _b === void 0 ? 'cloud control' : _b, _c = _a.multiSelect, multiSelect = _c === void 0 ? false : _c, _d = _a.value, value = _d === void 0 ? ['aws'] : _d, onChange = _a.onChange;
     return (react_1["default"].createElement(material_1.ToggleButtonGroup, { value: value, exclusive: !multiSelect, onChange: onChange, "aria-label": ariaLabel, sx: {
             height: '40px',
             borderWidth: '0px'

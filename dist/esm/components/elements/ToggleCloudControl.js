@@ -8,16 +8,7 @@ import imgGoogleGray from '../../assets/icons/google-gray-18px.png';
 import imgAzureColor from '../../assets/icons/azure-color-18px.png';
 import imgAzureGray from '../../assets/icons/azure-gray-18px.png';
 export var ToggleCloudControl = function (_a) {
-    //const [values, setValues] = useState<string[] | string>(() => [''])
-    var _b = _a.ariaLabel, ariaLabel = _b === void 0 ? 'cloud control' : _b, _c = _a.multiSelect, multiSelect = _c === void 0 ? false : _c, _d = _a.value, value = _d === void 0 ? [''] : _d, onChange = _a.onChange;
-    //console.log(values)
-    /*
-    const handleChange = (
-        event: React.MouseEvent<HTMLElement>,
-        newValues: string[] | string,
-    ) => {
-        setValues(newValues)
-    }*/
+    var _b = _a.ariaLabel, ariaLabel = _b === void 0 ? 'cloud control' : _b, _c = _a.multiSelect, multiSelect = _c === void 0 ? false : _c, _d = _a.value, value = _d === void 0 ? ['aws'] : _d, onChange = _a.onChange;
     return (React.createElement(ToggleButtonGroup, { value: value, exclusive: !multiSelect, onChange: onChange, "aria-label": ariaLabel, sx: {
             height: '40px',
             borderWidth: '0px'

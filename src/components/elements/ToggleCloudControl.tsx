@@ -17,19 +17,7 @@ export interface ToggleCloudControlProps extends ToggleButtonGroupProps {
     multiSelect?: boolean
 }
 
-export const ToggleCloudControl = ({ ariaLabel = 'cloud control', multiSelect = false, value = [''], onChange  }: ToggleCloudControlProps): JSX.Element => {
-
-    //const [values, setValues] = useState<string[] | string>(() => [''])
-
-    //console.log(values)
-
-    /*
-    const handleChange = (
-        event: React.MouseEvent<HTMLElement>,
-        newValues: string[] | string,
-    ) => {
-        setValues(newValues)
-    }*/
+export const ToggleCloudControl = ({ ariaLabel = 'cloud control', multiSelect = false, value = ['aws'], onChange  }: ToggleCloudControlProps): JSX.Element => {
 
     return (
         <ToggleButtonGroup
