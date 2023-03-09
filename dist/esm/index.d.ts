@@ -42,3 +42,6 @@ export * from './components/elements/ToggleCloudControl';
 export * from './components/elements/PolicyCard';
 export * from './components/elements/PolicyModal';
 export * from './components/elements/PickListRowHeading';
+export * from './components/elements/DataTable';
+export * from './components/elements/MenuButton';
+export * from './components/elements/MenuButtonItem';

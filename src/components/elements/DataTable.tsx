@@ -11,6 +11,9 @@ export interface DataTableProps extends DataGridProps {
     rows: Array<object>
 }
 
+/** Based on MUI-X DataGrid so it has the same Props and capabilities. Documentation here: https://mui.com/x/react-data-grid/  and here: https://mui.com/x/api/data-grid/data-grid/ .
+ *   Example columns and rows located on src/stories/elements/DataTable.stories.tsx
+*/
 export const DataTable = ({ columns, rows, ...props }: DataTableProps) => {
 
     const MyDataGrid = styled(DataGrid)({

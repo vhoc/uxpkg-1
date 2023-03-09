@@ -2,6 +2,7 @@ import React, { useState, HTMLAttributes } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { variants, theme, sizes } from '../../theme'
 import { styled } from '@mui/material/styles'
+import ButtonUnstyled from '@mui/base/ButtonUnstyled';
 
 export interface MenuButtonItemProps extends HTMLAttributes<HTMLLIElement> {
     action?: React.MouseEventHandler<HTMLButtonElement> | undefined,
@@ -15,7 +16,6 @@ export interface MenuButtonItemProps extends HTMLAttributes<HTMLLIElement> {
 export const MenuButtonItem = ({ variant = 'clear', size = 'sm', action, icon, title, disabled = false }: MenuButtonItemProps): JSX.Element => {
 
     const [hover, setHover] = useState<boolean>(false)
-    const [active, setActive] = useState<boolean>(false)
 
     type VariantKey = keyof typeof variants
     const selectedVariant = variant as VariantKey
@@ -23,8 +23,9 @@ export const MenuButtonItem = ({ variant = 'clear', size = 'sm', action, icon, t
     type SizeKey = keyof typeof sizes.button
     const selectedSize = size as SizeKey
 
-    const MyButton = styled('button')({
-        backgroundColor: disabled ? variants[selectedVariant].buttonBgColorDisabled : active ? variants[selectedVariant].buttonBgColorActive : hover ? variants[selectedVariant].buttonBgColorHover : variants[selectedVariant].buttonBgColor,
+    const MyButton = styled(ButtonUnstyled)({
+        backgroundColor: disabled ? variants[selectedVariant].buttonBgColorDisabled : hover ? variants[selectedVariant].buttonBgColorHover : variants[selectedVariant].buttonBgColor,
+        //backgroundColor: disabled ? variants[selectedVariant].buttonBgColorDisabled : active ? variants[selectedVariant].buttonBgColorActive : hover ? variants[selectedVariant].buttonBgColorHover : variants[selectedVariant].buttonBgColor,
         color: disabled ? variants[selectedVariant].buttonTextColorDisabled : variants[selectedVariant].buttonTextColor,
         textTransform: 'capitalize',
         width: 'fit-content',
@@ -54,11 +55,9 @@ export const MenuButtonItem = ({ variant = 'clear', size = 'sm', action, icon, t
             }}
         >
             <MyButton
-                onClick={action}
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
-                onMouseDown={() => setActive(true)}
-                onMouseUp={() => setActive(false)}
+                onClick={action}
             >
                 <span style={ { display: 'flex', gap: '8px' } }>
                     <span>{ icon ? <FontAwesomeIcon icon={icon}/> : '' }</span>

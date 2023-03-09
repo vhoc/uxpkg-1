@@ -8,7 +8,7 @@ var sharp_solid_svg_icons_1 = require("@fortawesome/sharp-solid-svg-icons");
 var theme_1 = require("../../theme");
 /** A Navigation bar with a multilevel dynamic dropdown menu. */
 var ImageDropDownButton = function (_a) {
-    var _b = _a.menuItems, menuItems = _b === void 0 ? [{ icon: sharp_solid_svg_icons_1.faTimes, title: "No menus found" }] : _b, _c = _a.variant, variant = _c === void 0 ? 'clear' : _c, _d = _a.size, size = _d === void 0 ? 'sm' : _d, height = _a.height, disabled = _a.disabled, _e = _a.hasDownArrow, hasDownArrow = _e === void 0 ? true : _e, _f = _a.mode, mode = _f === void 0 ? 'image' : _f, ImageDropDownButtonProps = tslib_1.__rest(_a, ["menuItems", "variant", "size", "height", "disabled", "hasDownArrow", "mode"]);
+    var _b = _a.menuItems, menuItems = _b === void 0 ? [{ icon: sharp_solid_svg_icons_1.faTimes, title: "No menus found" }] : _b, _c = _a.variant, variant = _c === void 0 ? 'clear' : _c, _d = _a.size, size = _d === void 0 ? 'sm' : _d, height = _a.height, disabled = _a.disabled, _e = _a.hasDownArrow, hasDownArrow = _e === void 0 ? true : _e, _f = _a.mode, mode = _f === void 0 ? 'image' : _f;
     //console.warn(menuItems)
     var depthLevel = 0;
     var _g = (0, react_1.useState)(false), hover = _g[0], setHover = _g[1];
@@ -39,7 +39,7 @@ var ImageDropDownButton = function (_a) {
         outlineStyle: 'auto',
         outlineWidth: focus ? '2px' : '0px'
     }); };
-    return (react_1["default"].createElement("ul", tslib_1.__assign({ style: {
+    return (react_1["default"].createElement("ul", { style: {
             listStyle: 'none',
             marginBlockStart: '0px !important',
             marginBlockEnd: '0px !important',
@@ -48,7 +48,7 @@ var ImageDropDownButton = function (_a) {
             width: 'fit-content',
             height: height,
             paddingLeft: '12px'
-        } }, ImageDropDownButtonProps), menuItems.map(function (menu, index) {
+        } }, menuItems.map(function (menu, index) {
         return (react_1["default"].createElement(MenuItems_1.MenuItems, { style: componentStyle(hover, active), onMouseEnter: function () { return setHover(true); }, onMouseLeave: function () { return setHover(false); }, onMouseDown: function () { return setActive(true); }, onMouseUp: function () { return setActive(false); }, onFocus: function () { return setFocus(true); }, onBlur: function () { return setFocus(false); }, items: menu, key: index, depthLevel: depthLevel, disabled: disabled || false, variant: variant, hasDownArrow: hasDownArrow, mode: mode, isImageDropDown: true, height: '32px' }));
     })));
 };

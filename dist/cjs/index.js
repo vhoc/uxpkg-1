@@ -45,3 +45,6 @@ tslib_1.__exportStar(require("./components/elements/ToggleCloudControl"), export
 tslib_1.__exportStar(require("./components/elements/PolicyCard"), exports);
 tslib_1.__exportStar(require("./components/elements/PolicyModal"), exports);
 tslib_1.__exportStar(require("./components/elements/PickListRowHeading"), exports);
+tslib_1.__exportStar(require("./components/elements/DataTable"), exports);
+tslib_1.__exportStar(require("./components/elements/MenuButton"), exports);
+tslib_1.__exportStar(require("./components/elements/MenuButtonItem"), exports);

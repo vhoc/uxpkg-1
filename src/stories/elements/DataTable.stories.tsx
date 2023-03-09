@@ -7,7 +7,7 @@ import { Typography } from "../../components/elements/Typography";
 import { GridRenderCellParams } from "@mui/x-data-grid";
 import { Button } from "../../components/elements/Button";
 import { faBrowser, faEllipsisV } from "@fortawesome/pro-regular-svg-icons";
-import { ImageDropDownButton } from "../../components/elements/ImageDropDownButton";
+import { MenuButton } from "../../components/elements/MenuButton";
 
 export default {
     title: 'composite/DataTable',
@@ -75,6 +75,11 @@ export const Default = {
                 headerName: '',
                 sortable: false,
                 width: 48,
+                renderCell: (params: GridRenderCellParams) => (
+                    <MenuButton
+                        menuItems={params.value.menuItems}
+                    />
+                )
             },
         ],
         rows: [
@@ -96,21 +101,20 @@ export const Default = {
                     id: 1,
                     menuItems: [
                         {
-                        submenu: [
-                            {
-                            title: 'Option 1'
-                            },
-                            {
-                            action: () => alert(`Option 2 clicked for id 1!`),
-                            title: 'Option 2'
-                            },
-                            {
-                            title: 'Option 3'
-                            }
-                        ],
-                        title: <FontAwesomeIcon icon={faEllipsisV} />
+                            title: 'Option 1',
+                            action: () => alert(`Row 1 Option 1!`),
+                        },
+                        {
+                            action: () => alert(`Row 1 Option 2!`),
+                            title: 'Option 2',
+                        },
+                        {
+                            title: 'Option 3',
+                            action: () => alert(`Row 1 Option 3!`),
                         }
-                    ]
+                    ],
+                    title: <FontAwesomeIcon icon={faEllipsisV} />
+                        
                 },
             },
             {
@@ -131,21 +135,20 @@ export const Default = {
                     id: 2,
                     menuItems: [
                         {
-                        submenu: [
-                            {
-                            title: 'Option 1'
-                            },
-                            {
-                            action: () => alert(`Option 2 clicked for id 2!`),
-                            title: 'Option 2'
-                            },
-                            {
-                            title: 'Option 3'
-                            }
-                        ],
-                        title: <FontAwesomeIcon icon={faEllipsisV} />
+                            title: 'Option 1',
+                            action: () => alert(`Row 2 Option 1!`),
+                        },
+                        {
+                            action: () => alert(`Row 2 Option 2!`),
+                            title: 'Option 2',
+                        },
+                        {
+                            title: 'Option 3',
+                            action: () => alert(`Row 2 Option 3!`),
                         }
-                    ]
+                    ],
+                    title: <FontAwesomeIcon icon={faEllipsisV} />
+                        
                 },
             },
         ]

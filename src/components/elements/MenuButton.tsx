@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Popper from "@mui/material/Popper";
 import { IconButton } from "./IconButton";
 import { faEllipsisV } from "@fortawesome/pro-regular-svg-icons";
@@ -23,11 +23,28 @@ export interface MenuButtonProps {
     disabled?: boolean
 }
 
+
+
 export const MenuButton = ({ menuItems }: MenuButtonProps): JSX.Element => {
 
-    //console.log(items)
-
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+
+    const useClickOutsideEvent = (ref: any) => {
+        useEffect(() => {
+            const handleClickOutside = (event: any) => {
+                if (ref.current && !ref.current.contains(event.target)) {
+                    setAnchorEl(null)
+                }
+            }
+            document.addEventListener("mousedown", handleClickOutside)
+            return () => {
+                document.removeEventListener("mousedown", handleClickOutside)
+            }
+        }, [ref])
+    }
+
+    const wrapperRef = useRef(null)
+    useClickOutsideEvent(wrapperRef)
     //const [dropdown, setDropdown] = useState<boolean>(false)
 
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -38,7 +55,7 @@ export const MenuButton = ({ menuItems }: MenuButtonProps): JSX.Element => {
     const id = open ? 'simple-popper' : undefined;
 
     return (
-        <div>
+        <div >
             <IconButton
                 aria-describedby={id}
                 icon={faEllipsisV}
@@ -50,7 +67,7 @@ export const MenuButton = ({ menuItems }: MenuButtonProps): JSX.Element => {
                     height: '34px',
                 }}
             />
-            <Popper id={id} open={open} anchorEl={anchorEl}>
+            <Popper id={id} open={open} anchorEl={anchorEl} ref={wrapperRef}>
                 <Paper
                     sx={{
                         width: '150px',
@@ -67,6 +84,7 @@ export const MenuButton = ({ menuItems }: MenuButtonProps): JSX.Element => {
                                 return (
                                     <MenuButtonItem
                                         key={index}
+                                        //action={item.action}
                                         action={item.action}
                                         icon={item.icon}
                                         title={item.title}

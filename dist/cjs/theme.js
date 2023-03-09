@@ -280,13 +280,13 @@ exports.variants = {
     },
     clear: {
         buttonBgColor: exports.colors.white,
-        buttonBgColorHover: exports.colors.white,
+        buttonBgColorHover: 'rgba(50, 103, 214, 0.06)',
         buttonBgColorActive: exports.colors.white,
         buttonBgColorDisabled: exports.colors.white,
         buttonTextColor: exports.colors.gray[70],
         buttonTextColorHover: exports.colors.gray[70],
         buttonTextColorActive: exports.colors.gray[70],
-        buttonTextColorDisabled: exports.colors.gray[70]
+        buttonTextColorDisabled: exports.colors.gray[20]
     },
     warning: {
         buttonBgColor: '#f59f03',

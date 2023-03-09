@@ -27,4 +27,4 @@ export interface MenuItemProps extends HTMLAttributes<HTMLLIElement> {
     /** Adapts the component for use with an image or a FontAwesomeIcon */
     mode?: 'image' | 'icon';
 }
-export declare const MenuItems: ({ style, items, depthLevel, disabled, variant, size, height, width, isImageDropDown, hasDownArrow, mode, ...MenuItemProps }: MenuItemProps) => JSX.Element;
+export declare const MenuItems: ({ style, items, depthLevel, disabled, variant, size, height, width, isImageDropDown, hasDownArrow, mode }: MenuItemProps) => JSX.Element;

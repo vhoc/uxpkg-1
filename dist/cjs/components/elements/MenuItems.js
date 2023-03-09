@@ -9,7 +9,7 @@ var sharp_solid_svg_icons_1 = require("@fortawesome/sharp-solid-svg-icons");
 var theme_1 = require("../../theme");
 require("../../assets/styles/dropdown.css");
 var MenuItems = function (_a) {
-    var style = _a.style, items = _a.items, depthLevel = _a.depthLevel, _b = _a.disabled, disabled = _b === void 0 ? false : _b, variant = _a.variant, _c = _a.size, size = _c === void 0 ? 'sm' : _c, height = _a.height, width = _a.width, _d = _a.isImageDropDown, isImageDropDown = _d === void 0 ? false : _d, hasDownArrow = _a.hasDownArrow, _e = _a.mode, mode = _e === void 0 ? 'image' : _e, MenuItemProps = tslib_1.__rest(_a, ["style", "items", "depthLevel", "disabled", "variant", "size", "height", "width", "isImageDropDown", "hasDownArrow", "mode"]);
+    var style = _a.style, items = _a.items, depthLevel = _a.depthLevel, _b = _a.disabled, disabled = _b === void 0 ? false : _b, variant = _a.variant, _c = _a.size, size = _c === void 0 ? 'sm' : _c, height = _a.height, width = _a.width, _d = _a.isImageDropDown, isImageDropDown = _d === void 0 ? false : _d, hasDownArrow = _a.hasDownArrow, _e = _a.mode, mode = _e === void 0 ? 'image' : _e;
     var selectedVariant = variant;
     var selectedSize = size;
     //console.log(items)
@@ -58,11 +58,13 @@ var MenuItems = function (_a) {
             document.removeEventListener("touchstart", handler);
         };
     }, [dropdown]);
-    return (react_1["default"].createElement("li", tslib_1.__assign({ className: 'menu-items' }, MenuItemProps, { ref: ref, style: {
+    return (react_1["default"].createElement("li", { className: 'menu-items', 
+        //{...MenuItemProps}
+        ref: ref, style: {
             position: 'relative',
             fontSize: '14px',
             width: 'fit-content'
-        } }), items.submenu ? (react_1["default"].createElement(react_1["default"].Fragment, null,
+        } }, items.submenu ? (react_1["default"].createElement(react_1["default"].Fragment, null,
         react_1["default"].createElement("button", { type: 'button', "aria-haspopup": "menu", "aria-expanded": dropdown ? 'true' : 'false', style: componentStyle(hover, active), onMouseEnter: function () { return setHover(true); }, onMouseLeave: function () { return setHover(false); }, onMouseDown: function () { return setActive(true); }, onMouseUp: function () { return setActive(false); }, 
             //onFocus={() => setFocus(true)}
             //onBlur={() => setFocus(false)}
