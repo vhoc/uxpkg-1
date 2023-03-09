@@ -320,13 +320,13 @@ export const variants: IVariant = {
     },
     clear: {
         buttonBgColor: colors.white,
-        buttonBgColorHover: colors.white,
+        buttonBgColorHover: 'rgba(50, 103, 214, 0.06)',
         buttonBgColorActive: colors.white,
         buttonBgColorDisabled: colors.white,
         buttonTextColor: colors.gray[70],
         buttonTextColorHover: colors.gray[70],
         buttonTextColorActive: colors.gray[70],
-        buttonTextColorDisabled: colors.gray[70],
+        buttonTextColorDisabled: colors.gray[20],
     },
     warning: {
         buttonBgColor: '#f59f03',

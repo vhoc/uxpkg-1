@@ -34,7 +34,7 @@ export interface MenuItemProps extends HTMLAttributes<HTMLLIElement> {
     mode?: 'image' | 'icon'
 }
 
-export const MenuItems = ({style, items, depthLevel, disabled = false, variant, size = 'sm', height, width, isImageDropDown = false, hasDownArrow, mode = 'image', ...MenuItemProps}: MenuItemProps): JSX.Element => {
+export const MenuItems = ({style, items, depthLevel, disabled = false, variant, size = 'sm', height, width, isImageDropDown = false, hasDownArrow, mode = 'image'}: MenuItemProps): JSX.Element => {
 
     type VariantKey = keyof typeof variants
     const selectedVariant = variant as VariantKey
@@ -96,7 +96,7 @@ export const MenuItems = ({style, items, depthLevel, disabled = false, variant, 
     return (
         <li
             className='menu-items'
-            {...MenuItemProps}
+            //{...MenuItemProps}
             ref={ref}
             style={{
                 position: 'relative',

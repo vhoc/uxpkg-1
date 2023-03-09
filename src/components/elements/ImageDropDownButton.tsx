@@ -28,7 +28,7 @@ export interface ImageDropDownButtonProps extends HTMLAttributes<HTMLUListElemen
 }
 
 /** A Navigation bar with a multilevel dynamic dropdown menu. */
-export const ImageDropDownButton = ({menuItems = [{ icon: faTimes, title: `No menus found` }], variant = 'clear', size = 'sm', height, disabled, hasDownArrow = true, mode = 'image', ...ImageDropDownButtonProps}: ImageDropDownButtonProps) : JSX.Element => {
+export const ImageDropDownButton = ({menuItems = [{ icon: faTimes, title: `No menus found` }], variant = 'clear', size = 'sm', height, disabled, hasDownArrow = true, mode = 'image',}: ImageDropDownButtonProps) : JSX.Element => {
 
     //console.warn(menuItems)
     const depthLevel = 0
@@ -80,7 +80,6 @@ export const ImageDropDownButton = ({menuItems = [{ icon: faTimes, title: `No me
                 paddingLeft: '12px',
             }}
             //className='menus'
-            {...ImageDropDownButtonProps}
         >
         {
             menuItems.map((menu, index) => {

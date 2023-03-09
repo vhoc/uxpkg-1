@@ -83,6 +83,7 @@
     "@fortawesome/sharp-solid-svg-icons": "^6.2.1",
     "@mui/base": "^5.0.0-alpha.119",
     "@mui/material": "^5.11.8",
+    "@mui/x-data-grid": "^6.0.0",
     "babel-preset-react-app": "^10.0.1"
   },
   "scripts": {
