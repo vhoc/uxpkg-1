@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.Default = void 0;
+exports.WithoutDropdown = exports.Default = void 0;
 var PickListHeading_1 = require("../../components/elements/PickListHeading");
 exports["default"] = {
     title: 'composite/PickList Elements/PickListHeading',
@@ -24,5 +24,11 @@ exports.Default = {
                 value: 'groups'
             }
         ]
+    }
+};
+exports.WithoutDropdown = {
+    args: {
+        title: 'Existing (123)',
+        showDropDown: false
     }
 };

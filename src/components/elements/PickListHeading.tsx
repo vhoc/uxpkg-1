@@ -13,11 +13,13 @@ export interface PickListHeadingProps {
     dropDownValue?: any
     /** Style overrides */
     style?: React.CSSProperties | undefined
+    /** Toggles the Dropdown control at the end of the heading */
+    showDropDown?: boolean
     /** onChange event that will be drilled into the internal SimpleDropDown component */
     onChange?: React.ChangeEventHandler<HTMLSelectElement> | undefined
 }
 
-export const PickListHeading = ({ title, dropDownItems, dropDownValue, style, onChange }: PickListHeadingProps): JSX.Element => {
+export const PickListHeading = ({ title, dropDownItems, dropDownValue, style, showDropDown = true, onChange }: PickListHeadingProps): JSX.Element => {
 
     return (
         <div
@@ -44,7 +46,7 @@ export const PickListHeading = ({ title, dropDownItems, dropDownValue, style, on
             <Typography variant={'breadcrumbLink'} >{ title }</Typography>
 
             {
-                dropDownItems && dropDownItems.length >= 1 ?
+                showDropDown && dropDownItems && dropDownItems.length >= 1 ?
                     <SimpleDropDown
                         menuItems={dropDownItems}
                         value={dropDownValue}

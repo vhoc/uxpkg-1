@@ -23,3 +23,9 @@ export var Default = {
         ]
     }
 };
+export var WithoutDropdown = {
+    args: {
+        title: 'Existing (123)',
+        showDropDown: false
+    }
+};

@@ -26,3 +26,10 @@ export const Default = {
         ]
     }
 }
+
+export const WithoutDropdown = {
+  args: {
+      title: 'Existing (123)',
+      showDropDown: false,
+  }
+}

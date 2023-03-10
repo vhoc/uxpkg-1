@@ -11,3 +11,9 @@ export declare const Default: {
         }[];
     };
 };
+export declare const WithoutDropdown: {
+    args: {
+        title: string;
+        showDropDown: boolean;
+    };
+};
