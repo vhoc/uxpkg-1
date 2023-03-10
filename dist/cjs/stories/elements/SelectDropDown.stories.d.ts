@@ -15,6 +15,21 @@ export declare const Default: {
         })[];
     };
 };
+export declare const WithLabel: {
+    args: {
+        label: string;
+        value: string;
+        menuItems: ({
+            value: string;
+            label: string;
+            selected: boolean;
+        } | {
+            value: string;
+            label: string;
+            selected?: undefined;
+        })[];
+    };
+};
 export declare const NoItems: {
     args: {
         value: string;

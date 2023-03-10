@@ -25,6 +25,23 @@ export var Default = {
         ]
     }
 };
+export var WithLabel = {
+    args: {
+        label: 'This is a label',
+        value: "",
+        menuItems: [
+            {
+                value: "sort-name",
+                label: 'Sort: by Name',
+                selected: true
+            },
+            {
+                value: "sort-lastName",
+                label: 'Sort: by Last Name'
+            },
+        ]
+    }
+};
 export var NoItems = {
     args: {
         value: "",

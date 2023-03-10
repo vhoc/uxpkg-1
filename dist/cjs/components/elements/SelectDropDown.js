@@ -6,6 +6,7 @@ var material_1 = require("@mui/material");
 var theme_1 = require("../../theme");
 var react_1 = tslib_1.__importDefault(require("react"));
 var styles_1 = require("@mui/material/styles");
+var Typography_1 = require("./Typography");
 var MySelect = (0, styles_1.styled)(material_1.Select)({
     backgroundColor: theme_1.colors.white,
     fontFamily: 'IBM Plex Sans',
@@ -35,7 +36,7 @@ var MyMenuItem = (0, styles_1.styled)(material_1.MenuItem)({
     fontSize: '14px'
 });
 var SelectDropDown = function (_a) {
-    var menuItems = _a.menuItems, value = _a.value, onChange = _a.onChange, _b = _a.disabled, disabled = _b === void 0 ? false : _b, props = tslib_1.__rest(_a, ["menuItems", "value", "onChange", "disabled"]);
+    var menuItems = _a.menuItems, value = _a.value, onChange = _a.onChange, _b = _a.disabled, disabled = _b === void 0 ? false : _b, label = _a.label, props = tslib_1.__rest(_a, ["menuItems", "value", "onChange", "disabled", "label"]);
     return (react_1["default"].createElement(material_1.FormControl, { sx: {
             fontFamily: 'IBM Plex Sans',
             p: 0,
@@ -47,6 +48,7 @@ var SelectDropDown = function (_a) {
                 boxShadow: 'none'
             }
         }, size: 'small', disabled: disabled },
+        label ? react_1["default"].createElement(Typography_1.Typography, { variant: 'body-regular', style: { marginBottom: '2px' } }, label) : null,
         react_1["default"].createElement(styles_1.ThemeProvider, { theme: theme_1.mtheme },
             react_1["default"].createElement(MySelect, tslib_1.__assign({ value: value, onChange: onChange, displayEmpty: true, inputProps: { 'aria-label': 'Without label' } }, props),
                 react_1["default"].createElement(MyMenuItem, { value: "" },

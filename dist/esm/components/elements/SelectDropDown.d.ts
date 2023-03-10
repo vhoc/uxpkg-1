@@ -15,6 +15,8 @@ export interface SelectDropDownProps extends SelectProps {
      * The default selected value if any.
      */
     value?: string | undefined;
+    /** Label at the top of the DropDown control */
+    label?: string | undefined;
     /**
      * Array of items objects in the menu.
      * Object structure:
@@ -23,7 +25,7 @@ export interface SelectDropDownProps extends SelectProps {
      * - selected: boolean | undefined
      * - disabled: boolean | undefined
      */
-    menuItems: SelectDropDownItemProps[];
+    menuItems?: SelectDropDownItemProps[] | undefined;
     disabled?: boolean;
 }
-export declare const SelectDropDown: ({ menuItems, value, onChange, disabled, ...props }: SelectDropDownProps) => JSX.Element;
+export declare const SelectDropDown: ({ menuItems, value, onChange, disabled, label, ...props }: SelectDropDownProps) => JSX.Element;

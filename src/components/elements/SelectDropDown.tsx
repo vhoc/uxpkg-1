@@ -2,6 +2,7 @@ import { Select, MenuItem, MenuItemProps, FormControl, SelectProps } from "@mui/
 import { mtheme, colors } from "../../theme";
 import React from "react";
 import { styled, ThemeProvider } from '@mui/material/styles';
+import { Typography } from "./Typography";
 
 
 export interface SelectDropDownItemProps extends MenuItemProps {
@@ -20,6 +21,8 @@ export interface SelectDropDownProps extends SelectProps {
      * The default selected value if any.
      */
     value?: string | undefined
+    /** Label at the top of the DropDown control */
+    label?: string | undefined
     /**
      * Array of items objects in the menu.  
      * Object structure:  
@@ -28,7 +31,7 @@ export interface SelectDropDownProps extends SelectProps {
      * - selected: boolean | undefined
      * - disabled: boolean | undefined
      */
-    menuItems: SelectDropDownItemProps[]
+    menuItems?: SelectDropDownItemProps[] | undefined
     disabled?: boolean
 }
 
@@ -62,7 +65,7 @@ const MyMenuItem = styled(MenuItem)({
     fontSize: '14px',
 })
 
-export const SelectDropDown = ({menuItems, value, onChange, disabled = false, ...props}: SelectDropDownProps): JSX.Element => {
+export const SelectDropDown = ({menuItems, value, onChange, disabled = false, label, ...props}: SelectDropDownProps): JSX.Element => {
 
 
     return (
@@ -82,6 +85,7 @@ export const SelectDropDown = ({menuItems, value, onChange, disabled = false, ..
             size={'small'}
             disabled={disabled}
             >
+            { label ? <Typography variant={'body-regular'} style={{ marginBottom: '2px' }}>{label}</Typography> : null }
                 <ThemeProvider theme={mtheme}>
                 <MySelect
                     value={value}

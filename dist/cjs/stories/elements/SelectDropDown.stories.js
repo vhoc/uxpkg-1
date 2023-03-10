@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.NoItems = exports.Default = void 0;
+exports.NoItems = exports.WithLabel = exports.Default = void 0;
 var SelectDropDown_1 = require("../../components/elements/SelectDropDown");
 var material_1 = require("@mui/material");
 exports["default"] = {
@@ -24,6 +24,23 @@ exports.Default = {
             {
                 value: "3",
                 label: 'Third item'
+            },
+        ]
+    }
+};
+exports.WithLabel = {
+    args: {
+        label: 'This is a label',
+        value: "",
+        menuItems: [
+            {
+                value: "sort-name",
+                label: 'Sort: by Name',
+                selected: true
+            },
+            {
+                value: "sort-lastName",
+                label: 'Sort: by Last Name'
             },
         ]
     }

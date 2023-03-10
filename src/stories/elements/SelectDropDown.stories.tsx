@@ -29,6 +29,26 @@ export const Default = {
     }
 }
 
+
+
+export const WithLabel = {
+    args: {
+        label: 'This is a label',   
+        value: "",
+        menuItems: [
+            {
+                value: "sort-name",
+                label: 'Sort: by Name',
+                selected: true,
+            },
+            {
+                value: "sort-lastName",
+                label: 'Sort: by Last Name',
+            },
+        ]
+    }
+}
+
 export const NoItems = {
     args: {
         value: "",
