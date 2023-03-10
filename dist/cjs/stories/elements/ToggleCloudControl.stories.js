@@ -8,19 +8,19 @@ exports["default"] = {
 };
 exports.AWS = {
     args: {
-        value: 'aws',
+        value: 'AWS',
         ariaLabel: 'cloud-select'
     }
 };
 exports.Google = {
     args: {
-        value: 'google',
+        value: 'GCP',
         ariaLabel: 'cloud-select'
     }
 };
 exports.Azure = {
     args: {
-        value: 'azure',
+        value: 'AZURE',
         ariaLabel: 'cloud-select'
     }
 };

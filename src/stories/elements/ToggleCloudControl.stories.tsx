@@ -8,21 +8,21 @@ export default {
 
 export const AWS = {
     args: {
-        value: 'aws',
+        value: 'AWS',
         ariaLabel: 'cloud-select',
     }
 }
 
 export const Google = {
     args: {
-        value: 'google',
+        value: 'GCP',
         ariaLabel: 'cloud-select',
     }
 }
 
 export const Azure = {
     args: {
-        value: 'azure',
+        value: 'AZURE',
         ariaLabel: 'cloud-select',
     }
 }

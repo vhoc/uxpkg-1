@@ -17,7 +17,7 @@ export interface ToggleCloudControlProps extends ToggleButtonGroupProps {
     multiSelect?: boolean
 }
 
-export const ToggleCloudControl = ({ ariaLabel = 'cloud control', multiSelect = false, value = ['aws'], onChange  }: ToggleCloudControlProps): JSX.Element => {
+export const ToggleCloudControl = ({ ariaLabel = 'cloud control', multiSelect = false, value = ['AWS'], onChange  }: ToggleCloudControlProps): JSX.Element => {
 
     return (
         <ToggleButtonGroup
@@ -32,8 +32,8 @@ export const ToggleCloudControl = ({ ariaLabel = 'cloud control', multiSelect = 
         >
 
             <ToggleButton
-                value={'aws'}
-                aria-label={'aws'}
+                value={'AWS'}
+                aria-label={'AWS'}
                 //onClick={item.onClick}
                 //onChange={item.onChange}
                 //disabled={item.disabled || false}
@@ -47,7 +47,7 @@ export const ToggleCloudControl = ({ ariaLabel = 'cloud control', multiSelect = 
                 }}
             >
                 <img src={
-                    ( value === 'aws' || (Array.isArray(value) && value.find((value) => value === 'aws')) ) ?
+                    ( value === 'AWS' || (Array.isArray(value) && value.find((value) => value === 'AWS')) ) ?
                         imgAwsColor
                     :
                         imgAwsGray
@@ -55,8 +55,8 @@ export const ToggleCloudControl = ({ ariaLabel = 'cloud control', multiSelect = 
             </ToggleButton>
 
             <ToggleButton
-                value={'google'}
-                aria-label={'google'}
+                value={'GCP'}
+                aria-label={'GCP'}
                 //selected={item.selected}
                 //onClick={item.onClick}
                 //onChange={item.onChange}
@@ -70,12 +70,12 @@ export const ToggleCloudControl = ({ ariaLabel = 'cloud control', multiSelect = 
                     },
                 }}
             >
-                <img src={ ( value === 'google' || (Array.isArray(value) && value.find((value) => value === 'google')) )? imgGoogleColor : imgGoogleGray} alt={'Google'} />
+                <img src={ ( value === 'GCP' || (Array.isArray(value) && value.find((value) => value === 'GCP')) )? imgGoogleColor : imgGoogleGray} alt={'GCP'} />
             </ToggleButton>
 
             <ToggleButton
-                value={'azure'}
-                aria-label={'azure'}
+                value={'AZURE'}
+                aria-label={'AZURE'}
                 //selected={item.selected}
                 //onClick={item.onClick}
                 //onChange={item.onChange}
@@ -89,7 +89,7 @@ export const ToggleCloudControl = ({ ariaLabel = 'cloud control', multiSelect = 
                     },
                 }}
             >
-                <img src={ ( value === 'azure' || (Array.isArray(value) && value.find((value) => value === 'azure')) ) ? imgAzureColor : imgAzureGray} alt={'Azure'} />
+                <img src={ ( value === 'AZURE' || (Array.isArray(value) && value.find((value) => value === 'AZURE')) ) ? imgAzureColor : imgAzureGray} alt={'AZURE'} />
             </ToggleButton>
 
         </ToggleButtonGroup>

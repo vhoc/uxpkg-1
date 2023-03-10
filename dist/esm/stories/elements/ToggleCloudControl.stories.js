@@ -5,19 +5,19 @@ export default {
 };
 export var AWS = {
     args: {
-        value: 'aws',
+        value: 'AWS',
         ariaLabel: 'cloud-select'
     }
 };
 export var Google = {
     args: {
-        value: 'google',
+        value: 'GCP',
         ariaLabel: 'cloud-select'
     }
 };
 export var Azure = {
     args: {
-        value: 'azure',
+        value: 'AZURE',
         ariaLabel: 'cloud-select'
     }
 };
