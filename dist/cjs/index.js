@@ -48,3 +48,4 @@ tslib_1.__exportStar(require("./components/elements/PickListRowHeading"), export
 tslib_1.__exportStar(require("./components/elements/DataTable"), exports);
 tslib_1.__exportStar(require("./components/elements/MenuButton"), exports);
 tslib_1.__exportStar(require("./components/elements/MenuButtonItem"), exports);
+tslib_1.__exportStar(require("./components/elements/ScrollableCard"), exports);
