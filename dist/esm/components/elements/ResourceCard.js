@@ -61,7 +61,7 @@ export var ResourceCard = function (_a) {
         accessState !== 'signIn' ?
             React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between' } },
                 React.createElement(Button, { variant: "gray", onClick: onMoreInfoClick }, "More Info"),
-                React.createElement(Button, { variant: "grayBlue", onClick: onAccessClick }, "Access"))
+                React.createElement(Button, { variant: "grayBlue", onClick: onAccessClick }, "Request"))
             :
                 React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between' } },
                     React.createElement("div", null,

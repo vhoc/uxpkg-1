@@ -158,7 +158,7 @@ export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, b
                 accessState !== 'signIn' ?
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <Button variant="gray" onClick={onMoreInfoClick} >More Info</Button>
-                        <Button variant="grayBlue" onClick={onAccessClick} >Access</Button>
+                        <Button variant="grayBlue" onClick={onAccessClick} >Request</Button>
                     </div>
                 :
                     <div style={{ display: 'flex', justifyContent: 'space-between', }}>
