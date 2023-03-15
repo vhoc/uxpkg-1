@@ -30,3 +30,16 @@ export declare const ManyRoles: {
         onClickDeleteButton: () => void;
     };
 };
+export declare const NoActionButtons: {
+    args: {
+        resourceIcon: string;
+        resourceName: string;
+        resourceType: string;
+        accountName: string;
+        region: string;
+        children: JSX.Element;
+        actionButtons: boolean;
+        isEditButtonEnabled: boolean;
+        isDeleteButtonEnabled: boolean;
+    };
+};

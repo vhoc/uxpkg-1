@@ -6,10 +6,11 @@ export interface SummaryResourceCardProps extends HTMLAttributes<HTMLDivElement>
     accountName: string;
     region: string;
     children?: ReactNode | undefined;
+    actionButtons?: boolean;
     isEditButtonEnabled: boolean;
     onClickEditButton?: React.MouseEventHandler<HTMLButtonElement> | undefined;
     onClickDeleteButton?: React.MouseEventHandler<HTMLButtonElement> | undefined;
     isDeleteButtonEnabled: boolean;
     style?: React.CSSProperties | undefined;
 }
-export declare const SummaryResourceCard: ({ resourceIcon, resourceName, resourceType, accountName, region, children, isEditButtonEnabled, isDeleteButtonEnabled, onClickEditButton, onClickDeleteButton, style }: SummaryResourceCardProps) => JSX.Element;
+export declare const SummaryResourceCard: ({ resourceIcon, resourceName, resourceType, accountName, region, children, actionButtons, isEditButtonEnabled, isDeleteButtonEnabled, onClickEditButton, onClickDeleteButton, style }: SummaryResourceCardProps) => JSX.Element;

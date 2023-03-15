@@ -46,3 +46,18 @@ export var ManyRoles = {
         onClickDeleteButton: function () { return alert("Delete button clicked!"); }
     }
 };
+export var NoActionButtons = {
+    args: {
+        resourceIcon: '[Icon]',
+        resourceName: 'eni-03a9ab07d4c9111c5',
+        resourceType: 'AWS EC2 Network Interface',
+        accountName: 'StagingAWSAcc',
+        region: 'US-west',
+        children: React.createElement(React.Fragment, null,
+            React.createElement(Label, { variant: 'grayBlue', text: 'AmazonAugmentedAIIntegratedAPIAccess' }),
+            React.createElement(Label, { variant: 'grayBlue', text: 'AdministratorAccess-Amplify' })),
+        actionButtons: false,
+        isEditButtonEnabled: false,
+        isDeleteButtonEnabled: false
+    }
+};

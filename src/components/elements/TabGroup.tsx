@@ -84,11 +84,20 @@ const a11yProps = (index: number) => {
 }
 
 interface TabGroupProps {
+    /** Leaves the tab control to the parent */
+    controllable?: boolean
+    /** Defines which tab is active, requires a number value above 0 and the "controllable" prop to be true. */
+    activeIndex?: number | undefined
+    /**
+     * The tabs in the component:  
+     * [{ label: string, tabContent: any, },]
+     */
     tabs: any
+    /** The tab content container height. */
     tabContentHeight?: string | undefined
 }
 
-export const TabGroup = ({tabs, tabContentHeight}: TabGroupProps) => {
+export const TabGroup = ({controllable = false, activeIndex, tabs, tabContentHeight}: TabGroupProps) => {
     const [value, setValue] = useState(0)
 
     const handleChange = ( event: React.SyntheticEvent, newValue: number ) => {
@@ -127,8 +136,8 @@ export const TabGroup = ({tabs, tabContentHeight}: TabGroupProps) => {
             {   
                 tabs && tabs.length >= 1 ?
                     <Tabs
-                        value={value}
-                        onChange={handleChange}
+                        value={ controllable === true && activeIndex ? activeIndex : value }
+                        onChange={ !controllable ? handleChange : undefined}
                         aria-label="here are the tabs"
                         TabIndicatorProps={{
                             style: {

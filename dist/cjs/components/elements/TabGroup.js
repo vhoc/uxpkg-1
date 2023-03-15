@@ -44,8 +44,8 @@ var a11yProps = function (index) {
     };
 };
 var TabGroup = function (_a) {
-    var tabs = _a.tabs, tabContentHeight = _a.tabContentHeight;
-    var _b = (0, react_1.useState)(0), value = _b[0], setValue = _b[1];
+    var _b = _a.controllable, controllable = _b === void 0 ? false : _b, activeIndex = _a.activeIndex, tabs = _a.tabs, tabContentHeight = _a.tabContentHeight;
+    var _c = (0, react_1.useState)(0), value = _c[0], setValue = _c[1];
     var handleChange = function (event, newValue) {
         setValue(newValue);
     };
@@ -74,7 +74,7 @@ var TabGroup = function (_a) {
                 width: '100%'
             } },
             React.createElement("div", null, tabs && tabs.length >= 1 ?
-                React.createElement(material_1.Tabs, { value: value, onChange: handleChange, "aria-label": "here are the tabs", TabIndicatorProps: {
+                React.createElement(material_1.Tabs, { value: controllable === true && activeIndex ? activeIndex : value, onChange: !controllable ? handleChange : undefined, "aria-label": "here are the tabs", TabIndicatorProps: {
                         style: {
                             display: 'none'
                         }

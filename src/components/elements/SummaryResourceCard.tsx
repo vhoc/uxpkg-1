@@ -12,6 +12,7 @@ export interface SummaryResourceCardProps extends HTMLAttributes<HTMLDivElement>
     accountName: string,
     region: string,
     children?: ReactNode | undefined
+    actionButtons?: boolean
     isEditButtonEnabled: boolean
     onClickEditButton?: React.MouseEventHandler<HTMLButtonElement> | undefined
     onClickDeleteButton?: React.MouseEventHandler<HTMLButtonElement> | undefined
@@ -19,7 +20,7 @@ export interface SummaryResourceCardProps extends HTMLAttributes<HTMLDivElement>
     style?: React.CSSProperties | undefined
 }
 
-export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, accountName, region, children, isEditButtonEnabled = true, isDeleteButtonEnabled = true, onClickEditButton, onClickDeleteButton, style}: SummaryResourceCardProps): JSX.Element => {
+export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, accountName, region, children, actionButtons = true, isEditButtonEnabled = true, isDeleteButtonEnabled = true, onClickEditButton, onClickDeleteButton, style}: SummaryResourceCardProps): JSX.Element => {
 
     const MyDiv = styled('div')({
         overflowY: 'auto',
@@ -45,7 +46,8 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
                 display: 'flex',
                 justifyContent: 'space-between',
                 padding: '16px',
-                minWidth: '640px',
+                width: '100%',
+                minWidth: '780px',
                 minHeight: '88px',
                 border: `1px solid ${colors.gray[20]}`,
                 borderRadius: '4px',
@@ -54,7 +56,7 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
         >
 
             {/** LEFT SECTION */}
-            <div style={{ display: 'flex', gap: '12px', }}>
+            <div style={{ display: 'flex', gap: '12px', width: '50%' }}>
 
                 {/** Resource Icon */}
                 <div style={{ width: '34px', fontSize: '10px', textAlign: 'center', }}>
@@ -66,6 +68,7 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
                     style={{
                         display: 'flex',
                         flexDirection: 'column',
+                        width: 'calc(100% - 40px)',
                     }}
                 >
                     <Typography
@@ -74,7 +77,7 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
                             whiteSpace: 'nowrap',
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
-                            maxWidth: '210px',
+                            width: '100%',
                             textAlign: 'left',
                         }}
                     >
@@ -87,7 +90,7 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
                             whiteSpace: 'nowrap',
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
-                            maxWidth: '210px',
+                            maxWidth: '100%',
                             textAlign: 'left',
                         }}
                     >
@@ -100,7 +103,7 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
                             whiteSpace: 'nowrap',
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
-                            maxWidth: '210px',
+                            maxWidth: '100%',
                             textAlign: 'left',
                         }}
                     >
@@ -130,32 +133,42 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
 
 
                 {/** Edit and Delete buttons */}
-                <div
-                    style={{
-                        display: 'flex',
-                        justifyContent: 'flex-end',
-                        gap: '4px'
-                    }}
-                >
-                    <IconButton
-                        variant={'gray'}
-                        icon={faTrash}
-                        disabled={!isDeleteButtonEnabled}
-                        onClick={ isDeleteButtonEnabled ? onClickDeleteButton : undefined}
-                        style={{
-                            color : !isDeleteButtonEnabled ? '#8d94a1' : '#545b71'
-                        }}
-                    />
-                    <IconButton
-                        variant={'gray'}
-                        icon={faPen}
-                        disabled={!isEditButtonEnabled}
-                        onClick={ isEditButtonEnabled ? onClickEditButton : undefined}
-                        style={{
-                            color : !isEditButtonEnabled ? '#8d94a1' : '#545b71'
-                        }}
-                    />
-                </div>
+                {
+                    actionButtons ?
+                        <div
+                            style={{
+                                display: 'flex',
+                                justifyContent: 'flex-end',
+                                gap: '4px',
+                            }}
+                        >
+                            <IconButton
+                                variant={'gray'}
+                                icon={faTrash}
+                                disabled={!isDeleteButtonEnabled}
+                                onClick={ isDeleteButtonEnabled ? onClickDeleteButton : undefined}
+                                style={{
+                                    color : !isDeleteButtonEnabled ? '#8d94a1' : '#545b71'
+                                }}
+                            />
+                            <IconButton
+                                variant={'gray'}
+                                icon={faPen}
+                                disabled={!isEditButtonEnabled}
+                                onClick={ isEditButtonEnabled ? onClickEditButton : undefined}
+                                style={{
+                                    color : !isEditButtonEnabled ? '#8d94a1' : '#545b71'
+                                }}
+                            />
+                        </div>
+                    :
+                        <div
+                            style={{
+                                width: '78px',
+                            }}
+                        ></div>
+                }
+                
 
             </div>
 
