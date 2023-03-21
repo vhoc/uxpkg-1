@@ -8,18 +8,18 @@ export declare const Default: {
             value: string;
             label: string;
             description: string;
-            type: number;
+            type: string;
             route: string[];
         }[] | {
             id: string;
             value: string;
             label: string;
-            type: number;
+            type: string;
             description: string;
         }[] | {
             id: string;
             value: string;
-            type: number;
+            type: string;
             label: string;
         }[])[];
         arrows: {
@@ -37,5 +37,9 @@ export declare const Default: {
             onClick: (e: any) => void;
             type: number;
         })[];
+        containerStyle: {
+            width: string;
+            height: string;
+        };
     };
 };

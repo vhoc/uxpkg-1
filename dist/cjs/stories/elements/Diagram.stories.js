@@ -9,7 +9,7 @@ var _data = [
             value: "1",
             label: "Andrew Jackson",
             description: "andrew@company.com",
-            type: 0,
+            type: 'USER',
             route: ["21", "31", "33", "42", "44", "45", "49"]
         },
         {
@@ -17,7 +17,7 @@ var _data = [
             value: "2",
             label: "Andrew Jackson",
             description: "andrew@company.com",
-            type: 0,
+            type: 'USER',
             route: ["21", "32", "42", "43", "47"]
         },
         {
@@ -25,7 +25,7 @@ var _data = [
             value: "3",
             label: "Andrew Jackson",
             description: "andrew@company.com",
-            type: 0,
+            type: 'USER',
             route: ["21", "34", "41", "45", "46", "48"]
         },
     ],
@@ -34,7 +34,7 @@ var _data = [
             id: "21",
             value: "1",
             label: "AWSTestPol",
-            type: 1,
+            type: 'POLICY',
             description: "SumaAWS/98012083109281"
         },
     ],
@@ -42,12 +42,12 @@ var _data = [
         {
             id: "31",
             value: "1",
-            type: 2,
+            type: 'ROLE',
             label: "AdministratorAccess-Amplify"
         },
-        { id: "32", value: "2", type: 2, label: "AmazonAugmentedAI" },
-        { id: "33", value: "3", type: 2, label: "AccessAnalyzerService" },
-        { id: "34", value: "4", type: 2, label: "AWSCustomRole" },
+        { id: "32", value: "2", type: 'ROLE', label: "AmazonAugmentedAI" },
+        { id: "33", value: "3", type: 'ROLE', label: "AccessAnalyzerService" },
+        { id: "34", value: "4", type: 'ROLE', label: "AWSCustomRole" },
     ],
     [
         {
@@ -55,63 +55,63 @@ var _data = [
             value: "1",
             label: "i-0054d9cfe5771e555",
             description: "AWS EC2 Instance",
-            type: 3
+            type: 'AWS_EC2_Instance'
         },
         {
             id: "42",
             value: "2",
             label: "alias/aws/rds",
             description: "RDS DB",
-            type: 4
+            type: 'AWS_Compute'
         },
         {
             id: "43",
             value: "3",
             label: "vpc-21b0035c",
             description: "VPC",
-            type: 5
+            type: 'AWS_User'
         },
         {
             id: "44",
             value: "4",
             label: "i-0054d9cfe5771e555",
             description: "AWS EC2 Instance",
-            type: 3
+            type: 'AWS_Compute'
         },
         {
             id: "45",
             value: "5",
             label: "alias/aws/rds",
             description: "RDS DB",
-            type: 4
+            type: 'AWS_User'
         },
         {
             id: "46",
             value: "6",
             label: "vpc-21b0035c",
             description: "VPC",
-            type: 5
+            type: 'AWS_User'
         },
         {
             id: "47",
             value: "7",
             label: "i-0054d9cfe5771e555",
             description: "AWS EC2 Instance",
-            type: 3
+            type: 'AWS_EC2_Instance'
         },
         {
             id: "48",
             value: "8",
             label: "alias/aws/rds",
             description: "RDS DB",
-            type: 4
+            type: 'AWS_User'
         },
         {
             id: "49",
             value: "9",
             label: "vpc-21b0035c",
             description: "VPC",
-            type: 5
+            type: 'AWS_EC2_Elastic_IP'
         },
     ],
 ];
@@ -161,6 +161,10 @@ exports.Default = {
     args: {
         data: _data,
         arrows: connections,
-        actions: actions
+        actions: actions,
+        containerStyle: {
+            width: '500px',
+            height: '300px'
+        }
     }
 };

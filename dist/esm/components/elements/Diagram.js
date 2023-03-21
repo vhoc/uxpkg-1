@@ -4,13 +4,19 @@ import { __assign, __awaiter, __generator, __spreadArray } from "tslib";
 import React, { useEffect, useState } from "react";
 import Xarrow, { Xwrapper, useXarrow } from "react-xarrows";
 import "./styles.css";
+import { styled } from '@mui/material/styles';
+import { colors } from "../../theme";
+/*
 import User from "./assets/icons/User.png";
 import Policy from "./assets/icons/Policy.png";
 import Role from "./assets/icons/Role.png";
 import AWSInstance from "./assets/icons/Instance.png";
 import AWSCompute from "./assets/icons/Compute.png";
 import AWSUser from "./assets/icons/users.png";
-var types = [User, Policy, Role, AWSInstance, AWSCompute, AWSUser];
+
+const resourceTypes = [User, Policy, Role, AWSInstance, AWSCompute, AWSUser];
+*/
+import { DisplayTypeToIconMap } from "../graphical/ResourceTypesIcons";
 export var Diagram = function (_a) {
     var data = _a.data, arrows = _a.arrows, actions = _a.actions, containerStyle = _a.containerStyle, columnStyle = _a.columnStyle;
     var _b = useState(null), selectedPath = _b[0], setSelectedPath = _b[1];
@@ -75,7 +81,22 @@ export var Diagram = function (_a) {
             setVisible("");
         }
     };
-    return (React.createElement("div", { style: __assign({}, containerStyle), className: "container", onScroll: updateXarrow },
+    var MyDiv = styled('div')({
+        overflowY: 'auto',
+        overflowX: 'auto',
+        '&::-webkit-scrollbar': {
+            width: '4px'
+        },
+        '&::-webkit-scrollbar-track': {
+            backgroundColor: colors.gray[10],
+            borderRadius: '3px'
+        },
+        '&::-webkit-scrollbar-thumb': {
+            backgroundColor: colors.gray[50],
+            borderRadius: '3px'
+        }
+    });
+    return (React.createElement(MyDiv, { style: __assign({}, containerStyle), className: "container", onScroll: updateXarrow },
         React.createElement("div", { className: "dia-content" },
             React.createElement(Xwrapper, null, data.map(function (column, index) { return (React.createElement("div", { key: index, className: "dia-column" },
                 column.map(function (element, i) {
@@ -85,7 +106,11 @@ export var Diagram = function (_a) {
                                     element.type !== null) ||
                                     !!element.icon)
                                     ? "dia-row_placehold"
-                                    : ""), style: __assign({}, columnStyle), onMouseOver: function () { return handlePath(element.id, index, i); }, onMouseLeave: function () { return setSelectedPath(null); }, onClick: function () { return toogleVisible(element.id); } }, element.type !== undefined && element.type !== null && element.type < types.length ? (React.createElement("img", { src: "".concat(types[element.type]), alt: types[element.type], height: "100%", width: "100%" })) : element.icon ? (React.createElement("img", { src: element.icon, alt: element.value, height: "100%", width: "100%" })) : (element.id)),
+                                    : ""), style: __assign({}, columnStyle), onMouseOver: function () { return handlePath(element.id, index, i); }, onMouseLeave: function () { return setSelectedPath(null); }, onClick: function () { return toogleVisible(element.id); } }, 
+                            //element.type !== undefined && element.type !== null && element.type < Object.keys(DisplayTypeToIconMap).length ? (
+                            element.type !== undefined && element.type !== null ? (
+                            // make here a typeof keyof something something
+                            React.createElement("img", { src: "".concat(DisplayTypeToIconMap[element.type]), alt: DisplayTypeToIconMap[element.type], height: "100%", width: "100%" })) : element.icon ? (React.createElement("img", { src: element.icon, alt: element.value, height: "100%", width: "100%" })) : (element.id)),
                             React.createElement("div", { className: "dropdown-content ".concat(visible === element.id ? "show-dropdown" : "") }, !!actions &&
                                 actions.map(function (action) {
                                     if (action.type === element.type ||

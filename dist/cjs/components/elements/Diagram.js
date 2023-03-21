@@ -7,13 +7,19 @@ var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importStar(require("react"));
 var react_xarrows_1 = tslib_1.__importStar(require("react-xarrows"));
 require("./styles.css");
-var User_png_1 = tslib_1.__importDefault(require("./assets/icons/User.png"));
-var Policy_png_1 = tslib_1.__importDefault(require("./assets/icons/Policy.png"));
-var Role_png_1 = tslib_1.__importDefault(require("./assets/icons/Role.png"));
-var Instance_png_1 = tslib_1.__importDefault(require("./assets/icons/Instance.png"));
-var Compute_png_1 = tslib_1.__importDefault(require("./assets/icons/Compute.png"));
-var users_png_1 = tslib_1.__importDefault(require("./assets/icons/users.png"));
-var types = [User_png_1["default"], Policy_png_1["default"], Role_png_1["default"], Instance_png_1["default"], Compute_png_1["default"], users_png_1["default"]];
+var styles_1 = require("@mui/material/styles");
+var theme_1 = require("../../theme");
+/*
+import User from "./assets/icons/User.png";
+import Policy from "./assets/icons/Policy.png";
+import Role from "./assets/icons/Role.png";
+import AWSInstance from "./assets/icons/Instance.png";
+import AWSCompute from "./assets/icons/Compute.png";
+import AWSUser from "./assets/icons/users.png";
+
+const resourceTypes = [User, Policy, Role, AWSInstance, AWSCompute, AWSUser];
+*/
+var ResourceTypesIcons_1 = require("../graphical/ResourceTypesIcons");
 var Diagram = function (_a) {
     var data = _a.data, arrows = _a.arrows, actions = _a.actions, containerStyle = _a.containerStyle, columnStyle = _a.columnStyle;
     var _b = (0, react_1.useState)(null), selectedPath = _b[0], setSelectedPath = _b[1];
@@ -78,7 +84,22 @@ var Diagram = function (_a) {
             setVisible("");
         }
     };
-    return (react_1["default"].createElement("div", { style: tslib_1.__assign({}, containerStyle), className: "container", onScroll: updateXarrow },
+    var MyDiv = (0, styles_1.styled)('div')({
+        overflowY: 'auto',
+        overflowX: 'auto',
+        '&::-webkit-scrollbar': {
+            width: '4px'
+        },
+        '&::-webkit-scrollbar-track': {
+            backgroundColor: theme_1.colors.gray[10],
+            borderRadius: '3px'
+        },
+        '&::-webkit-scrollbar-thumb': {
+            backgroundColor: theme_1.colors.gray[50],
+            borderRadius: '3px'
+        }
+    });
+    return (react_1["default"].createElement(MyDiv, { style: tslib_1.__assign({}, containerStyle), className: "container", onScroll: updateXarrow },
         react_1["default"].createElement("div", { className: "dia-content" },
             react_1["default"].createElement(react_xarrows_1.Xwrapper, null, data.map(function (column, index) { return (react_1["default"].createElement("div", { key: index, className: "dia-column" },
                 column.map(function (element, i) {
@@ -88,7 +109,11 @@ var Diagram = function (_a) {
                                     element.type !== null) ||
                                     !!element.icon)
                                     ? "dia-row_placehold"
-                                    : ""), style: tslib_1.__assign({}, columnStyle), onMouseOver: function () { return handlePath(element.id, index, i); }, onMouseLeave: function () { return setSelectedPath(null); }, onClick: function () { return toogleVisible(element.id); } }, element.type !== undefined && element.type !== null && element.type < types.length ? (react_1["default"].createElement("img", { src: "".concat(types[element.type]), alt: types[element.type], height: "100%", width: "100%" })) : element.icon ? (react_1["default"].createElement("img", { src: element.icon, alt: element.value, height: "100%", width: "100%" })) : (element.id)),
+                                    : ""), style: tslib_1.__assign({}, columnStyle), onMouseOver: function () { return handlePath(element.id, index, i); }, onMouseLeave: function () { return setSelectedPath(null); }, onClick: function () { return toogleVisible(element.id); } }, 
+                            //element.type !== undefined && element.type !== null && element.type < Object.keys(DisplayTypeToIconMap).length ? (
+                            element.type !== undefined && element.type !== null ? (
+                            // make here a typeof keyof something something
+                            react_1["default"].createElement("img", { src: "".concat(ResourceTypesIcons_1.DisplayTypeToIconMap[element.type]), alt: ResourceTypesIcons_1.DisplayTypeToIconMap[element.type], height: "100%", width: "100%" })) : element.icon ? (react_1["default"].createElement("img", { src: element.icon, alt: element.value, height: "100%", width: "100%" })) : (element.id)),
                             react_1["default"].createElement("div", { className: "dropdown-content ".concat(visible === element.id ? "show-dropdown" : "") }, !!actions &&
                                 actions.map(function (action) {
                                     if (action.type === element.type ||

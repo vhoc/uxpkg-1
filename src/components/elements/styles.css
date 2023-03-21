@@ -6,12 +6,31 @@
     background-color: #F9FBFC;
     height: 100%;
     width: 100%;
-    border: 2px solid #000;
     color: #000;
+    border-radius: 8px;
     z-index: 50;
     white-space: nowrap;
     overflow: auto;
     font-family: "IBM Plex Sans";
+    overflow-y: 'auto';
+    position: relative;
+}
+
+
+.container::-webkit-scrollbar {
+    position: absolute;
+    margin-bottom: 10px;
+    width: 4px;
+    height: 4px;
+}
+.container::-webkit-scrollbar-track {
+    background-color: #eef4f7;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.00);
+}
+.container::-webkit-scrollbar-thumb {
+    background-color: #8d94a1;
+    border-radius: 3px;
 }
 
 .dia-content {

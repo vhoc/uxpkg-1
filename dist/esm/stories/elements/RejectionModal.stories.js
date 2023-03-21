@@ -7,6 +7,6 @@ export var Default = {
     args: {
         title: 'Are you sure you want to reject Request 12312313?',
         onClickCancel: function () { return alert("Cancelling..."); },
-        onClickApprove: function () { return alert("Rejecting..."); }
+        onClickReject: function () { return alert("Rejecting..."); }
     }
 };

@@ -11,6 +11,6 @@ export const Default = {
         title: 'Are you sure you want to reject Request 12312313?',
        
         onClickCancel: () => alert(`Cancelling...`),
-        onClickApprove: () => alert(`Rejecting...`),
+        onClickReject: () => alert(`Rejecting...`),
     }
 }

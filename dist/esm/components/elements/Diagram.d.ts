@@ -7,7 +7,7 @@ interface Column {
     description?: string;
     route?: Array<any>;
     icon?: any;
-    type?: number;
+    type?: string;
 }
 interface Arrow {
     startID: string;

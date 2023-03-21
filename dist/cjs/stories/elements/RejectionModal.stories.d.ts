@@ -5,6 +5,6 @@ export declare const Default: {
     args: {
         title: string;
         onClickCancel: () => void;
-        onClickApprove: () => void;
+        onClickReject: () => void;
     };
 };

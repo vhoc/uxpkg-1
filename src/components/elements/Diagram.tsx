@@ -3,7 +3,10 @@
 import React, { useEffect, useState } from "react";
 import Xarrow, { Xwrapper, useXarrow } from "react-xarrows";
 import "./styles.css";
+import { styled } from '@mui/material/styles'
+import { colors } from "../../theme";
 
+/*
 import User from "./assets/icons/User.png";
 import Policy from "./assets/icons/Policy.png";
 import Role from "./assets/icons/Role.png";
@@ -12,6 +15,8 @@ import AWSCompute from "./assets/icons/Compute.png";
 import AWSUser from "./assets/icons/users.png";
 
 const resourceTypes = [User, Policy, Role, AWSInstance, AWSCompute, AWSUser];
+*/
+import { DisplayTypeToIconMap } from "../graphical/ResourceTypesIcons";
 
 interface Column {
   id: string;
@@ -20,7 +25,7 @@ interface Column {
   description?: string;
   route?: Array<any>;
   icon?: any;
-  type?: number;
+  type?: string;
 }
 
 interface Arrow {
@@ -121,17 +126,40 @@ export const Diagram: React.FC<Props> = ({
     }
   };
 
+  type ElementKey = keyof typeof DisplayTypeToIconMap
+
+  const MyDiv = styled('div')({        
+    overflowY: 'auto',
+    overflowX: 'auto',
+    '&::-webkit-scrollbar' : {
+        width: '4px',
+    },
+    '&::-webkit-scrollbar-track': {
+        backgroundColor: colors.gray[10],
+        borderRadius: '3px',
+        //'-webkit-box-shadow': 'inset 0 0 6px rgba(0,0,0,0.00)'
+    },
+    '&::-webkit-scrollbar-thumb': {
+        backgroundColor: colors.gray[50],
+        borderRadius: '3px',
+        //outline: '1px solid slategrey'
+    }
+})
+  
+
   return (
     <div
-      style={{ ...containerStyle }}
       className="container"
+      style={{
+        ...containerStyle,
+      }}
       onScroll={updateXarrow}
     >
       <div className="dia-content">
         <Xwrapper>
           {data.map((column, index) => (
             <div key={index} className="dia-column">
-              {column.map((element, i) => {
+              {column.map((element: Column, i) => {
                 return (
                   <div
                     key={`${index}-${i}`}
@@ -158,10 +186,13 @@ export const Diagram: React.FC<Props> = ({
                         onMouseLeave={() => setSelectedPath(null)}
                         onClick={() => toogleVisible(element.id)}
                       >
-                        {element.type !== undefined && element.type !== null && element.type < resourceTypes.length ? (
+                        {
+                        //element.type !== undefined && element.type !== null && element.type < Object.keys(DisplayTypeToIconMap).length ? (
+                          element.type !== undefined && element.type !== null ? (
+                            // make here a typeof keyof something something
                           <img
-                            src={`${resourceTypes[element.type]}`}
-                            alt={resourceTypes[element.type]}
+                            src={`${DisplayTypeToIconMap[element.type as ElementKey]}`}
+                            alt={DisplayTypeToIconMap[element.type as ElementKey]}
                             height="100%"
                             width="100%"
                           />
