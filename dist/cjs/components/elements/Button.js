@@ -6,7 +6,7 @@ var react_1 = tslib_1.__importStar(require("react"));
 var theme_1 = require("../../theme");
 var react_fontawesome_1 = require("@fortawesome/react-fontawesome");
 var Button = function (_a) {
-    var children = _a.children, _b = _a.size, size = _b === void 0 ? 'sm' : _b, _c = _a.variant, variant = _c === void 0 ? 'primary' : _c, _d = _a.disabled, disabled = _d === void 0 ? false : _d, icon = _a.icon, _e = _a.iconPosition, iconPosition = _e === void 0 ? 'start' : _e, iconColor = _a.iconColor, width = _a.width, height = _a.height, ButtonProps = tslib_1.__rest(_a, ["children", "size", "variant", "disabled", "icon", "iconPosition", "iconColor", "width", "height"]);
+    var children = _a.children, _b = _a.size, size = _b === void 0 ? 'sm' : _b, _c = _a.variant, variant = _c === void 0 ? 'primary' : _c, _d = _a.disabled, disabled = _d === void 0 ? false : _d, icon = _a.icon, _e = _a.iconPosition, iconPosition = _e === void 0 ? 'start' : _e, iconColor = _a.iconColor, width = _a.width, height = _a.height, onClick = _a.onClick, ButtonProps = tslib_1.__rest(_a, ["children", "size", "variant", "disabled", "icon", "iconPosition", "iconColor", "width", "height", "onClick"]);
     var _f = (0, react_1.useState)(false), hover = _f[0], setHover = _f[1];
     var _g = (0, react_1.useState)(false), active = _g[0], setActive = _g[1];
     var selectedVariant = variant;
@@ -40,7 +40,7 @@ var Button = function (_a) {
         gap: '8px',
         alignItems: 'center'
     }); };
-    return (react_1["default"].createElement("button", tslib_1.__assign({ style: componentStyle(hover, active), onMouseEnter: function () { return setHover(true); }, onMouseLeave: function () { return setHover(false); }, onMouseDown: function () { return setActive(true); }, onMouseUp: function () { return setActive(false); } }, ButtonProps),
+    return (react_1["default"].createElement("button", tslib_1.__assign({ style: componentStyle(hover, active), onMouseEnter: function () { return setHover(true); }, onMouseLeave: function () { return setHover(false); }, onMouseDown: function () { return setActive(true); }, onMouseUp: function () { return setActive(false); }, onClick: !disabled ? onClick : undefined }, ButtonProps),
         iconPosition === 'start' ?
             icon ?
                 react_1["default"].createElement(react_fontawesome_1.FontAwesomeIcon, { icon: icon, color: iconColor })

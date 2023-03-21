@@ -1,5 +1,5 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { HTMLAttributes, ReactNode } from "react";
+import React, { HTMLAttributes, ReactNode } from "react";
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
     variant: 'primary' | 'gray' | 'grayBlue' | 'grayRed' | 'success';
     children?: ReactNode;
@@ -16,5 +16,7 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
     iconPosition?: 'start' | 'end';
     /** Sets the color of the icon */
     iconColor?: string | undefined;
+    /** onClick button event */
+    onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 }
-export declare const Button: ({ children, size, variant, disabled, icon, iconPosition, iconColor, width, height, ...ButtonProps }: ButtonProps) => JSX.Element;
+export declare const Button: ({ children, size, variant, disabled, icon, iconPosition, iconColor, width, height, onClick, ...ButtonProps }: ButtonProps) => JSX.Element;

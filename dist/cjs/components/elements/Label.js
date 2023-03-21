@@ -10,7 +10,9 @@ var Label = function (_a) {
     var selectedVariant = variant;
     var componentStyle = function () { return (tslib_1.__assign({ backgroundColor: theme_1.variants[selectedVariant].labelBgColor, color: theme_1.variants[selectedVariant].labelTextColor, textTransform: 'capitalize', 
         //height: height || 'auto',
-        width: text ? 'fit-content' : '32px', maxWidth: '255px', fontFamily: theme_1.theme.font.body.regular.fontFamily, fontSize: '13px', borderRadius: '4px', border: 'none', paddingTop: '6px', paddingBottom: '6px', paddingLeft: '8px', paddingRight: '8px', display: 'flex', justifyContent: text ? 'space-between' : 'center', gap: '6px', alignItems: 'center', height: '32px' }, style)); };
+        width: text ? 'fit-content' : '32px', 
+        //maxWidth: '255px',
+        fontFamily: theme_1.theme.font.body.regular.fontFamily, fontSize: '13px', borderRadius: '4px', border: 'none', paddingTop: '6px', paddingBottom: '6px', paddingLeft: '8px', paddingRight: '8px', display: 'flex', justifyContent: text ? 'space-between' : 'center', gap: '6px', alignItems: 'center', height: '32px' }, style)); };
     return (react_1["default"].createElement("div", tslib_1.__assign({ style: componentStyle() }, LabelProps),
         iconButton && iconPosition === 'start' ?
             react_1["default"].createElement("div", { style: {
