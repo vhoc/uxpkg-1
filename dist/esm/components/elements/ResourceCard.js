@@ -8,7 +8,7 @@ import { Button } from "./Button";
 import { faBookmark } from "@fortawesome/sharp-solid-svg-icons";
 import { theme, colors } from "../../theme";
 export var ResourceCard = function (_a) {
-    var _b = _a.variant, variant = _b === void 0 ? 'primary' : _b, accessState = _a.accessState, resourceIcon = _a.resourceIcon, bookmarked = _a.bookmarked, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, dropDownItems = _a.dropDownItems, dotMenuItems = _a.dotMenuItems, onBookmarkClick = _a.onBookmarkClick, onMoreInfoClick = _a.onMoreInfoClick, onAccessClick = _a.onAccessClick, width = _a.width, style = _a.style, props = __rest(_a, ["variant", "accessState", "resourceIcon", "bookmarked", "resourceName", "resourceType", "accountName", "region", "dropDownItems", "dotMenuItems", "onBookmarkClick", "onMoreInfoClick", "onAccessClick", "width", "style"]);
+    var _b = _a.variant, variant = _b === void 0 ? 'primary' : _b, accessState = _a.accessState, resourceIcon = _a.resourceIcon, bookmarked = _a.bookmarked, _c = _a.forPolicy, forPolicy = _c === void 0 ? false : _c, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, dropDownItems = _a.dropDownItems, dotMenuItems = _a.dotMenuItems, onBookmarkClick = _a.onBookmarkClick, onMoreInfoClick = _a.onMoreInfoClick, onAccessClick = _a.onAccessClick, width = _a.width, style = _a.style, props = __rest(_a, ["variant", "accessState", "resourceIcon", "bookmarked", "forPolicy", "resourceName", "resourceType", "accountName", "region", "dropDownItems", "dotMenuItems", "onBookmarkClick", "onMoreInfoClick", "onAccessClick", "width", "style"]);
     // Exclusive accessState styles for this component:
     var accessStateStyles = {
         access: {
@@ -61,7 +61,7 @@ export var ResourceCard = function (_a) {
         accessState !== 'signIn' ?
             React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between' } },
                 React.createElement(Button, { variant: "gray", onClick: onMoreInfoClick }, "More Info"),
-                React.createElement(Button, { variant: "grayBlue", onClick: onAccessClick }, "Request"))
+                React.createElement(Button, { variant: "grayBlue", onClick: onAccessClick }, forPolicy ? 'Policy' : 'Request'))
             :
                 React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between' } },
                     React.createElement("div", null,

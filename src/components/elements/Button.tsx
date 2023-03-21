@@ -24,9 +24,12 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
 
     /** Sets the color of the icon */
     iconColor?: string | undefined
+
+    /** onClick button event */
+    onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
 }
 
-export const Button = ({children, size = 'sm', variant = 'primary', disabled = false, icon, iconPosition = 'start', iconColor, width, height, ...ButtonProps}: ButtonProps): JSX.Element => {
+export const Button = ({children, size = 'sm', variant = 'primary', disabled = false, icon, iconPosition = 'start', iconColor, width, height, onClick, ...ButtonProps}: ButtonProps): JSX.Element => {
 
     const [hover, setHover] = useState<boolean>(false)
     const [active, setActive] = useState<boolean>(false)
@@ -74,6 +77,7 @@ export const Button = ({children, size = 'sm', variant = 'primary', disabled = f
                 onMouseLeave={() => setHover(false)}
                 onMouseDown={() => setActive(true)}
                 onMouseUp={() => setActive(false)}
+                onClick={!disabled ? onClick : undefined}
                 {...ButtonProps}
             >
             {

@@ -29,7 +29,7 @@ export const Label = ({ variant = 'gray', text, iconButton, iconPosition = 'star
         textTransform: 'capitalize',
         //height: height || 'auto',
         width: text ? 'fit-content' : '32px',
-        maxWidth: '255px',
+        //maxWidth: '255px',
         fontFamily: theme.font.body.regular.fontFamily,
         fontSize: '13px',
         borderRadius: '4px',
