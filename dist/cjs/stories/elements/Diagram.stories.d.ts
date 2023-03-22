@@ -37,9 +37,5 @@ export declare const Default: {
             onClick: (e: any) => void;
             type: number;
         })[];
-        containerStyle: {
-            width: string;
-            height: string;
-        };
     };
 };

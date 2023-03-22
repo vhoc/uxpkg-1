@@ -17,3 +17,19 @@ export declare const Primary: {
         onAccessClick: () => void;
     };
 };
+export declare const SingleItemButton: {
+    args: {
+        variant: string;
+        accessState: string;
+        bookmarked: boolean;
+        resourceName: string;
+        resourceType: string;
+        accountName: string;
+        region: string;
+        dropDownItems: import("../../util/sample-data").IDropDownItem[];
+        dotMenuItems: import("../../util/sample-data").IDropDownItem[];
+        onBookmarkClick: () => void;
+        onMoreInfoClick: () => void;
+        onAccessClick: () => void;
+    };
+};

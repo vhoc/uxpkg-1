@@ -4,18 +4,6 @@ import { __assign, __awaiter, __generator, __spreadArray } from "tslib";
 import React, { useEffect, useState } from "react";
 import Xarrow, { Xwrapper, useXarrow } from "react-xarrows";
 import "./styles.css";
-import { styled } from '@mui/material/styles';
-import { colors } from "../../theme";
-/*
-import User from "./assets/icons/User.png";
-import Policy from "./assets/icons/Policy.png";
-import Role from "./assets/icons/Role.png";
-import AWSInstance from "./assets/icons/Instance.png";
-import AWSCompute from "./assets/icons/Compute.png";
-import AWSUser from "./assets/icons/users.png";
-
-const resourceTypes = [User, Policy, Role, AWSInstance, AWSCompute, AWSUser];
-*/
 import { DisplayTypeToIconMap } from "../graphical/ResourceTypesIcons";
 export var Diagram = function (_a) {
     var data = _a.data, arrows = _a.arrows, actions = _a.actions, containerStyle = _a.containerStyle, columnStyle = _a.columnStyle;
@@ -81,22 +69,7 @@ export var Diagram = function (_a) {
             setVisible("");
         }
     };
-    var MyDiv = styled('div')({
-        overflowY: 'auto',
-        overflowX: 'auto',
-        '&::-webkit-scrollbar': {
-            width: '4px'
-        },
-        '&::-webkit-scrollbar-track': {
-            backgroundColor: colors.gray[10],
-            borderRadius: '3px'
-        },
-        '&::-webkit-scrollbar-thumb': {
-            backgroundColor: colors.gray[50],
-            borderRadius: '3px'
-        }
-    });
-    return (React.createElement(MyDiv, { style: __assign({}, containerStyle), className: "container", onScroll: updateXarrow },
+    return (React.createElement("div", { className: "container", style: __assign({}, containerStyle), onScroll: updateXarrow },
         React.createElement("div", { className: "dia-content" },
             React.createElement(Xwrapper, null, data.map(function (column, index) { return (React.createElement("div", { key: index, className: "dia-column" },
                 column.map(function (element, i) {

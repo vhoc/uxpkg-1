@@ -70,7 +70,10 @@ var ResourceCard = function (_a) {
                     react_1["default"].createElement("div", null,
                         react_1["default"].createElement(Button_1.Button, { variant: "gray" }, "More Info")),
                     react_1["default"].createElement("div", { style: { display: 'flex', gap: '8px' } },
-                        react_1["default"].createElement(DropDownButton_1.DropDownButton, { size: "sm", variant: "grayBlue", menuItems: dropDownItems }),
+                        (dropDownItems && (dropDownItems === null || dropDownItems === void 0 ? void 0 : dropDownItems.length) < 2) ?
+                            react_1["default"].createElement(Button_1.Button, { variant: "grayBlue", onClick: onAccessClick }, forPolicy ? 'Policy' : 'Sign In')
+                            :
+                                react_1["default"].createElement(DropDownButton_1.DropDownButton, { size: "sm", variant: "grayBlue", menuItems: dropDownItems }),
                         react_1["default"].createElement(DropDownButton_1.DropDownButton, { size: "sm", variant: "grayBlue", menuItems: dotMenuItems, hasDownArrow: false })))));
 };
 exports.ResourceCard = ResourceCard;

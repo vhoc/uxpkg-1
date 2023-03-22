@@ -111,7 +111,7 @@ var _data = [
             value: "9",
             label: "vpc-21b0035c",
             description: "VPC",
-            type: 'AWS_EC2_Elastic_IP'
+            type: 'AWS_GAMES'
         },
     ],
 ];
@@ -161,10 +161,6 @@ exports.Default = {
     args: {
         data: _data,
         arrows: connections,
-        actions: actions,
-        containerStyle: {
-            width: '500px',
-            height: '300px'
-        }
+        actions: actions
     }
 };

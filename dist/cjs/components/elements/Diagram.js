@@ -7,18 +7,6 @@ var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importStar(require("react"));
 var react_xarrows_1 = tslib_1.__importStar(require("react-xarrows"));
 require("./styles.css");
-var styles_1 = require("@mui/material/styles");
-var theme_1 = require("../../theme");
-/*
-import User from "./assets/icons/User.png";
-import Policy from "./assets/icons/Policy.png";
-import Role from "./assets/icons/Role.png";
-import AWSInstance from "./assets/icons/Instance.png";
-import AWSCompute from "./assets/icons/Compute.png";
-import AWSUser from "./assets/icons/users.png";
-
-const resourceTypes = [User, Policy, Role, AWSInstance, AWSCompute, AWSUser];
-*/
 var ResourceTypesIcons_1 = require("../graphical/ResourceTypesIcons");
 var Diagram = function (_a) {
     var data = _a.data, arrows = _a.arrows, actions = _a.actions, containerStyle = _a.containerStyle, columnStyle = _a.columnStyle;
@@ -84,22 +72,7 @@ var Diagram = function (_a) {
             setVisible("");
         }
     };
-    var MyDiv = (0, styles_1.styled)('div')({
-        overflowY: 'auto',
-        overflowX: 'auto',
-        '&::-webkit-scrollbar': {
-            width: '4px'
-        },
-        '&::-webkit-scrollbar-track': {
-            backgroundColor: theme_1.colors.gray[10],
-            borderRadius: '3px'
-        },
-        '&::-webkit-scrollbar-thumb': {
-            backgroundColor: theme_1.colors.gray[50],
-            borderRadius: '3px'
-        }
-    });
-    return (react_1["default"].createElement(MyDiv, { style: tslib_1.__assign({}, containerStyle), className: "container", onScroll: updateXarrow },
+    return (react_1["default"].createElement("div", { className: "container", style: tslib_1.__assign({}, containerStyle), onScroll: updateXarrow },
         react_1["default"].createElement("div", { className: "dia-content" },
             react_1["default"].createElement(react_xarrows_1.Xwrapper, null, data.map(function (column, index) { return (react_1["default"].createElement("div", { key: index, className: "dia-column" },
                 column.map(function (element, i) {

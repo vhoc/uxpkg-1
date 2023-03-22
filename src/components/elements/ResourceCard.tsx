@@ -42,7 +42,7 @@ export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     style?: CSSProperties | undefined
 }
 
-export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, bookmarked, forPolicy = false, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onBookmarkClick, onMoreInfoClick, onAccessClick, width, style, ...props }: ResourceCardProps): JSX.Element => {
+export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, bookmarked, forPolicy = false, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onBookmarkClick, onMoreInfoClick, onAccessClick, width, style, }: ResourceCardProps): JSX.Element => {
 
     // Exclusive accessState styles for this component:
     const accessStateStyles: IVariant = {
@@ -91,7 +91,6 @@ export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, b
             style={componentStyle()}
             //width={'304px'}
             padding={'16px 16px 16px 24px'}
-            {...props}
         >
 
             {/** Row 1: AWSIcon and Bookmark button */}
@@ -180,7 +179,12 @@ export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, b
                     <div style={{ display: 'flex', justifyContent: 'space-between', }}>
                         <div><Button variant="gray" >More Info</Button></div>
                         <div style={{ display: 'flex', gap: '8px' }}>
-                            <DropDownButton size="sm" variant="grayBlue" menuItems={dropDownItems}  />
+                        {
+                            ( dropDownItems && dropDownItems?.length < 2) ?
+                                <Button variant="grayBlue" onClick={onAccessClick} >{forPolicy ? 'Policy' : 'Sign In'}</Button>
+                            :
+                                <DropDownButton size="sm" variant="grayBlue" menuItems={dropDownItems}  />
+                        }
                             <DropDownButton size="sm" variant="grayBlue" menuItems={dotMenuItems} hasDownArrow={false} />
                         </div>
                     </div>

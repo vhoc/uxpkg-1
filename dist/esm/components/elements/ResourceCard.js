@@ -67,6 +67,9 @@ export var ResourceCard = function (_a) {
                     React.createElement("div", null,
                         React.createElement(Button, { variant: "gray" }, "More Info")),
                     React.createElement("div", { style: { display: 'flex', gap: '8px' } },
-                        React.createElement(DropDownButton, { size: "sm", variant: "grayBlue", menuItems: dropDownItems }),
+                        (dropDownItems && (dropDownItems === null || dropDownItems === void 0 ? void 0 : dropDownItems.length) < 2) ?
+                            React.createElement(Button, { variant: "grayBlue", onClick: onAccessClick }, forPolicy ? 'Policy' : 'Sign In')
+                            :
+                                React.createElement(DropDownButton, { size: "sm", variant: "grayBlue", menuItems: dropDownItems }),
                         React.createElement(DropDownButton, { size: "sm", variant: "grayBlue", menuItems: dotMenuItems, hasDownArrow: false })))));
 };

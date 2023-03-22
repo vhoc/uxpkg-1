@@ -3,19 +3,6 @@
 import React, { useEffect, useState } from "react";
 import Xarrow, { Xwrapper, useXarrow } from "react-xarrows";
 import "./styles.css";
-import { styled } from '@mui/material/styles'
-import { colors } from "../../theme";
-
-/*
-import User from "./assets/icons/User.png";
-import Policy from "./assets/icons/Policy.png";
-import Role from "./assets/icons/Role.png";
-import AWSInstance from "./assets/icons/Instance.png";
-import AWSCompute from "./assets/icons/Compute.png";
-import AWSUser from "./assets/icons/users.png";
-
-const resourceTypes = [User, Policy, Role, AWSInstance, AWSCompute, AWSUser];
-*/
 import { DisplayTypeToIconMap } from "../graphical/ResourceTypesIcons";
 
 interface Column {
@@ -44,10 +31,9 @@ interface Props {
   data: Column[][];
   arrows?: Array<Arrow>;
   actions: Action[];
-  containerStyle?: {};
-  columnStyle?: {};
+  containerStyle?: object;
+  columnStyle?: object;
 }
-
 export const Diagram: React.FC<Props> = ({
   data,
   arrows,
@@ -127,24 +113,6 @@ export const Diagram: React.FC<Props> = ({
   };
 
   type ElementKey = keyof typeof DisplayTypeToIconMap
-
-  const MyDiv = styled('div')({        
-    overflowY: 'auto',
-    overflowX: 'auto',
-    '&::-webkit-scrollbar' : {
-        width: '4px',
-    },
-    '&::-webkit-scrollbar-track': {
-        backgroundColor: colors.gray[10],
-        borderRadius: '3px',
-        //'-webkit-box-shadow': 'inset 0 0 6px rgba(0,0,0,0.00)'
-    },
-    '&::-webkit-scrollbar-thumb': {
-        backgroundColor: colors.gray[50],
-        borderRadius: '3px',
-        //outline: '1px solid slategrey'
-    }
-})
   
 
   return (

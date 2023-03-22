@@ -23,8 +23,8 @@ interface Props {
     data: Column[][];
     arrows?: Array<Arrow>;
     actions: Action[];
-    containerStyle?: {};
-    columnStyle?: {};
+    containerStyle?: object;
+    columnStyle?: object;
 }
 export declare const Diagram: React.FC<Props>;
 export {};
