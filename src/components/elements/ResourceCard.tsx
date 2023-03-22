@@ -180,7 +180,7 @@ export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, b
                         <div><Button variant="gray" >More Info</Button></div>
                         <div style={{ display: 'flex', gap: '8px' }}>
                         {
-                            ( dropDownItems && dropDownItems?.length < 2) ?
+                            ( dropDownItems && dropDownItems?.length <= 1 && !dropDownItems[0].submenu) ?
                                 <Button variant="grayBlue" onClick={onAccessClick} >{forPolicy ? 'Policy' : 'Sign In'}</Button>
                             :
                                 <DropDownButton size="sm" variant="grayBlue" menuItems={dropDownItems}  />

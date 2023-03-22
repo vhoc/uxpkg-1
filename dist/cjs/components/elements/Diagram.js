@@ -77,7 +77,7 @@ var Diagram = function (_a) {
             react_1["default"].createElement(react_xarrows_1.Xwrapper, null, data.map(function (column, index) { return (react_1["default"].createElement("div", { key: index, className: "dia-column" },
                 column.map(function (element, i) {
                     return (react_1["default"].createElement("div", { key: "".concat(index, "-").concat(i), className: "element-container ".concat(index !== data.length - 1 ? "element-col" : "") },
-                        react_1["default"].createElement("div", { className: "dropdown" },
+                        react_1["default"].createElement("div", { className: "diadropdown" },
                             react_1["default"].createElement("div", { id: element.id, className: "dia-row ".concat(!((element.type !== undefined &&
                                     element.type !== null) ||
                                     !!element.icon)
@@ -87,7 +87,7 @@ var Diagram = function (_a) {
                             element.type !== undefined && element.type !== null ? (
                             // make here a typeof keyof something something
                             react_1["default"].createElement("img", { src: "".concat(ResourceTypesIcons_1.DisplayTypeToIconMap[element.type]), alt: ResourceTypesIcons_1.DisplayTypeToIconMap[element.type], height: "100%", width: "100%" })) : element.icon ? (react_1["default"].createElement("img", { src: element.icon, alt: element.value, height: "100%", width: "100%" })) : (element.id)),
-                            react_1["default"].createElement("div", { className: "dropdown-content ".concat(visible === element.id ? "show-dropdown" : "") }, !!actions &&
+                            react_1["default"].createElement("div", { className: "diadropdown-content ".concat(visible === element.id ? "show-dropdown" : "") }, !!actions &&
                                 actions.map(function (action) {
                                     if (action.type === element.type ||
                                         action.type === undefined ||

@@ -135,7 +135,7 @@ export const Diagram: React.FC<Props> = ({
                       index !== data.length - 1 ? "element-col" : ""
                     }`}
                   >
-                    <div className="dropdown">
+                    <div className="diadropdown">
                       <div
                         id={element.id}
                         className={`dia-row ${
@@ -176,7 +176,7 @@ export const Diagram: React.FC<Props> = ({
                         )}
                       </div>
                       <div
-                        className={`dropdown-content ${
+                        className={`diadropdown-content ${
                           visible === element.id ? "show-dropdown" : ""
                         }`}
                       >

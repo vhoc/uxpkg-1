@@ -1,4 +1,4 @@
-import { __assign, __rest } from "tslib";
+import { __assign } from "tslib";
 import React from "react";
 import { View } from "../layout/View";
 import { IconButton } from "./IconButton";
@@ -8,7 +8,7 @@ import { Button } from "./Button";
 import { faBookmark } from "@fortawesome/sharp-solid-svg-icons";
 import { theme, colors } from "../../theme";
 export var ResourceCard = function (_a) {
-    var _b = _a.variant, variant = _b === void 0 ? 'primary' : _b, accessState = _a.accessState, resourceIcon = _a.resourceIcon, bookmarked = _a.bookmarked, _c = _a.forPolicy, forPolicy = _c === void 0 ? false : _c, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, dropDownItems = _a.dropDownItems, dotMenuItems = _a.dotMenuItems, onBookmarkClick = _a.onBookmarkClick, onMoreInfoClick = _a.onMoreInfoClick, onAccessClick = _a.onAccessClick, width = _a.width, style = _a.style, props = __rest(_a, ["variant", "accessState", "resourceIcon", "bookmarked", "forPolicy", "resourceName", "resourceType", "accountName", "region", "dropDownItems", "dotMenuItems", "onBookmarkClick", "onMoreInfoClick", "onAccessClick", "width", "style"]);
+    var _b = _a.variant, variant = _b === void 0 ? 'primary' : _b, accessState = _a.accessState, resourceIcon = _a.resourceIcon, bookmarked = _a.bookmarked, _c = _a.forPolicy, forPolicy = _c === void 0 ? false : _c, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, dropDownItems = _a.dropDownItems, dotMenuItems = _a.dotMenuItems, onBookmarkClick = _a.onBookmarkClick, onMoreInfoClick = _a.onMoreInfoClick, onAccessClick = _a.onAccessClick, width = _a.width, style = _a.style;
     // Exclusive accessState styles for this component:
     var accessStateStyles = {
         access: {
@@ -30,9 +30,9 @@ export var ResourceCard = function (_a) {
     };
     var selectedAccessState = accessState;
     var componentStyle = function () { return (__assign({ backgroundColor: accessStateStyles[selectedAccessState].backgroundColor, color: colors.gray[90], fontFamily: theme.font.body.regular.fontFamily, fontSize: theme.font.body.regular.fontSize, borderRadius: '4px', borderWidth: '1px', borderStyle: 'solid', borderColor: accessStateStyles[selectedAccessState].borderColor, paddingTop: '16px', paddingBottom: '16px', paddingRight: '16px', paddingLeft: '24px', width: width || '240px', minWidth: '280px', maxWidth: width }, style)); };
-    return (React.createElement(View, __assign({ style: componentStyle(), 
+    return (React.createElement(View, { style: componentStyle(), 
         //width={'304px'}
-        padding: '16px 16px 16px 24px' }, props),
+        padding: '16px 16px 16px 24px' },
         accessState !== 'requested' ?
             accessState === 'waiting' ?
                 React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', marginBottom: '16px' } },
@@ -67,7 +67,7 @@ export var ResourceCard = function (_a) {
                     React.createElement("div", null,
                         React.createElement(Button, { variant: "gray" }, "More Info")),
                     React.createElement("div", { style: { display: 'flex', gap: '8px' } },
-                        (dropDownItems && (dropDownItems === null || dropDownItems === void 0 ? void 0 : dropDownItems.length) < 2) ?
+                        (dropDownItems && (dropDownItems === null || dropDownItems === void 0 ? void 0 : dropDownItems.length) <= 1 && !dropDownItems[0].submenu) ?
                             React.createElement(Button, { variant: "grayBlue", onClick: onAccessClick }, forPolicy ? 'Policy' : 'Sign In')
                             :
                                 React.createElement(DropDownButton, { size: "sm", variant: "grayBlue", menuItems: dropDownItems }),

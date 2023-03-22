@@ -23,7 +23,7 @@ export const Primary = {
         onAccessClick: () => alert('Access button triggered.')
     }
 }
-/*
+
 export const SingleItemButton = {
     args: {
         variant: 'primary',
@@ -33,10 +33,10 @@ export const SingleItemButton = {
         resourceType: 'AWS EC2 EBS Volume',
         accountName: 'StagingAWSAcc',
         region: 'US-west',
-        dropDownItems: menuItems,
+        dropDownItems: menu4Items,
         dotMenuItems: menu2Items,
         onBookmarkClick: () => alert('Bookmark button triggered.'),
         onMoreInfoClick: () => alert('More Info button triggered.'),
         onAccessClick: () => alert('Access button triggered.')
     }
-}*/
+}

@@ -74,7 +74,7 @@ export var Diagram = function (_a) {
             React.createElement(Xwrapper, null, data.map(function (column, index) { return (React.createElement("div", { key: index, className: "dia-column" },
                 column.map(function (element, i) {
                     return (React.createElement("div", { key: "".concat(index, "-").concat(i), className: "element-container ".concat(index !== data.length - 1 ? "element-col" : "") },
-                        React.createElement("div", { className: "dropdown" },
+                        React.createElement("div", { className: "diadropdown" },
                             React.createElement("div", { id: element.id, className: "dia-row ".concat(!((element.type !== undefined &&
                                     element.type !== null) ||
                                     !!element.icon)
@@ -84,7 +84,7 @@ export var Diagram = function (_a) {
                             element.type !== undefined && element.type !== null ? (
                             // make here a typeof keyof something something
                             React.createElement("img", { src: "".concat(DisplayTypeToIconMap[element.type]), alt: DisplayTypeToIconMap[element.type], height: "100%", width: "100%" })) : element.icon ? (React.createElement("img", { src: element.icon, alt: element.value, height: "100%", width: "100%" })) : (element.id)),
-                            React.createElement("div", { className: "dropdown-content ".concat(visible === element.id ? "show-dropdown" : "") }, !!actions &&
+                            React.createElement("div", { className: "diadropdown-content ".concat(visible === element.id ? "show-dropdown" : "") }, !!actions &&
                                 actions.map(function (action) {
                                     if (action.type === element.type ||
                                         action.type === undefined ||
