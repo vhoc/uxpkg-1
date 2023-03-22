@@ -84,7 +84,8 @@
     "@mui/base": "^5.0.0-alpha.119",
     "@mui/material": "^5.11.8",
     "@mui/x-data-grid": "^6.0.0",
-    "babel-preset-react-app": "^10.0.1"
+    "babel-preset-react-app": "^10.0.1",
+    "react-xarrows": "^2.0.2"
   },
   "scripts": {
     "//": "New scripts to run and build Storybook with Tailwind",

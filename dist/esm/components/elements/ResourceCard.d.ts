@@ -33,4 +33,4 @@ export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     /** Style overrides */
     style?: CSSProperties | undefined;
 }
-export declare const ResourceCard: ({ variant, accessState, resourceIcon, bookmarked, forPolicy, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onBookmarkClick, onMoreInfoClick, onAccessClick, width, style, ...props }: ResourceCardProps) => JSX.Element;
+export declare const ResourceCard: ({ variant, accessState, resourceIcon, bookmarked, forPolicy, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onBookmarkClick, onMoreInfoClick, onAccessClick, width, style, }: ResourceCardProps) => JSX.Element;

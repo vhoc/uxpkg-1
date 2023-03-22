@@ -11,7 +11,7 @@ var Button_1 = require("./Button");
 var sharp_solid_svg_icons_1 = require("@fortawesome/sharp-solid-svg-icons");
 var theme_1 = require("../../theme");
 var ResourceCard = function (_a) {
-    var _b = _a.variant, variant = _b === void 0 ? 'primary' : _b, accessState = _a.accessState, resourceIcon = _a.resourceIcon, bookmarked = _a.bookmarked, _c = _a.forPolicy, forPolicy = _c === void 0 ? false : _c, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, dropDownItems = _a.dropDownItems, dotMenuItems = _a.dotMenuItems, onBookmarkClick = _a.onBookmarkClick, onMoreInfoClick = _a.onMoreInfoClick, onAccessClick = _a.onAccessClick, width = _a.width, style = _a.style, props = tslib_1.__rest(_a, ["variant", "accessState", "resourceIcon", "bookmarked", "forPolicy", "resourceName", "resourceType", "accountName", "region", "dropDownItems", "dotMenuItems", "onBookmarkClick", "onMoreInfoClick", "onAccessClick", "width", "style"]);
+    var _b = _a.variant, variant = _b === void 0 ? 'primary' : _b, accessState = _a.accessState, resourceIcon = _a.resourceIcon, bookmarked = _a.bookmarked, _c = _a.forPolicy, forPolicy = _c === void 0 ? false : _c, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, dropDownItems = _a.dropDownItems, dotMenuItems = _a.dotMenuItems, onBookmarkClick = _a.onBookmarkClick, onMoreInfoClick = _a.onMoreInfoClick, onAccessClick = _a.onAccessClick, width = _a.width, style = _a.style;
     // Exclusive accessState styles for this component:
     var accessStateStyles = {
         access: {
@@ -33,9 +33,9 @@ var ResourceCard = function (_a) {
     };
     var selectedAccessState = accessState;
     var componentStyle = function () { return (tslib_1.__assign({ backgroundColor: accessStateStyles[selectedAccessState].backgroundColor, color: theme_1.colors.gray[90], fontFamily: theme_1.theme.font.body.regular.fontFamily, fontSize: theme_1.theme.font.body.regular.fontSize, borderRadius: '4px', borderWidth: '1px', borderStyle: 'solid', borderColor: accessStateStyles[selectedAccessState].borderColor, paddingTop: '16px', paddingBottom: '16px', paddingRight: '16px', paddingLeft: '24px', width: width || '240px', minWidth: '280px', maxWidth: width }, style)); };
-    return (react_1["default"].createElement(View_1.View, tslib_1.__assign({ style: componentStyle(), 
+    return (react_1["default"].createElement(View_1.View, { style: componentStyle(), 
         //width={'304px'}
-        padding: '16px 16px 16px 24px' }, props),
+        padding: '16px 16px 16px 24px' },
         accessState !== 'requested' ?
             accessState === 'waiting' ?
                 react_1["default"].createElement("div", { style: { display: 'flex', justifyContent: 'space-between', marginBottom: '16px' } },
@@ -70,7 +70,10 @@ var ResourceCard = function (_a) {
                     react_1["default"].createElement("div", null,
                         react_1["default"].createElement(Button_1.Button, { variant: "gray" }, "More Info")),
                     react_1["default"].createElement("div", { style: { display: 'flex', gap: '8px' } },
-                        react_1["default"].createElement(DropDownButton_1.DropDownButton, { size: "sm", variant: "grayBlue", menuItems: dropDownItems }),
+                        (dropDownItems && (dropDownItems === null || dropDownItems === void 0 ? void 0 : dropDownItems.length) <= 1 && !dropDownItems[0].submenu) ?
+                            react_1["default"].createElement(Button_1.Button, { variant: "grayBlue", onClick: onAccessClick }, forPolicy ? 'Policy' : 'Sign In')
+                            :
+                                react_1["default"].createElement(DropDownButton_1.DropDownButton, { size: "sm", variant: "grayBlue", menuItems: dropDownItems }),
                         react_1["default"].createElement(DropDownButton_1.DropDownButton, { size: "sm", variant: "grayBlue", menuItems: dotMenuItems, hasDownArrow: false })))));
 };
 exports.ResourceCard = ResourceCard;

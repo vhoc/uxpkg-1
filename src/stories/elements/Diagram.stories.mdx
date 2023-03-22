@@ -1,0 +1,326 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { Diagram } from "../../components/elements/Diagram";
+import { _data, connections, actions } from '../../util/sample-data'
+
+<Meta title="elements/Graphical/Diagram" component={Diagram} />
+
+export const Template = (args) => <Diagram {...args} />;
+
+# Diagram
+
+### Importing
+
+Import diagram component with
+
+```js
+$ import { Diagram } from 'procyon-ui'
+```
+
+## Props
+
+A two-dimensional ``Array``. Every array on it represents a column
+
+| Name   | Type      | Description
+| ---    | ---       | --- |
+| data   | Array[ ][ ] | Matrix of [Nodes](#node)
+| arrows | Array[ ]   | Array of [Arrows](#arrows)
+| actions| Array[ ]   | Array of [Actions](#actions)
+
+## Param values
+
+#### Node
+
+Node object represent every single cell on the diagram.
+
+| Name          | Type                         | Description
+| ---           | ---                          | --- |
+| id            | string                       | Identificator of the node. must be unique
+| value         | string                       | Value that represents the node **`(Optional)`**
+| label         | string                       | Label asociated to the node **`(Optional)`**
+| description   | string                       | Description asociated to the node **`(Optional)`**
+| route         | Array[ ]                     | Array of id's that will be highlighted on hover. If not provided, hover will map every related node **`(Optional)`**
+| icon          | image                        | Image that will be displayed as node cover, it's used as a fallback in case type is not specified.
+| type          | string ( 'AWS_EC2_Image' or 'AWS_KMS' or 'GCP_BUCKET' or... ) | Type of node (If type is provided, icon is not displayed) **`(Optional)`**.<br/>**FULL LIST OF TYPES [HERE](#types)**
+
+Note: <0, >5, null, undefined or NaN values will display icon (if provided) or id
+
+
+Example:
+
+```tsx
+const data = [
+    //First column
+    [
+    { id: "11",
+      value: "1",
+      label: "John Q. Public",
+      description: "john@mail.com",
+      type: 'USER',
+      route: ["21", "31", "33"],
+    },
+    { id: "12",
+      value: "2",
+      label: "Jane Doe",
+      description: "jane@mail.com",
+      type: 'USER',
+      route: ["21", "32"],
+    },
+    { id: "13",
+      value: "3",
+      label: "Petter B. P.",
+      description: "petter@mail.com",
+      type: 'USER',
+      route: ["21", "31", "32"],
+    },
+  ],
+  //Second column
+  [
+    {
+      id: "21",
+      value: "1",
+      label: "Awesome Company",
+      type: 'POLICY',
+    },
+  ]//Third Column
+    [
+    { id: "31",
+      value: "1",
+      label: "H.R.",
+      description: "5th Floor",
+    },
+    { id: "32",
+      value: "2",
+      label: "I.T.",
+      description: "6th Floor",
+    },
+    { id: "33",
+      value: "3",
+      label: "Sales",
+      description: "2ndFloor",
+    },
+  ],
+]
+```
+
+#### Arrows
+
+Arrow object represent every single relation on the diagram.
+
+| Name          | Type                         | Description
+| ---           | ---                          | --- |
+| startID       | string                       | Identificator of the node at the left.
+| endID         | string                       | Identificator of the node at the left.
+
+
+Example:
+
+```tsx
+const arrows = [
+    {startID: "11", endID: "21"},
+    {startID: "12", endID: "21"},
+    {startID: "13", endID: "21"},
+    {startID: "21", endID: "31"},
+    {startID: "21", endID: "32"},
+    {startID: "21", endID: "33"},
+]
+```
+
+#### Actions
+
+Actions that will be displayed on node click. returns an `<HTMLDivElement>`
+
+| Name          | Type                         | Description
+| ---           | ---                          | --- |
+| id            | string                       | Identificator of the action. must be unique
+| label         | string                       | Label that will be shown on dropdown menu
+| onClick       | React.MouseEventHandler      | Action that will be executed.
+| type          | string **[TYPES](#types)** | Type of node related to this action **`(Optional)`**.
+
+
+Note: On <0, >5, null, undefined or NaN values, that action will be available for every node.
+
+Example:
+
+```tsx
+
+const action = (e: any) => {
+  console.log("Action for", e.target.id, "option");
+};
+
+const actions = [
+  { id: "print-action", label: "More details", onClick: action }, //"General action displayed for every node"
+  { id: "print-action-2", label: "Another print details", onClick: action, type: 'AWS_EC2_Instance' }, //Specific action for type 5 nodes
+  { id: "print-action-3", label: "Some more details", onClick: action},
+  { id: "user-action", label: "Some user action", onClick: action, type: 'USER'},
+  { id: "role-action", label: "Some role action", onClick: action, type: 'AWS_DATABASE'},
+  { id: "t2-action", label: "Specific action", onClick: action, type: 'AWS_CONTAINERS'},
+  { id: "t3-action", label: "Some type 3 action", onClick: action, type: 'AWS_EC2_EBS_Volume'},
+  { id: "t4-action", label: "Some action", onClick: action, type: 'AWS_EKS'},
+  { id: "t5", label: "Some instance action", onClick: action, type: 'AWS_EC2_Instance' },
+];
+```
+#### Types
+```
+USER  
+POLICY  
+ROLE  
+AWS_EC2_Instance  
+AWS_Compute  
+AWS_User  
+AWS_EC2_Elastic_IP  
+AWS_EC2_EBS_Volume  
+AWS_EC2_Image  
+AWS_EC2_Key_Pair  
+AWS_EC2_Network_Interface  
+AWS_EC2_Security_Group  
+AWS_KMS  
+AWS_S3  
+AWS_VPC  
+All_Resource  
+AWS_EKS  
+AWS_ECR  
+AWS_ECS  
+AWS_ECS_Container  
+AWS_LAMBDA  
+AWS_EC2_Load_Balancer  
+AWS_EC2_Target_Group  
+AWS_EC2_EBS_Snapshot  
+AWS_EC2_Placement_Group  
+AWS_RDS_Cluster  
+AWS_RDS_DB  
+AWS_SM  
+AWS_MSK  
+AWS_ANALYRICS  
+AWS_APPLICATION_INTEGRATION  
+AWS_BLOCKCHAIN  
+AWS_BUSINESS_APPLICATIONS  
+AWS_CFM (Cloud Financial Management)  
+AWS_CONTAINERS  
+AWS_CUSTOMER_ENABLEMENT  
+AWS_DATABASE 
+AWS_DEVELOPER_TOOLS  
+AWS_EUC (End User Computing)  
+AWS_FEW (Front End Web Mobile)  
+AWS_GAMES  
+AWS_IOT (Internet of Things)  
+AWS_MACHINE_LEARNING  
+AWS_MANAGEMENT_GOVERNANCE  
+AWS_MEDIA_SERVICES  
+AWS_MIGRATION_TRANSFER  
+AWS_NCD (Networking Content Delivery)  
+AWS_QUANTUM_TECHNOLOGIES  
+AWS_ROBOTICS  
+AWS_SATELLITE  
+AWS_SIC (Security Identity Complicance)  
+AWS_SERVERLESS 
+AWS_STORAGE  
+AWS_VR_AR  
+AWS_ANALYTICS_ATHENA  
+AWS_ANALYTICS_CLOUDSEARCH  
+AWS_ANALYTICS_DATAZONE  
+AWS_ANALYTICS_EMR  
+AWS_ANALYTICS_FINSPACE  
+AWS_ANALYTICS_KINESIS  
+AWS_ANALYTICS_KDA (Kinesis Data Analytics)  
+AWS_ANALYTICS_KDS (Kinesis Data Streams)  
+AWS_ANALYTICS_KF (Kinesis Firehose)  
+AWS_ANALYTICS_KVS (Kinesis Video Streams)  
+AWS_ANALYTICS_MSA (Managed Streaming for Apache Kafka)  
+AWS_ANALYTICS_OSS (Open Search Service)  
+AWS_ANALYTICS_QUICKSIGHT  
+AWS_ANALYTICS_REDSHIFT  
+AWS_ANALYTICS_CLEANROOMS  
+AWS_ANALYTICS_DATAEXCHANGE  
+AWS_ANALYTICS_DATAPIPELINE  
+AWS_ANALYTICS_GLUE  
+AWS_ANALYTICS_GDB (Glue Data Brew)  
+AWS_ANALYTICS_GEV (Glue Elastic Views)  
+AWS_ANALYTICS_LAKEFORMATION  
+AWS_APPINTEGRATION_API_GATEWAY  
+AWS_APPINTEGRATION_APPFLOW  
+AWS_APPINTEGRATION_EVENTBRIDGE  
+AWS_APPINTEGRATION_MANAGEDWORKFLOWSAPACHE  
+AWS_APPINTEGRATION_MQ  
+AWS_APPINTEGRATION_SNS (Simple Notification Service)   
+AWS_APPINTEGRATION_SQS (Simple Queue Service)  
+AWS_APPINTEGRATION_APPSYNC  
+AWS_APPINTEGRATION_CMA (Console Mobile Application)  
+AWS_APPINTEGRATION_EXPRESSWORKFLOWS  
+AWS_APPINTEGRATION_STEPFUNCTIONS  
+AWS_BLOCKCHAIN_MANAGEDBLOCKCHAIN  
+AWS_BLOCKCHAIN_QLD  
+AWS_BUSINESSAPPLICATIONS_AFB (Alexa For Business)  
+AWS_BUSINESSAPPLICATIONS_CHIME  
+AWS_BUSINESSAPPLICATIONS_CHIMESDK  
+AWS_BUSINESSAPPLICATIONS_CVC (Chime Voice Connector)  
+AWS_BUSINESSAPPLICATIONS_CONNECT  
+AWS_BUSINESSAPPLICATIONS_HONEYCODE  
+AWS_BUSINESSAPPLICATIONS_PINPOINT  
+AWS_BUSINESSAPPLICATIONS_PINPOINTAPI  
+AWS_BUSINESSAPPLICATIONS_SES (Simple Email Service)  
+AWS_BUSINESSAPPLICATIONS_WORKDOCS  
+AWS_BUSINESSAPPLICATIONS_WORKDOCSSDK  
+AWS_BUSINESSAPPLICATIONS_WORKMAIL  
+AWS_BUSINESSAPPLICATIONS_SUPPLYCHAIN  
+AWS_BUSINESSAPPLICATIONS_WICKR  
+AWS_CLOUDFINANCIALMANAGEMENT_ACP (Application Cost Profiler)  
+AWS_CLOUDFINANCIALMANAGEMENT_BILLING_CONDUCTOR  
+AWS_CLOUDFINANCIALMANAGEMENT_BUDGETS  
+AWS_CLOUDFINANCIALMANAGEMENT_CUR (Cost Usage Report)  
+AWS_CLOUDFINANCIALMANAGEMENT_COSTEXPLORER  
+AWS_CLOUDFINANCIALMANAGEMENT_RIR (Reserved Instance Reporting)  
+AWS_CLOUDFINANCIALMANAGEMENT_SAVINGPLANS  
+AWS_COMPUTE_EC2  
+AWS_COMPUTE_AUTOSCALING  
+AWS_COMPUTE_M5N  
+AWS_COMPUTE_R5M  
+AWS_COMPUTE_ECK (Elastic Container Kubernetes)  
+AWS_COMPUTE_ECR (Elastic Container Registry)  
+AWS_COMPUTE_ECS (Elastic Container Service)  
+AWS_COMPUTE_GENOMICS  
+AWS_COMPUTE_LIGHTSAIL  
+AWS_COMPUTE_APPRUNNER  
+AWS_COMPUTE_BATCH  
+AWS_COMPUTE_OPTIMIZER  
+AWS_COMPUTE_ELASTIC_BEANSTALK  
+AWS_COMPUTE_FARGATE  
+AWS_COMPUTE_LOCALZONES  
+AWS_COMPUTE_NITRO_ENCLAVES  
+AWS_COMPUTE_OUTPOSTS_FAMILY  
+AWS_COMPUTE_OUTPOSTS_RACK  
+AWS_COMPUTE_OUTPOSTS_SERVERS  
+AWS_COMPUTE_PARALLEL_CLUSTER  
+AWS_COMPUTE_SAR (ServerlessApplicationRepository)  
+AWS_COMPUTE_SIMSPACE_WEAVER  
+AWS_COMPUTE_THINKBOX_DEADLINE  
+AWS_COMPUTE_THINKBOX_FROST  
+AWS_COMPUTE_THINKBOX_KRAKATOA  
+AWS_COMPUTE_THINKBOX_SEQUOIA  
+AWS_COMPUTE_THINKBOX_STOKE  
+AWS_COMPUTE_THINKBOX_XMESH  
+AWS_COMPUTE_WAVELENGTH  
+AWS_COMPUTE_BOTTLEROCKET  
+AWS_COMPUTE_EFA (ElasticFabricAdapter)  
+AWS_COMPUTE_NICE_DCV  
+AWS_COMPUTE_NICE_ENGINFRAME  
+AWS_COMPUTE_VMWARECLOUD  
+GCP_BIG_QUERY_TABLE  
+GCP_BIG_TABLE  
+GCP_BUCKET  
+GCP_CLOUD_FUNCTION  
+GCP_COMPUTE_INSTANCE  
+GCP_PROJECT  
+GCP_PUBSUB_SUSCRIPTION  
+GCP_PUBSUB_TOPIC  
+```
+<Canvas>
+  <Story 
+    name="Default"
+    args={{ 
+      data: _data,
+      arrows: connections,
+      actions: actions,
+    }}>
+    {Template.bind({})}
+   </Story>
+</Canvas>
