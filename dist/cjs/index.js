@@ -53,3 +53,4 @@ tslib_1.__exportStar(require("./components/elements/ScrollableCard"), exports);
 tslib_1.__exportStar(require("./components/elements/ApprovalModal"), exports);
 tslib_1.__exportStar(require("./components/elements/RejectionModal"), exports);
 tslib_1.__exportStar(require("./components/elements/CommentBox"), exports);
+tslib_1.__exportStar(require("./components/elements/Diagram"), exports);

@@ -50,3 +50,4 @@ export * from './components/elements/ScrollableCard';
 export * from './components/elements/ApprovalModal';
 export * from './components/elements/RejectionModal';
 export * from './components/elements/CommentBox';
+export * from './components/elements/Diagram';

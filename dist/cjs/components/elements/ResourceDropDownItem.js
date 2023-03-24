@@ -7,16 +7,17 @@ var Typography_1 = require("./Typography");
 var theme_1 = require("../../theme");
 var ResourceDropDownItem = function (_a) {
     var resourceName = _a.resourceName, resourceType = _a.resourceType, icon = _a.icon, onClick = _a.onClick, style = _a.style;
-    return (react_1["default"].createElement("div", { style: tslib_1.__assign({ minWidth: '217px', width: '217px', backgroundColor: theme_1.colors.white, paddingTop: '8px', paddingBottom: '8px', paddingLeft: '12px', paddingRight: '12px', display: 'flex', justifyContent: 'space-between', boxSizing: 'border-box', cursor: 'pointer' }, style), onClick: onClick },
+    return (react_1["default"].createElement("div", { style: tslib_1.__assign({ minWidth: '217px', width: '217px', backgroundColor: theme_1.colors.white, paddingTop: '8px', paddingBottom: '8px', paddingLeft: '12px', paddingRight: '12px', display: 'flex', justifyContent: 'flex-start', boxSizing: 'border-box', cursor: 'pointer', gap: '10px' }, style), onClick: onClick },
         react_1["default"].createElement("div", { style: {
                 width: '20px',
                 minWidth: '20px',
-                maxWidth: '20px'
+                maxWidth: '20px',
+                borderRadius: '4px'
             } }, icon ? icon : null),
         react_1["default"].createElement("div", { style: {
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'center',
+                justifyContent: 'flex-start',
                 width: '100%'
             } },
             react_1["default"].createElement(Typography_1.Typography, { variant: 'breadcrumbLink', color: theme_1.colors.gray[90], style: {

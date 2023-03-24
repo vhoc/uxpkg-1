@@ -30,9 +30,10 @@ export const ResourceDropDownItem = ({ resourceName, resourceType, icon, onClick
                 paddingLeft: '12px',
                 paddingRight: '12px',
                 display: 'flex',
-                justifyContent: 'space-between',
+                justifyContent: 'flex-start',
                 boxSizing: 'border-box',
                 cursor: 'pointer',
+                gap: '10px',
                 ...style,
             }}
             onClick={onClick}
@@ -42,7 +43,8 @@ export const ResourceDropDownItem = ({ resourceName, resourceType, icon, onClick
                 style={{
                     width: '20px',
                     minWidth: '20px',
-                    maxWidth: '20px'
+                    maxWidth: '20px',
+                    borderRadius: '4px',
                 }}
             >
                 {icon ? icon : null}
@@ -53,7 +55,7 @@ export const ResourceDropDownItem = ({ resourceName, resourceType, icon, onClick
                 style={{
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'center',
+                    justifyContent: 'flex-start',
                     width: '100%',
                 }}
             >
