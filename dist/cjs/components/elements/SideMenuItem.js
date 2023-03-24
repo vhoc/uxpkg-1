@@ -12,11 +12,7 @@ var SideMenuItem = function (_a) {
     var _f = (0, react_2.useState)(false), hover = _f[0], setHover = _f[1];
     var selectedVariant = variant;
     if (itemType === 'section') {
-        return (react_1["default"].createElement(SideMenuSectionName_1.SideMenuSectionName, { label: label, collapsed: collapsed, keepExtended: keepExtended, onMouseEnter: function () {
-                setCollapsed === null || setCollapsed === void 0 ? void 0 : setCollapsed(false);
-            }, onMouseLeave: function () {
-                setCollapsed === null || setCollapsed === void 0 ? void 0 : setCollapsed(true);
-            } }));
+        return (react_1["default"].createElement(SideMenuSectionName_1.SideMenuSectionName, { label: label, collapsed: collapsed, keepExtended: keepExtended }));
     }
     else {
         return react_1["default"].createElement("button", tslib_1.__assign({ type: "button", style: {
@@ -44,10 +40,8 @@ var SideMenuItem = function (_a) {
                 gap: '15px'
             }, onMouseEnter: function () {
                 setHover(true);
-                setCollapsed === null || setCollapsed === void 0 ? void 0 : setCollapsed(false);
             }, onMouseLeave: function () {
                 setHover(false);
-                setCollapsed === null || setCollapsed === void 0 ? void 0 : setCollapsed(true);
             }, onClick: onClick }, props),
             react_1["default"].createElement("div", { style: { textAlign: 'center', width: '24px', alignSelf: 'center' } },
                 react_1["default"].createElement(react_fontawesome_1.FontAwesomeIcon, { style: { alignSelf: 'center' }, icon: icon, color: selected ? theme_1.variants[selectedVariant].sideBarMenuItemIconColorHover : theme_1.colors.gray[70] })),

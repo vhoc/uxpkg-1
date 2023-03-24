@@ -11,7 +11,11 @@ export interface ChartPercentBarProps {
 export const ChartPercentBar = ({ data, criteria }: ChartPercentBarProps) => {
 
     return (
-        <div>
+        <div
+            style={{
+                marginTop: '-7px',
+            }}
+        >
             <Bar
                 data={data}
                 xField={'value'}

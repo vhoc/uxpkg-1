@@ -8,13 +8,21 @@ import { SideMenuItemProps } from "./SideMenuItem"
 
 export interface SideMenuProps extends HTMLAttributes<HTMLDivElement> {
     variant?: 'primary'
+    /** Items on the menu */
     menuItems?: SideMenuItemProps[]
+    /** Style overrides for the container */
     style?: React.CSSProperties | undefined
+    /** Whether the bar is collapsed or not */
+    collapsed?: boolean
+    /** Callback function to run when the mouse cursor enters the component */
+    onMouseEnter?: React.MouseEventHandler<HTMLDivElement> | undefined
+    /** Callback function to run when the mouse cursor leaves the component */
+    onMouseLeave?: React.MouseEventHandler<HTMLDivElement> | undefined
 }
 
-export const SideMenu = ({variant = 'primary', menuItems, style, ...props}:SideMenuProps): JSX.Element => {
+export const SideMenu = ({variant = 'primary', menuItems, onMouseEnter, onMouseLeave, style, collapsed = true, ...props}:SideMenuProps): JSX.Element => {
 
-    const [collapsed, setCollapsed] = useState<boolean>(true)
+    //const [collapsed, setCollapsed] = useState<boolean>(true)
     const [keepExtended, setKeepExtended] = useState<boolean>(false)
 
     type VariantKey = keyof typeof variants
@@ -39,9 +47,15 @@ export const SideMenu = ({variant = 'primary', menuItems, style, ...props}:SideM
             }}
             //onMouseOver={() => setCollapsed(false)}
             //onMouseOut={() => setCollapsed(true)}
+            onMouseEnter={() => {
+                if (collapsed) onMouseEnter
+            }}
+            onMouseLeave={() => {
+                if (!collapsed) onMouseLeave
+            }}
             {...props}        
         >
-            <div>
+            
             {
                 menuItems && menuItems.length >= 1 ?
                     menuItems.map((item, index) => {
@@ -53,7 +67,7 @@ export const SideMenu = ({variant = 'primary', menuItems, style, ...props}:SideM
                                 variant={item.variant}
                                 disabled={item.disabled}
                                 collapsed={collapsed}
-                                setCollapsed={setCollapsed}
+                                //setCollapsed={setCollapsed}
                                 selected={item.selected}
                                 label={item.label}
                                 onClick={item.onClick}
@@ -64,7 +78,7 @@ export const SideMenu = ({variant = 'primary', menuItems, style, ...props}:SideM
                 :
                     null
             }
-            </div>
+            
 
             <button
                 style={{
@@ -81,12 +95,6 @@ export const SideMenu = ({variant = 'primary', menuItems, style, ...props}:SideM
                     paddingLeft: '15px',
                     paddingRight: '15px',
                     width: (collapsed && !keepExtended) ? '46px' : '266px',
-                }}
-                onMouseEnter={() => {
-                    setCollapsed(false)
-                }}
-                onMouseLeave={() => {
-                    setCollapsed(true)
                 }}
                 onClick={() => setKeepExtended(prevState => (!prevState))}
             >

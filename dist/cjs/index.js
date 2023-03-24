@@ -54,3 +54,8 @@ tslib_1.__exportStar(require("./components/elements/ApprovalModal"), exports);
 tslib_1.__exportStar(require("./components/elements/RejectionModal"), exports);
 tslib_1.__exportStar(require("./components/elements/CommentBox"), exports);
 tslib_1.__exportStar(require("./components/elements/Diagram"), exports);
+tslib_1.__exportStar(require("./components/graphical/CloudIcon"), exports);
+tslib_1.__exportStar(require("./components/graphical/ResourceTypesIcons"), exports);
+tslib_1.__exportStar(require("./components/elements/Dashboard/ChartPercentBar"), exports);
+tslib_1.__exportStar(require("./components/elements/Dashboard/CounterItem"), exports);
+tslib_1.__exportStar(require("./components/elements/Dashboard/CountersCard"), exports);

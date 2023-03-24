@@ -8,8 +8,8 @@ import { ChartPercentBar } from './ChartPercentBar'
 import { colors } from '../../../theme'
 
 export interface CountersCardProps extends HTMLAttributes<HTMLDivElement> {
-    /** Type of the Card ('simple' | 'percent-bar') */
-    type?: 'simple' | 'percent-bar'
+    /** Type of the Card ('simple' | 'percent-bar' | 'mini') */
+    type?: 'simple' | 'percent-bar' | 'mini'
     /** Icon at the top left corner of the card */
     icon?: IconProp | undefined
     /** Criteria name (i.e. 'Users', 'Roles', 'Groups'...) */
@@ -30,9 +30,11 @@ export interface CountersCardProps extends HTMLAttributes<HTMLDivElement> {
     data?: Record<string, any>[]
     /** Criteria name (i.e. 'Users', 'Roles', 'Groups'...) */
     criteria?: string
+    /** Content (Displayed only in the 'mini' type) */
+    content?: string
 }
 
-export const CountersCard = ({ type = 'simple', icon, title, counterItems, data, criteria, style }: CountersCardProps): JSX.Element => {
+export const CountersCard = ({ type = 'simple', icon, title, counterItems, data, criteria, content, style }: CountersCardProps): JSX.Element => {
 
     const [total, setTotal] = useState<number>(0)
     
@@ -59,11 +61,12 @@ export const CountersCard = ({ type = 'simple', icon, title, counterItems, data,
     return (
         <div
             style={{
-                width: '250px',
+                minWidth: type === 'mini' ? '150px' : '250px',
+                width: type === 'mini' ? '150px' : '250px',
                 paddingTop: '12px',
                 paddingRight: '16px',
                 paddingLeft: '16px',
-                paddingBottom: '16px',
+                paddingBottom: '8px',
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '12px',
@@ -86,7 +89,12 @@ export const CountersCard = ({ type = 'simple', icon, title, counterItems, data,
                 </div>
 
                 {/** Total amount */}
-                <Typography variant={'h4-medium'} >{String(total)}</Typography>
+                {
+                    type !== "mini" ?
+                        <Typography variant={'h4-medium'} >{String(total)}</Typography>
+                    :
+                        null
+                }
 
             </div>
 
@@ -95,23 +103,26 @@ export const CountersCard = ({ type = 'simple', icon, title, counterItems, data,
                 type === 'percent-bar' ?
                     <ChartPercentBar data={data || []} criteria={title || ''} />
                 :
-                    counterItems && counterItems.length >= 1 ?
-                        <div style={{ display: 'flex', flexWrap: 'wrap', }}>
-                        {
-                            counterItems.map((item, index) => {
-                                return (
-                                    <CounterItem
-                                        key={index}
-                                        element={item.element}
-                                        count={item.count}
-                                        style={{ marginRight: '36px', }}
-                                    />
-                                )
-                            })
-                        }
-                        </div>
+                    type === 'mini' ?
+                        <Typography variant={'inputText-typed'} >{content}</Typography>
                     :
-                        null
+                        counterItems && counterItems.length >= 1 ?
+                            <div style={{ display: 'flex', flexWrap: 'wrap', }}>
+                            {
+                                counterItems.map((item, index) => {
+                                    return (
+                                        <CounterItem
+                                            key={index}
+                                            element={item.element}
+                                            count={item.count}
+                                            style={{ marginRight: '36px', marginBottom: '8px', }}
+                                        />
+                                    )
+                                })
+                            }
+                            </div>
+                        :
+                            null
             }
 
         </div>

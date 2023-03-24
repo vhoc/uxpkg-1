@@ -13,3 +13,7 @@ export interface ISegmentedControlItem {
     onChange?: (event: React.MouseEvent<HTMLElement>, value: any) => void;
     disabled?: boolean;
 }
+export interface ICounterItem {
+    element?: any;
+    count: number;
+}

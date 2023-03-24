@@ -34,12 +34,13 @@ export const SideMenuItem = ({ style, variant = 'primary', itemType, selected = 
                 label={label}
                 collapsed={collapsed}
                 keepExtended={keepExtended}
+                /*
                 onMouseEnter={() => {
                     setCollapsed?.(false)
                 }}
                 onMouseLeave={() => {
                     setCollapsed?.(true)
-                }}
+                }}*/
             />
         )
     } else {
@@ -71,11 +72,9 @@ export const SideMenuItem = ({ style, variant = 'primary', itemType, selected = 
         }}
         onMouseEnter={() => {
             setHover(true)
-            setCollapsed?.(false)
         }}
         onMouseLeave={() => {
             setHover(false)
-            setCollapsed?.(true)
         }}
         onClick={onClick}
         //onMouseDown={() => setActive(true)}
