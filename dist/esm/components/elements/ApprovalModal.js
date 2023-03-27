@@ -1,5 +1,5 @@
 import { __assign } from "tslib";
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTriangleExclamation } from '@fortawesome/pro-solid-svg-icons';
 import { colors } from '../../theme';
@@ -10,6 +10,7 @@ import { TextInput } from './TextInput';
 import { Button } from './Button';
 export var ApprovalModal = function (_a) {
     var title = _a.title, _b = _a.autoApprove, autoApprove = _b === void 0 ? false : _b, comments = _a.comments, endDateValue = _a.endDateValue, endDateOptions = _a.endDateOptions, timeValue = _a.timeValue, timeOptions = _a.timeOptions, onCommentsChange = _a.onCommentsChange, onClickCancel = _a.onClickCancel, onClickApprove = _a.onClickApprove, style = _a.style;
+    var _c = useState(autoApprove), auto = _c[0], setAuto = _c[1];
     return (React.createElement("div", { style: __assign({ width: '584px', height: 'auto', paddingTop: '31px', paddingRight: '31px', paddingBottom: '24px', paddingLeft: '31px', display: 'flex', flexDirection: 'column', gap: '28px', backgroundColor: colors.white, borderRadius: '8px', boxShadow: '0px 2px 4px rgba(34, 41, 69, 0.37)' }, style) },
         React.createElement("div", { style: {
                 display: 'flex',
@@ -29,8 +30,10 @@ export var ApprovalModal = function (_a) {
                     textOverflow: 'ellipsis',
                     width: '100%'
                 } }, title)),
-        React.createElement(FilterBarItem, { checked: autoApprove, name: 'Auto approve future requests with the same configuration  ' }),
-        autoApprove ?
+        React.createElement(FilterBarItem, { checked: auto, onClick: function () {
+                setAuto(function (prevState) { return !prevState; });
+            }, name: 'Auto approve future requests with the same configuration' }),
+        auto ?
             React.createElement("div", { style: {
                     display: 'flex',
                     flexDirection: 'column',

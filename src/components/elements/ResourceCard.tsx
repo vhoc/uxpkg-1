@@ -20,6 +20,8 @@ export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     forPolicy?: boolean
     /** Callback function to run when pressing the bookmark icon */
     onBookmarkClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
+    /** Whether to show the More Info button or not. */
+    showMoreInfoButton?: boolean
     /** Callback function to run when pressing the More Info button */
     onMoreInfoClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
     /** Callback function to run when pressing the Access/Policy button */
@@ -42,7 +44,7 @@ export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     style?: CSSProperties | undefined
 }
 
-export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, bookmarked, forPolicy = false, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onBookmarkClick, onMoreInfoClick, onAccessClick, width, style, }: ResourceCardProps): JSX.Element => {
+export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, bookmarked, forPolicy = false, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onBookmarkClick, showMoreInfoButton = true, onMoreInfoClick, onAccessClick, width, style, }: ResourceCardProps): JSX.Element => {
 
     // Exclusive accessState styles for this component:
     const accessStateStyles: IVariant = {
@@ -172,7 +174,13 @@ export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, b
             {
                 accessState !== 'signIn' ?
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <Button variant="gray" onClick={onMoreInfoClick} >More Info</Button>
+                    {
+                        showMoreInfoButton ?
+                            <Button variant="gray" onClick={onMoreInfoClick} >More Info</Button>
+                        :
+                            <div></div>
+                    }
+                        
                         <Button variant="grayBlue" onClick={onAccessClick} >{forPolicy ? 'Policy' : 'Request'}</Button>
                     </div>
                 :

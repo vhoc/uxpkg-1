@@ -12,6 +12,8 @@ export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     forPolicy?: boolean;
     /** Callback function to run when pressing the bookmark icon */
     onBookmarkClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+    /** Whether to show the More Info button or not. */
+    showMoreInfoButton?: boolean;
     /** Callback function to run when pressing the More Info button */
     onMoreInfoClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
     /** Callback function to run when pressing the Access/Policy button */
@@ -33,4 +35,4 @@ export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     /** Style overrides */
     style?: CSSProperties | undefined;
 }
-export declare const ResourceCard: ({ variant, accessState, resourceIcon, bookmarked, forPolicy, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onBookmarkClick, onMoreInfoClick, onAccessClick, width, style, }: ResourceCardProps) => JSX.Element;
+export declare const ResourceCard: ({ variant, accessState, resourceIcon, bookmarked, forPolicy, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onBookmarkClick, showMoreInfoButton, onMoreInfoClick, onAccessClick, width, style, }: ResourceCardProps) => JSX.Element;

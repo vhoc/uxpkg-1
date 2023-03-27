@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from 'react'
+import React, { HTMLAttributes, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTriangleExclamation } from '@fortawesome/pro-solid-svg-icons'
 import { colors } from '../../theme'
@@ -34,6 +34,8 @@ export interface ApprovalModalProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const ApprovalModal = ({ title, autoApprove = false, comments, endDateValue, endDateOptions, timeValue, timeOptions, onCommentsChange, onClickCancel, onClickApprove, style }: ApprovalModalProps): JSX.Element => {
+
+    const [auto, setAuto] = useState<boolean>(autoApprove)
 
     return (
         <div
@@ -86,11 +88,17 @@ export const ApprovalModal = ({ title, autoApprove = false, comments, endDateVal
             </div>
 
             {/** ROW 2: AUTO-APPROVE OPTION */}
-            <FilterBarItem checked={autoApprove} name={'Auto approve future requests with the same configuration  '}/>
+            <FilterBarItem
+                checked={auto}
+                onClick={() => {
+                    setAuto(prevState => !prevState)
+                }}
+                name={'Auto approve future requests with the same configuration'}
+            />
 
             {/** ROW 3: [CONDITIONALLY RENDERED] AUTO-APPROVE OPTIONS */}
             {
-                autoApprove ?
+                auto ?
                     <div
                         style={{
                             display: 'flex',

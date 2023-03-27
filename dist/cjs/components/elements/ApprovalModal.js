@@ -2,7 +2,7 @@
 exports.__esModule = true;
 exports.ApprovalModal = void 0;
 var tslib_1 = require("tslib");
-var react_1 = tslib_1.__importDefault(require("react"));
+var react_1 = tslib_1.__importStar(require("react"));
 var react_fontawesome_1 = require("@fortawesome/react-fontawesome");
 var pro_solid_svg_icons_1 = require("@fortawesome/pro-solid-svg-icons");
 var theme_1 = require("../../theme");
@@ -13,6 +13,7 @@ var TextInput_1 = require("./TextInput");
 var Button_1 = require("./Button");
 var ApprovalModal = function (_a) {
     var title = _a.title, _b = _a.autoApprove, autoApprove = _b === void 0 ? false : _b, comments = _a.comments, endDateValue = _a.endDateValue, endDateOptions = _a.endDateOptions, timeValue = _a.timeValue, timeOptions = _a.timeOptions, onCommentsChange = _a.onCommentsChange, onClickCancel = _a.onClickCancel, onClickApprove = _a.onClickApprove, style = _a.style;
+    var _c = (0, react_1.useState)(autoApprove), auto = _c[0], setAuto = _c[1];
     return (react_1["default"].createElement("div", { style: tslib_1.__assign({ width: '584px', height: 'auto', paddingTop: '31px', paddingRight: '31px', paddingBottom: '24px', paddingLeft: '31px', display: 'flex', flexDirection: 'column', gap: '28px', backgroundColor: theme_1.colors.white, borderRadius: '8px', boxShadow: '0px 2px 4px rgba(34, 41, 69, 0.37)' }, style) },
         react_1["default"].createElement("div", { style: {
                 display: 'flex',
@@ -32,8 +33,10 @@ var ApprovalModal = function (_a) {
                     textOverflow: 'ellipsis',
                     width: '100%'
                 } }, title)),
-        react_1["default"].createElement(FilterBarItem_1.FilterBarItem, { checked: autoApprove, name: 'Auto approve future requests with the same configuration  ' }),
-        autoApprove ?
+        react_1["default"].createElement(FilterBarItem_1.FilterBarItem, { checked: auto, onClick: function () {
+                setAuto(function (prevState) { return !prevState; });
+            }, name: 'Auto approve future requests with the same configuration' }),
+        auto ?
             react_1["default"].createElement("div", { style: {
                     display: 'flex',
                     flexDirection: 'column',
