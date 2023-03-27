@@ -56,3 +56,6 @@ export * from './components/graphical/ResourceTypesIcons';
 export * from './components/elements/Dashboard/ChartPercentBar';
 export * from './components/elements/Dashboard/CounterItem';
 export * from './components/elements/Dashboard/CountersCard';
+export * from './components/elements/Dashboard/DonutChart';
+export * from './components/elements/Dashboard/DonutChartCard';
+export * from './components/elements/Dashboard/ChartItem';

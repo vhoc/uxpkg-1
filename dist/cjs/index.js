@@ -59,3 +59,6 @@ tslib_1.__exportStar(require("./components/graphical/ResourceTypesIcons"), expor
 tslib_1.__exportStar(require("./components/elements/Dashboard/ChartPercentBar"), exports);
 tslib_1.__exportStar(require("./components/elements/Dashboard/CounterItem"), exports);
 tslib_1.__exportStar(require("./components/elements/Dashboard/CountersCard"), exports);
+tslib_1.__exportStar(require("./components/elements/Dashboard/DonutChart"), exports);
+tslib_1.__exportStar(require("./components/elements/Dashboard/DonutChartCard"), exports);
+tslib_1.__exportStar(require("./components/elements/Dashboard/ChartItem"), exports);

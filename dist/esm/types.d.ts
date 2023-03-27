@@ -17,3 +17,10 @@ export interface ICounterItem {
     element?: any;
     count: number;
 }
+export interface IChartItem {
+    type: string;
+    color?: string | undefined;
+    value: number;
+    percent: number;
+    caption?: string | undefined;
+}
