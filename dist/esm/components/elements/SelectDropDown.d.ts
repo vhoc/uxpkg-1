@@ -1,4 +1,4 @@
-import { MenuItemProps, SelectProps } from "@mui/material";
+import { MenuItemProps, SelectProps, SelectChangeEvent } from "@mui/material";
 import React from "react";
 export interface SelectDropDownItemProps extends MenuItemProps {
     /** Value to control the DropDown */
@@ -27,5 +27,7 @@ export interface SelectDropDownProps extends SelectProps {
      */
     menuItems?: SelectDropDownItemProps[] | undefined;
     disabled?: boolean;
+    /** onChange callback event */
+    onChange?: ((event: SelectChangeEvent<any>, child: React.ReactNode) => void) | undefined;
 }
 export declare const SelectDropDown: ({ menuItems, value, onChange, disabled, label, ...props }: SelectDropDownProps) => JSX.Element;
