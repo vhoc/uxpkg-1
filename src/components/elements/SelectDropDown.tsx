@@ -1,4 +1,4 @@
-import { Select, MenuItem, MenuItemProps, FormControl, SelectProps } from "@mui/material";
+import { Select, MenuItem, MenuItemProps, FormControl, SelectProps, SelectChangeEvent } from "@mui/material";
 import { mtheme, colors } from "../../theme";
 import React from "react";
 import { styled, ThemeProvider } from '@mui/material/styles';
@@ -33,6 +33,8 @@ export interface SelectDropDownProps extends SelectProps {
      */
     menuItems?: SelectDropDownItemProps[] | undefined
     disabled?: boolean
+    /** onChange callback event */
+    onChange?: ((event: SelectChangeEvent<any>, child: React.ReactNode) => void) | undefined
 }
 
 const MySelect = styled(Select)({

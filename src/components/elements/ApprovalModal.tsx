@@ -7,6 +7,7 @@ import { FilterBarItem } from './FilterBarItem'
 import { SelectDropDown, SelectDropDownItemProps } from './SelectDropDown'
 import { TextInput } from './TextInput'
 import { Button } from './Button'
+import { SelectChangeEvent } from '@mui/material'
 
 export interface ApprovalModalProps extends HTMLAttributes<HTMLDivElement> {
     /** Title of the modal */
@@ -23,8 +24,6 @@ export interface ApprovalModalProps extends HTMLAttributes<HTMLDivElement> {
     timeValue?: any
     /** timeValue options (SelectDropDownItemProps[]) */
     timeOptions?: SelectDropDownItemProps[] | undefined
-    /** onCommentsChange event */
-    onCommentsChange?: ((event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void) | undefined
     /** onClick Cancel button event */
     onClickCancel?: React.MouseEventHandler<HTMLButtonElement> | undefined
     /** onClick Approve button event */
@@ -33,11 +32,24 @@ export interface ApprovalModalProps extends HTMLAttributes<HTMLDivElement> {
     style?: React.CSSProperties | undefined
 }
 
-export const ApprovalModal = ({ title, autoApprove = false, comments, endDateValue, endDateOptions, timeValue, timeOptions, onCommentsChange, onClickCancel, onClickApprove, style }: ApprovalModalProps): JSX.Element => {
+export const ApprovalModal = ({ title, autoApprove = false, comments, endDateValue, endDateOptions, timeValue, timeOptions, onClickCancel, onClickApprove, style }: ApprovalModalProps): JSX.Element => {
 
     const [auto, setAuto] = useState<boolean>(autoApprove)
     const [endDateState, setEndDateState] = useState<any>(endDateValue)
     const [timeState, setTimeState] = useState<any>(timeValue)
+    const [commentsState, setCommentsState] = useState<string | undefined>(comments)
+
+    const handleEndDateChange = (event: SelectChangeEvent) => {
+        setEndDateState(event.target.value as string)
+    }
+
+    const handleTimeChange = (event: SelectChangeEvent) => {
+        setTimeState(event.target.value as string)
+    }
+
+    const handleCommentsChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setCommentsState(event.target.value)
+    }
 
     return (
         <div
@@ -122,14 +134,16 @@ export const ApprovalModal = ({ title, autoApprove = false, comments, endDateVal
                             <SelectDropDown
                                 label="End Date"
                                 menuItems={endDateOptions}
-                                value={endDateValue}
+                                value={endDateState}
                                 style={{ width: '198px' }}
+                                onChange={handleEndDateChange}
                             />
                             <SelectDropDown
                                 label="Time"
                                 menuItems={timeOptions}
-                                value={timeValue}
+                                value={timeState}
                                 style={{ width: '146px' }}
+                                onChange={handleTimeChange}
                             />
                         </div>
 
@@ -143,8 +157,8 @@ export const ApprovalModal = ({ title, autoApprove = false, comments, endDateVal
                 label={'Add comments'}
                 multiline={true}
                 rows={2}
-                onChange={onCommentsChange}
-                value={comments}
+                onChange={handleCommentsChange}
+                value={commentsState}
             />
             
             {/** ROW 5: BUTTONS */}
