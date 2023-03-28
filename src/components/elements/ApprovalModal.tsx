@@ -36,6 +36,8 @@ export interface ApprovalModalProps extends HTMLAttributes<HTMLDivElement> {
 export const ApprovalModal = ({ title, autoApprove = false, comments, endDateValue, endDateOptions, timeValue, timeOptions, onCommentsChange, onClickCancel, onClickApprove, style }: ApprovalModalProps): JSX.Element => {
 
     const [auto, setAuto] = useState<boolean>(autoApprove)
+    const [endDateState, setEndDateState] = useState<any>(endDateValue)
+    const [timeState, setTimeState] = useState<any>(timeValue)
 
     return (
         <div
