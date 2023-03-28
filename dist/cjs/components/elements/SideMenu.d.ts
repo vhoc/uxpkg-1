@@ -14,4 +14,4 @@ export interface SideMenuProps extends HTMLAttributes<HTMLDivElement> {
     /** Callback function to run when the mouse cursor leaves the component */
     onMouseLeave?: React.MouseEventHandler<HTMLDivElement> | undefined;
 }
-export declare const SideMenu: ({ variant, menuItems, onMouseEnter, onMouseLeave, style, collapsed, ...props }: SideMenuProps) => JSX.Element;
+export declare const SideMenu: ({ variant, menuItems, onMouseEnter, onMouseLeave, style, collapsed, }: SideMenuProps) => JSX.Element;

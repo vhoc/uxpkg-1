@@ -10,6 +10,9 @@ export default {
 
 export const Collapsed = {
     args: {
+        style: {
+            height: '1000px',
+        },
         variant: 'primary',
         menuItems: [
             {

@@ -20,7 +20,7 @@ export interface SideMenuProps extends HTMLAttributes<HTMLDivElement> {
     onMouseLeave?: React.MouseEventHandler<HTMLDivElement> | undefined
 }
 
-export const SideMenu = ({variant = 'primary', menuItems, onMouseEnter, onMouseLeave, style, collapsed = true, ...props}:SideMenuProps): JSX.Element => {
+export const SideMenu = ({variant = 'primary', menuItems, onMouseEnter, onMouseLeave, style, collapsed = true, }:SideMenuProps): JSX.Element => {
 
     //const [collapsed, setCollapsed] = useState<boolean>(true)
     const [keepExtended, setKeepExtended] = useState<boolean>(false)
@@ -52,9 +52,9 @@ export const SideMenu = ({variant = 'primary', menuItems, onMouseEnter, onMouseL
             }}
             onMouseLeave={() => {
                 if (!collapsed) onMouseLeave
-            }}
-            {...props}        
+            }}     
         >
+            <div>
             
             {
                 menuItems && menuItems.length >= 1 ?
@@ -78,7 +78,7 @@ export const SideMenu = ({variant = 'primary', menuItems, onMouseEnter, onMouseL
                 :
                     null
             }
-            
+            </div>
 
             <button
                 style={{
@@ -89,7 +89,7 @@ export const SideMenu = ({variant = 'primary', menuItems, onMouseEnter, onMouseL
                     borderTopWidth: '1px',
                     color: keepExtended ? colors.gray[70] : colors.gray[30],
                     display: 'flex',
-                    justifyContent: 'center',
+                    justifyContent: 'flex-start',
                     alignItems: 'center',
                     paddingTop: '13px',
                     paddingLeft: '15px',
@@ -98,19 +98,11 @@ export const SideMenu = ({variant = 'primary', menuItems, onMouseEnter, onMouseL
                 }}
                 onClick={() => setKeepExtended(prevState => (!prevState))}
             >
-                <FontAwesomeIcon icon={faSignOutAlt} />
-                {
-                    (!collapsed || keepExtended) ?
-                        <span style={{
-                            fontSize: '15px',
-                            color: keepExtended ? colors.gray[70] : colors.gray[50],
-                            marginLeft: '12px',
-                        }}>
-                            Keep Menu Open
-                        </span>
-                    :
-                        null
-                }
+                <FontAwesomeIcon
+                    icon={faSignOutAlt}
+                    className={keepExtended ? 'fa-flip-horizontal' : undefined}
+                />
+                
             </button>
 
         </div>

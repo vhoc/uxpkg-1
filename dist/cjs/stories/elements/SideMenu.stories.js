@@ -10,6 +10,9 @@ exports["default"] = {
 };
 exports.Collapsed = {
     args: {
+        style: {
+            height: '1000px'
+        },
         variant: 'primary',
         menuItems: [
             {

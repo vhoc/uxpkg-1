@@ -3,6 +3,9 @@ declare const _default: Meta<import("@storybook/react/types-6-0").Args>;
 export default _default;
 export declare const Collapsed: {
     args: {
+        style: {
+            height: string;
+        };
         variant: string;
         menuItems: ({
             icon: import("@fortawesome/fontawesome-common-types").IconDefinition;
