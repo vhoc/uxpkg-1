@@ -1,5 +1,5 @@
 import { __assign } from "tslib";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTriangleExclamation } from '@fortawesome/pro-solid-svg-icons';
 import { colors } from '../../theme';
@@ -9,11 +9,14 @@ import { SelectDropDown } from './SelectDropDown';
 import { TextInput } from './TextInput';
 import { Button } from './Button';
 export var ApprovalModal = function (_a) {
-    var title = _a.title, _b = _a.autoApprove, autoApprove = _b === void 0 ? false : _b, comments = _a.comments, endDateValue = _a.endDateValue, endDateOptions = _a.endDateOptions, timeValue = _a.timeValue, timeOptions = _a.timeOptions, onClickCancel = _a.onClickCancel, onClickApprove = _a.onClickApprove, style = _a.style;
+    var title = _a.title, _b = _a.autoApprove, autoApprove = _b === void 0 ? false : _b, comments = _a.comments, endDateValue = _a.endDateValue, endDateOptions = _a.endDateOptions, timeValue = _a.timeValue, timeOptions = _a.timeOptions, onCommentsChange = _a.onCommentsChange, onClickCancel = _a.onClickCancel, onClickApprove = _a.onClickApprove, style = _a.style, onAutoApproveChange = _a.onAutoApproveChange;
     var _c = useState(autoApprove), auto = _c[0], setAuto = _c[1];
     var _d = useState(endDateValue), endDateState = _d[0], setEndDateState = _d[1];
     var _e = useState(timeValue), timeState = _e[0], setTimeState = _e[1];
-    var _f = useState(comments), commentsState = _f[0], setCommentsState = _f[1];
+    //const [commentsState, setCommentsState] = useState<string | undefined>(comments)
+    var handleAutoApproveChange = function () {
+        setAuto(function (prevState) { return !prevState; });
+    };
     var handleEndDateChange = function (event) {
         setEndDateState(event.target.value);
     };
@@ -21,8 +24,16 @@ export var ApprovalModal = function (_a) {
         setTimeState(event.target.value);
     };
     var handleCommentsChange = function (event) {
-        setCommentsState(event.target.value);
+        //setCommentsState(event.target.value)
+        if (onCommentsChange) {
+            onCommentsChange(event.target.value);
+        }
     };
+    useEffect(function () {
+        if (onAutoApproveChange) {
+            onAutoApproveChange(auto);
+        }
+    }, [auto]);
     return (React.createElement("div", { style: __assign({ width: '584px', height: 'auto', paddingTop: '31px', paddingRight: '31px', paddingBottom: '24px', paddingLeft: '31px', display: 'flex', flexDirection: 'column', gap: '28px', backgroundColor: colors.white, borderRadius: '8px', boxShadow: '0px 2px 4px rgba(34, 41, 69, 0.37)' }, style) },
         React.createElement("div", { style: {
                 display: 'flex',
@@ -42,9 +53,7 @@ export var ApprovalModal = function (_a) {
                     textOverflow: 'ellipsis',
                     width: '100%'
                 } }, title)),
-        React.createElement(FilterBarItem, { checked: auto, onClick: function () {
-                setAuto(function (prevState) { return !prevState; });
-            }, name: 'Auto approve future requests with the same configuration' }),
+        React.createElement(FilterBarItem, { checked: auto, onClick: handleAutoApproveChange, name: 'Auto approve future requests with the same configuration' }),
         auto ?
             React.createElement("div", { style: {
                     display: 'flex',
@@ -61,7 +70,7 @@ export var ApprovalModal = function (_a) {
                     React.createElement(SelectDropDown, { label: "Time", menuItems: timeOptions, value: timeState, style: { width: '146px' }, onChange: handleTimeChange })))
             :
                 null,
-        React.createElement(TextInput, { label: 'Add comments', multiline: true, rows: 2, onChange: handleCommentsChange, value: commentsState }),
+        React.createElement(TextInput, { label: 'Add comments', multiline: true, rows: 2, onChange: handleCommentsChange, value: comments }),
         React.createElement("div", { style: {
                 display: 'flex',
                 justifyContent: 'flex-end',

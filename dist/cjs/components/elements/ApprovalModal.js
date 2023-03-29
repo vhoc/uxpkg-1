@@ -12,11 +12,14 @@ var SelectDropDown_1 = require("./SelectDropDown");
 var TextInput_1 = require("./TextInput");
 var Button_1 = require("./Button");
 var ApprovalModal = function (_a) {
-    var title = _a.title, _b = _a.autoApprove, autoApprove = _b === void 0 ? false : _b, comments = _a.comments, endDateValue = _a.endDateValue, endDateOptions = _a.endDateOptions, timeValue = _a.timeValue, timeOptions = _a.timeOptions, onClickCancel = _a.onClickCancel, onClickApprove = _a.onClickApprove, style = _a.style;
+    var title = _a.title, _b = _a.autoApprove, autoApprove = _b === void 0 ? false : _b, comments = _a.comments, endDateValue = _a.endDateValue, endDateOptions = _a.endDateOptions, timeValue = _a.timeValue, timeOptions = _a.timeOptions, onCommentsChange = _a.onCommentsChange, onClickCancel = _a.onClickCancel, onClickApprove = _a.onClickApprove, style = _a.style, onAutoApproveChange = _a.onAutoApproveChange;
     var _c = (0, react_1.useState)(autoApprove), auto = _c[0], setAuto = _c[1];
     var _d = (0, react_1.useState)(endDateValue), endDateState = _d[0], setEndDateState = _d[1];
     var _e = (0, react_1.useState)(timeValue), timeState = _e[0], setTimeState = _e[1];
-    var _f = (0, react_1.useState)(comments), commentsState = _f[0], setCommentsState = _f[1];
+    //const [commentsState, setCommentsState] = useState<string | undefined>(comments)
+    var handleAutoApproveChange = function () {
+        setAuto(function (prevState) { return !prevState; });
+    };
     var handleEndDateChange = function (event) {
         setEndDateState(event.target.value);
     };
@@ -24,8 +27,16 @@ var ApprovalModal = function (_a) {
         setTimeState(event.target.value);
     };
     var handleCommentsChange = function (event) {
-        setCommentsState(event.target.value);
+        //setCommentsState(event.target.value)
+        if (onCommentsChange) {
+            onCommentsChange(event.target.value);
+        }
     };
+    (0, react_1.useEffect)(function () {
+        if (onAutoApproveChange) {
+            onAutoApproveChange(auto);
+        }
+    }, [auto]);
     return (react_1["default"].createElement("div", { style: tslib_1.__assign({ width: '584px', height: 'auto', paddingTop: '31px', paddingRight: '31px', paddingBottom: '24px', paddingLeft: '31px', display: 'flex', flexDirection: 'column', gap: '28px', backgroundColor: theme_1.colors.white, borderRadius: '8px', boxShadow: '0px 2px 4px rgba(34, 41, 69, 0.37)' }, style) },
         react_1["default"].createElement("div", { style: {
                 display: 'flex',
@@ -45,9 +56,7 @@ var ApprovalModal = function (_a) {
                     textOverflow: 'ellipsis',
                     width: '100%'
                 } }, title)),
-        react_1["default"].createElement(FilterBarItem_1.FilterBarItem, { checked: auto, onClick: function () {
-                setAuto(function (prevState) { return !prevState; });
-            }, name: 'Auto approve future requests with the same configuration' }),
+        react_1["default"].createElement(FilterBarItem_1.FilterBarItem, { checked: auto, onClick: handleAutoApproveChange, name: 'Auto approve future requests with the same configuration' }),
         auto ?
             react_1["default"].createElement("div", { style: {
                     display: 'flex',
@@ -64,7 +73,7 @@ var ApprovalModal = function (_a) {
                     react_1["default"].createElement(SelectDropDown_1.SelectDropDown, { label: "Time", menuItems: timeOptions, value: timeState, style: { width: '146px' }, onChange: handleTimeChange })))
             :
                 null,
-        react_1["default"].createElement(TextInput_1.TextInput, { label: 'Add comments', multiline: true, rows: 2, onChange: handleCommentsChange, value: commentsState }),
+        react_1["default"].createElement(TextInput_1.TextInput, { label: 'Add comments', multiline: true, rows: 2, onChange: handleCommentsChange, value: comments }),
         react_1["default"].createElement("div", { style: {
                 display: 'flex',
                 justifyContent: 'flex-end',

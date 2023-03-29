@@ -76,7 +76,7 @@ exports._data = [
             value: "1",
             label: "Andrew Jackson",
             description: "andrew@company.com",
-            type: 'USER',
+            type: 'SERVICEACCOUNT',
             route: ["21", "31", "33", "42", "44", "45", "49"]
         },
         {
@@ -84,7 +84,7 @@ exports._data = [
             value: "2",
             label: "Andrew Jackson",
             description: "andrew@company.com",
-            type: 'USER',
+            type: 'SERVICEACCOUNT',
             route: ["21", "32", "42", "43", "47"]
         },
         {
@@ -92,7 +92,7 @@ exports._data = [
             value: "3",
             label: "Andrew Jackson",
             description: "andrew@company.com",
-            type: 'USER',
+            type: 'USERGROUPS',
             route: ["21", "34", "41", "45", "46", "48"]
         },
     ],

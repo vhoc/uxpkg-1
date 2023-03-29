@@ -1,5 +1,7 @@
 /** AWS ICONS Imports */
 import User from '../../assets/icons/resource-types/User.png';
+import ServiceAccount from '../../assets/icons/resource-types/ServiceAccount.svg'
+import UserGroups from '../../assets/icons/resource-types/UserGroups.svg'
 import Policy from "../../assets/icons/resource-types/Policy.png";
 import Role from "../../assets/icons/resource-types/Role.png";
 import AWSCompute from "../../assets/icons/resource-types/Compute.png";
@@ -161,6 +163,8 @@ export const ResourceIcons = [
 ];
 
 export const DisplayTypeToIconMap = {
+    USERGROUPS: UserGroups,
+    SERVICEACCOUNT: ServiceAccount,
     USER: User,
     POLICY: Policy,
     ROLE: Role,

@@ -4,6 +4,8 @@ exports.DisplayTypeToIconMap = exports.ResourceIcons = void 0;
 var tslib_1 = require("tslib");
 /** AWS ICONS Imports */
 var User_png_1 = tslib_1.__importDefault(require("../../assets/icons/resource-types/User.png"));
+var ServiceAccount_svg_1 = tslib_1.__importDefault(require("../../assets/icons/resource-types/ServiceAccount.svg"));
+var UserGroups_svg_1 = tslib_1.__importDefault(require("../../assets/icons/resource-types/UserGroups.svg"));
 var Policy_png_1 = tslib_1.__importDefault(require("../../assets/icons/resource-types/Policy.png"));
 var Role_png_1 = tslib_1.__importDefault(require("../../assets/icons/resource-types/Role.png"));
 var Compute_png_1 = tslib_1.__importDefault(require("../../assets/icons/resource-types/Compute.png"));
@@ -160,6 +162,8 @@ exports.ResourceIcons = [
     Res_Amazon_EC2_Elastic_IP_Address_48_Light_svg_1["default"], //6
 ];
 exports.DisplayTypeToIconMap = {
+    USERGROUPS: UserGroups_svg_1["default"],
+    SERVICEACCOUNT: ServiceAccount_svg_1["default"],
     USER: User_png_1["default"],
     POLICY: Policy_png_1["default"],
     ROLE: Role_png_1["default"],

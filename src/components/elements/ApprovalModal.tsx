@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, useState } from 'react'
+import React, { HTMLAttributes, useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTriangleExclamation } from '@fortawesome/pro-solid-svg-icons'
 import { colors } from '../../theme'
@@ -24,20 +24,28 @@ export interface ApprovalModalProps extends HTMLAttributes<HTMLDivElement> {
     timeValue?: any
     /** timeValue options (SelectDropDownItemProps[]) */
     timeOptions?: SelectDropDownItemProps[] | undefined
+    /** onCommentsChange event */
+    onCommentsChange?: ((value: string) => void) | undefined
     /** onClick Cancel button event */
     onClickCancel?: React.MouseEventHandler<HTMLButtonElement> | undefined
     /** onClick Approve button event */
     onClickApprove?: React.MouseEventHandler<HTMLButtonElement> | undefined
     /** Style overrides */
     style?: React.CSSProperties | undefined
+    /** autoApprove handler */
+    onAutoApproveChange?: (value: boolean) => void | undefined
 }
 
-export const ApprovalModal = ({ title, autoApprove = false, comments, endDateValue, endDateOptions, timeValue, timeOptions, onClickCancel, onClickApprove, style }: ApprovalModalProps): JSX.Element => {
+export const ApprovalModal = ({ title, autoApprove = false, comments, endDateValue, endDateOptions, timeValue, timeOptions, onCommentsChange, onClickCancel, onClickApprove, style, onAutoApproveChange }: ApprovalModalProps): JSX.Element => {
 
     const [auto, setAuto] = useState<boolean>(autoApprove)
     const [endDateState, setEndDateState] = useState<any>(endDateValue)
     const [timeState, setTimeState] = useState<any>(timeValue)
-    const [commentsState, setCommentsState] = useState<string | undefined>(comments)
+    //const [commentsState, setCommentsState] = useState<string | undefined>(comments)
+
+    const handleAutoApproveChange = () => {
+        setAuto(prevState => !prevState)
+    }
 
     const handleEndDateChange = (event: SelectChangeEvent) => {
         setEndDateState(event.target.value as string)
@@ -48,8 +56,15 @@ export const ApprovalModal = ({ title, autoApprove = false, comments, endDateVal
     }
 
     const handleCommentsChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setCommentsState(event.target.value)
+        //setCommentsState(event.target.value)
+        if (onCommentsChange) {
+            onCommentsChange(event.target.value)
+        }
     }
+
+    useEffect(() => {
+        if (onAutoApproveChange) { onAutoApproveChange(auto) }
+    }, [auto])
 
     return (
         <div
@@ -104,9 +119,7 @@ export const ApprovalModal = ({ title, autoApprove = false, comments, endDateVal
             {/** ROW 2: AUTO-APPROVE OPTION */}
             <FilterBarItem
                 checked={auto}
-                onClick={() => {
-                    setAuto(prevState => !prevState)
-                }}
+                onClick={handleAutoApproveChange}
                 name={'Auto approve future requests with the same configuration'}
             />
 
@@ -158,7 +171,7 @@ export const ApprovalModal = ({ title, autoApprove = false, comments, endDateVal
                 multiline={true}
                 rows={2}
                 onChange={handleCommentsChange}
-                value={commentsState}
+                value={comments}
             />
             
             {/** ROW 5: BUTTONS */}

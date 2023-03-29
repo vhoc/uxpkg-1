@@ -1,5 +1,7 @@
 export declare const ResourceIcons: any[];
 export declare const DisplayTypeToIconMap: {
+    USERGROUPS: any;
+    SERVICEACCOUNT: any;
     USER: any;
     POLICY: any;
     ROLE: any;
