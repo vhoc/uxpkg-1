@@ -6,9 +6,17 @@ export interface ChartPercentBarProps {
     data: Record<string, any>[]
     /** Criteria */
     criteria: string
+    /** Whether to show the legend labels or not */
+    legend?: boolean | undefined
+    /** Maximum bar width (use in conjuction with height) */
+    maxBarWidth?: number | undefined
+    /** Height */
+    height?: number | undefined
+    /** Interval between bars */
+    intervalPadding?: number | undefined
 }
 
-export const ChartPercentBar = ({ data, criteria }: ChartPercentBarProps) => {
+export const ChartPercentBar = ({ data, legend = true, maxBarWidth = 4, height = 36, criteria, intervalPadding = 0 }: ChartPercentBarProps) => {
 
     return (
         <div
@@ -17,20 +25,20 @@ export const ChartPercentBar = ({ data, criteria }: ChartPercentBarProps) => {
             }}
         >
             <Bar
+                autoFit={true}
                 data={data}
                 xField={'value'}
                 yField={criteria}
                 seriesField={'risk'}
                 isPercent={true}
                 isStack={true}
-                maxBarWidth={4}
-                height={36}
+                maxBarWidth={maxBarWidth}
+                height={height}
                 color={['#a8d08d', '#ffe5b0', '#ff9c4a', '#db573f', ]}
                 padding={[30, 0, 0, 0,]}
-                legend={{
-                    layout: 'horizontal',
-                    itemSpacing: 5,
-                }}
+                legend={ legend ? { layout: 'horizontal', itemSpacing: 5, } : false }
+                marginRatio={0}//nope
+                intervalPadding={intervalPadding}
                 xAxis={{
                     label: {
                         style: {
@@ -46,6 +54,8 @@ export const ChartPercentBar = ({ data, criteria }: ChartPercentBarProps) => {
                     },
                 }}
                 yAxis={{
+                    tickLine: null,//nope
+                    subTickLine: null,//nope
                     label: {
                         style: {
                             opacity: 0,
@@ -55,7 +65,7 @@ export const ChartPercentBar = ({ data, criteria }: ChartPercentBarProps) => {
                         line: {
                             style: {
                                 lineWidth: 0,
-                            }
+                            },
                         }
                     }
                 }}

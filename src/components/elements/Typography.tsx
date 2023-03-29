@@ -27,25 +27,25 @@ export interface TypographyProps extends HTMLAttributes<HTMLDivElement> {
     style?: CSSProperties | undefined,
 }
 
-export const Typography = ({ children, variant, style, ...props }: TypographyProps): JSX.Element => {
+export const Typography = ({ children, variant, style }: TypographyProps): JSX.Element => {
 
     const stylesTable = {
-        'body-regular': theme.font.body.regular,
-        'body-semiBold': theme.font.body.semiBold,
-        'bodySmall-regular': theme.font.bodySmall.regular,
-        'breadcrumbLink': theme.font.breadcrumb,
-        'breadcrumbLink-hover': theme.font.breadcrumb.hover,
-        'breadcrumbLink-pressed': theme.font.breadcrumb.pressed,
-        'buttonLabel-regular': theme.font.buttonLabel.regular,
-        'buttonLabel-medium': theme.font.buttonLabel.medium,
-        'caption-regular': theme.font.caption.regular,
-        'h2': theme.font.h2.medium,
-        'h3': theme.font.h3.regular,
-        'h4-regular': theme.font.h4.regular,
-        'h4-medium': theme.font.h4.medium,
-        'inputText-hint': theme.font.inputText.hint,
-        'inputText-typed': theme.font.inputText.typed,
-        'title-regular': theme.font.title.regular,
+        'body-regular': {...theme.font.body.regular, ...style},
+        'body-semiBold': {...theme.font.body.semiBold, ...style},
+        'bodySmall-regular': {...theme.font.bodySmall.regular, ...style},
+        'breadcrumbLink': {...theme.font.breadcrumb, ...style},
+        'breadcrumbLink-hover': {...theme.font.breadcrumb.hover, ...style},
+        'breadcrumbLink-pressed': {...theme.font.breadcrumb.pressed, ...style},
+        'buttonLabel-regular': {...theme.font.buttonLabel.regular, ...style},
+        'buttonLabel-medium': {...theme.font.buttonLabel.medium, ...style},
+        'caption-regular': {...theme.font.caption.regular, ...style},
+        'h2': {...theme.font.h2.medium, ...style},
+        'h3': {...theme.font.h3.regular, ...style},
+        'h4-regular': {...theme.font.h4.regular, ...style},
+        'h4-medium': {...theme.font.h4.medium, ...style},
+        'inputText-hint': {...theme.font.inputText.hint, ...style},
+        'inputText-typed': {...theme.font.inputText.typed, ...style},
+        'title-regular': {...theme.font.title.regular, ...style},
     }
 
     type VariantKey = keyof typeof stylesTable
@@ -53,11 +53,9 @@ export const Typography = ({ children, variant, style, ...props }: TypographyPro
 
     return (
         <div
-            style={{
-                ...stylesTable[selectedVariant],
-                ...style,
-            }}
-            {...props}
+            style={
+                {...stylesTable[selectedVariant]}
+            }
         >
             {children}
         </div>

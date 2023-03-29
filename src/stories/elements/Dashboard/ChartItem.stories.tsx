@@ -16,6 +16,16 @@ export const Critical = {
     }
 }
 
+export const InlineCritical = {
+    args: {
+        type: 'inline',
+        title: 'Inactive Services',
+        color: '#DA5942',
+        amount: 240,
+        showPercent: false,
+    }
+}
+
 export const High = {
     args: {
         title: 'High',
