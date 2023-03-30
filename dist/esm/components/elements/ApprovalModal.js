@@ -9,19 +9,25 @@ import { SelectDropDown } from './SelectDropDown';
 import { TextInput } from './TextInput';
 import { Button } from './Button';
 export var ApprovalModal = function (_a) {
-    var title = _a.title, _b = _a.autoApprove, autoApprove = _b === void 0 ? false : _b, comments = _a.comments, endDateValue = _a.endDateValue, endDateOptions = _a.endDateOptions, timeValue = _a.timeValue, timeOptions = _a.timeOptions, onCommentsChange = _a.onCommentsChange, onClickCancel = _a.onClickCancel, onClickApprove = _a.onClickApprove, style = _a.style, onAutoApproveChange = _a.onAutoApproveChange;
+    var title = _a.title, _b = _a.autoApprove, autoApprove = _b === void 0 ? false : _b, comments = _a.comments, endDateValue = _a.endDateValue, endDateOptions = _a.endDateOptions, timeValue = _a.timeValue, timeOptions = _a.timeOptions, onCommentsChange = _a.onCommentsChange, onEndDateChange = _a.onEndDateChange, onTimeChange = _a.onTimeChange, onClickCancel = _a.onClickCancel, onClickApprove = _a.onClickApprove, style = _a.style, onAutoApproveChange = _a.onAutoApproveChange;
     var _c = useState(autoApprove), auto = _c[0], setAuto = _c[1];
-    var _d = useState(endDateValue), endDateState = _d[0], setEndDateState = _d[1];
-    var _e = useState(timeValue), timeState = _e[0], setTimeState = _e[1];
+    //const [endDateState, setEndDateState] = useState<any>(endDateValue)
+    //const [timeState, setTimeState] = useState<any>(timeValue)
     //const [commentsState, setCommentsState] = useState<string | undefined>(comments)
     var handleAutoApproveChange = function () {
         setAuto(function (prevState) { return !prevState; });
     };
     var handleEndDateChange = function (event) {
-        setEndDateState(event.target.value);
+        //setEndDateState(event.target.value as string)
+        if (onEndDateChange) {
+            onEndDateChange(event.target.value);
+        }
     };
     var handleTimeChange = function (event) {
-        setTimeState(event.target.value);
+        //setTimeState(event.target.value as string)
+        if (onTimeChange) {
+            onTimeChange(event.target.value);
+        }
     };
     var handleCommentsChange = function (event) {
         //setCommentsState(event.target.value)
@@ -66,8 +72,8 @@ export var ApprovalModal = function (_a) {
                         alignItems: 'center',
                         gap: '31px'
                     } },
-                    React.createElement(SelectDropDown, { label: "End Date", menuItems: endDateOptions, value: endDateState, style: { width: '198px' }, onChange: handleEndDateChange }),
-                    React.createElement(SelectDropDown, { label: "Time", menuItems: timeOptions, value: timeState, style: { width: '146px' }, onChange: handleTimeChange })))
+                    React.createElement(SelectDropDown, { label: "End Date", menuItems: endDateOptions, value: endDateValue, style: { width: '198px' }, onChange: handleEndDateChange }),
+                    React.createElement(SelectDropDown, { label: "Time", menuItems: timeOptions, value: timeValue, style: { width: '146px' }, onChange: handleTimeChange })))
             :
                 null,
         React.createElement(TextInput, { label: 'Add comments', multiline: true, rows: 2, onChange: handleCommentsChange, value: comments }),

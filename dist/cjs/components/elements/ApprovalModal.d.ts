@@ -17,6 +17,10 @@ export interface ApprovalModalProps extends HTMLAttributes<HTMLDivElement> {
     timeOptions?: SelectDropDownItemProps[] | undefined;
     /** onCommentsChange event */
     onCommentsChange?: ((value: string) => void) | undefined;
+    /** Function to trigger when the End Date is changed. */
+    onEndDateChange?: ((value: any) => void) | undefined;
+    /** Function to trigger when the Time is changed. */
+    onTimeChange?: ((value: any) => void) | undefined;
     /** onClick Cancel button event */
     onClickCancel?: React.MouseEventHandler<HTMLButtonElement> | undefined;
     /** onClick Approve button event */
@@ -26,4 +30,4 @@ export interface ApprovalModalProps extends HTMLAttributes<HTMLDivElement> {
     /** autoApprove handler */
     onAutoApproveChange?: (value: boolean) => void | undefined;
 }
-export declare const ApprovalModal: ({ title, autoApprove, comments, endDateValue, endDateOptions, timeValue, timeOptions, onCommentsChange, onClickCancel, onClickApprove, style, onAutoApproveChange }: ApprovalModalProps) => JSX.Element;
+export declare const ApprovalModal: ({ title, autoApprove, comments, endDateValue, endDateOptions, timeValue, timeOptions, onCommentsChange, onEndDateChange, onTimeChange, onClickCancel, onClickApprove, style, onAutoApproveChange }: ApprovalModalProps) => JSX.Element;
