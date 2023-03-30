@@ -1,7 +1,7 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import React, { HTMLAttributes, ReactNode } from "react";
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
-    variant: 'primary' | 'gray' | 'grayBlue' | 'grayRed' | 'success';
+    variant: 'primary' | 'gray' | 'grayBlue' | 'grayRed' | 'success' | 'warning' | 'danger';
     children?: ReactNode;
     disabled?: boolean;
     textColor?: string;

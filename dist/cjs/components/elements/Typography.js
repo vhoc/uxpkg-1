@@ -5,26 +5,26 @@ var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importDefault(require("react"));
 var theme_1 = require("../../theme");
 var Typography = function (_a) {
-    var children = _a.children, variant = _a.variant, style = _a.style, props = tslib_1.__rest(_a, ["children", "variant", "style"]);
+    var children = _a.children, variant = _a.variant, style = _a.style;
     var stylesTable = {
-        'body-regular': theme_1.theme.font.body.regular,
-        'body-semiBold': theme_1.theme.font.body.semiBold,
-        'bodySmall-regular': theme_1.theme.font.bodySmall.regular,
-        'breadcrumbLink': theme_1.theme.font.breadcrumb,
-        'breadcrumbLink-hover': theme_1.theme.font.breadcrumb.hover,
-        'breadcrumbLink-pressed': theme_1.theme.font.breadcrumb.pressed,
-        'buttonLabel-regular': theme_1.theme.font.buttonLabel.regular,
-        'buttonLabel-medium': theme_1.theme.font.buttonLabel.medium,
-        'caption-regular': theme_1.theme.font.caption.regular,
-        'h2': theme_1.theme.font.h2.medium,
-        'h3': theme_1.theme.font.h3.regular,
-        'h4-regular': theme_1.theme.font.h4.regular,
-        'h4-medium': theme_1.theme.font.h4.medium,
-        'inputText-hint': theme_1.theme.font.inputText.hint,
-        'inputText-typed': theme_1.theme.font.inputText.typed,
-        'title-regular': theme_1.theme.font.title.regular
+        'body-regular': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.body.regular), style),
+        'body-semiBold': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.body.semiBold), style),
+        'bodySmall-regular': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.bodySmall.regular), style),
+        'breadcrumbLink': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.breadcrumb), style),
+        'breadcrumbLink-hover': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.breadcrumb.hover), style),
+        'breadcrumbLink-pressed': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.breadcrumb.pressed), style),
+        'buttonLabel-regular': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.buttonLabel.regular), style),
+        'buttonLabel-medium': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.buttonLabel.medium), style),
+        'caption-regular': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.caption.regular), style),
+        'h2': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.h2.medium), style),
+        'h3': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.h3.regular), style),
+        'h4-regular': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.h4.regular), style),
+        'h4-medium': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.h4.medium), style),
+        'inputText-hint': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.inputText.hint), style),
+        'inputText-typed': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.inputText.typed), style),
+        'title-regular': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.title.regular), style)
     };
     var selectedVariant = variant;
-    return (react_1["default"].createElement("div", tslib_1.__assign({ style: tslib_1.__assign(tslib_1.__assign({}, stylesTable[selectedVariant]), style) }, props), children));
+    return (react_1["default"].createElement("div", { style: tslib_1.__assign({}, stylesTable[selectedVariant]) }, children));
 };
 exports.Typography = Typography;

@@ -10,6 +10,15 @@ export declare const Critical: {
         caption: string;
     };
 };
+export declare const InlineCritical: {
+    args: {
+        type: string;
+        title: string;
+        color: string;
+        amount: number;
+        showPercent: boolean;
+    };
+};
 export declare const High: {
     args: {
         title: string;

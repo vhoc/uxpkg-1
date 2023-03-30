@@ -1,5 +1,6 @@
 import "@fontsource/ibm-plex-sans";
 import { createTheme } from "@mui/material/styles";
+import { faInfoCircle, faHexagonExclamation, faTriangleExclamation, faCheck } from "@fortawesome/pro-solid-svg-icons";
 //import { enUS } from '@mui/material/locale';
 export var mtheme = createTheme({
     typography: {
@@ -253,7 +254,12 @@ export var variants = {
         sideBarMenuItemIconColor: colors.gray[90],
         sideBarMenuItemIconColorHover: colors.blue[60],
         sideBarMenuItemBgColorHover: colors.blue[10],
-        sideBarMenuItemTextColor: colors.gray[90]
+        sideBarMenuItemTextColor: colors.gray[90],
+        snackBarBgColor: '#224980',
+        snackBarButtonTextColor: colors.white,
+        snackBarTextColor: colors.white,
+        snackBarButtonBgColor: '#2e67d7',
+        snackBarLeftIcon: faInfoCircle
     },
     secondary: {
         buttonBgColor: 'rgba(50, 103, 214, 0.04)',
@@ -291,7 +297,12 @@ export var variants = {
         buttonTextColor: '#fff',
         labelBgColor: 'rgba(216, 160, 50, 0.1)',
         labelTextColor: colors.yellow[50],
-        borderColor: colors.yellow[50]
+        borderColor: colors.yellow[50],
+        snackBarBgColor: colors.yellow[50],
+        snackBarButtonTextColor: colors.white,
+        snackBarTextColor: colors.white,
+        snackBarButtonBgColor: 'rgba(35, 37, 41, 0.04)',
+        snackBarLeftIcon: faHexagonExclamation
     },
     danger: {
         buttonBgColor: '#dd2121',
@@ -299,7 +310,12 @@ export var variants = {
         buttonTextColor: '#fff',
         labelBgColor: 'rgba(224, 42, 71, 0.1)',
         labelTextColor: colors.red[50],
-        borderColor: colors.red[50]
+        borderColor: colors.red[50],
+        snackBarBgColor: colors.red[50],
+        snackBarButtonTextColor: colors.white,
+        snackBarTextColor: colors.white,
+        snackBarButtonBgColor: 'rgba(35, 37, 41, 0.04)',
+        snackBarLeftIcon: faTriangleExclamation
     },
     success: {
         alertIconBgColor: '#AFE1AF',
@@ -313,7 +329,12 @@ export var variants = {
         buttonBorderColor: 'transparent',
         labelBgColor: 'rgba(94, 154, 90, 0.1)',
         labelTextColor: colors.green[50],
-        borderColor: colors.green[50]
+        borderColor: colors.green[50],
+        snackBarBgColor: colors.green[50],
+        snackBarButtonTextColor: colors.white,
+        snackBarTextColor: colors.white,
+        snackBarButtonBgColor: 'rgba(35, 37, 41, 0.04)',
+        snackBarLeftIcon: faCheck
     },
     gray: {
         buttonBgColor: 'rgba(35, 37, 41, 0.04)',

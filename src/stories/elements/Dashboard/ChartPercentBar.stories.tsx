@@ -14,21 +14,25 @@ export const Default = {
           risk: '24',
           'Users': 'Users',
           value: 24,
+          color: '#a8d08d',
         },
         {// MEDIUM
           risk: '40',
           'Users': 'Users',
           value: 40,
+          color: '#ffe5b0',
         },
         {// HIGH
           risk: '27',
           'Users': 'Users',
           value: 27,
+          color: '#ff9c4a',
         },
         {// CRITICAL
           risk: '3',
           'Users': 'Users',
           value: 3,
+          color: '#db573f',
         },
       ]
     }
@@ -44,21 +48,25 @@ export const Broader = {
         risk: '24',
         'Users': 'Users',
         value: 24,
+        color: '#a8d08d',
       },
       {// MEDIUM
         risk: '40',
         'Users': 'Users',
         value: 40,
+        color: '#ffe5b0',
       },
       {// HIGH
         risk: '27',
         'Users': 'Users',
         value: 27,
+        color: '#ff9c4a',
       },
       {// CRITICAL
         risk: '3',
         'Users': 'Users',
         value: 3,
+        color: '#db573f',
       },
     ]
   }
@@ -75,21 +83,25 @@ export const NoLegend = {
         risk: '24',
         'Users': 'Users',
         value: 24,
+        color: '#a8d08d',
       },
       {// MEDIUM
         risk: '40',
         'Users': 'Users',
         value: 40,
+        color: '#ffe5b0',
       },
       {// HIGH
         risk: '27',
         'Users': 'Users',
         value: 27,
+        color: '#ff9c4a',
       },
       {// CRITICAL
         risk: '3',
         'Users': 'Users',
         value: 3,
+        color: '#db573f',
       },
     ]
   }

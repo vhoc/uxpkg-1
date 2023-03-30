@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.Low = exports.Medium = exports.High = exports.Critical = void 0;
+exports.Low = exports.Medium = exports.High = exports.InlineCritical = exports.Critical = void 0;
 var ChartItem_1 = require("../../../components/elements/Dashboard/ChartItem");
 exports["default"] = {
     title: 'dashboard/ChartItem',
@@ -13,6 +13,15 @@ exports.Critical = {
         amount: 240,
         percent: 40,
         caption: 'Excessive Privilege'
+    }
+};
+exports.InlineCritical = {
+    args: {
+        type: 'inline',
+        title: 'Inactive Services',
+        color: '#DA5942',
+        amount: 240,
+        showPercent: false
     }
 };
 exports.High = {

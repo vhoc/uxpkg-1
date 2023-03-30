@@ -22,6 +22,7 @@ export declare const Users: {
             risk: string;
             Users: string;
             value: number;
+            color: string;
         }[];
     };
 };

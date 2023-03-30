@@ -4,9 +4,9 @@ import { colors } from '../../../theme'
 
 export interface ChartItemProps extends HTMLAttributes<HTMLDivElement> {
     /** The type of the element card */
-    type?: 'block' | 'inline'
+    type?: 'block' | 'inline' | string
     /** The name of the element */
-    title: string
+    title?: string | undefined
     /** The color representing the element */
     color?: string | undefined
     /** The amount of elements */

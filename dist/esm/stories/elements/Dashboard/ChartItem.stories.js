@@ -12,6 +12,15 @@ export var Critical = {
         caption: 'Excessive Privilege'
     }
 };
+export var InlineCritical = {
+    args: {
+        type: 'inline',
+        title: 'Inactive Services',
+        color: '#DA5942',
+        amount: 240,
+        showPercent: false
+    }
+};
 export var High = {
     args: {
         title: 'High',

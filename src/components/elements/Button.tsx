@@ -4,7 +4,7 @@ import { theme, variants, sizes } from '../../theme'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
-    variant: 'primary' | 'gray' | 'grayBlue' | 'grayRed' | 'success'
+    variant: 'primary' | 'gray' | 'grayBlue' | 'grayRed' | 'success' | 'warning' | 'danger'
     children?: ReactNode
     disabled?: boolean
     textColor?: string

@@ -8,6 +8,34 @@ export declare const Default: {
             risk: string;
             Users: string;
             value: number;
+            color: string;
+        }[];
+    };
+};
+export declare const Broader: {
+    args: {
+        maxBarWidth: number;
+        height: number;
+        criteria: string;
+        data: {
+            risk: string;
+            Users: string;
+            value: number;
+            color: string;
+        }[];
+    };
+};
+export declare const NoLegend: {
+    args: {
+        legend: boolean;
+        maxBarWidth: number;
+        height: number;
+        criteria: string;
+        data: {
+            risk: string;
+            Users: string;
+            value: number;
+            color: string;
         }[];
     };
 };

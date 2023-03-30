@@ -3,6 +3,7 @@ exports.__esModule = true;
 exports.variants = exports.sizes = exports.theme = exports.colors = exports.mtheme = void 0;
 require("@fontsource/ibm-plex-sans");
 var styles_1 = require("@mui/material/styles");
+var pro_solid_svg_icons_1 = require("@fortawesome/pro-solid-svg-icons");
 //import { enUS } from '@mui/material/locale';
 exports.mtheme = (0, styles_1.createTheme)({
     typography: {
@@ -256,7 +257,12 @@ exports.variants = {
         sideBarMenuItemIconColor: exports.colors.gray[90],
         sideBarMenuItemIconColorHover: exports.colors.blue[60],
         sideBarMenuItemBgColorHover: exports.colors.blue[10],
-        sideBarMenuItemTextColor: exports.colors.gray[90]
+        sideBarMenuItemTextColor: exports.colors.gray[90],
+        snackBarBgColor: '#224980',
+        snackBarButtonTextColor: exports.colors.white,
+        snackBarTextColor: exports.colors.white,
+        snackBarButtonBgColor: '#2e67d7',
+        snackBarLeftIcon: pro_solid_svg_icons_1.faInfoCircle
     },
     secondary: {
         buttonBgColor: 'rgba(50, 103, 214, 0.04)',
@@ -294,7 +300,12 @@ exports.variants = {
         buttonTextColor: '#fff',
         labelBgColor: 'rgba(216, 160, 50, 0.1)',
         labelTextColor: exports.colors.yellow[50],
-        borderColor: exports.colors.yellow[50]
+        borderColor: exports.colors.yellow[50],
+        snackBarBgColor: exports.colors.yellow[50],
+        snackBarButtonTextColor: exports.colors.white,
+        snackBarTextColor: exports.colors.white,
+        snackBarButtonBgColor: 'rgba(35, 37, 41, 0.04)',
+        snackBarLeftIcon: pro_solid_svg_icons_1.faHexagonExclamation
     },
     danger: {
         buttonBgColor: '#dd2121',
@@ -302,7 +313,12 @@ exports.variants = {
         buttonTextColor: '#fff',
         labelBgColor: 'rgba(224, 42, 71, 0.1)',
         labelTextColor: exports.colors.red[50],
-        borderColor: exports.colors.red[50]
+        borderColor: exports.colors.red[50],
+        snackBarBgColor: exports.colors.red[50],
+        snackBarButtonTextColor: exports.colors.white,
+        snackBarTextColor: exports.colors.white,
+        snackBarButtonBgColor: 'rgba(35, 37, 41, 0.04)',
+        snackBarLeftIcon: pro_solid_svg_icons_1.faTriangleExclamation
     },
     success: {
         alertIconBgColor: '#AFE1AF',
@@ -316,7 +332,12 @@ exports.variants = {
         buttonBorderColor: 'transparent',
         labelBgColor: 'rgba(94, 154, 90, 0.1)',
         labelTextColor: exports.colors.green[50],
-        borderColor: exports.colors.green[50]
+        borderColor: exports.colors.green[50],
+        snackBarBgColor: exports.colors.green[50],
+        snackBarButtonTextColor: exports.colors.white,
+        snackBarTextColor: exports.colors.white,
+        snackBarButtonBgColor: 'rgba(35, 37, 41, 0.04)',
+        snackBarLeftIcon: pro_solid_svg_icons_1.faCheck
     },
     gray: {
         buttonBgColor: 'rgba(35, 37, 41, 0.04)',

@@ -1,4 +1,5 @@
 import "@fontsource/ibm-plex-sans";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 export declare const mtheme: import("@mui/material/styles").Theme;
 export type TVariant = {
     buttonBgColor?: string;
@@ -26,6 +27,11 @@ export type TVariant = {
     sideBarMenuItemTextColor?: string;
     sideBarMenuItemIconColor?: string;
     sideBarMenuItemIconColorHover?: string;
+    snackBarBgColor?: string;
+    snackBarTextColor?: string;
+    snackBarButtonBgColor?: string;
+    snackBarButtonTextColor?: string;
+    snackBarLeftIcon?: IconProp | undefined;
 };
 export interface IVariant {
     [key: string]: TVariant;

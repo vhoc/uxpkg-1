@@ -26,7 +26,7 @@ tslib_1.__exportStar(require("./components/elements/SelectDropDown"), exports);
 tslib_1.__exportStar(require("./components/elements/TextInput"), exports);
 tslib_1.__exportStar(require("./components/elements/RoundedToggleButton"), exports);
 tslib_1.__exportStar(require("./components/elements/IamRolesCard"), exports);
-tslib_1.__exportStar(require("./components/elements/AccessRequestModal"), exports);
+tslib_1.__exportStar(require("./components/elements/SnackBar"), exports);
 tslib_1.__exportStar(require("./components/elements/Typography"), exports);
 tslib_1.__exportStar(require("./components/elements/SummaryResourceCard"), exports);
 tslib_1.__exportStar(require("./components/elements/SelectDate"), exports);
@@ -62,3 +62,4 @@ tslib_1.__exportStar(require("./components/elements/Dashboard/CountersCard"), ex
 tslib_1.__exportStar(require("./components/elements/Dashboard/DonutChart"), exports);
 tslib_1.__exportStar(require("./components/elements/Dashboard/DonutChartCard"), exports);
 tslib_1.__exportStar(require("./components/elements/Dashboard/ChartItem"), exports);
+tslib_1.__exportStar(require("./components/elements/Dashboard/PercentBarCard"), exports);

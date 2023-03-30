@@ -8,17 +8,24 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { Menu, MenuItem, SxProps, Theme } from "@mui/material";
 import { SelectDropDownItemProps } from "./SelectDropDown";
 import IconButton from "@mui/material/IconButton";
+import { variants } from "../../theme";
 
-export interface AccessRequestModalProps {
-    /** The state of the request */
-    variant: 'queued' | 'submitted'
-    /** The number of requests on queue if it applies. */
-    requestCount?: number | undefined
-    /** The icon on the left of the message. */
+export interface SnackBarProps {
+    /** Color set */
+    variant: 'primary' | 'success' | 'warning' | 'danger'
+    /** Icon override to replace the default one defined by the variant. */
     leftIcon: IconProp,
     /** Text message of the Modal */
     textMessage: string,
-    /** Items of the DropDown menu (button available on the 'queued' variant) */
+    /** Whether to show the dropdown button */
+    showDropDownButton?: boolean,
+    /** Show extra button at the left of the Continue button */
+    showExtraButton?: boolean,
+    /** Extra button label. Requires the showExtraButton prop to be set to TRUE. */
+    extraButtonLabel?: string | undefined
+    /** Function to run when the extra button is clicked. Requires the showExtraButton prop to be set to TRUE. */
+    extraButtonOnClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
+    /** Items of the DropDown menu. Requires showDropDownButton prop to be set to TRUE. */
     menuItems?: SelectDropDownItemProps[] | undefined,
     /** Function to be triggered by the "Continue Button" */
     continueButtonOnClick?: React.MouseEventHandler<HTMLButtonElement>
@@ -27,7 +34,7 @@ export interface AccessRequestModalProps {
 
 }
 
-export const AccessRequestModal = ({ variant, requestCount, leftIcon, textMessage, menuItems, continueButtonOnClick, sx, }: AccessRequestModalProps): JSX.Element => {
+export const SnackBar = ({ variant, leftIcon, textMessage, showExtraButton = false, extraButtonOnClick, extraButtonLabel, menuItems, showDropDownButton = false, continueButtonOnClick, sx, }: SnackBarProps): JSX.Element => {
 
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
@@ -38,13 +45,22 @@ export const AccessRequestModal = ({ variant, requestCount, leftIcon, textMessag
     setAnchorEl(null);
     };
 
+    type VariantKey = keyof typeof variants
+    const selectedVariant = variant as VariantKey
+
     const action = (
         <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
-            <Button variant={ variant === 'queued' ? 'primary' : 'success'} size={'sm'} onClick={continueButtonOnClick}>
+        {
+            showExtraButton ?
+                <Button variant={variant} size={'sm'} onClick={extraButtonOnClick}>{extraButtonLabel}</Button>
+            :
+                null
+        }
+            <Button variant={ variant } size={'sm'} onClick={continueButtonOnClick}>
                 Continue
             </Button>
             {
-                variant === 'queued' ?
+                showDropDownButton ?
                     <div>
                         <IconButton
                             aria-label="more"
@@ -116,8 +132,8 @@ export const AccessRequestModal = ({ variant, requestCount, leftIcon, textMessag
                 fontSize: '14px',
             }}
         >
-            <FontAwesomeIcon icon={leftIcon}/>
-            <span>{`${ requestCount ? requestCount.toString() + ' ' : '' }${ textMessage }`}</span>
+            <FontAwesomeIcon icon={leftIcon ? leftIcon: variants[selectedVariant].snackBarLeftIcon as IconProp} size={'lg'}/>
+            <span>{textMessage}</span>
         </div>
     )
 
@@ -125,7 +141,7 @@ export const AccessRequestModal = ({ variant, requestCount, leftIcon, textMessag
         <SnackbarContent
             sx={{
                 height: '50px',
-                backgroundColor: variant === 'queued' ? '#274A7F' : colors.green[50],
+                backgroundColor: variants[selectedVariant].snackBarBgColor,
                 ...sx
             }}
             message={ message }

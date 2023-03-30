@@ -19,6 +19,8 @@ export interface ICounterItem {
 }
 export interface IChartItem {
     type: string;
+    title?: string | undefined;
+    risk?: string | undefined;
     color?: string | undefined;
     value: number;
     percent: number;
