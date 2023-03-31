@@ -12,8 +12,8 @@ var SelectDropDown_1 = require("./SelectDropDown");
 var TextInput_1 = require("./TextInput");
 var Button_1 = require("./Button");
 var ApprovalModal = function (_a) {
-    var title = _a.title, _b = _a.autoApprove, autoApprove = _b === void 0 ? false : _b, comments = _a.comments, endDateValue = _a.endDateValue, endDateOptions = _a.endDateOptions, timeValue = _a.timeValue, timeOptions = _a.timeOptions, onCommentsChange = _a.onCommentsChange, onEndDateChange = _a.onEndDateChange, onTimeChange = _a.onTimeChange, onClickCancel = _a.onClickCancel, onClickApprove = _a.onClickApprove, style = _a.style, onAutoApproveChange = _a.onAutoApproveChange;
-    var _c = (0, react_1.useState)(autoApprove), auto = _c[0], setAuto = _c[1];
+    var title = _a.title, _b = _a.allowsAutoApproval, allowsAutoApproval = _b === void 0 ? true : _b, _c = _a.autoApprove, autoApprove = _c === void 0 ? false : _c, comments = _a.comments, endDateValue = _a.endDateValue, endDateOptions = _a.endDateOptions, timeValue = _a.timeValue, timeOptions = _a.timeOptions, onCommentsChange = _a.onCommentsChange, onEndDateChange = _a.onEndDateChange, onTimeChange = _a.onTimeChange, onClickCancel = _a.onClickCancel, onClickApprove = _a.onClickApprove, style = _a.style, onAutoApproveChange = _a.onAutoApproveChange;
+    var _d = (0, react_1.useState)(autoApprove), auto = _d[0], setAuto = _d[1];
     //const [endDateState, setEndDateState] = useState<any>(endDateValue)
     //const [timeState, setTimeState] = useState<any>(timeValue)
     //const [commentsState, setCommentsState] = useState<string | undefined>(comments)
@@ -62,8 +62,11 @@ var ApprovalModal = function (_a) {
                     textOverflow: 'ellipsis',
                     width: '100%'
                 } }, title)),
-        react_1["default"].createElement(FilterBarItem_1.FilterBarItem, { checked: auto, onClick: handleAutoApproveChange, name: 'Auto approve future requests with the same configuration' }),
-        auto ?
+        allowsAutoApproval ?
+            react_1["default"].createElement(FilterBarItem_1.FilterBarItem, { checked: auto, onClick: handleAutoApproveChange, name: 'Auto approve future requests with the same configuration' })
+            :
+                null,
+        allowsAutoApproval && auto ?
             react_1["default"].createElement("div", { style: {
                     display: 'flex',
                     flexDirection: 'column',

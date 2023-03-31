@@ -12,6 +12,8 @@ import { SelectChangeEvent } from '@mui/material'
 export interface ApprovalModalProps extends HTMLAttributes<HTMLDivElement> {
     /** Title of the modal */
     title?: string | undefined
+    /** Enables or Disables the auto approval option */
+    allowsAutoApproval?: boolean | undefined
     /** Option to auto-approve future requests */
     autoApprove?: boolean
     /** Comments */
@@ -40,7 +42,7 @@ export interface ApprovalModalProps extends HTMLAttributes<HTMLDivElement> {
     onAutoApproveChange?: (value: boolean) => void | undefined
 }
 
-export const ApprovalModal = ({ title, autoApprove = false, comments, endDateValue, endDateOptions, timeValue, timeOptions, onCommentsChange, onEndDateChange, onTimeChange, onClickCancel, onClickApprove, style, onAutoApproveChange }: ApprovalModalProps): JSX.Element => {
+export const ApprovalModal = ({ title, allowsAutoApproval = true, autoApprove = false, comments, endDateValue, endDateOptions, timeValue, timeOptions, onCommentsChange, onEndDateChange, onTimeChange, onClickCancel, onClickApprove, style, onAutoApproveChange }: ApprovalModalProps): JSX.Element => {
 
     const [auto, setAuto] = useState<boolean>(autoApprove)
     //const [endDateState, setEndDateState] = useState<any>(endDateValue)
@@ -127,15 +129,20 @@ export const ApprovalModal = ({ title, autoApprove = false, comments, endDateVal
             </div>
 
             {/** ROW 2: AUTO-APPROVE OPTION */}
-            <FilterBarItem
-                checked={auto}
-                onClick={handleAutoApproveChange}
-                name={'Auto approve future requests with the same configuration'}
-            />
+            {
+                allowsAutoApproval ?
+                    <FilterBarItem
+                        checked={auto}
+                        onClick={handleAutoApproveChange}
+                        name={'Auto approve future requests with the same configuration'}
+                    />
+                :
+                    null
+            }
 
             {/** ROW 3: [CONDITIONALLY RENDERED] AUTO-APPROVE OPTIONS */}
             {
-                auto ?
+                allowsAutoApproval && auto ?
                     <div
                         style={{
                             display: 'flex',

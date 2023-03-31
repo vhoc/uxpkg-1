@@ -3,6 +3,8 @@ import { SelectDropDownItemProps } from './SelectDropDown';
 export interface ApprovalModalProps extends HTMLAttributes<HTMLDivElement> {
     /** Title of the modal */
     title?: string | undefined;
+    /** Enables or Disables the auto approval option */
+    allowsAutoApproval?: boolean | undefined;
     /** Option to auto-approve future requests */
     autoApprove?: boolean;
     /** Comments */
@@ -30,4 +32,4 @@ export interface ApprovalModalProps extends HTMLAttributes<HTMLDivElement> {
     /** autoApprove handler */
     onAutoApproveChange?: (value: boolean) => void | undefined;
 }
-export declare const ApprovalModal: ({ title, autoApprove, comments, endDateValue, endDateOptions, timeValue, timeOptions, onCommentsChange, onEndDateChange, onTimeChange, onClickCancel, onClickApprove, style, onAutoApproveChange }: ApprovalModalProps) => JSX.Element;
+export declare const ApprovalModal: ({ title, allowsAutoApproval, autoApprove, comments, endDateValue, endDateOptions, timeValue, timeOptions, onCommentsChange, onEndDateChange, onTimeChange, onClickCancel, onClickApprove, style, onAutoApproveChange }: ApprovalModalProps) => JSX.Element;
