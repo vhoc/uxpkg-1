@@ -2,7 +2,7 @@ import { __assign } from "tslib";
 import React from "react";
 import { theme } from "../../theme";
 export var Typography = function (_a) {
-    var children = _a.children, variant = _a.variant, style = _a.style;
+    var children = _a.children, variant = _a.variant, className = _a.className, style = _a.style;
     var stylesTable = {
         'body-regular': __assign(__assign({}, theme.font.body.regular), style),
         'body-semiBold': __assign(__assign({}, theme.font.body.semiBold), style),
@@ -22,5 +22,5 @@ export var Typography = function (_a) {
         'title-regular': __assign(__assign({}, theme.font.title.regular), style)
     };
     var selectedVariant = variant;
-    return (React.createElement("div", { style: __assign({}, stylesTable[selectedVariant]) }, children));
+    return (React.createElement("div", { className: className, style: __assign({}, stylesTable[selectedVariant]) }, children));
 };

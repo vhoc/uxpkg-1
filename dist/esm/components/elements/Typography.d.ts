@@ -5,7 +5,9 @@ export interface TypographyProps extends HTMLAttributes<HTMLDivElement> {
     children: ReactNode | string;
     /** The font styles variant */
     variant: 'body-regular' | 'body-semiBold' | 'bodySmall-regular' | 'breadcrumbLink' | 'breadcrumbLink-hover' | 'breadcrumbLink-pressed' | 'buttonLabel-regular' | 'buttonLabel-medium' | 'caption-regular' | 'h2' | 'h3' | 'h4-regular' | 'h4-medium' | 'inputText-hint' | 'inputText-typed' | 'title-regular';
+    /** Class name(s) */
+    className?: string | undefined;
     /** Style override if needed. */
     style?: CSSProperties | undefined;
 }
-export declare const Typography: ({ children, variant, style }: TypographyProps) => JSX.Element;
+export declare const Typography: ({ children, variant, className, style }: TypographyProps) => JSX.Element;

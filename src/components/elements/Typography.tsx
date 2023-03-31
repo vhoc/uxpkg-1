@@ -23,11 +23,13 @@ export interface TypographyProps extends HTMLAttributes<HTMLDivElement> {
         'inputText-hint' |
         'inputText-typed' |
         'title-regular'
+    /** Class name(s) */
+    className?: string | undefined
     /** Style override if needed. */
     style?: CSSProperties | undefined,
 }
 
-export const Typography = ({ children, variant, style }: TypographyProps): JSX.Element => {
+export const Typography = ({ children, variant, className, style }: TypographyProps): JSX.Element => {
 
     const stylesTable = {
         'body-regular': {...theme.font.body.regular, ...style},
@@ -53,6 +55,7 @@ export const Typography = ({ children, variant, style }: TypographyProps): JSX.E
 
     return (
         <div
+            className={className}
             style={
                 {...stylesTable[selectedVariant]}
             }
