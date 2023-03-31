@@ -19,7 +19,8 @@ export var Typography = function (_a) {
         'h4-medium': __assign(__assign({}, theme.font.h4.medium), style),
         'inputText-hint': __assign(__assign({}, theme.font.inputText.hint), style),
         'inputText-typed': __assign(__assign({}, theme.font.inputText.typed), style),
-        'title-regular': __assign(__assign({}, theme.font.title.regular), style)
+        'title-regular': __assign(__assign({}, theme.font.title.regular), style),
+        'button-sm': __assign(__assign({}, theme.font.buttonLabel.regular), style)
     };
     var selectedVariant = variant;
     return (React.createElement("div", { className: className, style: __assign({}, stylesTable[selectedVariant]) }, children));

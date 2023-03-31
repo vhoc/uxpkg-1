@@ -63,3 +63,4 @@ tslib_1.__exportStar(require("./components/elements/Dashboard/DonutChart"), expo
 tslib_1.__exportStar(require("./components/elements/Dashboard/DonutChartCard"), exports);
 tslib_1.__exportStar(require("./components/elements/Dashboard/ChartItem"), exports);
 tslib_1.__exportStar(require("./components/elements/Dashboard/PercentBarCard"), exports);
+tslib_1.__exportStar(require("./components/elements/TargetInputModal"), exports);

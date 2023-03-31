@@ -22,7 +22,8 @@ var Typography = function (_a) {
         'h4-medium': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.h4.medium), style),
         'inputText-hint': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.inputText.hint), style),
         'inputText-typed': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.inputText.typed), style),
-        'title-regular': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.title.regular), style)
+        'title-regular': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.title.regular), style),
+        'button-sm': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.buttonLabel.regular), style)
     };
     var selectedVariant = variant;
     return (react_1["default"].createElement("div", { className: className, style: tslib_1.__assign({}, stylesTable[selectedVariant]) }, children));

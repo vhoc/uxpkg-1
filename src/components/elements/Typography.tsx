@@ -22,7 +22,8 @@ export interface TypographyProps extends HTMLAttributes<HTMLDivElement> {
         'h4-medium' |
         'inputText-hint' |
         'inputText-typed' |
-        'title-regular'
+        'title-regular' |
+        'button-sm'
     /** Class name(s) */
     className?: string | undefined
     /** Style override if needed. */
@@ -48,6 +49,7 @@ export const Typography = ({ children, variant, className, style }: TypographyPr
         'inputText-hint': {...theme.font.inputText.hint, ...style},
         'inputText-typed': {...theme.font.inputText.typed, ...style},
         'title-regular': {...theme.font.title.regular, ...style},
+        'button-sm': {...theme.font.buttonLabel.regular, ...style}
     }
 
     type VariantKey = keyof typeof stylesTable
