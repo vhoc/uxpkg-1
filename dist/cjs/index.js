@@ -64,3 +64,5 @@ tslib_1.__exportStar(require("./components/elements/Dashboard/DonutChartCard"), 
 tslib_1.__exportStar(require("./components/elements/Dashboard/ChartItem"), exports);
 tslib_1.__exportStar(require("./components/elements/Dashboard/PercentBarCard"), exports);
 tslib_1.__exportStar(require("./components/elements/TargetInputModal"), exports);
+tslib_1.__exportStar(require("./components/elements/Dashboard/ResourceAccountRiskMeter"), exports);
+tslib_1.__exportStar(require("./components/elements/Dashboard/TopAccountsRiskCard"), exports);

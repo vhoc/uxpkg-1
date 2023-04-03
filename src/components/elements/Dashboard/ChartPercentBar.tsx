@@ -14,16 +14,18 @@ export interface ChartPercentBarProps {
     height?: number | undefined
     /** Interval between bars */
     intervalPadding?: number | undefined
+    /** Margin Top adjustment (Default: -7) */
+    marginTop?: string | undefined
 }
 
-export const ChartPercentBar = ({ data, legend = true, maxBarWidth = 4, height = 36, criteria, intervalPadding = 0 }: ChartPercentBarProps) => {
+export const ChartPercentBar = ({ data, legend = true, maxBarWidth = 4, height = 36, criteria, intervalPadding = 0, marginTop = '-7px' }: ChartPercentBarProps) => {
 
     const colors = data.map((item) => item.color)
 
     return (
         <div
             style={{
-                marginTop: '-7px',
+                marginTop: marginTop,
             }}
         >
             <Bar

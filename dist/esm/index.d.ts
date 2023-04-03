@@ -61,3 +61,5 @@ export * from './components/elements/Dashboard/DonutChartCard';
 export * from './components/elements/Dashboard/ChartItem';
 export * from './components/elements/Dashboard/PercentBarCard';
 export * from './components/elements/TargetInputModal';
+export * from './components/elements/Dashboard/ResourceAccountRiskMeter';
+export * from './components/elements/Dashboard/TopAccountsRiskCard';

@@ -12,5 +12,7 @@ export interface ChartPercentBarProps {
     height?: number | undefined;
     /** Interval between bars */
     intervalPadding?: number | undefined;
+    /** Margin Top adjustment (Default: -7) */
+    marginTop?: string | undefined;
 }
-export declare const ChartPercentBar: ({ data, legend, maxBarWidth, height, criteria, intervalPadding }: ChartPercentBarProps) => JSX.Element;
+export declare const ChartPercentBar: ({ data, legend, maxBarWidth, height, criteria, intervalPadding, marginTop }: ChartPercentBarProps) => JSX.Element;
