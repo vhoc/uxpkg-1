@@ -66,3 +66,7 @@ tslib_1.__exportStar(require("./components/elements/Dashboard/PercentBarCard"), 
 tslib_1.__exportStar(require("./components/elements/TargetInputModal"), exports);
 tslib_1.__exportStar(require("./components/elements/Dashboard/ResourceAccountRiskMeter"), exports);
 tslib_1.__exportStar(require("./components/elements/Dashboard/TopAccountsRiskCard"), exports);
+tslib_1.__exportStar(require("./components/elements/Dashboard/AccountRiskItem"), exports);
+tslib_1.__exportStar(require("./components/elements/Dashboard/AccountRiskModal"), exports);
+tslib_1.__exportStar(require("./components/elements/Dashboard/RiskIndicator"), exports);
+tslib_1.__exportStar(require("./components/elements/Dashboard/SignalBars"), exports);
