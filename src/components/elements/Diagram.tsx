@@ -12,6 +12,7 @@ interface Column {
   description?: string;
   route?: Array<any>;
   icon?: any;
+  //type?: number;
   type?: string;
 }
 
@@ -34,6 +35,7 @@ interface Props {
   containerStyle?: object;
   columnStyle?: object;
 }
+
 export const Diagram: React.FC<Props> = ({
   data,
   arrows,
@@ -74,11 +76,19 @@ export const Diagram: React.FC<Props> = ({
   }
 
   const connectPaths = async (node: Arrow) => {
+    const isObject = typeof node === "object";
     const prevNodes = findPath(node.endID, false);
     const nextNodes = findPath(node.startID, true);
     const current = [node.endID, node.startID];
 
-    setSelectedPath([...current, ...nextNodes, ...prevNodes]);
+    // setSelectedPath([...current, ...nextNodes, ...prevNodes]);
+    // setSelectedPath([...current]);
+    if (isObject) {
+      setSelectedPath([...current]);
+    }
+    else {
+      setSelectedPath([...current, ...nextNodes, ...prevNodes]);
+    }
   };
 
   const findPath = (node: string, prev: boolean): any[] => {
@@ -91,13 +101,13 @@ export const Diagram: React.FC<Props> = ({
       elementsFound.forEach((foundElement) => {
         prev
           ? found.push(
-              foundElement.startID,
-              ...findPath(foundElement.startID, true)
-            )
+            foundElement.startID,
+            ...findPath(foundElement.startID, true)
+          )
           : found.push(
-              foundElement.endID,
-              ...findPath(foundElement.endID, false)
-            );
+            foundElement.endID,
+            ...findPath(foundElement.endID, false)
+          );
       });
     }
 
@@ -113,40 +123,37 @@ export const Diagram: React.FC<Props> = ({
   };
 
   type ElementKey = keyof typeof DisplayTypeToIconMap
-  
 
   return (
     <div
-      className="container"
-      style={{
-        ...containerStyle,
-      }}
+        className="container"
+        style={{
+        ...containerStyle
+        }}
       onScroll={updateXarrow}
     >
       <div className="dia-content">
         <Xwrapper>
           {data.map((column, index) => (
             <div key={index} className="dia-column">
-              {column.map((element: Column, i) => {
+              {column.map((element, i) => {
                 return (
                   <div
                     key={`${index}-${i}`}
-                    className={`element-container ${
-                      index !== data.length - 1 ? "element-col" : ""
-                    }`}
+                    className={`element-container ${index !== data.length - 1 ? "element-col" : ""
+                      }`}
                   >
                     <div className="diadropdown">
                       <div
                         id={element.id}
-                        className={`dia-row ${
-                          !(
+                        className={`dia-row ${!(
                             (element.type !== undefined &&
                               element.type !== null) ||
                             !!element.icon
                           )
                             ? "dia-row_placehold"
                             : ""
-                        }`}
+                          }`}
                         style={{
                           ...columnStyle,
                         }}
@@ -155,11 +162,12 @@ export const Diagram: React.FC<Props> = ({
                         onClick={() => toogleVisible(element.id)}
                       >
                         {
-                        //element.type !== undefined && element.type !== null && element.type < Object.keys(DisplayTypeToIconMap).length ? (
+                            //element.type !== undefined && element.type !== null && element.type < types.length ? (
                           element.type !== undefined && element.type !== null ? (
-                            // make here a typeof keyof something something
                           <img
+                            //src={`${types[element.type]}`}
                             src={`${DisplayTypeToIconMap[element.type as ElementKey]}`}
+                            //alt={types[element.type]}
                             alt={DisplayTypeToIconMap[element.type as ElementKey]}
                             height="100%"
                             width="100%"
@@ -176,9 +184,8 @@ export const Diagram: React.FC<Props> = ({
                         )}
                       </div>
                       <div
-                        className={`diadropdown-content ${
-                          visible === element.id ? "show-dropdown" : ""
-                        }`}
+                        className={`diadropdown-content ${visible === element.id ? "show-dropdown" : ""
+                          }`}
                       >
                         {!!actions &&
                           actions.map((action) => {
@@ -187,20 +194,19 @@ export const Diagram: React.FC<Props> = ({
                               action.type === undefined ||
                               action.type === null
                             ) {
-                                return (
-                                    <div
-                                      className="actions-text"
-                                      key={`option-${action.id}`}
-                                      id={`${action.id}`}
-                                      onClick={action.onClick}
-                                    >
-                                      {action.label}
-                                    </div>
-                                  );
-                            } else {
-                                return null
-                            }
-                              
+                              return (
+                                <div
+                                  className="actions-text"
+                                  key={`option-${action.id}`}
+                                  id={`${action.id}`}
+                                  onClick={action.onClick}
+                                >
+                                  {action.label}
+                                </div>
+                              );
+                          } else {
+                            return null
+                          }
                           })}
                       </div>
                     </div>

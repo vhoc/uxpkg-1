@@ -37,20 +37,12 @@ export var Diagram = function (_a) {
         return _data[0];
     }
     var connectPaths = function (node) { return __awaiter(void 0, void 0, void 0, function () {
-        var isObject, prevNodes, nextNodes, current;
+        var prevNodes, nextNodes, current;
         return __generator(this, function (_a) {
-            isObject = typeof node === "object";
             prevNodes = findPath(node.endID, false);
             nextNodes = findPath(node.startID, true);
             current = [node.endID, node.startID];
-            // setSelectedPath([...current, ...nextNodes, ...prevNodes]);
-            // setSelectedPath([...current]);
-            if (isObject) {
-                setSelectedPath(__spreadArray([], current, true));
-            }
-            else {
-                setSelectedPath(__spreadArray(__spreadArray(__spreadArray([], current, true), nextNodes, true), prevNodes, true));
-            }
+            setSelectedPath(__spreadArray(__spreadArray(__spreadArray([], current, true), nextNodes, true), prevNodes, true));
             return [2 /*return*/];
         });
     }); };
@@ -88,12 +80,10 @@ export var Diagram = function (_a) {
                                     !!element.icon)
                                     ? "dia-row_placehold"
                                     : ""), style: __assign({}, columnStyle), onMouseOver: function () { return handlePath(element.id, index, i); }, onMouseLeave: function () { return setSelectedPath(null); }, onClick: function () { return toogleVisible(element.id); } }, 
-                            //element.type !== undefined && element.type !== null && element.type < types.length ? (
-                            element.type !== undefined && element.type !== null ? (React.createElement("img", { 
-                                //src={`${types[element.type]}`}
-                                src: "".concat(DisplayTypeToIconMap[element.type]), 
-                                //alt={types[element.type]}
-                                alt: DisplayTypeToIconMap[element.type], height: "100%", width: "100%" })) : element.icon ? (React.createElement("img", { src: element.icon, alt: element.value, height: "100%", width: "100%" })) : (element.id)),
+                            //element.type !== undefined && element.type !== null && element.type < Object.keys(DisplayTypeToIconMap).length ? (
+                            element.type !== undefined && element.type !== null ? (
+                            // make here a typeof keyof something something
+                            React.createElement("img", { src: "".concat(DisplayTypeToIconMap[element.type]), alt: DisplayTypeToIconMap[element.type], height: "100%", width: "100%" })) : element.icon ? (React.createElement("img", { src: element.icon, alt: element.value, height: "100%", width: "100%" })) : (element.id)),
                             React.createElement("div", { className: "diadropdown-content ".concat(visible === element.id ? "show-dropdown" : "") }, !!actions &&
                                 actions.map(function (action) {
                                     if (action.type === element.type ||
