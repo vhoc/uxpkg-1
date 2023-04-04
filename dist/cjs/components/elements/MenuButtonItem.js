@@ -14,7 +14,6 @@ var MenuButtonItem = function (_a) {
     var selectedSize = size;
     var MyButton = (0, styles_1.styled)(ButtonUnstyled_1["default"])({
         backgroundColor: disabled ? theme_1.variants[selectedVariant].buttonBgColorDisabled : hover ? theme_1.variants[selectedVariant].buttonBgColorHover : theme_1.variants[selectedVariant].buttonBgColor,
-        //backgroundColor: disabled ? variants[selectedVariant].buttonBgColorDisabled : active ? variants[selectedVariant].buttonBgColorActive : hover ? variants[selectedVariant].buttonBgColorHover : variants[selectedVariant].buttonBgColor,
         color: disabled ? theme_1.variants[selectedVariant].buttonTextColorDisabled : theme_1.variants[selectedVariant].buttonTextColor,
         textTransform: 'capitalize',
         width: 'fit-content',
@@ -28,9 +27,6 @@ var MenuButtonItem = function (_a) {
         borderRadius: (variant === 'clear') ? '0px' : '4px',
         cursor: disabled ? 'not-allowed' : 'pointer',
         border: 'none',
-        //outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',
-        //outlineStyle: isImageDropDown ? 'none' : 'auto',
-        //outlineWidth: focus ? '2px' : '0px',
         outlineWidth: '0px',
         textAlign: 'left'
     });

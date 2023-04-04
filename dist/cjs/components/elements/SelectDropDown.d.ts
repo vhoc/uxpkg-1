@@ -26,8 +26,9 @@ export interface SelectDropDownProps extends SelectProps {
      * - disabled: boolean | undefined
      */
     menuItems?: SelectDropDownItemProps[] | undefined;
+    /** Disabled state of the component (true or false). */
     disabled?: boolean;
-    /** onChange callback event */
+    /** Function to run when changing the value. */
     onChange?: ((event: SelectChangeEvent<any>, child: React.ReactNode) => void) | undefined;
 }
 export declare const SelectDropDown: ({ menuItems, value, onChange, disabled, label, ...props }: SelectDropDownProps) => JSX.Element;

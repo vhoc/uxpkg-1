@@ -24,7 +24,6 @@ var MySelect = styled(Select)({
     '&.Mui-focused fieldset': {
         borderColor: colors.blue[40] + ' !important',
         borderWidth: '1px !important',
-        //border: 'inherited',
         boxShadow: 'none'
     }
 });
@@ -41,7 +40,6 @@ export var SelectDropDown = function (_a) {
             '&:hover fieldset': {
                 borderColor: colors.gray[20] + ' !important',
                 borderWidth: '1px',
-                //border: 'inherited',
                 boxShadow: 'none'
             }
         }, size: 'small', disabled: disabled },

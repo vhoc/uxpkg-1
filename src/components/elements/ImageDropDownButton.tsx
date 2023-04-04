@@ -4,26 +4,27 @@ import { IDropDownItem } from '../../util/sample-data'
 import { faTimes } from "@fortawesome/sharp-solid-svg-icons"
 import { variants, sizes, theme } from '../../theme'
 
-//import '../../assets/styles/dropdown.css'
-
-
 export interface ImageDropDownButtonProps extends HTMLAttributes<HTMLUListElement> {
-    /** Array of objects with the following scructure:
+    /** Array of objects with the following scructure:  
      * [{ icon?, title, style?, action?, submenu?  }]  
-     * - icon: [Optional], Type: IconDefinition (FontAwesome)
-     * - title: [Mandatory], Type: string
-     * - style: [Optional], Type: object
-     * - action: [Optional], Type: Function
-     * - submenu: [Optional], Properties[] (Recursive)
+     * - icon: [Optional], Type: IconDefinition (FontAwesome)  
+     * - title: [Mandatory], Type: string  
+     * - style: [Optional], Type: object  
+     * - action: [Optional], Type: Function  
+     * - submenu: [Optional], Properties[] (Recursive)  
      */
     menuItems?: IDropDownItem[]
+    /** Variant to specify the color scheme of the button. */
     variant?: 'clear' | 'gray'
+    /** The disabled/enable state of the button. */
     disabled?: boolean
+    /** Size of the button. Currently only 'sm' is supported. */
     size?: 'sm'
+    /** Height override for the button. */
     height?: string
-    /** Whether to show the down arrow or not */
+    /** Whether to show the down arrow or not. */
     hasDownArrow?: boolean
-    /** Adapts the component for use with an image or a FontAwesomeIcon */
+    /** Adapts the component for use with an image or a FontAwesomeIcon. */
     mode?: 'image' | 'icon'
 }
 
@@ -45,8 +46,6 @@ export const ImageDropDownButton = ({menuItems = [{ icon: faTimes, title: `No me
     const componentStyle = (hover: boolean, active: boolean): object => ({
         backgroundColor: disabled ? variants[selectedVariant].buttonBgColorDisabled : active ? variants[selectedVariant].buttonBgColorActive : hover ? variants[selectedVariant].buttonBgColorHover : variants[selectedVariant].buttonBgColor,
         color: disabled ? variants[selectedVariant].buttonTextColorDisabled : active ? variants[selectedVariant].buttonTextColorActive : hover ? variants[selectedVariant].buttonTextColorHover : variants[selectedVariant].buttonTextColor,
-        //backgroundColor: disabled ? variants[selectedVariant].buttonBgColorDisabled : active ? variants[selectedVariant].buttonBgColorActive : hover ? variants[selectedVariant].buttonBgColorHover : variants[selectedVariant].buttonBgColor,
-        //color: disabled ? variants[selectedVariant].buttonTextColorDisabled : active ? variants[selectedVariant].buttonTextColorActive : hover ? variants[selectedVariant].buttonTextColorHover : variants[selectedVariant].buttonTextColor,
         textTransform: 'capitalize',
         width: 'fit-content',
         height: height,

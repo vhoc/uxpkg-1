@@ -1,6 +1,6 @@
 import { FilterBarItem } from '../../components/elements/FilterBarItem';
 export default {
-    title: 'Elements/Controls/FilterBarItem',
+    title: 'Elements/FilterBarResources/FilterBarItem',
     component: FilterBarItem
 };
 export var Default = {

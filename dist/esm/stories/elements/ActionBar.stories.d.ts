@@ -5,8 +5,8 @@ export declare const Default: {
     args: {
         leftIcon: string;
         name: string;
-        addButtonOnClick: () => void;
-        removeButtonOnClick: () => void;
+        onClickAddButton: () => void;
+        onClickRemoveButton: () => void;
         style: {
             width: string;
         };
@@ -18,8 +18,8 @@ export declare const Assigned: {
         name: string;
         selected: boolean;
         assigned: boolean;
-        addButtonOnClick: () => void;
-        removeButtonOnClick: () => void;
+        onClickAddButton: () => void;
+        onClickRemoveButton: () => void;
         style: {
             width: string;
         };
@@ -31,8 +31,8 @@ export declare const Unssigned: {
         name: string;
         selected: boolean;
         assigned: boolean;
-        addButtonOnClick: () => void;
-        removeButtonOnClick: () => void;
+        onClickAddButton: () => void;
+        onClickRemoveButton: () => void;
         style: {
             width: string;
         };
@@ -44,8 +44,8 @@ export declare const Selected: {
         name: string;
         selected: boolean;
         assigned: boolean;
-        addButtonOnClick: () => void;
-        removeButtonOnClick: () => void;
+        onClickAddButton: () => void;
+        onClickRemoveButton: () => void;
         style: {
             width: string;
         };
@@ -57,8 +57,8 @@ export declare const Unselected: {
         name: string;
         selected: boolean;
         assigned: boolean;
-        addButtonOnClick: () => void;
-        removeButtonOnClick: () => void;
+        onClickAddButton: () => void;
+        onClickRemoveButton: () => void;
         style: {
             width: string;
         };

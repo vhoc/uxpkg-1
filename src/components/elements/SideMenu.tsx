@@ -22,7 +22,6 @@ export interface SideMenuProps extends HTMLAttributes<HTMLDivElement> {
 
 export const SideMenu = ({variant = 'primary', menuItems, onMouseEnter, onMouseLeave, style, collapsed = true, }:SideMenuProps): JSX.Element => {
 
-    //const [collapsed, setCollapsed] = useState<boolean>(true)
     const [keepExtended, setKeepExtended] = useState<boolean>(false)
 
     type VariantKey = keyof typeof variants
@@ -45,8 +44,6 @@ export const SideMenu = ({variant = 'primary', menuItems, onMouseEnter, onMouseL
                 justifyContent: 'space-between',
                 ...style,
             }}
-            //onMouseOver={() => setCollapsed(false)}
-            //onMouseOut={() => setCollapsed(true)}
             onMouseEnter={() => {
                 if (collapsed) onMouseEnter
             }}
@@ -67,7 +64,6 @@ export const SideMenu = ({variant = 'primary', menuItems, onMouseEnter, onMouseL
                                 variant={item.variant}
                                 disabled={item.disabled}
                                 collapsed={collapsed}
-                                //setCollapsed={setCollapsed}
                                 selected={item.selected}
                                 label={item.label}
                                 onClick={item.onClick}

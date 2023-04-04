@@ -10,13 +10,17 @@ export interface ImageDropDownButtonProps extends HTMLAttributes<HTMLUListElemen
      * - submenu: [Optional], Properties[] (Recursive)
      */
     menuItems?: IDropDownItem[];
+    /** Variant to specify the color scheme of the button. */
     variant?: 'clear' | 'gray';
+    /** The disabled/enable state of the button. */
     disabled?: boolean;
+    /** Size of the button. Currently only 'sm' is supported. */
     size?: 'sm';
+    /** Height override for the button. */
     height?: string;
-    /** Whether to show the down arrow or not */
+    /** Whether to show the down arrow or not. */
     hasDownArrow?: boolean;
-    /** Adapts the component for use with an image or a FontAwesomeIcon */
+    /** Adapts the component for use with an image or a FontAwesomeIcon. */
     mode?: 'image' | 'icon';
 }
 /** A Navigation bar with a multilevel dynamic dropdown menu. */

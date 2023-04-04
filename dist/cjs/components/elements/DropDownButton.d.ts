@@ -10,10 +10,15 @@ export interface DropDownButtonProps extends HTMLAttributes<HTMLUListElement> {
      * - submenu: [Optional], Properties[] (Recursive)
      */
     menuItems?: IDropDownItem[];
+    /** The variant determines the color scheme. */
     variant?: 'primary' | 'gray' | 'grayBlue' | 'grayRed' | 'clear';
+    /** Whether the control is disabled or not. */
     disabled?: boolean;
+    /** The size of the control. */
     size?: 'sm';
+    /** Height override for the control. */
     height?: string;
+    /** Shows or hides the downward arrow. */
     hasDownArrow?: boolean;
 }
 /** A Navigation bar with a multilevel dynamic dropdown menu. */

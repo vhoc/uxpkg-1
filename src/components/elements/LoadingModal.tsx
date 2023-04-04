@@ -4,7 +4,9 @@ import { Spinner } from '../graphical/Spinner'
 import { Typography } from './Typography'
 
 export interface LoadingModalProps extends HTMLAttributes<HTMLDivElement> {
+    /** A text message to be shown in the modal. */
     message: string
+    /** A smaller text to be shown below the message. */
     caption?: string | undefined
 }
 
@@ -56,7 +58,6 @@ export const LoadingModal = ({ message, caption, ...props }: LoadingModalProps):
                     style={{
                         whiteSpace: 'normal',
                         overflow: 'hidden',
-                        //textOverflow: 'ellipsis',
                         width: '100%',
                         textAlign: 'left',
                     }}

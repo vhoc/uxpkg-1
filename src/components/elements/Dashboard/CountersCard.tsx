@@ -15,13 +15,13 @@ export interface CountersCardProps extends HTMLAttributes<HTMLDivElement> {
     /** Criteria name (i.e. 'Users', 'Roles', 'Groups'...) */
     title: string
     /**
-     *  Counter items array
-     * [
-     *      {
-     *          element?: (any),
-     *          count: (number)
-     *      },
-     * ]
+     *  Counter items array  
+     * [  
+     *      {  
+     *          element?: (any),  
+     *          count: (number)  
+     *      },  
+     * ]  
      */
     counterItems?: ICounterItem[] | undefined
     /** Style overrides */

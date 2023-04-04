@@ -27,20 +27,20 @@ export const WithChildren = {
         },
         children: <>
             <UserGroupBar
-                addButtonOnClick={() => console.log('click')}
+                onClickAddButton={() => console.log('click')}
                 caption="bill@company.com"
                 name="Bill Murray"
-                removeButtonOnClick={() => console.log('click')}
+                onClickRemoveButton={() => console.log('click')}
                 style={{
                     width: '394px'
                 }}
                 type="user"
             />
             <UserGroupBar
-                addButtonOnClick={() => console.log('click')}
+                onClickAddButton={() => console.log('click')}
                 caption="keanu@company.com"
                 name="Keanu Reeves"
-                removeButtonOnClick={() => console.log('click')}
+                onClickRemoveButton={() => console.log('click')}
                 selected
                 style={{
                     width: '394px'
@@ -48,66 +48,66 @@ export const WithChildren = {
                 type="user"
             />
             <UserGroupBar
-                addButtonOnClick={() => console.log('click')}
+                onClickAddButton={() => console.log('click')}
                 caption="ana@company.com"
                 name="Ana de Armas"
                 assigned
-                removeButtonOnClick={() => console.log('click')}
+                onClickRemoveButton={() => console.log('click')}
                 style={{
                     width: '394px'
                 }}
                 type="user"
             />
             <UserGroupBar
-                addButtonOnClick={() => console.log('click')}
+                onClickAddButton={() => console.log('click')}
                 caption="12 users"
                 name="Billing Team"
                 assigned
-                removeButtonOnClick={() => console.log('click')}
+                onClickRemoveButton={() => console.log('click')}
                 style={{
                     width: '394px'
                 }}
                 type="group"
             />
             <UserGroupBar
-                addButtonOnClick={() => console.log('click')}
+                onClickAddButton={() => console.log('click')}
                 caption="12 users"
                 name="Billing Team"
                 assigned
-                removeButtonOnClick={() => console.log('click')}
+                onClickRemoveButton={() => console.log('click')}
                 style={{
                     width: '394px'
                 }}
                 type="group"
             />
             <UserGroupBar
-                addButtonOnClick={() => console.log('click')}
+                onClickAddButton={() => console.log('click')}
                 caption="12 users"
                 name="Billing Team"
                 assigned
-                removeButtonOnClick={() => console.log('click')}
+                onClickRemoveButton={() => console.log('click')}
                 style={{
                     width: '394px'
                 }}
                 type="group"
             />
             <UserGroupBar
-                addButtonOnClick={() => console.log('click')}
+                onClickAddButton={() => console.log('click')}
                 caption="12 users"
                 name="Billing Team"
                 assigned
-                removeButtonOnClick={() => console.log('click')}
+                onClickRemoveButton={() => console.log('click')}
                 style={{
                     width: '394px'
                 }}
                 type="group"
             />
             <UserGroupBar
-                addButtonOnClick={() => console.log('click')}
+                onClickAddButton={() => console.log('click')}
                 caption="12 users"
                 name="Billing Team"
                 assigned
-                removeButtonOnClick={() => console.log('click')}
+                onClickRemoveButton={() => console.log('click')}
                 style={{
                     width: '394px'
                 }}

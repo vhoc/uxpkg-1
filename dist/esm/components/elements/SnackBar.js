@@ -9,7 +9,7 @@ import { Menu, MenuItem } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import { variants } from "../../theme";
 export var SnackBar = function (_a) {
-    var variant = _a.variant, leftIcon = _a.leftIcon, textMessage = _a.textMessage, _b = _a.showExtraButton, showExtraButton = _b === void 0 ? false : _b, extraButtonOnClick = _a.extraButtonOnClick, extraButtonLabel = _a.extraButtonLabel, menuItems = _a.menuItems, _c = _a.showDropDownButton, showDropDownButton = _c === void 0 ? false : _c, continueButtonOnClick = _a.continueButtonOnClick, sx = _a.sx;
+    var variant = _a.variant, leftIcon = _a.leftIcon, textMessage = _a.textMessage, _b = _a.showExtraButton, showExtraButton = _b === void 0 ? false : _b, onClickExtraButton = _a.onClickExtraButton, extraButtonLabel = _a.extraButtonLabel, menuItems = _a.menuItems, _c = _a.showDropDownButton, showDropDownButton = _c === void 0 ? false : _c, onClickContinueButton = _a.onClickContinueButton, sx = _a.sx;
     var _d = React.useState(null), anchorEl = _d[0], setAnchorEl = _d[1];
     var open = Boolean(anchorEl);
     var handleClick = function (event) {
@@ -21,10 +21,10 @@ export var SnackBar = function (_a) {
     var selectedVariant = variant;
     var action = (React.createElement("div", { style: { display: 'flex', gap: '20px', alignItems: 'center' } },
         showExtraButton ?
-            React.createElement(Button, { variant: variant, size: 'sm', onClick: extraButtonOnClick }, extraButtonLabel)
+            React.createElement(Button, { variant: variant, size: 'sm', onClick: onClickExtraButton }, extraButtonLabel)
             :
                 null,
-        React.createElement(Button, { variant: variant, size: 'sm', onClick: continueButtonOnClick }, "Continue"),
+        React.createElement(Button, { variant: variant, size: 'sm', onClick: onClickContinueButton }, "Continue"),
         showDropDownButton ?
             React.createElement("div", null,
                 React.createElement(IconButton, { "aria-label": "more", id: "long-button", "aria-controls": open ? 'long-menu' : undefined, "aria-expanded": open ? 'true' : undefined, "aria-haspopup": "true", onClick: handleClick, sx: {

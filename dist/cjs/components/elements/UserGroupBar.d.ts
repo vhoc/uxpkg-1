@@ -14,14 +14,14 @@ export interface UserGroupBarProps extends HTMLAttributes<HTMLDivElement> {
     /** Assigned state. It affects the button on the right. */
     assigned?: boolean;
     /** Add button function */
-    addButtonOnClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+    onClickAddButton?: React.MouseEventHandler<HTMLButtonElement> | undefined;
     /** Remove button function */
-    removeButtonOnClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+    onClickRemoveButton?: React.MouseEventHandler<HTMLButtonElement> | undefined;
     /** Style override for the container */
     style?: React.CSSProperties | undefined;
     /** Toggle the add/remove button */
     endButton?: boolean;
-    /** onClick for the component */
+    /** Function to run when clicking on the component. */
     onClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
 }
-export declare const UserGroupBar: ({ type, name, leftIcon, caption, selected, assigned, addButtonOnClick, removeButtonOnClick, style, endButton, onClick, }: UserGroupBarProps) => JSX.Element;
+export declare const UserGroupBar: ({ type, name, leftIcon, caption, selected, assigned, onClickAddButton, onClickRemoveButton, style, endButton, onClick, }: UserGroupBarProps) => JSX.Element;

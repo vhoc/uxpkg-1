@@ -5,19 +5,20 @@ import { ISegmentedControlItem } from '../../types'
 import { colors } from '../../theme'
 
 export interface SegmentedControlProps {
-    //children: ReactNode
     /**
      * Item object Props:  
      * - value: string  
      * - ariaLabel: string  
-     * - icon: IconProp | ReactNode
+     * - icon: IconProp | ReactNode  
      * - selected: boolean  
      * - onClick: (event: React.MouseEvent<HTMLElement>, value: any) => void  
      * - onChange: (event: React.MouseEvent<HTMLElement>, value: any) => void  
      * - disabled: boolean  
      */
     items: ISegmentedControlItem[]
+    /** Enables or disables the selection of multiple options at the same time. */
     multiSelect?: boolean
+    /** Aria label html property. */
     ariaLabel: string
 }
 

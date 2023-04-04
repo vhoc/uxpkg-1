@@ -7,7 +7,9 @@ import { faCaretUp, faCaretDown } from '@fortawesome/pro-solid-svg-icons'
 
 
 export interface DataTableProps extends DataGridProps {
+    /** Array of GridColDef. More info at: https://mui.com/x/api/data-grid/grid-col-def/ */
     columns: GridColDef[]
+    /** Array of objects. */
     rows: Array<object>
 }
 

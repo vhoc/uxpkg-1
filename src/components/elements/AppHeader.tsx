@@ -7,7 +7,6 @@ import { faBell } from "@fortawesome/sharp-solid-svg-icons";
 import { IconButton } from "./IconButton";
 
 export interface AppHeaderProps extends HTMLAttributes<HTMLDivElement>{
-    variant?: 'default'
     /** Image URL for the logo */
     imgUrl?: string
     /** Styles for the image */
@@ -22,7 +21,7 @@ export interface AppHeaderProps extends HTMLAttributes<HTMLDivElement>{
     onClickNotificationButton?: React.MouseEventHandler<HTMLButtonElement> | undefined
 }
 
-export const AppHeader = ({variant = 'default', imgUrl, imgStyle, userName, userRole, dropDownMenuItems, onClickNotificationButton, ...props}: AppHeaderProps): JSX.Element => {
+export const AppHeader = ({imgUrl, imgStyle, userName, userRole, dropDownMenuItems, onClickNotificationButton, ...props}: AppHeaderProps): JSX.Element => {
 
     return (
         <div

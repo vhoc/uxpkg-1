@@ -6,24 +6,33 @@ import { variants, theme, colors } from '../../theme'
 import { SideMenuSectionName } from "./SideMenuSectionName";
 
 export interface SideMenuItemProps extends HTMLAttributes<HTMLButtonElement> {
+    /** Container style overrides. */
     style?: React.CSSProperties
+    /** The type of the item to be rendered. */
     itemType?: 'item' | 'section'
+    /** Color scheme (currently only 'primary' is supported for this component). */
     variant?: 'primary'
+    /** Selected state of the control (true or false). */
     selected?: boolean
+    /** Collapsed state of the control (true or false). */
     collapsed?: boolean
+    /** FontAwesomeIcon IconProp */
     icon?: IconProp | null
+    /** Disabled state of the control (true or false). */
     disabled?: boolean
+    /** Text label of the control. */
     label?: string | null
+    /** Function to run when clicking on the control. */
     onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
+    /** Whether to keep the control in an extended (not collapsed) state or not. */
     keepExtended?: boolean
-    setCollapsed?: (state: boolean) => void
+    /** Unused? */
+    //setCollapsed?: (state: boolean) => void
 }
 
-export const SideMenuItem = ({ style, variant = 'primary', itemType, selected = false, collapsed = false, setCollapsed, icon, disabled = false, label, onClick, keepExtended,...props }: SideMenuItemProps): JSX.Element => {
+export const SideMenuItem = ({ style, variant = 'primary', itemType, selected = false, collapsed = false, icon, disabled = false, label, onClick, keepExtended,...props }: SideMenuItemProps): JSX.Element => {
 
     const [hover, setHover] = useState<boolean>(false)
-    //const [active, setActive] = useState<boolean>(false)
-    //const [focus, setFocus] = useState<boolean>(false)
 
     type VariantKey = keyof typeof variants
     const selectedVariant = variant as VariantKey
@@ -34,13 +43,6 @@ export const SideMenuItem = ({ style, variant = 'primary', itemType, selected = 
                 label={label}
                 collapsed={collapsed}
                 keepExtended={keepExtended}
-                /*
-                onMouseEnter={() => {
-                    setCollapsed?.(false)
-                }}
-                onMouseLeave={() => {
-                    setCollapsed?.(true)
-                }}*/
             />
         )
     } else {
@@ -67,8 +69,8 @@ export const SideMenuItem = ({ style, variant = 'primary', itemType, selected = 
             justifyContent: 'flex-start',
             alignItems: 'center',
             width: (collapsed && !keepExtended) ? 'fit-content' : '266px',
-            //width: '100%',
-            gap: '15px'
+            gap: '15px',
+            ...style,
         }}
         onMouseEnter={() => {
             setHover(true)
@@ -77,10 +79,6 @@ export const SideMenuItem = ({ style, variant = 'primary', itemType, selected = 
             setHover(false)
         }}
         onClick={onClick}
-        //onMouseDown={() => setActive(true)}
-        //onMouseUp={() => setActive(false)}
-        //onFocus={() => setFocus(true)}
-        //onBlur={() => setFocus(false)}
         {...props}
     >
         <div style={{ textAlign: 'center', width: '24px', alignSelf: 'center', }}>

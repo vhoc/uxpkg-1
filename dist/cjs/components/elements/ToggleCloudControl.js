@@ -17,11 +17,7 @@ var ToggleCloudControl = function (_a) {
             height: '40px',
             borderWidth: '0px'
         } },
-        react_1["default"].createElement(material_1.ToggleButton, { value: 'AWS', "aria-label": 'AWS', 
-            //onClick={item.onClick}
-            //onChange={item.onChange}
-            //disabled={item.disabled || false}
-            sx: {
+        react_1["default"].createElement(material_1.ToggleButton, { value: 'AWS', "aria-label": 'AWS', sx: {
                 backgroundColor: theme_1.colors.gray[10],
                 paddingLeft: '14px',
                 paddingRight: '14px',
@@ -33,12 +29,7 @@ var ToggleCloudControl = function (_a) {
                     aws_color_18px_png_1["default"]
                     :
                         aws_gray_18px_png_1["default"], alt: 'AWS' })),
-        react_1["default"].createElement(material_1.ToggleButton, { value: 'GCP', "aria-label": 'GCP', 
-            //selected={item.selected}
-            //onClick={item.onClick}
-            //onChange={item.onChange}
-            //disabled={item.disabled || false}
-            sx: {
+        react_1["default"].createElement(material_1.ToggleButton, { value: 'GCP', "aria-label": 'GCP', sx: {
                 backgroundColor: theme_1.colors.gray[10],
                 paddingLeft: '14px',
                 paddingRight: '14px',
@@ -47,12 +38,7 @@ var ToggleCloudControl = function (_a) {
                 }
             } },
             react_1["default"].createElement("img", { src: (value === 'GCP' || (Array.isArray(value) && value.find(function (value) { return value === 'GCP'; }))) ? google_color_18px_png_1["default"] : google_gray_18px_png_1["default"], alt: 'GCP' })),
-        react_1["default"].createElement(material_1.ToggleButton, { value: 'AZURE', "aria-label": 'AZURE', 
-            //selected={item.selected}
-            //onClick={item.onClick}
-            //onChange={item.onChange}
-            //disabled={item.disabled || false}
-            sx: {
+        react_1["default"].createElement(material_1.ToggleButton, { value: 'AZURE', "aria-label": 'AZURE', sx: {
                 backgroundColor: theme_1.colors.gray[10],
                 paddingLeft: '14px',
                 paddingRight: '14px',

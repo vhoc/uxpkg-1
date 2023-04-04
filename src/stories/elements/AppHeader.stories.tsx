@@ -9,7 +9,6 @@ export default {
 
 export const Default = {
     args: {
-        variant: 'default',
         imgUrl: 'https://uxneighbor.com/customer-files/procyon/procyon-logo.png',
         userName: 'John Doe',
         userRole: 'coke/admin',

@@ -21,7 +21,6 @@ export const PickListRowHeading = ({ title, style, button = 'add', onClickAddAll
         <div
             style={{
                 minWidth: 'fit-content',
-                //height: '32px',
                 backgroundColor: '#f9fbfc',
                 borderStyle: 'solid',
                 borderWidth: '1px',

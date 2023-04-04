@@ -11,8 +11,8 @@ export interface RejectionModalProps extends HTMLAttributes<HTMLDivElement> {
     title?: string | undefined
     /** Comments */
     comments?: string | undefined
-    /** onCommentsChange event */
-    onCommentsChange?: ((event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void) | undefined
+    /** onChangeComments event */
+    onChangeComments?: ((event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void) | undefined
     /** onClick Cancel button event */
     onClickCancel?: React.MouseEventHandler<HTMLButtonElement> | undefined
     /** onClick Approve button event */
@@ -21,7 +21,7 @@ export interface RejectionModalProps extends HTMLAttributes<HTMLDivElement> {
     style?: React.CSSProperties | undefined
 }
 
-export const RejectionModal = ({ title,comments, onCommentsChange, onClickCancel, onClickReject, style }: RejectionModalProps): JSX.Element => {
+export const RejectionModal = ({ title,comments, onChangeComments, onClickCancel, onClickReject, style }: RejectionModalProps): JSX.Element => {
 
     return (
         <div
@@ -52,7 +52,6 @@ export const RejectionModal = ({ title,comments, onCommentsChange, onClickCancel
             >
                 <FontAwesomeIcon
                     icon={faTriangleExclamation}
-                    //size={'md'}
                     color={colors.yellow[50]}
                     style={{
                         backgroundColor: 'rgba(216, 160, 50, 0.1)',
@@ -78,7 +77,7 @@ export const RejectionModal = ({ title,comments, onCommentsChange, onClickCancel
                 label={'Add comments'}
                 multiline={true}
                 rows={2}
-                onChange={onCommentsChange}
+                onChange={onChangeComments}
                 value={comments}
             />
             

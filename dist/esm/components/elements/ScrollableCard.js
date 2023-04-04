@@ -20,14 +20,7 @@ export var ScrollableCard = function (_a) {
             borderRadius: '3px'
         }
     });
-    return (React.createElement("div", { style: __assign({ 
-            //width: '605px',
-            //maxWidth: '605px',
-            minHeight: '150px', 
-            //height: expanded ? 'fit-content' : '72px',
-            backgroundColor: colors.white, borderWidth: '1px', borderColor: colors.gray[20] || '#D8DDE4 !important', borderRadius: '8px', borderStyle: 'solid', paddingTop: '14px', paddingBottom: '16px', paddingLeft: '24px', paddingRight: '16px', display: 'flex', flexDirection: 'column', 
-            //justifyContent: 'space-between',
-            fontFamily: theme.font.body.regular.fontFamily, fontSize: theme.font.body.regular.fontSize, fontWeight: theme.font.body.regular.fontWeight, color: theme.font.body.regular.color }, style) },
+    return (React.createElement("div", { style: __assign({ minHeight: '150px', backgroundColor: colors.white, borderWidth: '1px', borderColor: colors.gray[20] || '#D8DDE4 !important', borderRadius: '8px', borderStyle: 'solid', paddingTop: '14px', paddingBottom: '16px', paddingLeft: '24px', paddingRight: '16px', display: 'flex', flexDirection: 'column', fontFamily: theme.font.body.regular.fontFamily, fontSize: theme.font.body.regular.fontSize, fontWeight: theme.font.body.regular.fontWeight, color: theme.font.body.regular.color }, style) },
         React.createElement(Typography, { variant: 'body-semiBold', style: {
                 color: colors.gray[90],
                 whiteSpace: 'nowrap',
@@ -37,10 +30,5 @@ export var ScrollableCard = function (_a) {
                 minHeight: '24px'
             } }, title),
         React.createElement(Typography, { variant: 'caption-regular' }, description),
-        React.createElement(MyDiv, { style: __assign(__assign({}, theme.font.caption.regular), { width: '100%', 
-                //height: 'fit-content',
-                //maxHeight: '280px',
-                //height: '100px',
-                //paddingRight: '100px',
-                textAlign: 'left' }) }, content)));
+        React.createElement(MyDiv, { style: __assign(__assign({}, theme.font.caption.regular), { width: '100%', textAlign: 'left' }) }, content)));
 };

@@ -1,6 +1,5 @@
 import React, { HTMLAttributes } from 'react';
 export interface ResourceDropDownItemProps extends HTMLAttributes<HTMLDivElement> {
-    /** Value to control the DropDown */
     /** Upper text (resource name) */
     resourceName: string;
     /** Lower text */

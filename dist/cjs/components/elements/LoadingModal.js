@@ -42,7 +42,6 @@ var LoadingModal = function (_a) {
             react_1["default"].createElement(Typography_1.Typography, { variant: 'body-regular', style: {
                     whiteSpace: 'normal',
                     overflow: 'hidden',
-                    //textOverflow: 'ellipsis',
                     width: '100%',
                     textAlign: 'left'
                 } }, caption))));

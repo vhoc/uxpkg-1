@@ -14,6 +14,7 @@ export interface SimpleDropDownProps extends HTMLAttributes<HTMLSelectElement> {
      * - disabled: boolean | undefined
      */
     menuItems: SelectDropDownItemProps[];
+    /** Disabled state of the control (true or false). */
     disabled?: boolean;
     /** On Change event */
     onChange?: React.ChangeEventHandler<HTMLSelectElement> | undefined;

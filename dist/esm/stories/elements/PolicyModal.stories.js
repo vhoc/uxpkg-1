@@ -29,13 +29,13 @@ export var Default = {
             {
                 label: "Identities with access (3)",
                 tabContent: React.createElement(React.Fragment, null,
-                    React.createElement(UserGroupBar, { addButtonOnClick: function () { return alert("Adding user Bill Murray"); }, caption: "bill@company.com", name: "Bill Murray", removeButtonOnClick: function () { return alert("Removing user Bill Murray"); }, style: {
+                    React.createElement(UserGroupBar, { onClickAddButton: function () { return alert("Adding user Bill Murray"); }, caption: "bill@company.com", name: "Bill Murray", onClickRemoveButton: function () { return alert("Removing user Bill Murray"); }, style: {
                             width: '100%'
                         }, type: "user", endButton: false, onClick: function () { return alert("Bill Murray clicked!"); } }),
-                    React.createElement(UserGroupBar, { addButtonOnClick: function () { return alert("Adding user John Travolta"); }, caption: "john@company.com", name: "John Travolta", removeButtonOnClick: function () { return alert("Removing user John Travolta"); }, style: {
+                    React.createElement(UserGroupBar, { onClickAddButton: function () { return alert("Adding user John Travolta"); }, caption: "john@company.com", name: "John Travolta", onClickRemoveButton: function () { return alert("Removing user John Travolta"); }, style: {
                             width: '100%'
                         }, type: "user", endButton: false, onClick: function () { return alert("John Travolta clicked!"); } }),
-                    React.createElement(UserGroupBar, { addButtonOnClick: function () { return alert("Adding user Will Smith"); }, caption: "will@company.com", name: "Will Smith", removeButtonOnClick: function () { return alert("Removing user Will Smith"); }, style: {
+                    React.createElement(UserGroupBar, { onClickAddButton: function () { return alert("Adding user Will Smith"); }, caption: "will@company.com", name: "Will Smith", onClickRemoveButton: function () { return alert("Removing user Will Smith"); }, style: {
                             width: '100%'
                         }, type: "user", endButton: false, onClick: function () { return alert("Will Smith clicked!"); } }))
             },

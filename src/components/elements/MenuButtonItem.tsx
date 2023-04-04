@@ -25,7 +25,6 @@ export const MenuButtonItem = ({ variant = 'clear', size = 'sm', action, icon, t
 
     const MyButton = styled(ButtonUnstyled)({
         backgroundColor: disabled ? variants[selectedVariant].buttonBgColorDisabled : hover ? variants[selectedVariant].buttonBgColorHover : variants[selectedVariant].buttonBgColor,
-        //backgroundColor: disabled ? variants[selectedVariant].buttonBgColorDisabled : active ? variants[selectedVariant].buttonBgColorActive : hover ? variants[selectedVariant].buttonBgColorHover : variants[selectedVariant].buttonBgColor,
         color: disabled ? variants[selectedVariant].buttonTextColorDisabled : variants[selectedVariant].buttonTextColor,
         textTransform: 'capitalize',
         width: 'fit-content',
@@ -39,9 +38,6 @@ export const MenuButtonItem = ({ variant = 'clear', size = 'sm', action, icon, t
         borderRadius: ( variant === 'clear') ? '0px' : '4px',
         cursor: disabled ? 'not-allowed' : 'pointer',
         border: 'none',
-        //outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',
-        //outlineStyle: isImageDropDown ? 'none' : 'auto',
-        //outlineWidth: focus ? '2px' : '0px',
         outlineWidth: '0px',
         textAlign: 'left',
     })

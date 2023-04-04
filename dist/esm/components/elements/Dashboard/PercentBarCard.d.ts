@@ -7,7 +7,16 @@ export interface PercentBarCardProps extends HTMLAttributes<HTMLDivElement> {
     topRightCaption: string;
     /** Style overrides for the container. */
     style?: React.CSSProperties | undefined;
-    /** Collection of elements as data input. */
+    /**
+     * Array of IChartItem in the card.
+     * -- type: string
+     * -- title?: string | undefined
+     * -- risk?: string | undefined
+     * -- color?: string | undefined
+     * -- value: number
+     * -- percent: number
+     * -- caption?: string | undefined
+     */
     items: IChartItem[];
 }
 export declare const PercentBarCard: ({ title, topRightCaption, items, style, }: PercentBarCardProps) => JSX.Element;

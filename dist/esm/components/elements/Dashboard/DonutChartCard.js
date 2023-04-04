@@ -6,9 +6,7 @@ import { ChartItem } from './ChartItem';
 import { DonutChart } from './DonutChart';
 export var DonutChartCard = function (_a) {
     var title = _a.title, items = _a.items, shortTitle = _a.shortTitle, style = _a.style;
-    return (React.createElement("div", { style: __assign({ minWidth: '666px', width: '666px', paddingTop: '20px', paddingRight: '40px', paddingLeft: '24px', paddingBottom: '31px', display: 'flex', gap: '70px', 
-            //justifyContent: 'space-between',
-            borderStyle: 'solid', borderWidth: '1px', borderColor: 'rgb(216, 221, 228)', borderRadius: '4px', backgroundColor: colors.white }, style) },
+    return (React.createElement("div", { style: __assign({ minWidth: '666px', width: '666px', paddingTop: '20px', paddingRight: '40px', paddingLeft: '24px', paddingBottom: '31px', display: 'flex', gap: '70px', borderStyle: 'solid', borderWidth: '1px', borderColor: 'rgb(216, 221, 228)', borderRadius: '4px', backgroundColor: colors.white }, style) },
         React.createElement("div", { style: {
                 display: 'flex',
                 flexDirection: 'column',

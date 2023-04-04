@@ -9,9 +9,7 @@ var ChartItem_1 = require("./ChartItem");
 var DonutChart_1 = require("./DonutChart");
 var DonutChartCard = function (_a) {
     var title = _a.title, items = _a.items, shortTitle = _a.shortTitle, style = _a.style;
-    return (react_1["default"].createElement("div", { style: tslib_1.__assign({ minWidth: '666px', width: '666px', paddingTop: '20px', paddingRight: '40px', paddingLeft: '24px', paddingBottom: '31px', display: 'flex', gap: '70px', 
-            //justifyContent: 'space-between',
-            borderStyle: 'solid', borderWidth: '1px', borderColor: 'rgb(216, 221, 228)', borderRadius: '4px', backgroundColor: theme_1.colors.white }, style) },
+    return (react_1["default"].createElement("div", { style: tslib_1.__assign({ minWidth: '666px', width: '666px', paddingTop: '20px', paddingRight: '40px', paddingLeft: '24px', paddingBottom: '31px', display: 'flex', gap: '70px', borderStyle: 'solid', borderWidth: '1px', borderColor: 'rgb(216, 221, 228)', borderRadius: '4px', backgroundColor: theme_1.colors.white }, style) },
         react_1["default"].createElement("div", { style: {
                 display: 'flex',
                 flexDirection: 'column',

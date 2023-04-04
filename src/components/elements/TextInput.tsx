@@ -115,7 +115,7 @@ export interface TextInputProps extends InputProps {
      * This can be used to handle the input value (delete the text inside).  
      * It requires the iconPosition prop be set at 'end'.
      */
-    endIconOnClick?: React.MouseEventHandler<HTMLDivElement> | undefined
+    onClickEndIcon?: React.MouseEventHandler<HTMLDivElement> | undefined
 }
 
 const MyInput = styled(OutlinedInput)({
@@ -143,7 +143,7 @@ const MyInput = styled(OutlinedInput)({
     },
 })
 
-export const TextInput = ({ label, autoComplete, autoFocus, classes, defaultValue, disabled = false, error, id, icon, name, onChange, placeholder, iconPosition = 'start', fullWidth = false, multiline = false, readOnly = false, required = false, rows = 1, sx, type, value, endIconOnClick, iconStyle, ...props }: TextInputProps): JSX.Element => {
+export const TextInput = ({ label, autoComplete, autoFocus, classes, defaultValue, disabled = false, error, id, icon, name, onChange, placeholder, iconPosition = 'start', fullWidth = false, multiline = false, readOnly = false, required = false, rows = 1, sx, type, value, onClickEndIcon, iconStyle, ...props }: TextInputProps): JSX.Element => {
 
     return (
         <FormControl
@@ -154,7 +154,6 @@ export const TextInput = ({ label, autoComplete, autoFocus, classes, defaultValu
                 '&:hover fieldset' : {
                     borderColor: colors.gray[20] + ' !important',
                     borderWidth: '1px',
-                    //border: 'inherited',
                     boxShadow: 'none',
                 },
                 ...sx,
@@ -203,7 +202,7 @@ export const TextInput = ({ label, autoComplete, autoFocus, classes, defaultValu
                     endAdornment={ icon && iconPosition === 'end' ?                     
                         <InputAdornment
                             position={ iconPosition }
-                            onClick={endIconOnClick}
+                            onClick={onClickEndIcon}
                         >
                             <FontAwesomeIcon
                                 icon={ icon }

@@ -4,8 +4,8 @@ export interface RejectionModalProps extends HTMLAttributes<HTMLDivElement> {
     title?: string | undefined;
     /** Comments */
     comments?: string | undefined;
-    /** onCommentsChange event */
-    onCommentsChange?: ((event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void) | undefined;
+    /** onChangeComments event */
+    onChangeComments?: ((event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void) | undefined;
     /** onClick Cancel button event */
     onClickCancel?: React.MouseEventHandler<HTMLButtonElement> | undefined;
     /** onClick Approve button event */
@@ -13,4 +13,4 @@ export interface RejectionModalProps extends HTMLAttributes<HTMLDivElement> {
     /** Style overrides */
     style?: React.CSSProperties | undefined;
 }
-export declare const RejectionModal: ({ title, comments, onCommentsChange, onClickCancel, onClickReject, style }: RejectionModalProps) => JSX.Element;
+export declare const RejectionModal: ({ title, comments, onChangeComments, onClickCancel, onClickReject, style }: RejectionModalProps) => JSX.Element;

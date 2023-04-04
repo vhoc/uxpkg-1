@@ -38,7 +38,6 @@ export const ChartPercentBar = ({ data, legend = true, maxBarWidth = 4, height =
                 isStack={true}
                 maxBarWidth={maxBarWidth}
                 height={height}
-                //color={['#a8d08d', '#ffe5b0', '#ff9c4a', '#db573f', ]}
                 color={colors}
                 padding={[30, 0, 0, 0,]}
                 legend={ legend ? { layout: 'horizontal', itemSpacing: 5, } : false }

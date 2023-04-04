@@ -1,7 +1,9 @@
 import React, { HTMLAttributes } from "react";
 
 export interface RingProps extends HTMLAttributes<HTMLDivElement> {
+    /** Width of the ring. */
     width?: string
+    /** Height of the ring. */
     height?: string
 }
 

@@ -1,7 +1,6 @@
 import React, { CSSProperties, HTMLAttributes } from "react";
 import { IDropDownItem } from '../../util/sample-data';
 export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
-    variant?: 'primary';
     /** The access state of the resource displayed in the card */
     accessState: 'access' | 'requested' | 'signIn' | 'waiting';
     /** The resource icon to be displayed at the top left corner of the card */
@@ -11,13 +10,13 @@ export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     /** Whether to display 'Policy' or 'Request' on the access button. */
     forPolicy?: boolean;
     /** Callback function to run when pressing the bookmark icon */
-    onBookmarkClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+    onClickBookmark?: React.MouseEventHandler<HTMLButtonElement> | undefined;
     /** Whether to show the More Info button or not. */
     showMoreInfoButton?: boolean;
     /** Callback function to run when pressing the More Info button */
-    onMoreInfoClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+    onClickMoreInfo?: React.MouseEventHandler<HTMLButtonElement> | undefined;
     /** Callback function to run when pressing the Access/Policy button */
-    onAccessClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+    onClickAccess?: React.MouseEventHandler<HTMLButtonElement> | undefined;
     /** The name of the resource */
     resourceName: string;
     /** The type of the resource */
@@ -35,4 +34,4 @@ export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     /** Style overrides */
     style?: CSSProperties | undefined;
 }
-export declare const ResourceCard: ({ variant, accessState, resourceIcon, bookmarked, forPolicy, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onBookmarkClick, showMoreInfoButton, onMoreInfoClick, onAccessClick, width, style, }: ResourceCardProps) => JSX.Element;
+export declare const ResourceCard: ({ accessState, resourceIcon, bookmarked, forPolicy, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onClickBookmark, showMoreInfoButton, onClickMoreInfo, onClickAccess, width, style, }: ResourceCardProps) => JSX.Element;

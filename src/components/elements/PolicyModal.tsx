@@ -27,8 +27,6 @@ export interface PolicyModalProps extends HTMLAttributes<HTMLDivElement> {
 
 export const PolicyModal = ({ title, caption, onClickFullDetail, onClickClose, style, tabs, }: PolicyModalProps): JSX.Element => {
 
-    //const [selectedElement, setSelectedElement] = useState<any>()
-
     return (
         <div
             style={{

@@ -94,6 +94,6 @@ export interface TextInputProps extends InputProps {
      * This can be used to handle the input value (delete the text inside).
      * It requires the iconPosition prop be set at 'end'.
      */
-    endIconOnClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
+    onClickEndIcon?: React.MouseEventHandler<HTMLDivElement> | undefined;
 }
-export declare const TextInput: ({ label, autoComplete, autoFocus, classes, defaultValue, disabled, error, id, icon, name, onChange, placeholder, iconPosition, fullWidth, multiline, readOnly, required, rows, sx, type, value, endIconOnClick, iconStyle, ...props }: TextInputProps) => JSX.Element;
+export declare const TextInput: ({ label, autoComplete, autoFocus, classes, defaultValue, disabled, error, id, icon, name, onChange, placeholder, iconPosition, fullWidth, multiline, readOnly, required, rows, sx, type, value, onClickEndIcon, iconStyle, ...props }: TextInputProps) => JSX.Element;

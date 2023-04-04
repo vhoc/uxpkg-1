@@ -10,11 +10,10 @@ var Typography_1 = require("./Typography");
 var pro_regular_svg_icons_1 = require("@fortawesome/pro-regular-svg-icons");
 var TextInput_1 = require("./TextInput");
 var TargetInputModal = function (_a) {
-    var icon = _a.icon, _b = _a.title, title = _b === void 0 ? 'Confirm' : _b, onCloseButtonClick = _a.onCloseButtonClick, onTextInputChange = _a.onTextInputChange, onClickConfirm = _a.onClickConfirm, _c = _a.confirmButtonLabel, confirmButtonLabel = _c === void 0 ? 'OK' : _c;
+    var icon = _a.icon, _b = _a.title, title = _b === void 0 ? 'Confirm' : _b, onClickCloseButton = _a.onClickCloseButton, onChangeTextInput = _a.onChangeTextInput, onClickConfirm = _a.onClickConfirm, _c = _a.confirmButtonLabel, confirmButtonLabel = _c === void 0 ? 'OK' : _c;
     var handleTextInputChange = function (event) {
-        //setCommentsState(event.target.value)
-        if (onTextInputChange) {
-            onTextInputChange(event.target.value);
+        if (onChangeTextInput) {
+            onChangeTextInput(event.target.value);
         }
     };
     return (react_1["default"].createElement("div", { style: {
@@ -44,7 +43,7 @@ var TargetInputModal = function (_a) {
                 icon,
                 " ",
                 react_1["default"].createElement(Typography_1.Typography, { variant: 'title-regular' }, title)),
-            react_1["default"].createElement(IconButton_1.IconButton, { icon: pro_regular_svg_icons_1.faTimes, variant: 'gray', onClick: onCloseButtonClick })),
+            react_1["default"].createElement(IconButton_1.IconButton, { icon: pro_regular_svg_icons_1.faTimes, variant: 'gray', onClick: onClickCloseButton })),
         react_1["default"].createElement("div", { style: {
                 display: 'flex',
                 gap: '18px'

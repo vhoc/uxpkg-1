@@ -2,7 +2,7 @@ import { Meta } from '@storybook/react/types-6-0'
 import { FilterBarItem } from '../../components/elements/FilterBarItem'
 
 export default {
-    title: 'Elements/Controls/FilterBarItem',
+    title: 'Elements/FilterBarResources/FilterBarItem',
     component: FilterBarItem,
 } as Meta
 

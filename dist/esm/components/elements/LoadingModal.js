@@ -39,7 +39,6 @@ export var LoadingModal = function (_a) {
             React.createElement(Typography, { variant: 'body-regular', style: {
                     whiteSpace: 'normal',
                     overflow: 'hidden',
-                    //textOverflow: 'ellipsis',
                     width: '100%',
                     textAlign: 'left'
                 } }, caption))));

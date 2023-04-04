@@ -34,10 +34,10 @@ export const Default = {
                 label: `Identities with access (3)`,
                 tabContent: <>
                     <UserGroupBar
-                        addButtonOnClick={() => alert(`Adding user Bill Murray`)}
+                        onClickAddButton={() => alert(`Adding user Bill Murray`)}
                         caption="bill@company.com"
                         name="Bill Murray"
-                        removeButtonOnClick={() => alert(`Removing user Bill Murray`)}
+                        onClickRemoveButton={() => alert(`Removing user Bill Murray`)}
                         style={{
                             width: '100%'
                         }}
@@ -46,10 +46,10 @@ export const Default = {
                         onClick={() => alert(`Bill Murray clicked!`)}
                     />
                     <UserGroupBar
-                        addButtonOnClick={() => alert(`Adding user John Travolta`)}
+                        onClickAddButton={() => alert(`Adding user John Travolta`)}
                         caption="john@company.com"
                         name="John Travolta"
-                        removeButtonOnClick={() => alert(`Removing user John Travolta`)}
+                        onClickRemoveButton={() => alert(`Removing user John Travolta`)}
                         style={{
                             width: '100%'
                         }}
@@ -58,10 +58,10 @@ export const Default = {
                         onClick={() => alert(`John Travolta clicked!`)}
                     />
                     <UserGroupBar
-                        addButtonOnClick={() => alert(`Adding user Will Smith`)}
+                        onClickAddButton={() => alert(`Adding user Will Smith`)}
                         caption="will@company.com"
                         name="Will Smith"
-                        removeButtonOnClick={() => alert(`Removing user Will Smith`)}
+                        onClickRemoveButton={() => alert(`Removing user Will Smith`)}
                         style={{
                             width: '100%'
                         }}

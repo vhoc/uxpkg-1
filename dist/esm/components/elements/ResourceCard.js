@@ -8,7 +8,7 @@ import { Button } from "./Button";
 import { faBookmark } from "@fortawesome/sharp-solid-svg-icons";
 import { theme, colors } from "../../theme";
 export var ResourceCard = function (_a) {
-    var _b = _a.variant, variant = _b === void 0 ? 'primary' : _b, accessState = _a.accessState, resourceIcon = _a.resourceIcon, bookmarked = _a.bookmarked, _c = _a.forPolicy, forPolicy = _c === void 0 ? false : _c, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, dropDownItems = _a.dropDownItems, dotMenuItems = _a.dotMenuItems, onBookmarkClick = _a.onBookmarkClick, _d = _a.showMoreInfoButton, showMoreInfoButton = _d === void 0 ? true : _d, onMoreInfoClick = _a.onMoreInfoClick, onAccessClick = _a.onAccessClick, width = _a.width, style = _a.style;
+    var accessState = _a.accessState, resourceIcon = _a.resourceIcon, bookmarked = _a.bookmarked, _b = _a.forPolicy, forPolicy = _b === void 0 ? false : _b, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, dropDownItems = _a.dropDownItems, dotMenuItems = _a.dotMenuItems, onClickBookmark = _a.onClickBookmark, _c = _a.showMoreInfoButton, showMoreInfoButton = _c === void 0 ? true : _c, onClickMoreInfo = _a.onClickMoreInfo, onClickAccess = _a.onClickAccess, width = _a.width, style = _a.style;
     // Exclusive accessState styles for this component:
     var accessStateStyles = {
         access: {
@@ -30,26 +30,24 @@ export var ResourceCard = function (_a) {
     };
     var selectedAccessState = accessState;
     var componentStyle = function () { return (__assign({ backgroundColor: accessStateStyles[selectedAccessState].backgroundColor, color: colors.gray[90], fontFamily: theme.font.body.regular.fontFamily, fontSize: theme.font.body.regular.fontSize, borderRadius: '4px', borderWidth: '1px', borderStyle: 'solid', borderColor: accessStateStyles[selectedAccessState].borderColor, paddingTop: '16px', paddingBottom: '16px', paddingRight: '16px', paddingLeft: '24px', width: width || '240px', minWidth: '280px', maxWidth: width }, style)); };
-    return (React.createElement(View, { style: componentStyle(), 
-        //width={'304px'}
-        padding: '16px 16px 16px 24px' },
+    return (React.createElement(View, { style: componentStyle(), padding: '16px 16px 16px 24px' },
         accessState !== 'requested' ?
             accessState === 'waiting' ?
                 React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', marginBottom: '16px' } },
                     React.createElement("div", { style: { display: 'flex', justifyContent: 'flex-start', gap: '8px' } },
                         React.createElement("div", null, resourceIcon),
                         React.createElement(Label, { variant: "warning", text: "Awaiting for approval" })),
-                    React.createElement(IconButton, { variant: bookmarked ? 'grayBlue' : 'tertiary', icon: faBookmark, onClick: onBookmarkClick }))
+                    React.createElement(IconButton, { variant: bookmarked ? 'grayBlue' : 'tertiary', icon: faBookmark, onClick: onClickBookmark }))
                 :
                     React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', marginBottom: '16px' } },
                         React.createElement("div", null, resourceIcon),
-                        React.createElement(IconButton, { variant: bookmarked ? 'grayBlue' : 'tertiary', icon: faBookmark, onClick: onBookmarkClick }))
+                        React.createElement(IconButton, { variant: bookmarked ? 'grayBlue' : 'tertiary', icon: faBookmark, onClick: onClickBookmark }))
             :
                 React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', marginBottom: '16px' } },
                     React.createElement("div", { style: { display: 'flex', justifyContent: 'flex-start', gap: '8px' } },
                         React.createElement("div", null, resourceIcon),
                         React.createElement(Label, { variant: "warning", text: "Request in progress" })),
-                    React.createElement(IconButton, { variant: bookmarked ? 'grayBlue' : 'tertiary', icon: faBookmark, onClick: onBookmarkClick })),
+                    React.createElement(IconButton, { variant: bookmarked ? 'grayBlue' : 'tertiary', icon: faBookmark, onClick: onClickBookmark })),
         React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', marginBottom: '14px', width: '100%' } },
             React.createElement("div", { style: { display: 'flex', flexDirection: 'column', alignItems: 'flex-start', width: '100%' } },
                 React.createElement("div", { style: __assign(__assign({}, theme.font.title.regular), { marginBottom: '4px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', width: '100%' }) }, resourceName),
@@ -61,17 +59,17 @@ export var ResourceCard = function (_a) {
         accessState !== 'signIn' ?
             React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between' } },
                 showMoreInfoButton ?
-                    React.createElement(Button, { variant: "gray", onClick: onMoreInfoClick }, "More Info")
+                    React.createElement(Button, { variant: "gray", onClick: onClickMoreInfo }, "More Info")
                     :
                         React.createElement("div", null),
-                React.createElement(Button, { variant: "grayBlue", onClick: onAccessClick }, forPolicy ? 'Policy' : 'Request'))
+                React.createElement(Button, { variant: "grayBlue", onClick: onClickAccess }, forPolicy ? 'Policy' : 'Request'))
             :
                 React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between' } },
                     React.createElement("div", null,
                         React.createElement(Button, { variant: "gray" }, "More Info")),
                     React.createElement("div", { style: { display: 'flex', gap: '8px' } },
                         (dropDownItems && (dropDownItems === null || dropDownItems === void 0 ? void 0 : dropDownItems.length) <= 1 && !dropDownItems[0].submenu) ?
-                            React.createElement(Button, { variant: "grayBlue", onClick: onAccessClick }, forPolicy ? 'Policy' : 'Sign In')
+                            React.createElement(Button, { variant: "grayBlue", onClick: onClickAccess }, forPolicy ? 'Policy' : 'Sign In')
                             :
                                 React.createElement(DropDownButton, { size: "sm", variant: "grayBlue", menuItems: dropDownItems }),
                         React.createElement(DropDownButton, { size: "sm", variant: "grayBlue", menuItems: dotMenuItems, hasDownArrow: false })))));

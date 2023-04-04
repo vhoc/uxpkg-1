@@ -23,7 +23,6 @@ export var MenuButton = function (_a) {
     };
     var wrapperRef = useRef(null);
     useClickOutsideEvent(wrapperRef);
-    //const [dropdown, setDropdown] = useState<boolean>(false)
     var handleClick = function (event) {
         setAnchorEl(anchorEl ? null : event.currentTarget);
     };
@@ -44,9 +43,7 @@ export var MenuButton = function (_a) {
                 } },
                 React.createElement("ul", null, menuItems && menuItems.length >= 1 ?
                     menuItems.map(function (item, index) {
-                        return (React.createElement(MenuButtonItem, { key: index, 
-                            //action={item.action}
-                            action: item.action, icon: item.icon, title: item.title, disabled: item.disabled, size: item.size }));
+                        return (React.createElement(MenuButtonItem, { key: index, action: item.action, icon: item.icon, title: item.title, disabled: item.disabled, size: item.size }));
                     })
                     :
                         null)))));

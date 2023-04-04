@@ -3,7 +3,7 @@ exports.__esModule = true;
 exports.Default = void 0;
 var FilterBarItem_1 = require("../../components/elements/FilterBarItem");
 exports["default"] = {
-    title: 'Elements/Controls/FilterBarItem',
+    title: 'Elements/FilterBarResources/FilterBarItem',
     component: FilterBarItem_1.FilterBarItem
 };
 exports.Default = {

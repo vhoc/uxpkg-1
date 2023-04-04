@@ -20,18 +20,18 @@ export interface UserGroupBarProps extends HTMLAttributes<HTMLDivElement> {
     /** Assigned state. It affects the button on the right. */
     assigned?: boolean
     /** Add button function */
-    addButtonOnClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
+    onClickAddButton?: React.MouseEventHandler<HTMLButtonElement> | undefined
     /** Remove button function */
-    removeButtonOnClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
+    onClickRemoveButton?: React.MouseEventHandler<HTMLButtonElement> | undefined
     /** Style override for the container */
     style?: React.CSSProperties | undefined
     /** Toggle the add/remove button */
     endButton?: boolean
-    /** onClick for the component */
+    /** Function to run when clicking on the component. */
     onClick?: React.MouseEventHandler<HTMLDivElement> | undefined
 }
 
-export const UserGroupBar = ({ type, name, leftIcon, caption, selected = false, assigned = false, addButtonOnClick, removeButtonOnClick, style, endButton = true, onClick, }: UserGroupBarProps) => {
+export const UserGroupBar = ({ type, name, leftIcon, caption, selected = false, assigned = false, onClickAddButton, onClickRemoveButton, style, endButton = true, onClick, }: UserGroupBarProps) => {
 
     return (
         <div
@@ -92,11 +92,10 @@ export const UserGroupBar = ({ type, name, leftIcon, caption, selected = false, 
             {
                 endButton ?
                     <IconButton
-                        //style={{alignSelf: 'start' }}
                         icon={assigned ? faCircleMinus : faCirclePlus}
                         variant={assigned ? 'gray' : 'grayBlue'}
                         size={'sm'}
-                        onClick={assigned ? removeButtonOnClick : addButtonOnClick }
+                        onClick={assigned ? onClickRemoveButton : onClickAddButton }
                     />
                 :
                     null

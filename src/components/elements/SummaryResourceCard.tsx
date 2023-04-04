@@ -1,22 +1,35 @@
-import React, { HTMLAttributes, ReactNode } from "react";
+import React, { HTMLAttributes } from "react";
 import { colors } from "../../theme";
 import { Typography } from "./Typography";
 import { IconButton } from "./IconButton";
 import { faTrash, faPen } from "@fortawesome/pro-solid-svg-icons";
 import { styled } from '@mui/material/styles';
+import { LabelProps } from "./Label";
 
 export interface SummaryResourceCardProps extends HTMLAttributes<HTMLDivElement> {
+    /** The icon to be shown at the top left of the card. Free for any type. */
     resourceIcon?: any,
+    /** The name of the resource shown. */
     resourceName: string,
+    /** The type of the resource. */
     resourceType: string,
+    /** The name of the account. */
     accountName: string,
+    /** the account region. */
     region: string,
-    children?: ReactNode | undefined
+    /** Content of the card (Labels). Only Label children are allowed. */
+    children?: React.ReactElement<LabelProps> | Array<React.ReactElement<LabelProps>> | undefined
+    /** Whether to show the action buttons or not. */
     actionButtons?: boolean
+    /** Enables or disables the edit button. */
     isEditButtonEnabled: boolean
+    /** Function to run when clicking on the Edit button. */
     onClickEditButton?: React.MouseEventHandler<HTMLButtonElement> | undefined
+    /** Function to run when clicking on the Delete button. */
     onClickDeleteButton?: React.MouseEventHandler<HTMLButtonElement> | undefined
+    /** Enables or disables the Delete button. */
     isDeleteButtonEnabled: boolean
+    /** Container style overrides. */
     style?: React.CSSProperties | undefined
 }
 
@@ -30,12 +43,10 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
         '&::-webkit-scrollbar-track': {
             backgroundColor: colors.gray[10],
             borderRadius: '3px',
-            //'-webkit-box-shadow': 'inset 0 0 6px rgba(0,0,0,0.00)'
         },
         '&::-webkit-scrollbar-thumb': {
             backgroundColor: colors.gray[50],
             borderRadius: '3px',
-            //outline: '1px solid slategrey'
         }
     })
     

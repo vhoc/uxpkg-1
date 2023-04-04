@@ -11,10 +11,10 @@ export interface ActionBarProps extends HTMLAttributes<HTMLDivElement> {
     /** Assigned state. It affects the button on the right. */
     assigned?: boolean;
     /** Add button function */
-    addButtonOnClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+    onClickAddButton?: React.MouseEventHandler<HTMLButtonElement> | undefined;
     /** Remove button function */
-    removeButtonOnClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+    onClickRemoveButton?: React.MouseEventHandler<HTMLButtonElement> | undefined;
     /** Style override for the container */
     style?: React.CSSProperties | undefined;
 }
-export declare const ActionBar: ({ name, leftIcon, selected, assigned, addButtonOnClick, removeButtonOnClick, style, }: ActionBarProps) => JSX.Element;
+export declare const ActionBar: ({ name, leftIcon, selected, assigned, onClickAddButton, onClickRemoveButton, style, }: ActionBarProps) => JSX.Element;

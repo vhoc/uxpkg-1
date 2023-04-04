@@ -13,11 +13,7 @@ export var ToggleCloudControl = function (_a) {
             height: '40px',
             borderWidth: '0px'
         } },
-        React.createElement(ToggleButton, { value: 'AWS', "aria-label": 'AWS', 
-            //onClick={item.onClick}
-            //onChange={item.onChange}
-            //disabled={item.disabled || false}
-            sx: {
+        React.createElement(ToggleButton, { value: 'AWS', "aria-label": 'AWS', sx: {
                 backgroundColor: colors.gray[10],
                 paddingLeft: '14px',
                 paddingRight: '14px',
@@ -29,12 +25,7 @@ export var ToggleCloudControl = function (_a) {
                     imgAwsColor
                     :
                         imgAwsGray, alt: 'AWS' })),
-        React.createElement(ToggleButton, { value: 'GCP', "aria-label": 'GCP', 
-            //selected={item.selected}
-            //onClick={item.onClick}
-            //onChange={item.onChange}
-            //disabled={item.disabled || false}
-            sx: {
+        React.createElement(ToggleButton, { value: 'GCP', "aria-label": 'GCP', sx: {
                 backgroundColor: colors.gray[10],
                 paddingLeft: '14px',
                 paddingRight: '14px',
@@ -43,12 +34,7 @@ export var ToggleCloudControl = function (_a) {
                 }
             } },
             React.createElement("img", { src: (value === 'GCP' || (Array.isArray(value) && value.find(function (value) { return value === 'GCP'; }))) ? imgGoogleColor : imgGoogleGray, alt: 'GCP' })),
-        React.createElement(ToggleButton, { value: 'AZURE', "aria-label": 'AZURE', 
-            //selected={item.selected}
-            //onClick={item.onClick}
-            //onChange={item.onChange}
-            //disabled={item.disabled || false}
-            sx: {
+        React.createElement(ToggleButton, { value: 'AZURE', "aria-label": 'AZURE', sx: {
                 backgroundColor: colors.gray[10],
                 paddingLeft: '14px',
                 paddingRight: '14px',

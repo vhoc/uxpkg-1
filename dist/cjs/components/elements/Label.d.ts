@@ -11,7 +11,7 @@ export interface LabelProps extends HTMLAttributes<HTMLDivElement> {
     iconPosition?: 'start' | 'end';
     /** Style overrides */
     style?: CSSProperties | undefined;
-    /** onClick function */
+    /** Function to run when clicking on the label. */
     onClick?: MouseEventHandler<HTMLDivElement> | undefined;
 }
 export declare const Label: ({ variant, text, iconButton, iconPosition, onClick, style, ...LabelProps }: LabelProps) => JSX.Element;

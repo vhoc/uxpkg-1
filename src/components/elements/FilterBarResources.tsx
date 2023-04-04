@@ -2,6 +2,7 @@ import React, { HTMLAttributes, ReactNode } from "react"
 import { theme, colors } from "../../theme"
 
 interface FilterBarResourcesProps extends HTMLAttributes<HTMLDivElement> {
+    /** All the categories and filter controls. (Any ReactNode) */
     children: ReactNode
 }
 

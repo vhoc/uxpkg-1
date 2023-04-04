@@ -6,7 +6,6 @@ import { Button } from './Button';
 import { faTimes } from '@fortawesome/pro-regular-svg-icons';
 import { TabGroup } from './TabGroup';
 export var PolicyModal = function (_a) {
-    //const [selectedElement, setSelectedElement] = useState<any>()
     var title = _a.title, caption = _a.caption, onClickFullDetail = _a.onClickFullDetail, onClickClose = _a.onClickClose, style = _a.style, tabs = _a.tabs;
     return (React.createElement("div", { style: __assign({ backgroundColor: colors.white, borderStyle: 'solid', borderWidth: '1px', borderColor: colors.gray[20], borderRadius: '8px', width: '626px', height: '540px', paddingTop: '29px', paddingLeft: '32px', paddingRight: '32px', paddingBottom: '16px', display: 'flex', flexDirection: 'column', gap: '24px', boxShadow: '3px 6px 12px 3px rgba(0,0,0,0.24)' }, style) },
         React.createElement("div", { style: {

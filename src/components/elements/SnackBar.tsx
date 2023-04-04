@@ -24,17 +24,17 @@ export interface SnackBarProps {
     /** Extra button label. Requires the showExtraButton prop to be set to TRUE. */
     extraButtonLabel?: string | undefined
     /** Function to run when the extra button is clicked. Requires the showExtraButton prop to be set to TRUE. */
-    extraButtonOnClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
+    onClickExtraButton?: React.MouseEventHandler<HTMLButtonElement> | undefined
     /** Items of the DropDown menu. Requires showDropDownButton prop to be set to TRUE. */
     menuItems?: SelectDropDownItemProps[] | undefined,
     /** Function to be triggered by the "Continue Button" */
-    continueButtonOnClick?: React.MouseEventHandler<HTMLButtonElement>
+    onClickContinueButton?: React.MouseEventHandler<HTMLButtonElement>
     /** Styling object */
     sx?: SxProps<Theme> | undefined
 
 }
 
-export const SnackBar = ({ variant, leftIcon, textMessage, showExtraButton = false, extraButtonOnClick, extraButtonLabel, menuItems, showDropDownButton = false, continueButtonOnClick, sx, }: SnackBarProps): JSX.Element => {
+export const SnackBar = ({ variant, leftIcon, textMessage, showExtraButton = false, onClickExtraButton, extraButtonLabel, menuItems, showDropDownButton = false, onClickContinueButton, sx, }: SnackBarProps): JSX.Element => {
 
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
@@ -52,11 +52,11 @@ export const SnackBar = ({ variant, leftIcon, textMessage, showExtraButton = fal
         <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
         {
             showExtraButton ?
-                <Button variant={variant} size={'sm'} onClick={extraButtonOnClick}>{extraButtonLabel}</Button>
+                <Button variant={variant} size={'sm'} onClick={onClickExtraButton}>{extraButtonLabel}</Button>
             :
                 null
         }
-            <Button variant={ variant } size={'sm'} onClick={continueButtonOnClick}>
+            <Button variant={ variant } size={'sm'} onClick={onClickContinueButton}>
                 Continue
             </Button>
             {

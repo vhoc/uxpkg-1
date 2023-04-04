@@ -10,9 +10,7 @@ var ChartPercentBar = function (_a) {
     return (react_1["default"].createElement("div", { style: {
             marginTop: marginTop
         } },
-        react_1["default"].createElement(plots_1.Bar, { autoFit: true, data: data, xField: 'value', yField: criteria, seriesField: 'risk', isPercent: true, isStack: true, maxBarWidth: maxBarWidth, height: height, 
-            //color={['#a8d08d', '#ffe5b0', '#ff9c4a', '#db573f', ]}
-            color: colors, padding: [30, 0, 0, 0,], legend: legend ? { layout: 'horizontal', itemSpacing: 5 } : false, marginRatio: 0, intervalPadding: intervalPadding, xAxis: {
+        react_1["default"].createElement(plots_1.Bar, { autoFit: true, data: data, xField: 'value', yField: criteria, seriesField: 'risk', isPercent: true, isStack: true, maxBarWidth: maxBarWidth, height: height, color: colors, padding: [30, 0, 0, 0,], legend: legend ? { layout: 'horizontal', itemSpacing: 5 } : false, marginRatio: 0, intervalPadding: intervalPadding, xAxis: {
                 label: {
                     style: {
                         opacity: 0

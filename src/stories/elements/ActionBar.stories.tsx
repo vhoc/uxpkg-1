@@ -10,8 +10,8 @@ export const Default = {
     args: {
         leftIcon: '[icon]',
         name: 'eks:AccessKubernetesAPI',
-        addButtonOnClick: () => alert(`Add user/group`),
-        removeButtonOnClick: () => alert(`Remove user/group`),
+        onClickAddButton: () => alert(`Add user/group`),
+        onClickRemoveButton: () => alert(`Remove user/group`),
         style: {
             width: '394px',
         }
@@ -24,8 +24,8 @@ export const Assigned = {
         name: 'eks:AccessKubernetesAPI',
         selected: false,
         assigned: true,
-        addButtonOnClick: () => alert(`Add user/group`),
-        removeButtonOnClick: () => alert(`Remove user/group`),
+        onClickAddButton: () => alert(`Add user/group`),
+        onClickRemoveButton: () => alert(`Remove user/group`),
         style: {
             width: '394px',
         }
@@ -38,8 +38,8 @@ export const Unssigned = {
         name: 'eks:AccessKubernetesAPI',
         selected: false,
         assigned: false,
-        addButtonOnClick: () => alert(`Add user/group`),
-        removeButtonOnClick: () => alert(`Remove user/group`),
+        onClickAddButton: () => alert(`Add user/group`),
+        onClickRemoveButton: () => alert(`Remove user/group`),
         style: {
             width: '394px',
         }
@@ -52,8 +52,8 @@ export const Selected = {
         name: 'eks:AccessKubernetesAPI',
         selected: true,
         assigned: false,
-        addButtonOnClick: () => alert(`Add user/group`),
-        removeButtonOnClick: () => alert(`Remove user/group`),
+        onClickAddButton: () => alert(`Add user/group`),
+        onClickRemoveButton: () => alert(`Remove user/group`),
         style: {
             width: '394px',
         }
@@ -66,8 +66,8 @@ export const Unselected = {
         name: 'eks:AccessKubernetesAPI',
         selected: false,
         assigned: false,
-        addButtonOnClick: () => alert(`Add user/group`),
-        removeButtonOnClick: () => alert(`Remove user/group`),
+        onClickAddButton: () => alert(`Add user/group`),
+        onClickRemoveButton: () => alert(`Remove user/group`),
         style: {
             width: '394px',
         }

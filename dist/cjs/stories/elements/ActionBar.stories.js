@@ -10,8 +10,8 @@ exports.Default = {
     args: {
         leftIcon: '[icon]',
         name: 'eks:AccessKubernetesAPI',
-        addButtonOnClick: function () { return alert("Add user/group"); },
-        removeButtonOnClick: function () { return alert("Remove user/group"); },
+        onClickAddButton: function () { return alert("Add user/group"); },
+        onClickRemoveButton: function () { return alert("Remove user/group"); },
         style: {
             width: '394px'
         }
@@ -23,8 +23,8 @@ exports.Assigned = {
         name: 'eks:AccessKubernetesAPI',
         selected: false,
         assigned: true,
-        addButtonOnClick: function () { return alert("Add user/group"); },
-        removeButtonOnClick: function () { return alert("Remove user/group"); },
+        onClickAddButton: function () { return alert("Add user/group"); },
+        onClickRemoveButton: function () { return alert("Remove user/group"); },
         style: {
             width: '394px'
         }
@@ -36,8 +36,8 @@ exports.Unssigned = {
         name: 'eks:AccessKubernetesAPI',
         selected: false,
         assigned: false,
-        addButtonOnClick: function () { return alert("Add user/group"); },
-        removeButtonOnClick: function () { return alert("Remove user/group"); },
+        onClickAddButton: function () { return alert("Add user/group"); },
+        onClickRemoveButton: function () { return alert("Remove user/group"); },
         style: {
             width: '394px'
         }
@@ -49,8 +49,8 @@ exports.Selected = {
         name: 'eks:AccessKubernetesAPI',
         selected: true,
         assigned: false,
-        addButtonOnClick: function () { return alert("Add user/group"); },
-        removeButtonOnClick: function () { return alert("Remove user/group"); },
+        onClickAddButton: function () { return alert("Add user/group"); },
+        onClickRemoveButton: function () { return alert("Remove user/group"); },
         style: {
             width: '394px'
         }
@@ -62,8 +62,8 @@ exports.Unselected = {
         name: 'eks:AccessKubernetesAPI',
         selected: false,
         assigned: false,
-        addButtonOnClick: function () { return alert("Add user/group"); },
-        removeButtonOnClick: function () { return alert("Remove user/group"); },
+        onClickAddButton: function () { return alert("Add user/group"); },
+        onClickRemoveButton: function () { return alert("Remove user/group"); },
         style: {
             width: '394px'
         }

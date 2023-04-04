@@ -6,11 +6,10 @@ import { Typography } from './Typography';
 import { faTimes } from '@fortawesome/pro-regular-svg-icons';
 import { TextInput } from './TextInput';
 export var TargetInputModal = function (_a) {
-    var icon = _a.icon, _b = _a.title, title = _b === void 0 ? 'Confirm' : _b, onCloseButtonClick = _a.onCloseButtonClick, onTextInputChange = _a.onTextInputChange, onClickConfirm = _a.onClickConfirm, _c = _a.confirmButtonLabel, confirmButtonLabel = _c === void 0 ? 'OK' : _c;
+    var icon = _a.icon, _b = _a.title, title = _b === void 0 ? 'Confirm' : _b, onClickCloseButton = _a.onClickCloseButton, onChangeTextInput = _a.onChangeTextInput, onClickConfirm = _a.onClickConfirm, _c = _a.confirmButtonLabel, confirmButtonLabel = _c === void 0 ? 'OK' : _c;
     var handleTextInputChange = function (event) {
-        //setCommentsState(event.target.value)
-        if (onTextInputChange) {
-            onTextInputChange(event.target.value);
+        if (onChangeTextInput) {
+            onChangeTextInput(event.target.value);
         }
     };
     return (React.createElement("div", { style: {
@@ -40,7 +39,7 @@ export var TargetInputModal = function (_a) {
                 icon,
                 " ",
                 React.createElement(Typography, { variant: 'title-regular' }, title)),
-            React.createElement(IconButton, { icon: faTimes, variant: 'gray', onClick: onCloseButtonClick })),
+            React.createElement(IconButton, { icon: faTimes, variant: 'gray', onClick: onClickCloseButton })),
         React.createElement("div", { style: {
                 display: 'flex',
                 gap: '18px'

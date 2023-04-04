@@ -9,7 +9,6 @@ import { faBookmark } from "@fortawesome/sharp-solid-svg-icons"
 import { theme, colors, IVariant } from "../../theme"
 
 export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
-    variant?: 'primary'
     /** The access state of the resource displayed in the card */
     accessState: 'access' | 'requested' | 'signIn' | 'waiting'
     /** The resource icon to be displayed at the top left corner of the card */
@@ -19,13 +18,13 @@ export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     /** Whether to display 'Policy' or 'Request' on the access button. */
     forPolicy?: boolean
     /** Callback function to run when pressing the bookmark icon */
-    onBookmarkClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
+    onClickBookmark?: React.MouseEventHandler<HTMLButtonElement> | undefined
     /** Whether to show the More Info button or not. */
     showMoreInfoButton?: boolean
     /** Callback function to run when pressing the More Info button */
-    onMoreInfoClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
+    onClickMoreInfo?: React.MouseEventHandler<HTMLButtonElement> | undefined
     /** Callback function to run when pressing the Access/Policy button */
-    onAccessClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
+    onClickAccess?: React.MouseEventHandler<HTMLButtonElement> | undefined
     /** The name of the resource */
     resourceName: string
     /** The type of the resource */
@@ -44,7 +43,7 @@ export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     style?: CSSProperties | undefined
 }
 
-export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, bookmarked, forPolicy = false, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onBookmarkClick, showMoreInfoButton = true, onMoreInfoClick, onAccessClick, width, style, }: ResourceCardProps): JSX.Element => {
+export const ResourceCard = ({ accessState, resourceIcon, bookmarked, forPolicy = false, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onClickBookmark, showMoreInfoButton = true, onClickMoreInfo, onClickAccess, width, style, }: ResourceCardProps): JSX.Element => {
 
     // Exclusive accessState styles for this component:
     const accessStateStyles: IVariant = {
@@ -91,7 +90,6 @@ export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, b
     return (
         <View
             style={componentStyle()}
-            //width={'304px'}
             padding={'16px 16px 16px 24px'}
         >
 
@@ -108,7 +106,7 @@ export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, b
                             <IconButton
                                 variant={ bookmarked ? 'grayBlue' : 'tertiary' }
                                 icon={faBookmark}
-                                onClick={onBookmarkClick}
+                                onClick={onClickBookmark}
                             />
                         </div>
                     :
@@ -118,7 +116,7 @@ export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, b
                             <IconButton
                                 variant={ bookmarked ? 'grayBlue' : 'tertiary' }
                                 icon={faBookmark}
-                                onClick={onBookmarkClick}
+                                onClick={onClickBookmark}
                             />
                         </div>
                 :
@@ -131,7 +129,7 @@ export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, b
                         <IconButton
                             variant={ bookmarked ? 'grayBlue' : 'tertiary' }
                             icon={faBookmark}
-                            onClick={onBookmarkClick}
+                            onClick={onClickBookmark}
                         />
                     </div>
             }
@@ -176,12 +174,12 @@ export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, b
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     {
                         showMoreInfoButton ?
-                            <Button variant="gray" onClick={onMoreInfoClick} >More Info</Button>
+                            <Button variant="gray" onClick={onClickMoreInfo} >More Info</Button>
                         :
                             <div></div>
                     }
                         
-                        <Button variant="grayBlue" onClick={onAccessClick} >{forPolicy ? 'Policy' : 'Request'}</Button>
+                        <Button variant="grayBlue" onClick={onClickAccess} >{forPolicy ? 'Policy' : 'Request'}</Button>
                     </div>
                 :
                     <div style={{ display: 'flex', justifyContent: 'space-between', }}>
@@ -189,7 +187,7 @@ export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, b
                         <div style={{ display: 'flex', gap: '8px' }}>
                         {
                             ( dropDownItems && dropDownItems?.length <= 1 && !dropDownItems[0].submenu) ?
-                                <Button variant="grayBlue" onClick={onAccessClick} >{forPolicy ? 'Policy' : 'Sign In'}</Button>
+                                <Button variant="grayBlue" onClick={onClickAccess} >{forPolicy ? 'Policy' : 'Sign In'}</Button>
                             :
                                 <DropDownButton size="sm" variant="grayBlue" menuItems={dropDownItems}  />
                         }
@@ -198,9 +196,6 @@ export const ResourceCard = ({ variant = 'primary', accessState, resourceIcon, b
                     </div>
 
             }
-
-
-
         </View>
     )
 

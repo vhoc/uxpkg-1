@@ -35,10 +35,7 @@ export const ScrollableCard = ({ title, description, content, style }: Scrollabl
     return (
         <div
             style={{
-                //width: '605px',
-                //maxWidth: '605px',
                 minHeight: '150px',
-                //height: expanded ? 'fit-content' : '72px',
                 backgroundColor: colors.white,
                 borderWidth: '1px',
                 borderColor: colors.gray[20] || '#D8DDE4 !important',
@@ -50,7 +47,6 @@ export const ScrollableCard = ({ title, description, content, style }: Scrollabl
                 paddingRight: '16px',
                 display: 'flex',
                 flexDirection: 'column',
-                //justifyContent: 'space-between',
                 fontFamily: theme.font.body.regular.fontFamily,
                 fontSize: theme.font.body.regular.fontSize,
                 fontWeight: theme.font.body.regular.fontWeight,
@@ -82,10 +78,6 @@ export const ScrollableCard = ({ title, description, content, style }: Scrollabl
                 style={{
                     ...theme.font.caption.regular,
                     width: '100%',
-                    //height: 'fit-content',
-                    //maxHeight: '280px',
-                    //height: '100px',
-                    //paddingRight: '100px',
                     textAlign: 'left',
                 }}
             >

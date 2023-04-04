@@ -6,9 +6,22 @@ import { ChartItem } from './ChartItem'
 import { DonutChart } from './DonutChart'
 
 export interface DonutChartCardProps extends HTMLAttributes<HTMLDivElement> {
+    /** The title at the top of the card */
     title: string,
+    /** A text label to be show at the center of the donut. */
     shortTitle: string,
+    /** Container style CSS overrides. */
     style?: React.CSSProperties | undefined
+    /**
+     * Array of IChartItem in the card.  
+     * -- type: string  
+     * -- title?: string | undefined  
+     * -- risk?: string | undefined  
+     * -- color?: string | undefined  
+     * -- value: number  
+     * -- percent: number  
+     * -- caption?: string | undefined  
+     */
     items: IChartItem[]
 }
 
@@ -25,7 +38,6 @@ export const DonutChartCard = ({title, items, shortTitle, style}: DonutChartCard
                 paddingBottom: '31px',
                 display: 'flex',
                 gap: '70px',
-                //justifyContent: 'space-between',
                 borderStyle: 'solid',
                 borderWidth: '1px',
                 borderColor: 'rgb(216, 221, 228)',

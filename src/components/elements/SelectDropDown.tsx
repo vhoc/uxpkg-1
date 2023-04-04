@@ -26,14 +26,15 @@ export interface SelectDropDownProps extends SelectProps {
     /**
      * Array of items objects in the menu.  
      * Object structure:  
-     * - value?: string | undefined
-     * - label: string
-     * - selected: boolean | undefined
-     * - disabled: boolean | undefined
+     * - value?: string | undefined  
+     * - label: string  
+     * - selected: boolean | undefined  
+     * - disabled: boolean | undefined  
      */
     menuItems?: SelectDropDownItemProps[] | undefined
+    /** Disabled state of the component (true or false). */
     disabled?: boolean
-    /** onChange callback event */
+    /** Function to run when changing the value. */
     onChange?: ((event: SelectChangeEvent<any>, child: React.ReactNode) => void) | undefined
 }
 
@@ -57,7 +58,6 @@ const MySelect = styled(Select)({
     '&.Mui-focused fieldset' : {
         borderColor: colors.blue[40] + ' !important',
         borderWidth: '1px !important',
-        //border: 'inherited',
         boxShadow: 'none',
     },
 })
@@ -80,7 +80,6 @@ export const SelectDropDown = ({menuItems, value, onChange, disabled = false, la
                     '&:hover fieldset' : {
                         borderColor: colors.gray[20] + ' !important',
                         borderWidth: '1px',
-                        //border: 'inherited',
                         boxShadow: 'none',
                     },                
                 }}

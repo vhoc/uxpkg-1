@@ -12,7 +12,9 @@ export interface SegmentedControlProps {
      * - disabled: boolean
      */
     items: ISegmentedControlItem[];
+    /** Enables or disables the selection of multiple options at the same time. */
     multiSelect?: boolean;
+    /** Aria label html property. */
     ariaLabel: string;
 }
 export declare const SegmentedControl: ({ items, multiSelect, ariaLabel, }: SegmentedControlProps) => JSX.Element;

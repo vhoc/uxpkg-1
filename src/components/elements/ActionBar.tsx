@@ -16,14 +16,14 @@ export interface ActionBarProps extends HTMLAttributes<HTMLDivElement> {
     /** Assigned state. It affects the button on the right. */
     assigned?: boolean
     /** Add button function */
-    addButtonOnClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
+    onClickAddButton?: React.MouseEventHandler<HTMLButtonElement> | undefined
     /** Remove button function */
-    removeButtonOnClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
+    onClickRemoveButton?: React.MouseEventHandler<HTMLButtonElement> | undefined
     /** Style override for the container */
     style?: React.CSSProperties | undefined
 }
 
-export const ActionBar = ({ name, leftIcon, selected = false, assigned = false, addButtonOnClick, removeButtonOnClick, style, }: ActionBarProps) => {
+export const ActionBar = ({ name, leftIcon, selected = false, assigned = false, onClickAddButton, onClickRemoveButton, style, }: ActionBarProps) => {
 
     return (
         <div
@@ -66,7 +66,7 @@ export const ActionBar = ({ name, leftIcon, selected = false, assigned = false, 
                     icon={assigned ? faCircleMinus : faCirclePlus}
                     variant={assigned ? 'gray' : 'grayBlue'}
                     size={'sm'}
-                    onClick={assigned ? removeButtonOnClick : addButtonOnClick }
+                    onClick={assigned ? onClickRemoveButton : onClickAddButton }
                 />
             </div>
             

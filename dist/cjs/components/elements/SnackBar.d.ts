@@ -16,12 +16,12 @@ export interface SnackBarProps {
     /** Extra button label. Requires the showExtraButton prop to be set to TRUE. */
     extraButtonLabel?: string | undefined;
     /** Function to run when the extra button is clicked. Requires the showExtraButton prop to be set to TRUE. */
-    extraButtonOnClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+    onClickExtraButton?: React.MouseEventHandler<HTMLButtonElement> | undefined;
     /** Items of the DropDown menu. Requires showDropDownButton prop to be set to TRUE. */
     menuItems?: SelectDropDownItemProps[] | undefined;
     /** Function to be triggered by the "Continue Button" */
-    continueButtonOnClick?: React.MouseEventHandler<HTMLButtonElement>;
+    onClickContinueButton?: React.MouseEventHandler<HTMLButtonElement>;
     /** Styling object */
     sx?: SxProps<Theme> | undefined;
 }
-export declare const SnackBar: ({ variant, leftIcon, textMessage, showExtraButton, extraButtonOnClick, extraButtonLabel, menuItems, showDropDownButton, continueButtonOnClick, sx, }: SnackBarProps) => JSX.Element;
+export declare const SnackBar: ({ variant, leftIcon, textMessage, showExtraButton, onClickExtraButton, extraButtonLabel, menuItems, showDropDownButton, onClickContinueButton, sx, }: SnackBarProps) => JSX.Element;

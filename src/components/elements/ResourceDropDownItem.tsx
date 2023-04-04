@@ -3,8 +3,6 @@ import { Typography } from './Typography'
 import { colors } from '../../theme'
 
 export interface ResourceDropDownItemProps extends HTMLAttributes<HTMLDivElement> {
-    /** Value to control the DropDown */
-    //value?: string | undefined
     /** Upper text (resource name) */
     resourceName: string
     /** Lower text */

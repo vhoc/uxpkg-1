@@ -33,13 +33,13 @@ exports.Default = {
             {
                 label: "Identities with access (3)",
                 tabContent: react_1["default"].createElement(react_1["default"].Fragment, null,
-                    react_1["default"].createElement(UserGroupBar_1.UserGroupBar, { addButtonOnClick: function () { return alert("Adding user Bill Murray"); }, caption: "bill@company.com", name: "Bill Murray", removeButtonOnClick: function () { return alert("Removing user Bill Murray"); }, style: {
+                    react_1["default"].createElement(UserGroupBar_1.UserGroupBar, { onClickAddButton: function () { return alert("Adding user Bill Murray"); }, caption: "bill@company.com", name: "Bill Murray", onClickRemoveButton: function () { return alert("Removing user Bill Murray"); }, style: {
                             width: '100%'
                         }, type: "user", endButton: false, onClick: function () { return alert("Bill Murray clicked!"); } }),
-                    react_1["default"].createElement(UserGroupBar_1.UserGroupBar, { addButtonOnClick: function () { return alert("Adding user John Travolta"); }, caption: "john@company.com", name: "John Travolta", removeButtonOnClick: function () { return alert("Removing user John Travolta"); }, style: {
+                    react_1["default"].createElement(UserGroupBar_1.UserGroupBar, { onClickAddButton: function () { return alert("Adding user John Travolta"); }, caption: "john@company.com", name: "John Travolta", onClickRemoveButton: function () { return alert("Removing user John Travolta"); }, style: {
                             width: '100%'
                         }, type: "user", endButton: false, onClick: function () { return alert("John Travolta clicked!"); } }),
-                    react_1["default"].createElement(UserGroupBar_1.UserGroupBar, { addButtonOnClick: function () { return alert("Adding user Will Smith"); }, caption: "will@company.com", name: "Will Smith", removeButtonOnClick: function () { return alert("Removing user Will Smith"); }, style: {
+                    react_1["default"].createElement(UserGroupBar_1.UserGroupBar, { onClickAddButton: function () { return alert("Adding user Will Smith"); }, caption: "will@company.com", name: "Will Smith", onClickRemoveButton: function () { return alert("Removing user Will Smith"); }, style: {
                             width: '100%'
                         }, type: "user", endButton: false, onClick: function () { return alert("Will Smith clicked!"); } }))
             },

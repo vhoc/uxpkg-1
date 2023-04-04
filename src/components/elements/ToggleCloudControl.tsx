@@ -9,11 +9,13 @@ import imgAzureColor from '../../assets/icons/azure-color-18px.png'
 import imgAzureGray from '../../assets/icons/azure-gray-18px.png'
 
 export interface ToggleCloudControlProps extends ToggleButtonGroupProps {
-    //value: 'aws' | 'azure' | 'google'
-    //multiSelect?: boolean
+    /** The value of the control. */
     value: string[] | string
+    /** Aria Label HTML property */
     ariaLabel?: string | undefined
+    /** Function to run when changing the value. */
     onChange?: ((event: React.MouseEvent<HTMLElement, MouseEvent>, value: any) => void) | undefined
+    /** Enables or disables the selection of multiple values. */
     multiSelect?: boolean
 }
 
@@ -34,9 +36,6 @@ export const ToggleCloudControl = ({ ariaLabel = 'cloud control', multiSelect = 
             <ToggleButton
                 value={'AWS'}
                 aria-label={'AWS'}
-                //onClick={item.onClick}
-                //onChange={item.onChange}
-                //disabled={item.disabled || false}
                 sx={{
                     backgroundColor: colors.gray[10],
                     paddingLeft: '14px',
@@ -57,10 +56,6 @@ export const ToggleCloudControl = ({ ariaLabel = 'cloud control', multiSelect = 
             <ToggleButton
                 value={'GCP'}
                 aria-label={'GCP'}
-                //selected={item.selected}
-                //onClick={item.onClick}
-                //onChange={item.onChange}
-                //disabled={item.disabled || false}
                 sx={{
                     backgroundColor: colors.gray[10],
                     paddingLeft: '14px',
@@ -76,10 +71,6 @@ export const ToggleCloudControl = ({ ariaLabel = 'cloud control', multiSelect = 
             <ToggleButton
                 value={'AZURE'}
                 aria-label={'AZURE'}
-                //selected={item.selected}
-                //onClick={item.onClick}
-                //onChange={item.onChange}
-                //disabled={item.disabled || false}
                 sx={{
                     backgroundColor: colors.gray[10],
                     paddingLeft: '14px',

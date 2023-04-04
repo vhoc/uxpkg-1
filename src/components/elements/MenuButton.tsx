@@ -7,6 +7,7 @@ import { Paper } from "@mui/material";
 import '../../assets/styles/dropdown.css'
 
 export interface IMenuItem {
+    /** asdasdasd */
     icon?: any
     title: string
     style?: object
@@ -17,9 +18,20 @@ export interface IMenuItem {
 }
 
 export interface MenuButtonProps {
+    /**
+     * Array of IMenuItem:  
+     * -- icon (any) _Optional_  
+     * -- title (string)  
+     * -- style (object) _Optional_  
+     * -- action (React.MouseEventHandler<HTMLButtonElement> | undefined) _Optional_  
+     * -- variant ('primary' | 'gray' | 'grayBlue' | 'grayRed' | 'clear') _Optional_  
+     * -- size ('sm' | 'md') _Optional_  
+     * -- disabled (boolean) _Optional_  
+     */
     menuItems: IMenuItem[]
-    //variant?: 'primary' | 'gray' | 'grayBlue' | 'grayRed' | 'clear'
+    /** The size of the button. */
     size?: 'sm' | 'md'
+    /** Disabled state of the button. */
     disabled?: boolean
 }
 
@@ -45,7 +57,6 @@ export const MenuButton = ({ menuItems }: MenuButtonProps): JSX.Element => {
 
     const wrapperRef = useRef(null)
     useClickOutsideEvent(wrapperRef)
-    //const [dropdown, setDropdown] = useState<boolean>(false)
 
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(anchorEl ? null : event.currentTarget);
@@ -84,7 +95,6 @@ export const MenuButton = ({ menuItems }: MenuButtonProps): JSX.Element => {
                                 return (
                                     <MenuButtonItem
                                         key={index}
-                                        //action={item.action}
                                         action={item.action}
                                         icon={item.icon}
                                         title={item.title}

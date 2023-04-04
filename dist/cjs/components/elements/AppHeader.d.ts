@@ -1,7 +1,6 @@
 import React, { CSSProperties, HTMLAttributes } from "react";
 import { IDropDownItem } from "../../util/sample-data";
 export interface AppHeaderProps extends HTMLAttributes<HTMLDivElement> {
-    variant?: 'default';
     /** Image URL for the logo */
     imgUrl?: string;
     /** Styles for the image */
@@ -15,4 +14,4 @@ export interface AppHeaderProps extends HTMLAttributes<HTMLDivElement> {
     /** Function to be assigned to the notification icon button. */
     onClickNotificationButton?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 }
-export declare const AppHeader: ({ variant, imgUrl, imgStyle, userName, userRole, dropDownMenuItems, onClickNotificationButton, ...props }: AppHeaderProps) => JSX.Element;
+export declare const AppHeader: ({ imgUrl, imgStyle, userName, userRole, dropDownMenuItems, onClickNotificationButton, ...props }: AppHeaderProps) => JSX.Element;

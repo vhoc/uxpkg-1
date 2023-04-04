@@ -5,9 +5,13 @@ import { colors } from '../../theme'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export interface AlertModalProps extends HTMLAttributes<HTMLDivElement> {
+    /** FontAwesome v6 Icon (IconProp). */
     icon?: IconProp
+    /** The title at the top of the modal. */
     title?: string
+    /** The text in the main container of the component. */
     description?: string
+    /** React Elements of the Button type only. */
     children?: ReactElement<ButtonProps> | Array<ReactElement<ButtonProps>>
 }
 

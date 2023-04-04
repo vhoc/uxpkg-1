@@ -53,8 +53,6 @@ export const SelectDate = ({value, onChange, defaultValue,}: SelectDateProps): J
         '&:hover' : {
             backgroundColor: colors.blue[5],
             borderColor: colors.gray[20],
-            //borderWidth: 'px',
-            //border: 'none',
         },
         '&:disabled': {
             borderColor: colors.gray[20],

@@ -6,7 +6,7 @@ import { ImageDropDownButton } from "./ImageDropDownButton";
 import { faBell } from "@fortawesome/sharp-solid-svg-icons";
 import { IconButton } from "./IconButton";
 export var AppHeader = function (_a) {
-    var _b = _a.variant, variant = _b === void 0 ? 'default' : _b, imgUrl = _a.imgUrl, imgStyle = _a.imgStyle, userName = _a.userName, userRole = _a.userRole, dropDownMenuItems = _a.dropDownMenuItems, onClickNotificationButton = _a.onClickNotificationButton, props = __rest(_a, ["variant", "imgUrl", "imgStyle", "userName", "userRole", "dropDownMenuItems", "onClickNotificationButton"]);
+    var imgUrl = _a.imgUrl, imgStyle = _a.imgStyle, userName = _a.userName, userRole = _a.userRole, dropDownMenuItems = _a.dropDownMenuItems, onClickNotificationButton = _a.onClickNotificationButton, props = __rest(_a, ["imgUrl", "imgStyle", "userName", "userRole", "dropDownMenuItems", "onClickNotificationButton"]);
     return (React.createElement("div", __assign({ style: {
             width: '100%',
             backgroundColor: colors.white,

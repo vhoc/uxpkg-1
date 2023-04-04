@@ -9,9 +9,7 @@ var ChartPercentBar_1 = require("./ChartPercentBar");
 var ChartItem_1 = require("./ChartItem");
 var PercentBarCard = function (_a) {
     var title = _a.title, topRightCaption = _a.topRightCaption, items = _a.items, style = _a.style;
-    return (react_1["default"].createElement("div", { style: tslib_1.__assign({ minWidth: '666px', width: '666px', 
-            //height: '284px',
-            paddingTop: '20px', paddingRight: '24px', paddingLeft: '24px', paddingBottom: '18px', display: 'flex', flexDirection: 'column', borderStyle: 'solid', borderWidth: '1px', borderColor: 'rgb(216, 221, 228)', borderRadius: '4px', backgroundColor: theme_1.colors.white }, style) },
+    return (react_1["default"].createElement("div", { style: tslib_1.__assign({ minWidth: '666px', width: '666px', paddingTop: '20px', paddingRight: '24px', paddingLeft: '24px', paddingBottom: '18px', display: 'flex', flexDirection: 'column', borderStyle: 'solid', borderWidth: '1px', borderColor: 'rgb(216, 221, 228)', borderRadius: '4px', backgroundColor: theme_1.colors.white }, style) },
         react_1["default"].createElement("div", { style: {
                 display: 'flex',
                 justifyContent: 'space-between',

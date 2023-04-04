@@ -12,21 +12,20 @@ export interface TargetInputModalProps extends HTMLAttributes<HTMLDivElement> {
     /** Title of the modal */
     title: string
     /** Function to run when clicking on the close button */
-    onCloseButtonClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
+    onClickCloseButton?: React.MouseEventHandler<HTMLButtonElement> | undefined
     /** Function to run when changing the text in the input */
-    onTextInputChange?: ((value: any) => void) | undefined
+    onChangeTextInput?: ((value: any) => void) | undefined
     /** Function to run the confirm, button */
     onClickConfirm?: React.MouseEventHandler<HTMLButtonElement> | undefined
     /** Label of the confirm button */
     confirmButtonLabel?: string | undefined
 }
 
-export const TargetInputModal = ({ icon, title = 'Confirm', onCloseButtonClick, onTextInputChange, onClickConfirm, confirmButtonLabel = 'OK' }: TargetInputModalProps): JSX.Element => {
+export const TargetInputModal = ({ icon, title = 'Confirm', onClickCloseButton, onChangeTextInput, onClickConfirm, confirmButtonLabel = 'OK' }: TargetInputModalProps): JSX.Element => {
 
     const handleTextInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        //setCommentsState(event.target.value)
-        if (onTextInputChange) {
-            onTextInputChange(event.target.value)
+        if (onChangeTextInput) {
+            onChangeTextInput(event.target.value)
         }
     }
 
@@ -68,7 +67,7 @@ export const TargetInputModal = ({ icon, title = 'Confirm', onCloseButtonClick, 
                 </div>
 
                 {/** RIGHT SIDE (CLOSE BUTTON) */}
-                <IconButton icon={faTimes} variant={'gray'} onClick={onCloseButtonClick} />
+                <IconButton icon={faTimes} variant={'gray'} onClick={onClickCloseButton} />
 
             </div>
 
