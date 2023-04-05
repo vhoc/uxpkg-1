@@ -7,14 +7,14 @@ import RiskLevelCritical from '../../../assets/icons/risk-critical.png'
 
 export interface SignalBarsProps extends HTMLAttributes<HTMLImageElement> {
     /** The level of the risk defines the number of filled bars and their color */
-    level: 'none' | 'low' | 'medium' | 'high' | 'critical'
+    variant: 'none' | 'low' | 'medium' | 'high' | 'critical'
     /** CSS Overrides */
     style?: React.CSSProperties | undefined
 }
 
-export const SignalBars = ({ level, style }: SignalBarsProps): JSX.Element => {
+export const SignalBars = ({ variant, style }: SignalBarsProps): JSX.Element => {
 
-    const levelsTable = {
+    const variantsTable = {
         none: RiskLevelNone,
         low: RiskLevelLow,
         medium: RiskLevelMedium,
@@ -22,19 +22,19 @@ export const SignalBars = ({ level, style }: SignalBarsProps): JSX.Element => {
         critical: RiskLevelCritical,
     }
 
-    type LevelType = keyof typeof levelsTable
-    const selectedLevel = level as LevelType
+    type LevelType = keyof typeof variantsTable
+    const selectedVariant = variant as LevelType
 
     return (
         <img
-            src={levelsTable[selectedLevel]}
+            src={variantsTable[selectedVariant]}
             style={{
                 display: 'flex',
                 width: '15px',
                 height: '14px',
                 ...style,
             }}
-            alt={`${selectedLevel} risk`}
+            alt={`${selectedVariant} risk`}
         >
 
         </img>

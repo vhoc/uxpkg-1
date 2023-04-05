@@ -35,6 +35,6 @@ var AccountRiskItem = function (_a) {
                 } },
                 react_1["default"].createElement(Typography_1.Typography, { variant: 'bodySmall-regular', style: { color: theme_1.colors.gray[90] } }, title),
                 react_1["default"].createElement(Typography_1.Typography, { variant: 'bodySmall-regular', style: { color: theme_1.colors.gray[70] } }, caption))),
-        react_1["default"].createElement(RiskIndicator_1.RiskIndicator, { level: riskLevel })));
+        react_1["default"].createElement(RiskIndicator_1.RiskIndicator, { variant: riskLevel })));
 };
 exports.AccountRiskItem = AccountRiskItem;

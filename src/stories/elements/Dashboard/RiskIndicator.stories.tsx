@@ -8,24 +8,36 @@ export default {
 
 export const Low = {
     args: {
-        level: 'low',
+        variant: 'low',
     }
 }
 
 export const Medium = {
     args: {
-        level: 'medium',
+        variant: 'medium',
     }
 }
 
 export const High = {
     args: {
-        level: 'high',
+        variant: 'high',
     }
 }
 
 export const Critical = {
     args: {
-        level: 'critical',
+        variant: 'critical',
+    }
+}
+
+export const Online = {
+    args: {
+        variant: 'online',
+    }
+}
+
+export const Offline = {
+    args: {
+        variant: 'offline',
     }
 }

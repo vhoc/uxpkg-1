@@ -6,14 +6,14 @@ import RiskLevelMedium from '../../../assets/icons/risk-med.svg';
 import RiskLevelHigh from '../../../assets/icons/risk-high.svg';
 import RiskLevelCritical from '../../../assets/icons/risk-critical.png';
 export var SignalBars = function (_a) {
-    var level = _a.level, style = _a.style;
-    var levelsTable = {
+    var variant = _a.variant, style = _a.style;
+    var variantsTable = {
         none: RiskLevelNone,
         low: RiskLevelLow,
         medium: RiskLevelMedium,
         high: RiskLevelHigh,
         critical: RiskLevelCritical
     };
-    var selectedLevel = level;
-    return (React.createElement("img", { src: levelsTable[selectedLevel], style: __assign({ display: 'flex', width: '15px', height: '14px' }, style), alt: "".concat(selectedLevel, " risk") }));
+    var selectedVariant = variant;
+    return (React.createElement("img", { src: variantsTable[selectedVariant], style: __assign({ display: 'flex', width: '15px', height: '14px' }, style), alt: "".concat(selectedVariant, " risk") }));
 };

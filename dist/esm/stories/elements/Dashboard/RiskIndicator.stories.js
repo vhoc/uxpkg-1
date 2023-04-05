@@ -5,21 +5,31 @@ export default {
 };
 export var Low = {
     args: {
-        level: 'low'
+        variant: 'low'
     }
 };
 export var Medium = {
     args: {
-        level: 'medium'
+        variant: 'medium'
     }
 };
 export var High = {
     args: {
-        level: 'high'
+        variant: 'high'
     }
 };
 export var Critical = {
     args: {
-        level: 'critical'
+        variant: 'critical'
+    }
+};
+export var Online = {
+    args: {
+        variant: 'online'
+    }
+};
+export var Offline = {
+    args: {
+        variant: 'offline'
     }
 };

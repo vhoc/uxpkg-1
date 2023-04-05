@@ -87,7 +87,7 @@ export const AccountRiskItem = ({ accountProvider, icon, title, caption, riskLev
             </div>
 
             {/** RIGHT PANE (RISK INDICATOR) */}
-            <RiskIndicator level={riskLevel}/>
+            <RiskIndicator variant={riskLevel}/>
             
         </div>
     )

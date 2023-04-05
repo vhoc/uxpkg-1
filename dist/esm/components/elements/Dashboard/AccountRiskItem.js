@@ -32,5 +32,5 @@ export var AccountRiskItem = function (_a) {
                 } },
                 React.createElement(Typography, { variant: 'bodySmall-regular', style: { color: colors.gray[90] } }, title),
                 React.createElement(Typography, { variant: 'bodySmall-regular', style: { color: colors.gray[70] } }, caption))),
-        React.createElement(RiskIndicator, { level: riskLevel })));
+        React.createElement(RiskIndicator, { variant: riskLevel })));
 };
