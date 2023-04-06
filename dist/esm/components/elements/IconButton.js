@@ -21,7 +21,9 @@ export var IconButton = function (_a) {
         //outlineColor: focus ? variants[selectedVariant].buttonBgColor : 'transparent',
         //outlineStyle: 'auto',
         //outlineWidth: focus ? '2px' : '0px',
-        outlineWidth: '0px', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: '500', position: 'relative' }, style)); };
+        outlineWidth: '0px', display: 'flex', justifyContent: 'center', alignItems: 'center', 
+        //zIndex: '500',
+        position: 'relative' }, style)); };
     return (React.createElement("button", __assign({ style: componentStyle(hover, active), onMouseEnter: function () { return setHover(true); }, onMouseLeave: function () { return setHover(false); }, onMouseDown: function () { return setActive(true); }, onMouseUp: function () { return setActive(false); }, 
         //onFocus={() => setFocus(true)}
         //onBlur={() => setFocus(false)}

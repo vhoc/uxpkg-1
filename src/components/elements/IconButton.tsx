@@ -68,7 +68,7 @@ export const IconButton = ({style, icon, size = 'sm', variant = 'primary', disab
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        zIndex: '500',
+        //zIndex: '500',
         position: 'relative',
         ...style,
     })
