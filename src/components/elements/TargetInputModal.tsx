@@ -11,6 +11,8 @@ export interface TargetInputModalProps extends HTMLAttributes<HTMLDivElement> {
     icon?: any
     /** Title of the modal */
     title: string
+    /** TextInput value */
+    textInputValue?: string | undefined
     /** Function to run when clicking on the close button */
     onClickCloseButton?: React.MouseEventHandler<HTMLButtonElement> | undefined
     /** Function to run when changing the text in the input */
@@ -21,7 +23,7 @@ export interface TargetInputModalProps extends HTMLAttributes<HTMLDivElement> {
     confirmButtonLabel?: string | undefined
 }
 
-export const TargetInputModal = ({ icon, title = 'Confirm', onClickCloseButton, onChangeTextInput, onClickConfirm, confirmButtonLabel = 'OK' }: TargetInputModalProps): JSX.Element => {
+export const TargetInputModal = ({ icon, title = 'Confirm', textInputValue, onClickCloseButton, onChangeTextInput, onClickConfirm, confirmButtonLabel = 'OK' }: TargetInputModalProps): JSX.Element => {
 
     const handleTextInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         if (onChangeTextInput) {
@@ -80,6 +82,7 @@ export const TargetInputModal = ({ icon, title = 'Confirm', onClickCloseButton, 
             >
                 <TextInput
                     placeholder={'Enter Principal'}
+                    value={textInputValue}
                     onChange={handleTextInputChange}
                     sx={{
                         width: '265px',

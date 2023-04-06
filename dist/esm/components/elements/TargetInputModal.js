@@ -6,7 +6,7 @@ import { Typography } from './Typography';
 import { faTimes } from '@fortawesome/pro-regular-svg-icons';
 import { TextInput } from './TextInput';
 export var TargetInputModal = function (_a) {
-    var icon = _a.icon, _b = _a.title, title = _b === void 0 ? 'Confirm' : _b, onClickCloseButton = _a.onClickCloseButton, onChangeTextInput = _a.onChangeTextInput, onClickConfirm = _a.onClickConfirm, _c = _a.confirmButtonLabel, confirmButtonLabel = _c === void 0 ? 'OK' : _c;
+    var icon = _a.icon, _b = _a.title, title = _b === void 0 ? 'Confirm' : _b, textInputValue = _a.textInputValue, onClickCloseButton = _a.onClickCloseButton, onChangeTextInput = _a.onChangeTextInput, onClickConfirm = _a.onClickConfirm, _c = _a.confirmButtonLabel, confirmButtonLabel = _c === void 0 ? 'OK' : _c;
     var handleTextInputChange = function (event) {
         if (onChangeTextInput) {
             onChangeTextInput(event.target.value);
@@ -44,7 +44,7 @@ export var TargetInputModal = function (_a) {
                 display: 'flex',
                 gap: '18px'
             } },
-            React.createElement(TextInput, { placeholder: 'Enter Principal', onChange: handleTextInputChange, sx: {
+            React.createElement(TextInput, { placeholder: 'Enter Principal', value: textInputValue, onChange: handleTextInputChange, sx: {
                     width: '265px'
                 } }),
             React.createElement(Button, { variant: 'primary', size: 'md', onClick: onClickConfirm },

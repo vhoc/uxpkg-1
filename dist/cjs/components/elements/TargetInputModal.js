@@ -10,7 +10,7 @@ var Typography_1 = require("./Typography");
 var pro_regular_svg_icons_1 = require("@fortawesome/pro-regular-svg-icons");
 var TextInput_1 = require("./TextInput");
 var TargetInputModal = function (_a) {
-    var icon = _a.icon, _b = _a.title, title = _b === void 0 ? 'Confirm' : _b, onClickCloseButton = _a.onClickCloseButton, onChangeTextInput = _a.onChangeTextInput, onClickConfirm = _a.onClickConfirm, _c = _a.confirmButtonLabel, confirmButtonLabel = _c === void 0 ? 'OK' : _c;
+    var icon = _a.icon, _b = _a.title, title = _b === void 0 ? 'Confirm' : _b, textInputValue = _a.textInputValue, onClickCloseButton = _a.onClickCloseButton, onChangeTextInput = _a.onChangeTextInput, onClickConfirm = _a.onClickConfirm, _c = _a.confirmButtonLabel, confirmButtonLabel = _c === void 0 ? 'OK' : _c;
     var handleTextInputChange = function (event) {
         if (onChangeTextInput) {
             onChangeTextInput(event.target.value);
@@ -48,7 +48,7 @@ var TargetInputModal = function (_a) {
                 display: 'flex',
                 gap: '18px'
             } },
-            react_1["default"].createElement(TextInput_1.TextInput, { placeholder: 'Enter Principal', onChange: handleTextInputChange, sx: {
+            react_1["default"].createElement(TextInput_1.TextInput, { placeholder: 'Enter Principal', value: textInputValue, onChange: handleTextInputChange, sx: {
                     width: '265px'
                 } }),
             react_1["default"].createElement(Button_1.Button, { variant: 'primary', size: 'md', onClick: onClickConfirm },
