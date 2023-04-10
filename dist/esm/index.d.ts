@@ -67,3 +67,4 @@ export * from './components/elements/Dashboard/AccountRiskItem';
 export * from './components/elements/Dashboard/AccountRiskModal';
 export * from './components/elements/Dashboard/RiskIndicator';
 export * from './components/elements/Dashboard/SignalBars';
+export * from './components/elements/ServiceCard';

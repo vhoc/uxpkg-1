@@ -10,12 +10,24 @@ import { theme, colors } from "../../theme";
 import { faBadgeCheck } from "@fortawesome/pro-solid-svg-icons";
 import { ServiceIcons } from "../graphical/ServiceIcons";
 export var ServiceCard = function (_a) {
-    var serviceType = _a.serviceType, accessState = _a.accessState, customIcon = _a.customIcon, bookmarked = _a.bookmarked, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, dotMenuItems = _a.dotMenuItems, onClickBookmark = _a.onClickBookmark, _b = _a.showMoreInfoButton, showMoreInfoButton = _b === void 0 ? false : _b, onClickMoreInfo = _a.onClickMoreInfo, width = _a.width, style = _a.style;
+    var serviceType = _a.serviceType, accessState = _a.accessState, customIcon = _a.customIcon, _b = _a.isGranted, isGranted = _b === void 0 ? true : _b, _c = _a.forPolicy, forPolicy = _c === void 0 ? false : _c, onClickPolicy = _a.onClickPolicy, onClickRequest = _a.onClickRequest, bookmarked = _a.bookmarked, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, dotMenuItems = _a.dotMenuItems, onClickBookmark = _a.onClickBookmark, _d = _a.showMoreInfoButton, showMoreInfoButton = _d === void 0 ? false : _d, onClickMoreInfo = _a.onClickMoreInfo, width = _a.width, style = _a.style;
     // Exclusive accessState styles for this component:
     var accessStateStyles = {
-        granted: {
+        access: {
             borderColor: colors.gray[20],
             backgroundColor: colors.white
+        },
+        requested: {
+            borderColor: colors.yellow[50],
+            backgroundColor: colors.white
+        },
+        waiting: {
+            borderColor: colors.yellow[50],
+            backgroundColor: colors.white
+        },
+        signIn: {
+            borderColor: colors.blue[30],
+            backgroundColor: colors.blue[5]
         }
     };
     var selectedAccessState = accessState;
@@ -42,8 +54,14 @@ export var ServiceCard = function (_a) {
                 :
                     React.createElement("div", null),
             React.createElement("div", { style: { display: 'flex', gap: '8px', alignItems: 'center' } },
-                React.createElement(Label, { variant: 'success', text: 'Granted', iconButton: faBadgeCheck, iconPosition: 'end', style: {
-                        height: '30px'
-                    } }),
+                isGranted ?
+                    React.createElement(Label, { variant: 'success', text: 'Granted', iconButton: faBadgeCheck, iconPosition: 'end', style: {
+                            height: '30px'
+                        } })
+                    :
+                        forPolicy ?
+                            React.createElement(Button, { variant: "grayBlue", onClick: onClickPolicy }, "Policy")
+                            :
+                                React.createElement(Button, { variant: "grayBlue", onClick: onClickRequest }, "Request"),
                 React.createElement(DropDownButton, { size: "sm", variant: "grayBlue", menuItems: dotMenuItems, hasDownArrow: false })))));
 };

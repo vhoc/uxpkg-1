@@ -2,11 +2,19 @@ import React, { CSSProperties, HTMLAttributes } from "react";
 import { IDropDownItem } from '../../util/sample-data';
 export interface ServiceCardProps extends HTMLAttributes<HTMLDivElement> {
     /** The type of the service (it determines the icon) */
-    serviceType: 'server' | 'serverPrivate' | 'database' | 'appRole' | 'appRoleDynamic';
+    serviceType: 'SERVER_PRIVATE' | 'DATABASE' | 'APPROLE' | 'APPROLE_DYNAMIC';
     /** The access state of the resource displayed in the card */
-    accessState: 'granted';
+    accessState: 'access' | 'requested' | 'signIn' | 'waiting';
     /** Overrides the service type icon. */
     customIcon?: any;
+    /** Granted state (true or false) */
+    isGranted?: boolean;
+    /** Policy state (true or false) */
+    forPolicy?: boolean;
+    /** Function to run when clicking on Policy button. */
+    onClickPolicy?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+    /** Function to run when clicking on Request button */
+    onClickRequest?: React.MouseEventHandler<HTMLButtonElement> | undefined;
     /** Toggle the bookmarked state of the resource */
     bookmarked: boolean;
     /** Callback function to run when pressing the bookmark icon */
@@ -30,4 +38,4 @@ export interface ServiceCardProps extends HTMLAttributes<HTMLDivElement> {
     /** Style overrides */
     style?: CSSProperties | undefined;
 }
-export declare const ServiceCard: ({ serviceType, accessState, customIcon, bookmarked, resourceName, resourceType, accountName, region, dotMenuItems, onClickBookmark, showMoreInfoButton, onClickMoreInfo, width, style, }: ServiceCardProps) => JSX.Element;
+export declare const ServiceCard: ({ serviceType, accessState, customIcon, isGranted, forPolicy, onClickPolicy, onClickRequest, bookmarked, resourceName, resourceType, accountName, region, dotMenuItems, onClickBookmark, showMoreInfoButton, onClickMoreInfo, width, style, }: ServiceCardProps) => JSX.Element;

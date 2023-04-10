@@ -5,9 +5,9 @@ import ServiceDatabase from '../../assets/icons/database.svg';
 import ServiceAppRole from '../../assets/icons/app-role.svg';
 import ServiceAppRoleDynamic from '../../assets/icons/app-role-dynamic.svg';
 export var ServiceIcons = {
-    server: ServiceServer,
-    serverPrivate: ServiceServerPrivate,
-    database: ServiceDatabase,
-    appRole: ServiceAppRole,
-    appRoleDynamic: ServiceAppRoleDynamic
+    SERVER: ServiceServer,
+    SERVER_PRIVATE: ServiceServerPrivate,
+    DATABASE: ServiceDatabase,
+    APPROLE: ServiceAppRole,
+    APPROLE_DYNAMIC: ServiceAppRoleDynamic
 };

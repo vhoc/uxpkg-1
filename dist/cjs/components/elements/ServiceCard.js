@@ -13,12 +13,24 @@ var theme_1 = require("../../theme");
 var pro_solid_svg_icons_1 = require("@fortawesome/pro-solid-svg-icons");
 var ServiceIcons_1 = require("../graphical/ServiceIcons");
 var ServiceCard = function (_a) {
-    var serviceType = _a.serviceType, accessState = _a.accessState, customIcon = _a.customIcon, bookmarked = _a.bookmarked, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, dotMenuItems = _a.dotMenuItems, onClickBookmark = _a.onClickBookmark, _b = _a.showMoreInfoButton, showMoreInfoButton = _b === void 0 ? false : _b, onClickMoreInfo = _a.onClickMoreInfo, width = _a.width, style = _a.style;
+    var serviceType = _a.serviceType, accessState = _a.accessState, customIcon = _a.customIcon, _b = _a.isGranted, isGranted = _b === void 0 ? true : _b, _c = _a.forPolicy, forPolicy = _c === void 0 ? false : _c, onClickPolicy = _a.onClickPolicy, onClickRequest = _a.onClickRequest, bookmarked = _a.bookmarked, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, dotMenuItems = _a.dotMenuItems, onClickBookmark = _a.onClickBookmark, _d = _a.showMoreInfoButton, showMoreInfoButton = _d === void 0 ? false : _d, onClickMoreInfo = _a.onClickMoreInfo, width = _a.width, style = _a.style;
     // Exclusive accessState styles for this component:
     var accessStateStyles = {
-        granted: {
+        access: {
             borderColor: theme_1.colors.gray[20],
             backgroundColor: theme_1.colors.white
+        },
+        requested: {
+            borderColor: theme_1.colors.yellow[50],
+            backgroundColor: theme_1.colors.white
+        },
+        waiting: {
+            borderColor: theme_1.colors.yellow[50],
+            backgroundColor: theme_1.colors.white
+        },
+        signIn: {
+            borderColor: theme_1.colors.blue[30],
+            backgroundColor: theme_1.colors.blue[5]
         }
     };
     var selectedAccessState = accessState;
@@ -45,9 +57,15 @@ var ServiceCard = function (_a) {
                 :
                     react_1["default"].createElement("div", null),
             react_1["default"].createElement("div", { style: { display: 'flex', gap: '8px', alignItems: 'center' } },
-                react_1["default"].createElement(Label_1.Label, { variant: 'success', text: 'Granted', iconButton: pro_solid_svg_icons_1.faBadgeCheck, iconPosition: 'end', style: {
-                        height: '30px'
-                    } }),
+                isGranted ?
+                    react_1["default"].createElement(Label_1.Label, { variant: 'success', text: 'Granted', iconButton: pro_solid_svg_icons_1.faBadgeCheck, iconPosition: 'end', style: {
+                            height: '30px'
+                        } })
+                    :
+                        forPolicy ?
+                            react_1["default"].createElement(Button_1.Button, { variant: "grayBlue", onClick: onClickPolicy }, "Policy")
+                            :
+                                react_1["default"].createElement(Button_1.Button, { variant: "grayBlue", onClick: onClickRequest }, "Request"),
                 react_1["default"].createElement(DropDownButton_1.DropDownButton, { size: "sm", variant: "grayBlue", menuItems: dotMenuItems, hasDownArrow: false })))));
 };
 exports.ServiceCard = ServiceCard;

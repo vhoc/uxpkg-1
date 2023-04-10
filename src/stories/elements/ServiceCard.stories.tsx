@@ -9,24 +9,24 @@ export default {
 
 export const Default = {
     args: {
-        serviceType: 'server',
-        accessState: 'granted',
+        serviceType: 'SERVER_PRIVATE',
+        accessState: 'access',
         bookmarked: false,
         resourceName: 'Server name',
         resourceType: 'Server type',
         accountName: 'Account',
         region: 'us-west',
         dotMenuItems: menu2Items,
-        onBookmarkClick: () => alert('Bookmark button triggered.'),
-        onMoreInfoClick: () => alert('More Info button triggered.'),
+        onClickBookmark: () => alert('Bookmark button triggered.'),
+        onClickMoreInfo: () => alert('More Info button triggered.'),
     }
 }
 
 
 export const WithMoreInfoButton = {
     args: {
-        serviceType: 'database',
-        accessState: 'granted',
+        serviceType: 'DATABASE',
+        accessState: 'access',
         bookmarked: false,
         showMoreInfoButton: true,
         resourceName: 'Server name',
@@ -34,8 +34,8 @@ export const WithMoreInfoButton = {
         accountName: 'Account',
         region: 'us-east',
         dotMenuItems: menu2Items,
-        onBookmarkClick: () => alert('Bookmark button triggered.'),
-        onMoreInfoClick: () => alert('More Info button triggered.'),
+        onClickBookmark: () => alert('Bookmark button triggered.'),
+        onClickMoreInfo: () => alert('More Info button triggered.'),
     }
 }
 

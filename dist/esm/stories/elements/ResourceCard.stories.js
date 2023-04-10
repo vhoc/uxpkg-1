@@ -15,9 +15,9 @@ export var Primary = {
         region: 'US-west',
         dropDownItems: menuItems,
         dotMenuItems: menu2Items,
-        onBookmarkClick: function () { return alert('Bookmark button triggered.'); },
-        onMoreInfoClick: function () { return alert('More Info button triggered.'); },
-        onAccessClick: function () { return alert('Access button triggered.'); }
+        onClickBookmark: function () { return alert('Bookmark button triggered.'); },
+        onClickMoreInfo: function () { return alert('More Info button triggered.'); },
+        onClickSingleSignIn: function () { return alert("Single sign in function."); }
     }
 };
 export var SingleItemButton = {
@@ -31,8 +31,7 @@ export var SingleItemButton = {
         region: 'US-west',
         dropDownItems: menu4Items,
         dotMenuItems: menu2Items,
-        onBookmarkClick: function () { return alert('Bookmark button triggered.'); },
-        onMoreInfoClick: function () { return alert('More Info button triggered.'); },
-        onAccessClick: function () { return alert('Access button triggered.'); }
+        onClickBookmark: function () { return alert('Bookmark button triggered.'); },
+        onClickMoreInfo: function () { return alert('More Info button triggered.'); }
     }
 };

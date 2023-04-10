@@ -18,9 +18,9 @@ exports.Primary = {
         region: 'US-west',
         dropDownItems: sample_data_1.menuItems,
         dotMenuItems: sample_data_1.menu2Items,
-        onBookmarkClick: function () { return alert('Bookmark button triggered.'); },
-        onMoreInfoClick: function () { return alert('More Info button triggered.'); },
-        onAccessClick: function () { return alert('Access button triggered.'); }
+        onClickBookmark: function () { return alert('Bookmark button triggered.'); },
+        onClickMoreInfo: function () { return alert('More Info button triggered.'); },
+        onClickSingleSignIn: function () { return alert("Single sign in function."); }
     }
 };
 exports.SingleItemButton = {
@@ -34,8 +34,7 @@ exports.SingleItemButton = {
         region: 'US-west',
         dropDownItems: sample_data_1.menu4Items,
         dotMenuItems: sample_data_1.menu2Items,
-        onBookmarkClick: function () { return alert('Bookmark button triggered.'); },
-        onMoreInfoClick: function () { return alert('More Info button triggered.'); },
-        onAccessClick: function () { return alert('Access button triggered.'); }
+        onClickBookmark: function () { return alert('Bookmark button triggered.'); },
+        onClickMoreInfo: function () { return alert('More Info button triggered.'); }
     }
 };

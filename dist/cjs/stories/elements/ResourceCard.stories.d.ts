@@ -12,9 +12,9 @@ export declare const Primary: {
         region: string;
         dropDownItems: import("../../util/sample-data").IDropDownItem[];
         dotMenuItems: import("../../util/sample-data").IDropDownItem[];
-        onBookmarkClick: () => void;
-        onMoreInfoClick: () => void;
-        onAccessClick: () => void;
+        onClickBookmark: () => void;
+        onClickMoreInfo: () => void;
+        onClickSingleSignIn: () => void;
     };
 };
 export declare const SingleItemButton: {
@@ -28,8 +28,7 @@ export declare const SingleItemButton: {
         region: string;
         dropDownItems: import("../../util/sample-data").IDropDownItem[];
         dotMenuItems: import("../../util/sample-data").IDropDownItem[];
-        onBookmarkClick: () => void;
-        onMoreInfoClick: () => void;
-        onAccessClick: () => void;
+        onClickBookmark: () => void;
+        onClickMoreInfo: () => void;
     };
 };

@@ -12,11 +12,19 @@ import { ServiceIcons } from "../graphical/ServiceIcons"
 
 export interface ServiceCardProps extends HTMLAttributes<HTMLDivElement> {
     /** The type of the service (it determines the icon) */
-    serviceType: 'server' | 'serverPrivate' | 'database' | 'appRole' | 'appRoleDynamic'
+    serviceType: 'SERVER_PRIVATE' | 'DATABASE' | 'APPROLE' | 'APPROLE_DYNAMIC'
     /** The access state of the resource displayed in the card */
-    accessState: 'granted'
+    accessState: 'access' | 'requested' | 'signIn' | 'waiting'
     /** Overrides the service type icon. */
     customIcon?: any
+    /** Granted state (true or false) */
+    isGranted?: boolean
+    /** Policy state (true or false) */
+    forPolicy?: boolean
+    /** Function to run when clicking on Policy button. */
+    onClickPolicy?: React.MouseEventHandler<HTMLButtonElement> | undefined
+    /** Function to run when clicking on Request button */
+    onClickRequest? : React.MouseEventHandler<HTMLButtonElement> | undefined
     /** Toggle the bookmarked state of the resource */
     bookmarked: boolean
     /** Callback function to run when pressing the bookmark icon */
@@ -41,13 +49,25 @@ export interface ServiceCardProps extends HTMLAttributes<HTMLDivElement> {
     style?: CSSProperties | undefined
 }
 
-export const ServiceCard = ({ serviceType, accessState, customIcon, bookmarked, resourceName, resourceType, accountName, region, dotMenuItems, onClickBookmark, showMoreInfoButton = false, onClickMoreInfo, width, style, }: ServiceCardProps): JSX.Element => {
+export const ServiceCard = ({ serviceType, accessState, customIcon, isGranted = true, forPolicy = false, onClickPolicy, onClickRequest, bookmarked, resourceName, resourceType, accountName, region, dotMenuItems, onClickBookmark, showMoreInfoButton = false, onClickMoreInfo, width, style, }: ServiceCardProps): JSX.Element => {
 
     // Exclusive accessState styles for this component:
     const accessStateStyles: IVariant = {
-        granted: {
+        access: {
             borderColor: colors.gray[20],
             backgroundColor: colors.white,
+        },
+        requested: {
+            borderColor: colors.yellow[50],
+            backgroundColor: colors.white,
+        },
+        waiting: {
+            borderColor: colors.yellow[50],
+            backgroundColor: colors.white,
+        },
+        signIn: {
+            borderColor: colors.blue[30],
+            backgroundColor: colors.blue[5],
         },
     }
 
@@ -147,15 +167,25 @@ export const ServiceCard = ({ serviceType, accessState, customIcon, bookmarked, 
                     <div></div>
                 }
                     <div style={{ display: 'flex', gap: '8px', alignItems: 'center', }}>
-                        <Label
-                            variant={'success'}
-                            text={'Granted'}
-                            iconButton={faBadgeCheck}
-                            iconPosition={'end'}
-                            style={{
-                                height: '30px',
-                            }}
-                        />
+                    {/** isGranted conditional > isPolicy conditional */}
+                    {
+                        isGranted ?
+                            <Label
+                                variant={'success'}
+                                text={'Granted'}
+                                iconButton={faBadgeCheck}
+                                iconPosition={'end'}
+                                style={{
+                                    height: '30px',
+                                }}
+                            />
+                        :
+                            forPolicy ?
+                                <Button variant="grayBlue" onClick={onClickPolicy} >Policy</Button>
+                            :
+                                <Button variant="grayBlue" onClick={onClickRequest} >Request</Button>
+
+                    }
                         <DropDownButton
                             size="sm"
                             variant="grayBlue"

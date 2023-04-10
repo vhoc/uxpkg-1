@@ -11,8 +11,8 @@ export declare const Default: {
         accountName: string;
         region: string;
         dotMenuItems: import("../../util/sample-data").IDropDownItem[];
-        onBookmarkClick: () => void;
-        onMoreInfoClick: () => void;
+        onClickBookmark: () => void;
+        onClickMoreInfo: () => void;
     };
 };
 export declare const WithMoreInfoButton: {
@@ -26,7 +26,7 @@ export declare const WithMoreInfoButton: {
         accountName: string;
         region: string;
         dotMenuItems: import("../../util/sample-data").IDropDownItem[];
-        onBookmarkClick: () => void;
-        onMoreInfoClick: () => void;
+        onClickBookmark: () => void;
+        onClickMoreInfo: () => void;
     };
 };
