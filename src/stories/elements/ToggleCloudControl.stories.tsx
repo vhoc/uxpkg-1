@@ -26,3 +26,10 @@ export const Azure = {
         ariaLabel: 'cloud-select',
     }
 }
+
+export const Private = {
+    args: {
+        value: 'PRIVATE',
+        ariaLabel: 'cloud-select',
+    }
+}

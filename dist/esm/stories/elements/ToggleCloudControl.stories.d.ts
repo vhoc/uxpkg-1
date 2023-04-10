@@ -19,3 +19,9 @@ export declare const Azure: {
         ariaLabel: string;
     };
 };
+export declare const Private: {
+    args: {
+        value: string;
+        ariaLabel: string;
+    };
+};

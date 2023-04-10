@@ -1,6 +1,6 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import { Diagram } from "../../components/elements/Diagram";
-import { _data, connections, actions } from '../../util/sample-data'
+import { _data, connections } from '../../util/sample-data'
 
 <Meta title="elements/Graphical/Diagram" component={Diagram} />
 
@@ -24,7 +24,6 @@ A two-dimensional ``Array``. Every array on it represents a column
 | ---    | ---       | --- |
 | data   | Array[ ][ ] | Matrix of [Nodes](#node)
 | arrows | Array[ ]   | Array of [Arrows](#arrows)
-| actions| Array[ ]   | Array of [Actions](#actions)
 
 ## Param values
 
@@ -41,65 +40,180 @@ Node object represent every single cell on the diagram.
 | route         | Array[ ]                     | Array of id's that will be highlighted on hover. If not provided, hover will map every related node **`(Optional)`**
 | icon          | image                        | Image that will be displayed as node cover, it's used as a fallback in case type is not specified.
 | type          | string ( 'AWS_EC2_Image' or 'AWS_KMS' or 'GCP_BUCKET' or... ) | Type of node (If type is provided, icon is not displayed) **`(Optional)`**.<br/>**FULL LIST OF TYPES [HERE](#types)**
-
-Note: <0, >5, null, undefined or NaN values will display icon (if provided) or id
+| actions       | Array[ ]                     | Array of action elements. Described below.
 
 
 Example:
 
 ```tsx
 const data = [
-    //First column
     [
-    { id: "11",
-      value: "1",
-      label: "John Q. Public",
-      description: "john@mail.com",
-      type: 'USER',
-      route: ["21", "31", "33"],
-    },
-    { id: "12",
-      value: "2",
-      label: "Jane Doe",
-      description: "jane@mail.com",
-      type: 'USER',
-      route: ["21", "32"],
-    },
-    { id: "13",
-      value: "3",
-      label: "Petter B. P.",
-      description: "petter@mail.com",
-      type: 'USER',
-      route: ["21", "31", "32"],
-    },
-  ],
-  //Second column
-  [
-    {
-      id: "21",
-      value: "1",
-      label: "Awesome Company",
-      type: 'POLICY',
-    },
-  ]//Third Column
+      {
+        id: "11",
+        value: "1",
+        label: "Andrew Jackson",
+        description: "andrew@company.com",
+        type: 'SERVICEACCOUNT',
+        route: ["21", "31", "33", "42", "44", "45", "49"],
+        actions: [
+          { id: "print-action", label: "More details", onClick: action },
+          { id: "print-action-2", label: "Another print details", onClick: action, },
+          { id: "print-action-3", label: "Some more details", onClick: action},
+        ]
+      },
+      {
+        id: "12",
+        value: "2",
+        label: "Andrew Jackson",
+        description: "andrew@company.com",
+        type: 'SERVICEACCOUNT',
+        route: ["21", "32", "42", "43", "47"],
+        actions: [
+          { id: "print-action", label: "More details", onClick: action },
+          { id: "print-action-2", label: "Another print details", onClick: action, },
+          { id: "print-action-3", label: "Some more details", onClick: action},
+        ]
+      },
+      {
+        id: "13",
+        value: "3",
+        label: "Andrew Jackson",
+        description: "andrew@company.com",
+        type: 'USERGROUPS',
+        route: ["21", "34", "41", "45", "46", "48"],
+        actions: [
+          { id: "print-action", label: "More details", onClick: action },
+          { id: "print-action-2", label: "Another print details", onClick: action, },
+          { id: "print-action-3", label: "Some more details", onClick: action},
+        ]
+      },
+    ],
     [
-    { id: "31",
-      value: "1",
-      label: "H.R.",
-      description: "5th Floor",
-    },
-    { id: "32",
-      value: "2",
-      label: "I.T.",
-      description: "6th Floor",
-    },
-    { id: "33",
-      value: "3",
-      label: "Sales",
-      description: "2ndFloor",
-    },
-  ],
-]
+      {
+        id: "21",
+        value: "1",
+        label: "AWSTestPol",
+        type: 'POLICY',
+        description: "SumaAWS/98012083109281",
+        actions: [
+          { id: "user-action", label: "Some user action", onClick: action, },
+          { id: "role-action", label: "Some role action", onClick: action, },
+          { id: "policy-action", label: "Some policy action", onClick: action, },
+        ],
+      },
+    ],
+    [
+      {
+        id: "31",
+        value: "1",
+        type: 'ROLE',
+        label: "AdministratorAccess-Amplify",
+        actions: [
+          { id: "user-action", label: "Some user action", onClick: action, },
+          { id: "role-action", label: "Some role action", onClick: action,},
+          { id: "policy-action", label: "Some policy action", onClick: action, },
+        ],
+      },
+      { id: "32", value: "2", type: 'ROLE', label: "AmazonAugmentedAI" },
+      { id: "33", value: "3", type: 'ROLE', label: "AccessAnalyzerService" },
+      { id: "34", value: "4", type: 'ROLE', label: "AWSCustomRole" },
+    ],
+    [
+      {
+        id: "41",
+        value: "1",
+        label: "i-0054d9cfe5771e555",
+        description: "AWS EC2 Instance",
+        type: 'AWS_EC2_Instance',
+        actions: [
+        { id: "db-action", label: "Some database action", onClick: action, },
+        { id: "awsUser-action", label: "Some aws user action", onClick: action, },
+        { id: "instance-action", label: "Some instance action", onClick: action, },
+        ],
+      },
+      {
+        id: "42",
+        value: "2",
+        label: "alias/aws/rds",
+        description: "RDS DB",
+        type: 'AWS_Compute',
+        actions: [
+        { id: "db-action", label: "Some database action", onClick: action, },
+        { id: "awsUser-action", label: "Some aws user action", onClick: action, },
+        { id: "instance-action", label: "Some instance action", onClick: action, },
+        ],
+      },
+      {
+        id: "43",
+        value: "3",
+        label: "vpc-21b0035c",
+        description: "VPC",
+        type: 'AWS_User',
+        actions: [
+        { id: "db-action", label: "Some database action", onClick: action, },
+        { id: "awsUser-action", label: "Some aws user action", onClick: action, },
+        { id: "instance-action", label: "Some instance action", onClick: action, },
+        ],
+      },
+      {
+        id: "44",
+        value: "4",
+        label: "i-0054d9cfe5771e555",
+        description: "AWS EC2 Instance",
+        type: 'AWS_Compute',
+        actions: [
+        { id: "db-action", label: "Some database action", onClick: action,},
+        { id: "awsUser-action", label: "Some aws user action", onClick: action,},
+        { id: "instance-action", label: "Some instance action", onClick: action, },
+        ],
+      },
+      {
+        id: "45",
+        value: "5",
+        label: "alias/aws/rds",
+        description: "RDS DB",
+        type: 'AWS_User',
+      },
+      {
+        id: "46",
+        value: "6",
+        label: "vpc-21b0035c",
+        description: "VPC",
+        type: 'AWS_User',
+      },
+      {
+        id: "47",
+        value: "7",
+        label: "i-0054d9cfe5771e555",
+        description: "AWS EC2 Instance",
+        type: 'AWS_EC2_Instance',
+      },
+      {
+        id: "48",
+        value: "8",
+        label: "alias/aws/rds",
+        description: "RDS DB",
+        type: 'AWS_User',
+        actions: [
+        { id: "db-action", label: "Some database action", onClick: action, },
+        { id: "awsUser-action", label: "Some aws user action", onClick: action, },
+        { id: "instance-action", label: "Some instance action", onClick: action, },
+        ],
+      },
+      {
+        id: "49",
+        value: "9",
+        label: "vpc-21b0035c",
+        description: "VPC",
+        type: 'AWS_GAMES',
+        actions: [
+        { id: "db-action", label: "Some database action", onClick: action, },
+        { id: "awsUser-action", label: "Some aws user action", onClick: action, },
+        { id: "instance-action", label: "Some instance action", onClick: action, },
+        ],
+      },
+    ],
+  ];
 ```
 
 #### Arrows
@@ -137,28 +251,6 @@ Actions that will be displayed on node click. returns an `<HTMLDivElement>`
 | type          | string **[TYPES](#types)** | Type of node related to this action **`(Optional)`**.
 
 
-Note: On <0, >5, null, undefined or NaN values, that action will be available for every node.
-
-Example:
-
-```tsx
-
-const action = (e: any) => {
-  console.log("Action for", e.target.id, "option");
-};
-
-const actions = [
-  { id: "print-action", label: "More details", onClick: action }, //"General action displayed for every node"
-  { id: "print-action-2", label: "Another print details", onClick: action, type: 'AWS_EC2_Instance' }, //Specific action for type 5 nodes
-  { id: "print-action-3", label: "Some more details", onClick: action},
-  { id: "user-action", label: "Some user action", onClick: action, type: 'USER'},
-  { id: "role-action", label: "Some role action", onClick: action, type: 'AWS_DATABASE'},
-  { id: "t2-action", label: "Specific action", onClick: action, type: 'AWS_CONTAINERS'},
-  { id: "t3-action", label: "Some type 3 action", onClick: action, type: 'AWS_EC2_EBS_Volume'},
-  { id: "t4-action", label: "Some action", onClick: action, type: 'AWS_EKS'},
-  { id: "t5", label: "Some instance action", onClick: action, type: 'AWS_EC2_Instance' },
-];
-```
 #### Types
 ```
 USER  
@@ -321,7 +413,6 @@ GCP_PUBSUB_TOPIC
     args={{ 
       data: _data,
       arrows: connections,
-      actions: actions,
     }}>
     {Template.bind({})}
    </Story>

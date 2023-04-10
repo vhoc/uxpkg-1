@@ -7,6 +7,8 @@ import imgGoogleColor from '../../assets/icons/google-color-18px.png'
 import imgGoogleGray from '../../assets/icons/google-gray-18px.png'
 import imgAzureColor from '../../assets/icons/azure-color-18px.png'
 import imgAzureGray from '../../assets/icons/azure-gray-18px.png'
+import imgPrivateColor from '../../assets/icons/private-color-18px.png'
+import imgPrivateGray from '../../assets/icons/private-gray-18px.png'
 
 export interface ToggleCloudControlProps extends ToggleButtonGroupProps {
     /** The value of the control. */
@@ -81,6 +83,21 @@ export const ToggleCloudControl = ({ ariaLabel = 'cloud control', multiSelect = 
                 }}
             >
                 <img src={ ( value === 'AZURE' || (Array.isArray(value) && value.find((value) => value === 'AZURE')) ) ? imgAzureColor : imgAzureGray} alt={'AZURE'} />
+            </ToggleButton>
+
+            <ToggleButton
+                value={'PRIVATE'}
+                aria-label={'PRIVATE'}
+                sx={{
+                    backgroundColor: colors.gray[10],
+                    paddingLeft: '14px',
+                    paddingRight: '14px',
+                    '&.Mui-selected': {
+                        backgroundColor: colors.white,
+                    },
+                }}
+            >
+                <img src={ ( value === 'PRIVATE' || (Array.isArray(value) && value.find((value) => value === 'PRIVATE')) ) ? imgPrivateColor : imgPrivateGray} alt={'PRIVATE'} />
             </ToggleButton>
 
         </ToggleButtonGroup>

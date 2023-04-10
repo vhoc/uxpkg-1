@@ -8,6 +8,7 @@ interface Column {
     route?: Array<any>;
     icon?: any;
     type?: string;
+    actions?: Array<Action>;
 }
 interface Arrow {
     startID: string;
@@ -22,7 +23,6 @@ interface Action {
 interface Props {
     data: Column[][];
     arrows?: Array<Arrow>;
-    actions: Action[];
     containerStyle?: object;
     columnStyle?: object;
 }

@@ -6,7 +6,7 @@ import Xarrow, { Xwrapper, useXarrow } from "react-xarrows";
 import "./styles.css";
 import { DisplayTypeToIconMap } from "../graphical/ResourceTypesIcons";
 export var Diagram = function (_a) {
-    var data = _a.data, arrows = _a.arrows, actions = _a.actions, containerStyle = _a.containerStyle, columnStyle = _a.columnStyle;
+    var data = _a.data, arrows = _a.arrows, containerStyle = _a.containerStyle, columnStyle = _a.columnStyle;
     var _b = useState(null), selectedPath = _b[0], setSelectedPath = _b[1];
     var _c = useState([]), mappedPaths = _c[0], setMappedPaths = _c[1];
     var _d = useState(), visible = _d[0], setVisible = _d[1];
@@ -94,17 +94,20 @@ export var Diagram = function (_a) {
                                 src: "".concat(DisplayTypeToIconMap[element.type]), 
                                 //alt={types[element.type]}
                                 alt: DisplayTypeToIconMap[element.type], height: "100%", width: "100%" })) : element.icon ? (React.createElement("img", { src: element.icon, alt: element.value, height: "100%", width: "100%" })) : (element.id)),
-                            React.createElement("div", { className: "diadropdown-content ".concat(visible === element.id ? "show-dropdown" : "") }, !!actions &&
-                                actions.map(function (action) {
-                                    if (action.type === element.type ||
-                                        action.type === undefined ||
-                                        action.type === null) {
-                                        return (React.createElement("div", { className: "actions-text", key: "option-".concat(action.id), id: "".concat(action.id), onClick: action.onClick }, action.label));
-                                    }
-                                    else {
-                                        return null;
-                                    }
-                                }))),
+                            element.actions && element.actions.length >= 1 ?
+                                React.createElement("div", { className: "diadropdown-content ".concat(visible === element.id ? "show-dropdown" : ""), style: { zIndex: 9999 } }, !!element.actions &&
+                                    element.actions.map(function (action) {
+                                        if (action.type === element.type ||
+                                            action.type === undefined ||
+                                            action.type === null) {
+                                            return (React.createElement("div", { className: "actions-text", key: "option-".concat(action.id), id: "".concat(action.id), onClick: action.onClick }, action.label));
+                                        }
+                                        else {
+                                            return null;
+                                        }
+                                    }))
+                                :
+                                    null),
                         React.createElement("div", { className: "text-container" },
                             React.createElement("p", { className: "element-label" }, element.label),
                             element.description && (React.createElement("p", { className: "element-description" }, element.description)))));
