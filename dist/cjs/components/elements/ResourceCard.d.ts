@@ -17,6 +17,8 @@ export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     onClickMoreInfo?: React.MouseEventHandler<HTMLButtonElement> | undefined;
     /** Callback function to run when pressing the Access/Policy button */
     onClickAccess?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+    /** Callback function to run when pressing the SignIn button. */
+    onClickSingleSignIn?: React.MouseEventHandler<HTMLButtonElement> | undefined;
     /** The name of the resource */
     resourceName: string;
     /** The type of the resource */
@@ -34,4 +36,4 @@ export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     /** Style overrides */
     style?: CSSProperties | undefined;
 }
-export declare const ResourceCard: ({ accessState, resourceIcon, bookmarked, forPolicy, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onClickBookmark, showMoreInfoButton, onClickMoreInfo, onClickAccess, width, style, }: ResourceCardProps) => JSX.Element;
+export declare const ResourceCard: ({ accessState, resourceIcon, bookmarked, forPolicy, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onClickBookmark, showMoreInfoButton, onClickMoreInfo, onClickAccess, onClickSingleSignIn, width, style, }: ResourceCardProps) => JSX.Element;

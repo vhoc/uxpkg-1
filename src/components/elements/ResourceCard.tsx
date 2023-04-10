@@ -25,6 +25,8 @@ export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     onClickMoreInfo?: React.MouseEventHandler<HTMLButtonElement> | undefined
     /** Callback function to run when pressing the Access/Policy button */
     onClickAccess?: React.MouseEventHandler<HTMLButtonElement> | undefined
+    /** Callback function to run when pressing the SignIn button. */
+    onClickSingleSignIn?: React.MouseEventHandler<HTMLButtonElement> | undefined
     /** The name of the resource */
     resourceName: string
     /** The type of the resource */
@@ -43,7 +45,7 @@ export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     style?: CSSProperties | undefined
 }
 
-export const ResourceCard = ({ accessState, resourceIcon, bookmarked, forPolicy = false, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onClickBookmark, showMoreInfoButton = true, onClickMoreInfo, onClickAccess, width, style, }: ResourceCardProps): JSX.Element => {
+export const ResourceCard = ({ accessState, resourceIcon, bookmarked, forPolicy = false, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onClickBookmark, showMoreInfoButton = true, onClickMoreInfo, onClickAccess, onClickSingleSignIn, width, style, }: ResourceCardProps): JSX.Element => {
 
     // Exclusive accessState styles for this component:
     const accessStateStyles: IVariant = {
@@ -178,16 +180,23 @@ export const ResourceCard = ({ accessState, resourceIcon, bookmarked, forPolicy 
                         :
                             <div></div>
                     }
-                        
-                        <Button variant="grayBlue" onClick={onClickAccess} >{forPolicy ? 'Policy' : 'Request'}</Button>
+                    {
+                        forPolicy ?
+                            <Button variant="grayBlue" onClick={onClickAccess} >Policy</Button>
+                        :
+                            <Button variant="grayBlue" onClick={onClickSingleSignIn} >Sign In</Button>
+                    }
                     </div>
                 :
                     <div style={{ display: 'flex', justifyContent: 'space-between', }}>
                         <div><Button variant="gray" >More Info</Button></div>
                         <div style={{ display: 'flex', gap: '8px' }}>
                         {
-                            ( dropDownItems && dropDownItems?.length <= 1 && !dropDownItems[0].submenu) ?
-                                <Button variant="grayBlue" onClick={onClickAccess} >{forPolicy ? 'Policy' : 'Sign In'}</Button>
+                            ( dropDownItems && dropDownItems?.length <= 1 && !dropDownItems[0].submenu) || onClickSingleSignIn ?
+                                forPolicy ?
+                                    <Button variant="grayBlue" onClick={onClickAccess} >Policy</Button>
+                                :
+                                    <Button variant="grayBlue" onClick={onClickSingleSignIn} >Sign In</Button>
                             :
                                 <DropDownButton size="sm" variant="grayBlue" menuItems={dropDownItems}  />
                         }

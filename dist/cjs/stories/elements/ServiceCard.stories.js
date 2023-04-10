@@ -9,22 +9,22 @@ exports["default"] = {
 };
 exports.Default = {
     args: {
-        serviceType: 'server',
-        accessState: 'granted',
+        serviceType: 'SERVER_PRIVATE',
+        accessState: 'access',
         bookmarked: false,
         resourceName: 'Server name',
         resourceType: 'Server type',
         accountName: 'Account',
         region: 'us-west',
         dotMenuItems: sample_data_1.menu2Items,
-        onBookmarkClick: function () { return alert('Bookmark button triggered.'); },
-        onMoreInfoClick: function () { return alert('More Info button triggered.'); }
+        onClickBookmark: function () { return alert('Bookmark button triggered.'); },
+        onClickMoreInfo: function () { return alert('More Info button triggered.'); }
     }
 };
 exports.WithMoreInfoButton = {
     args: {
-        serviceType: 'database',
-        accessState: 'granted',
+        serviceType: 'DATABASE',
+        accessState: 'access',
         bookmarked: false,
         showMoreInfoButton: true,
         resourceName: 'Server name',
@@ -32,7 +32,7 @@ exports.WithMoreInfoButton = {
         accountName: 'Account',
         region: 'us-east',
         dotMenuItems: sample_data_1.menu2Items,
-        onBookmarkClick: function () { return alert('Bookmark button triggered.'); },
-        onMoreInfoClick: function () { return alert('More Info button triggered.'); }
+        onClickBookmark: function () { return alert('Bookmark button triggered.'); },
+        onClickMoreInfo: function () { return alert('More Info button triggered.'); }
     }
 };

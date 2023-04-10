@@ -8,7 +8,7 @@ import { Button } from "./Button";
 import { faBookmark } from "@fortawesome/sharp-solid-svg-icons";
 import { theme, colors } from "../../theme";
 export var ResourceCard = function (_a) {
-    var accessState = _a.accessState, resourceIcon = _a.resourceIcon, bookmarked = _a.bookmarked, _b = _a.forPolicy, forPolicy = _b === void 0 ? false : _b, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, dropDownItems = _a.dropDownItems, dotMenuItems = _a.dotMenuItems, onClickBookmark = _a.onClickBookmark, _c = _a.showMoreInfoButton, showMoreInfoButton = _c === void 0 ? true : _c, onClickMoreInfo = _a.onClickMoreInfo, onClickAccess = _a.onClickAccess, width = _a.width, style = _a.style;
+    var accessState = _a.accessState, resourceIcon = _a.resourceIcon, bookmarked = _a.bookmarked, _b = _a.forPolicy, forPolicy = _b === void 0 ? false : _b, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, dropDownItems = _a.dropDownItems, dotMenuItems = _a.dotMenuItems, onClickBookmark = _a.onClickBookmark, _c = _a.showMoreInfoButton, showMoreInfoButton = _c === void 0 ? true : _c, onClickMoreInfo = _a.onClickMoreInfo, onClickAccess = _a.onClickAccess, onClickSingleSignIn = _a.onClickSingleSignIn, width = _a.width, style = _a.style;
     // Exclusive accessState styles for this component:
     var accessStateStyles = {
         access: {
@@ -62,14 +62,20 @@ export var ResourceCard = function (_a) {
                     React.createElement(Button, { variant: "gray", onClick: onClickMoreInfo }, "More Info")
                     :
                         React.createElement("div", null),
-                React.createElement(Button, { variant: "grayBlue", onClick: onClickAccess }, forPolicy ? 'Policy' : 'Request'))
+                forPolicy ?
+                    React.createElement(Button, { variant: "grayBlue", onClick: onClickAccess }, "Policy")
+                    :
+                        React.createElement(Button, { variant: "grayBlue", onClick: onClickSingleSignIn }, "Sign In"))
             :
                 React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between' } },
                     React.createElement("div", null,
                         React.createElement(Button, { variant: "gray" }, "More Info")),
                     React.createElement("div", { style: { display: 'flex', gap: '8px' } },
-                        (dropDownItems && (dropDownItems === null || dropDownItems === void 0 ? void 0 : dropDownItems.length) <= 1 && !dropDownItems[0].submenu) ?
-                            React.createElement(Button, { variant: "grayBlue", onClick: onClickAccess }, forPolicy ? 'Policy' : 'Sign In')
+                        (dropDownItems && (dropDownItems === null || dropDownItems === void 0 ? void 0 : dropDownItems.length) <= 1 && !dropDownItems[0].submenu) || onClickSingleSignIn ?
+                            forPolicy ?
+                                React.createElement(Button, { variant: "grayBlue", onClick: onClickAccess }, "Policy")
+                                :
+                                    React.createElement(Button, { variant: "grayBlue", onClick: onClickSingleSignIn }, "Sign In")
                             :
                                 React.createElement(DropDownButton, { size: "sm", variant: "grayBlue", menuItems: dropDownItems }),
                         React.createElement(DropDownButton, { size: "sm", variant: "grayBlue", menuItems: dotMenuItems, hasDownArrow: false })))));

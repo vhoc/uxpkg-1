@@ -1,7 +1,7 @@
 export declare const ServiceIcons: {
-    server: any;
-    serverPrivate: any;
-    database: any;
-    appRole: any;
-    appRoleDynamic: any;
+    SERVER: any;
+    SERVER_PRIVATE: any;
+    DATABASE: any;
+    APPROLE: any;
+    APPROLE_DYNAMIC: any;
 };

@@ -6,22 +6,22 @@ export default {
 };
 export var Default = {
     args: {
-        serviceType: 'server',
-        accessState: 'granted',
+        serviceType: 'SERVER_PRIVATE',
+        accessState: 'access',
         bookmarked: false,
         resourceName: 'Server name',
         resourceType: 'Server type',
         accountName: 'Account',
         region: 'us-west',
         dotMenuItems: menu2Items,
-        onBookmarkClick: function () { return alert('Bookmark button triggered.'); },
-        onMoreInfoClick: function () { return alert('More Info button triggered.'); }
+        onClickBookmark: function () { return alert('Bookmark button triggered.'); },
+        onClickMoreInfo: function () { return alert('More Info button triggered.'); }
     }
 };
 export var WithMoreInfoButton = {
     args: {
-        serviceType: 'database',
-        accessState: 'granted',
+        serviceType: 'DATABASE',
+        accessState: 'access',
         bookmarked: false,
         showMoreInfoButton: true,
         resourceName: 'Server name',
@@ -29,7 +29,7 @@ export var WithMoreInfoButton = {
         accountName: 'Account',
         region: 'us-east',
         dotMenuItems: menu2Items,
-        onBookmarkClick: function () { return alert('Bookmark button triggered.'); },
-        onMoreInfoClick: function () { return alert('More Info button triggered.'); }
+        onClickBookmark: function () { return alert('Bookmark button triggered.'); },
+        onClickMoreInfo: function () { return alert('More Info button triggered.'); }
     }
 };

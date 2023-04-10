@@ -18,9 +18,10 @@ export const Primary = {
         region: 'US-west',
         dropDownItems: menuItems,
         dotMenuItems: menu2Items,
-        onBookmarkClick: () => alert('Bookmark button triggered.'),
-        onMoreInfoClick: () => alert('More Info button triggered.'),
-        onAccessClick: () => alert('Access button triggered.')
+        onClickBookmark: () => alert('Bookmark button triggered.'),
+        onClickMoreInfo: () => alert('More Info button triggered.'),
+        onClickSingleSignIn: () => alert(`Single sign in function.`),
+        //onClickAccess: () => alert('Access button triggered.')
     }
 }
 
@@ -35,8 +36,8 @@ export const SingleItemButton = {
         region: 'US-west',
         dropDownItems: menu4Items,
         dotMenuItems: menu2Items,
-        onBookmarkClick: () => alert('Bookmark button triggered.'),
-        onMoreInfoClick: () => alert('More Info button triggered.'),
-        onAccessClick: () => alert('Access button triggered.')
+        onClickBookmark: () => alert('Bookmark button triggered.'),
+        onClickMoreInfo: () => alert('More Info button triggered.'),
+        //onClickAccess: () => alert('Access button triggered.')
     }
 }

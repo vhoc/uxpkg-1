@@ -70,3 +70,4 @@ tslib_1.__exportStar(require("./components/elements/Dashboard/AccountRiskItem"),
 tslib_1.__exportStar(require("./components/elements/Dashboard/AccountRiskModal"), exports);
 tslib_1.__exportStar(require("./components/elements/Dashboard/RiskIndicator"), exports);
 tslib_1.__exportStar(require("./components/elements/Dashboard/SignalBars"), exports);
+tslib_1.__exportStar(require("./components/elements/ServiceCard"), exports);
