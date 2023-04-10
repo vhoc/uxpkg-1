@@ -62,14 +62,6 @@
     "@fortawesome/free-brands-svg-icons": "^6.3.0",
     "@mui/material": "^5.11.8",
     "@types/styled-components": "^5.1.26",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "dependencies": {
-    "@ant-design/charts": "^1.4.2",
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@fontsource/ibm-plex-sans": "^4.5.13",
     "@fortawesome/fontawesome-pro": "^6.3.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-brands-svg-icons": "^6.3.0",
@@ -82,6 +74,14 @@
     "@fortawesome/pro-thin-svg-icons": "^6.2.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@fortawesome/sharp-solid-svg-icons": "^6.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "@ant-design/charts": "^1.4.2",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@fontsource/ibm-plex-sans": "^4.5.13",
     "@mui/base": "^5.0.0-alpha.119",
     "@mui/material": "^5.11.8",
     "@mui/x-data-grid": "^6.0.0",
