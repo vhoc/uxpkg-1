@@ -21,3 +21,9 @@ export var Azure = {
         ariaLabel: 'cloud-select'
     }
 };
+export var Private = {
+    args: {
+        value: 'PRIVATE',
+        ariaLabel: 'cloud-select'
+    }
+};

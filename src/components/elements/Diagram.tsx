@@ -14,6 +14,7 @@ interface Column {
   icon?: any;
   //type?: number;
   type?: string;
+  actions?: Array<Action>;
 }
 
 interface Arrow {
@@ -31,7 +32,6 @@ interface Action {
 interface Props {
   data: Column[][];
   arrows?: Array<Arrow>;
-  actions: Action[];
   containerStyle?: object;
   columnStyle?: object;
 }
@@ -39,7 +39,6 @@ interface Props {
 export const Diagram: React.FC<Props> = ({
   data,
   arrows,
-  actions,
   containerStyle,
   columnStyle,
 }) => {
@@ -183,32 +182,38 @@ export const Diagram: React.FC<Props> = ({
                           element.id
                         )}
                       </div>
-                      <div
-                        className={`diadropdown-content ${visible === element.id ? "show-dropdown" : ""
-                          }`}
-                      >
-                        {!!actions &&
-                          actions.map((action) => {
-                            if (
-                              action.type === element.type ||
-                              action.type === undefined ||
-                              action.type === null
-                            ) {
-                              return (
-                                <div
-                                  className="actions-text"
-                                  key={`option-${action.id}`}
-                                  id={`${action.id}`}
-                                  onClick={action.onClick}
-                                >
-                                  {action.label}
-                                </div>
-                              );
-                          } else {
-                            return null
-                          }
-                          })}
-                      </div>
+                      {
+                        element.actions && element.actions.length >= 1 ?
+                          <div
+                            className={`diadropdown-content ${visible === element.id ? "show-dropdown" : "" }`}
+                            style={{ zIndex: 9999,}}
+                          >
+                            {!!element.actions &&
+                              element.actions.map((action) => {
+                                if (
+                                  action.type === element.type ||
+                                  action.type === undefined ||
+                                  action.type === null
+                                ) {
+                                  return (
+                                    <div
+                                      className="actions-text"
+                                      key={`option-${action.id}`}
+                                      id={`${action.id}`}
+                                      onClick={action.onClick}
+                                    >
+                                      {action.label}
+                                    </div>
+                                  );
+                              } else {
+                                return null
+                              }
+                              })}
+                          </div>
+                        :
+                          null
+                      }
+                      
                     </div>
                     <div className="text-container">
                       <p className="element-label">{element.label}</p>

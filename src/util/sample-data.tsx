@@ -82,6 +82,11 @@ export const menu4Items: IDropDownItem[] = [
   }
 ]
 
+  
+export const action = (e: any) => {
+  console.log("Action for", e.target.id, "action");
+};
+
 export const _data = [
     [
       {
@@ -91,6 +96,11 @@ export const _data = [
         description: "andrew@company.com",
         type: 'SERVICEACCOUNT',
         route: ["21", "31", "33", "42", "44", "45", "49"],
+        actions: [
+          { id: "print-action", label: "More details", onClick: action },
+          { id: "print-action-2", label: "Another print details", onClick: action, },
+          { id: "print-action-3", label: "Some more details", onClick: action},
+        ]
       },
       {
         id: "12",
@@ -99,6 +109,11 @@ export const _data = [
         description: "andrew@company.com",
         type: 'SERVICEACCOUNT',
         route: ["21", "32", "42", "43", "47"],
+        actions: [
+          { id: "print-action", label: "More details", onClick: action },
+          { id: "print-action-2", label: "Another print details", onClick: action, },
+          { id: "print-action-3", label: "Some more details", onClick: action},
+        ]
       },
       {
         id: "13",
@@ -107,6 +122,11 @@ export const _data = [
         description: "andrew@company.com",
         type: 'USERGROUPS',
         route: ["21", "34", "41", "45", "46", "48"],
+        actions: [
+          { id: "print-action", label: "More details", onClick: action },
+          { id: "print-action-2", label: "Another print details", onClick: action, },
+          { id: "print-action-3", label: "Some more details", onClick: action},
+        ]
       },
     ],
     [
@@ -116,6 +136,11 @@ export const _data = [
         label: "AWSTestPol",
         type: 'POLICY',
         description: "SumaAWS/98012083109281",
+        actions: [
+          { id: "user-action", label: "Some user action", onClick: action, },
+          { id: "role-action", label: "Some role action", onClick: action, },
+          { id: "policy-action", label: "Some policy action", onClick: action, },
+        ],
       },
     ],
     [
@@ -124,6 +149,11 @@ export const _data = [
         value: "1",
         type: 'ROLE',
         label: "AdministratorAccess-Amplify",
+        actions: [
+          { id: "user-action", label: "Some user action", onClick: action, },
+          { id: "role-action", label: "Some role action", onClick: action,},
+          { id: "policy-action", label: "Some policy action", onClick: action, },
+        ],
       },
       { id: "32", value: "2", type: 'ROLE', label: "AmazonAugmentedAI" },
       { id: "33", value: "3", type: 'ROLE', label: "AccessAnalyzerService" },
@@ -136,6 +166,11 @@ export const _data = [
         label: "i-0054d9cfe5771e555",
         description: "AWS EC2 Instance",
         type: 'AWS_EC2_Instance',
+        actions: [
+        { id: "db-action", label: "Some database action", onClick: action, },
+        { id: "awsUser-action", label: "Some aws user action", onClick: action, },
+        { id: "instance-action", label: "Some instance action", onClick: action, },
+        ],
       },
       {
         id: "42",
@@ -143,6 +178,11 @@ export const _data = [
         label: "alias/aws/rds",
         description: "RDS DB",
         type: 'AWS_Compute',
+        actions: [
+        { id: "db-action", label: "Some database action", onClick: action, },
+        { id: "awsUser-action", label: "Some aws user action", onClick: action, },
+        { id: "instance-action", label: "Some instance action", onClick: action, },
+        ],
       },
       {
         id: "43",
@@ -150,6 +190,11 @@ export const _data = [
         label: "vpc-21b0035c",
         description: "VPC",
         type: 'AWS_User',
+        actions: [
+        { id: "db-action", label: "Some database action", onClick: action, },
+        { id: "awsUser-action", label: "Some aws user action", onClick: action, },
+        { id: "instance-action", label: "Some instance action", onClick: action, },
+        ],
       },
       {
         id: "44",
@@ -157,6 +202,11 @@ export const _data = [
         label: "i-0054d9cfe5771e555",
         description: "AWS EC2 Instance",
         type: 'AWS_Compute',
+        actions: [
+        { id: "db-action", label: "Some database action", onClick: action,},
+        { id: "awsUser-action", label: "Some aws user action", onClick: action,},
+        { id: "instance-action", label: "Some instance action", onClick: action, },
+        ],
       },
       {
         id: "45",
@@ -185,6 +235,11 @@ export const _data = [
         label: "alias/aws/rds",
         description: "RDS DB",
         type: 'AWS_User',
+        actions: [
+        { id: "db-action", label: "Some database action", onClick: action, },
+        { id: "awsUser-action", label: "Some aws user action", onClick: action, },
+        { id: "instance-action", label: "Some instance action", onClick: action, },
+        ],
       },
       {
         id: "49",
@@ -192,24 +247,13 @@ export const _data = [
         label: "vpc-21b0035c",
         description: "VPC",
         type: 'AWS_GAMES',
+        actions: [
+        { id: "db-action", label: "Some database action", onClick: action, },
+        { id: "awsUser-action", label: "Some aws user action", onClick: action, },
+        { id: "instance-action", label: "Some instance action", onClick: action, },
+        ],
       },
     ],
-  ];
-  
-  export const action = (e: any) => {
-    console.log("Action for", e.target.id, "action");
-  };
-  
-  export const actions = [
-    { id: "print-action", label: "More details", onClick: action },
-    { id: "print-action-2", label: "Another print details", onClick: action, type: 5 },
-    { id: "print-action-3", label: "Some more details", onClick: action},
-    { id: "user-action", label: "Some user action", onClick: action, type: 0},
-    { id: "role-action", label: "Some role action", onClick: action, type: 1},
-    { id: "policy-action", label: "Some policy action", onClick: action, type: 2},
-    { id: "db-action", label: "Some database action", onClick: action, type: 3},
-    { id: "awsUser-action", label: "Some aws user action", onClick: action, type: 4},
-    { id: "instance-action", label: "Some instance action", onClick: action, type: 5 },
   ];
   
   export const connections = [
