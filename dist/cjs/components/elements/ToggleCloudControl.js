@@ -11,6 +11,8 @@ var google_color_18px_png_1 = tslib_1.__importDefault(require("../../assets/icon
 var google_gray_18px_png_1 = tslib_1.__importDefault(require("../../assets/icons/google-gray-18px.png"));
 var azure_color_18px_png_1 = tslib_1.__importDefault(require("../../assets/icons/azure-color-18px.png"));
 var azure_gray_18px_png_1 = tslib_1.__importDefault(require("../../assets/icons/azure-gray-18px.png"));
+var private_color_18px_png_1 = tslib_1.__importDefault(require("../../assets/icons/private-color-18px.png"));
+var private_gray_18px_png_1 = tslib_1.__importDefault(require("../../assets/icons/private-gray-18px.png"));
 var ToggleCloudControl = function (_a) {
     var _b = _a.ariaLabel, ariaLabel = _b === void 0 ? 'cloud control' : _b, _c = _a.multiSelect, multiSelect = _c === void 0 ? false : _c, _d = _a.value, value = _d === void 0 ? ['AWS'] : _d, onChange = _a.onChange;
     return (react_1["default"].createElement(material_1.ToggleButtonGroup, { value: value, exclusive: !multiSelect, onChange: onChange, "aria-label": ariaLabel, sx: {
@@ -46,6 +48,15 @@ var ToggleCloudControl = function (_a) {
                     backgroundColor: theme_1.colors.white
                 }
             } },
-            react_1["default"].createElement("img", { src: (value === 'AZURE' || (Array.isArray(value) && value.find(function (value) { return value === 'AZURE'; }))) ? azure_color_18px_png_1["default"] : azure_gray_18px_png_1["default"], alt: 'AZURE' }))));
+            react_1["default"].createElement("img", { src: (value === 'AZURE' || (Array.isArray(value) && value.find(function (value) { return value === 'AZURE'; }))) ? azure_color_18px_png_1["default"] : azure_gray_18px_png_1["default"], alt: 'AZURE' })),
+        react_1["default"].createElement(material_1.ToggleButton, { value: 'PRIVATE', "aria-label": 'PRIVATE', sx: {
+                backgroundColor: theme_1.colors.gray[10],
+                paddingLeft: '14px',
+                paddingRight: '14px',
+                '&.Mui-selected': {
+                    backgroundColor: theme_1.colors.white
+                }
+            } },
+            react_1["default"].createElement("img", { src: (value === 'PRIVATE' || (Array.isArray(value) && value.find(function (value) { return value === 'PRIVATE'; }))) ? private_color_18px_png_1["default"] : private_gray_18px_png_1["default"], alt: 'PRIVATE' }))));
 };
 exports.ToggleCloudControl = ToggleCloudControl;

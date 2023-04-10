@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.connections = exports.actions = exports.action = exports._data = exports.menu4Items = exports.menu3Items = exports.menu2Items = exports.menuItems = exports.testAlert = void 0;
+exports.connections = exports._data = exports.action = exports.menu4Items = exports.menu3Items = exports.menu2Items = exports.menuItems = exports.testAlert = void 0;
 var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importDefault(require("react"));
 var UserPicture_1 = require("../components/elements/UserPicture");
@@ -69,6 +69,10 @@ exports.menu4Items = [
         action: function () { return alert("Single item button"); }
     }
 ];
+var action = function (e) {
+    console.log("Action for", e.target.id, "action");
+};
+exports.action = action;
 exports._data = [
     [
         {
@@ -77,7 +81,12 @@ exports._data = [
             label: "Andrew Jackson",
             description: "andrew@company.com",
             type: 'SERVICEACCOUNT',
-            route: ["21", "31", "33", "42", "44", "45", "49"]
+            route: ["21", "31", "33", "42", "44", "45", "49"],
+            actions: [
+                { id: "print-action", label: "More details", onClick: exports.action },
+                { id: "print-action-2", label: "Another print details", onClick: exports.action },
+                { id: "print-action-3", label: "Some more details", onClick: exports.action },
+            ]
         },
         {
             id: "12",
@@ -85,7 +94,12 @@ exports._data = [
             label: "Andrew Jackson",
             description: "andrew@company.com",
             type: 'SERVICEACCOUNT',
-            route: ["21", "32", "42", "43", "47"]
+            route: ["21", "32", "42", "43", "47"],
+            actions: [
+                { id: "print-action", label: "More details", onClick: exports.action },
+                { id: "print-action-2", label: "Another print details", onClick: exports.action },
+                { id: "print-action-3", label: "Some more details", onClick: exports.action },
+            ]
         },
         {
             id: "13",
@@ -93,7 +107,12 @@ exports._data = [
             label: "Andrew Jackson",
             description: "andrew@company.com",
             type: 'USERGROUPS',
-            route: ["21", "34", "41", "45", "46", "48"]
+            route: ["21", "34", "41", "45", "46", "48"],
+            actions: [
+                { id: "print-action", label: "More details", onClick: exports.action },
+                { id: "print-action-2", label: "Another print details", onClick: exports.action },
+                { id: "print-action-3", label: "Some more details", onClick: exports.action },
+            ]
         },
     ],
     [
@@ -102,7 +121,12 @@ exports._data = [
             value: "1",
             label: "AWSTestPol",
             type: 'POLICY',
-            description: "SumaAWS/98012083109281"
+            description: "SumaAWS/98012083109281",
+            actions: [
+                { id: "user-action", label: "Some user action", onClick: exports.action },
+                { id: "role-action", label: "Some role action", onClick: exports.action },
+                { id: "policy-action", label: "Some policy action", onClick: exports.action },
+            ]
         },
     ],
     [
@@ -110,7 +134,12 @@ exports._data = [
             id: "31",
             value: "1",
             type: 'ROLE',
-            label: "AdministratorAccess-Amplify"
+            label: "AdministratorAccess-Amplify",
+            actions: [
+                { id: "user-action", label: "Some user action", onClick: exports.action },
+                { id: "role-action", label: "Some role action", onClick: exports.action },
+                { id: "policy-action", label: "Some policy action", onClick: exports.action },
+            ]
         },
         { id: "32", value: "2", type: 'ROLE', label: "AmazonAugmentedAI" },
         { id: "33", value: "3", type: 'ROLE', label: "AccessAnalyzerService" },
@@ -122,28 +151,48 @@ exports._data = [
             value: "1",
             label: "i-0054d9cfe5771e555",
             description: "AWS EC2 Instance",
-            type: 'AWS_EC2_Instance'
+            type: 'AWS_EC2_Instance',
+            actions: [
+                { id: "db-action", label: "Some database action", onClick: exports.action },
+                { id: "awsUser-action", label: "Some aws user action", onClick: exports.action },
+                { id: "instance-action", label: "Some instance action", onClick: exports.action },
+            ]
         },
         {
             id: "42",
             value: "2",
             label: "alias/aws/rds",
             description: "RDS DB",
-            type: 'AWS_Compute'
+            type: 'AWS_Compute',
+            actions: [
+                { id: "db-action", label: "Some database action", onClick: exports.action },
+                { id: "awsUser-action", label: "Some aws user action", onClick: exports.action },
+                { id: "instance-action", label: "Some instance action", onClick: exports.action },
+            ]
         },
         {
             id: "43",
             value: "3",
             label: "vpc-21b0035c",
             description: "VPC",
-            type: 'AWS_User'
+            type: 'AWS_User',
+            actions: [
+                { id: "db-action", label: "Some database action", onClick: exports.action },
+                { id: "awsUser-action", label: "Some aws user action", onClick: exports.action },
+                { id: "instance-action", label: "Some instance action", onClick: exports.action },
+            ]
         },
         {
             id: "44",
             value: "4",
             label: "i-0054d9cfe5771e555",
             description: "AWS EC2 Instance",
-            type: 'AWS_Compute'
+            type: 'AWS_Compute',
+            actions: [
+                { id: "db-action", label: "Some database action", onClick: exports.action },
+                { id: "awsUser-action", label: "Some aws user action", onClick: exports.action },
+                { id: "instance-action", label: "Some instance action", onClick: exports.action },
+            ]
         },
         {
             id: "45",
@@ -171,31 +220,26 @@ exports._data = [
             value: "8",
             label: "alias/aws/rds",
             description: "RDS DB",
-            type: 'AWS_User'
+            type: 'AWS_User',
+            actions: [
+                { id: "db-action", label: "Some database action", onClick: exports.action },
+                { id: "awsUser-action", label: "Some aws user action", onClick: exports.action },
+                { id: "instance-action", label: "Some instance action", onClick: exports.action },
+            ]
         },
         {
             id: "49",
             value: "9",
             label: "vpc-21b0035c",
             description: "VPC",
-            type: 'AWS_GAMES'
+            type: 'AWS_GAMES',
+            actions: [
+                { id: "db-action", label: "Some database action", onClick: exports.action },
+                { id: "awsUser-action", label: "Some aws user action", onClick: exports.action },
+                { id: "instance-action", label: "Some instance action", onClick: exports.action },
+            ]
         },
     ],
-];
-var action = function (e) {
-    console.log("Action for", e.target.id, "action");
-};
-exports.action = action;
-exports.actions = [
-    { id: "print-action", label: "More details", onClick: exports.action },
-    { id: "print-action-2", label: "Another print details", onClick: exports.action, type: 5 },
-    { id: "print-action-3", label: "Some more details", onClick: exports.action },
-    { id: "user-action", label: "Some user action", onClick: exports.action, type: 0 },
-    { id: "role-action", label: "Some role action", onClick: exports.action, type: 1 },
-    { id: "policy-action", label: "Some policy action", onClick: exports.action, type: 2 },
-    { id: "db-action", label: "Some database action", onClick: exports.action, type: 3 },
-    { id: "awsUser-action", label: "Some aws user action", onClick: exports.action, type: 4 },
-    { id: "instance-action", label: "Some instance action", onClick: exports.action, type: 5 },
 ];
 exports.connections = [
     { startID: "11", endID: "21" },

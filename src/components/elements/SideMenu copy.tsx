@@ -44,16 +44,12 @@ export const SideMenu = ({variant = 'primary', menuItems, onMouseEnter, onMouseL
                 justifyContent: 'space-between',
                 ...style,
             }}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-            /*
             onMouseEnter={() => {
                 if (collapsed) onMouseEnter
             }}
             onMouseLeave={() => {
                 if (!collapsed) onMouseLeave
-            }}*/
-
+            }}     
         >
             <div>
             

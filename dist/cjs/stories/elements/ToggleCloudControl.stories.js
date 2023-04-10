@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.Azure = exports.Google = exports.AWS = void 0;
+exports.Private = exports.Azure = exports.Google = exports.AWS = void 0;
 var ToggleCloudControl_1 = require("../../components/elements/ToggleCloudControl");
 exports["default"] = {
     title: 'Composite/ToggleCloudControl',
@@ -21,6 +21,12 @@ exports.Google = {
 exports.Azure = {
     args: {
         value: 'AZURE',
+        ariaLabel: 'cloud-select'
+    }
+};
+exports.Private = {
+    args: {
+        value: 'PRIVATE',
         ariaLabel: 'cloud-select'
     }
 };
