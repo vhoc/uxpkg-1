@@ -10,7 +10,7 @@ export interface SideMenuProps extends HTMLAttributes<HTMLDivElement> {
     /** Whether the bar is collapsed or not */
     collapsed?: boolean;
     /** Callback function to run when the mouse cursor enters the component */
-    onMouseEnter?: React.MouseEventHandler<HTMLDivElement> | undefined;
+    onMouseEnter?: (React.MouseEventHandler<HTMLDivElement>) | undefined;
     /** Callback function to run when the mouse cursor leaves the component */
     onMouseLeave?: React.MouseEventHandler<HTMLDivElement> | undefined;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { HTMLAttributes } from "react"
 import { colors, variants } from "../../theme"
 import { SideMenuItem } from "./SideMenuItem"
@@ -15,7 +15,7 @@ export interface SideMenuProps extends HTMLAttributes<HTMLDivElement> {
     /** Whether the bar is collapsed or not */
     collapsed?: boolean
     /** Callback function to run when the mouse cursor enters the component */
-    onMouseEnter?: React.MouseEventHandler<HTMLDivElement> | undefined
+    onMouseEnter?: (React.MouseEventHandler<HTMLDivElement>) | undefined
     /** Callback function to run when the mouse cursor leaves the component */
     onMouseLeave?: React.MouseEventHandler<HTMLDivElement> | undefined
 }
@@ -23,14 +23,19 @@ export interface SideMenuProps extends HTMLAttributes<HTMLDivElement> {
 export const SideMenu = ({variant = 'primary', menuItems, onMouseEnter, onMouseLeave, style, collapsed = true, }:SideMenuProps): JSX.Element => {
 
     const [keepExtended, setKeepExtended] = useState<boolean>(false)
+    const [isCollapsed, setIsCollapsed] = useState<boolean>(collapsed)
 
     type VariantKey = keyof typeof variants
     const selectedVariant = variant as VariantKey
 
+    useEffect(() => {
+        setIsCollapsed(collapsed)
+    }, [collapsed])
+
     return (
         <div
             style={{
-                width: (collapsed && !keepExtended) ? 'fit-content' : '289px',
+                width: (isCollapsed && !keepExtended) ? 'fit-content' : '289px',
                 minHeight: '100%',
                 height: '100%',
                 backgroundColor: variants[selectedVariant].sideBarBgColor,
@@ -67,7 +72,7 @@ export const SideMenu = ({variant = 'primary', menuItems, onMouseEnter, onMouseL
                                 icon={item.icon}
                                 variant={item.variant}
                                 disabled={item.disabled}
-                                collapsed={collapsed}
+                                collapsed={isCollapsed}
                                 selected={item.selected}
                                 label={item.label}
                                 onClick={item.onClick}
@@ -94,7 +99,7 @@ export const SideMenu = ({variant = 'primary', menuItems, onMouseEnter, onMouseL
                     paddingTop: '13px',
                     paddingLeft: '15px',
                     paddingRight: '15px',
-                    width: (collapsed && !keepExtended) ? '46px' : '266px',
+                    width: (isCollapsed && !keepExtended) ? '46px' : '266px',
                 }}
                 onClick={() => setKeepExtended(prevState => (!prevState))}
             >

@@ -2,7 +2,7 @@ import React, { CSSProperties, HTMLAttributes } from "react";
 import { IDropDownItem } from '../../util/sample-data';
 export interface ServiceCardProps extends HTMLAttributes<HTMLDivElement> {
     /** The type of the service (it determines the icon) */
-    serviceType: 'SERVER_PRIVATE' | 'DATABASE' | 'APPROLE' | 'APPROLE_DYNAMIC';
+    serviceType: 'SERVER' | 'SERVER_PRIVATE' | 'DATABASE' | 'APPROLE' | 'APPROLE_DYNAMIC';
     /** The access state of the resource displayed in the card */
     accessState: 'access' | 'requested' | 'signIn' | 'waiting';
     /** Overrides the service type icon. */
