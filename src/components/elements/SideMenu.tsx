@@ -18,11 +18,15 @@ export interface SideMenuProps extends HTMLAttributes<HTMLDivElement> {
     onMouseEnter?: (React.MouseEventHandler<HTMLDivElement>) | undefined
     /** Callback function to run when the mouse cursor leaves the component */
     onMouseLeave?: React.MouseEventHandler<HTMLDivElement> | undefined
+    /** Callback function to run when the Keep Open button is clicked */
+    onClickKeepOpen?: React.MouseEventHandler<HTMLButtonElement> | undefined
+    /** Keep the menu open regardles of the hover state of the component. */
+    keepOpen?: boolean
 }
 
-export const SideMenu = ({variant = 'primary', menuItems, onMouseEnter, onMouseLeave, style, collapsed = true, }:SideMenuProps): JSX.Element => {
+export const SideMenu = ({variant = 'primary', menuItems, onMouseEnter, onMouseLeave, style, collapsed = true, onClickKeepOpen, keepOpen = false, }:SideMenuProps): JSX.Element => {
 
-    const [keepExtended, setKeepExtended] = useState<boolean>(false)
+    //const [keepExtended, setKeepExtended] = useState<boolean>(false)
     const [isCollapsed, setIsCollapsed] = useState<boolean>(collapsed)
 
     type VariantKey = keyof typeof variants
@@ -35,7 +39,7 @@ export const SideMenu = ({variant = 'primary', menuItems, onMouseEnter, onMouseL
     return (
         <div
             style={{
-                width: (isCollapsed && !keepExtended) ? 'fit-content' : '289px',
+                width: (isCollapsed && !keepOpen) ? 'fit-content' : '289px',
                 minHeight: '100%',
                 height: '100%',
                 backgroundColor: variants[selectedVariant].sideBarBgColor,
@@ -76,7 +80,7 @@ export const SideMenu = ({variant = 'primary', menuItems, onMouseEnter, onMouseL
                                 selected={item.selected}
                                 label={item.label}
                                 onClick={item.onClick}
-                                keepExtended={keepExtended}
+                                keepExtended={keepOpen}
                             />
                         )
                     })
@@ -92,20 +96,20 @@ export const SideMenu = ({variant = 'primary', menuItems, onMouseEnter, onMouseL
                     borderTopColor: '#E3E3E3',
                     borderTopStyle: 'solid',
                     borderTopWidth: '1px',
-                    color: keepExtended ? colors.gray[70] : colors.gray[30],
+                    color: keepOpen ? colors.gray[70] : colors.gray[30],
                     display: 'flex',
                     justifyContent: 'flex-start',
                     alignItems: 'center',
                     paddingTop: '13px',
                     paddingLeft: '15px',
                     paddingRight: '15px',
-                    width: (isCollapsed && !keepExtended) ? '46px' : '266px',
+                    width: (isCollapsed && !keepOpen) ? '46px' : '266px',
                 }}
-                onClick={() => setKeepExtended(prevState => (!prevState))}
+                onClick={onClickKeepOpen}
             >
                 <FontAwesomeIcon
                     icon={faSignOutAlt}
-                    className={keepExtended ? 'fa-flip-horizontal' : undefined}
+                    className={keepOpen ? 'fa-flip-horizontal' : undefined}
                 />
                 
             </button>
