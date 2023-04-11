@@ -1,7 +1,8 @@
 import { Meta } from '@storybook/react/types-6-0'
 import { SideMenu } from '../../components/elements/SideMenu'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faTasks, faGauge, faUser, faUsers, faLaptop, faAddressCard, faCloud, faLayerGroup, faWindowMaximize, faTh } from '@fortawesome/sharp-solid-svg-icons'
+import { faTasks, faGauge, faUser, faLaptop, faAddressCard, faCloud, faLayerGroup, faWindowMaximize, faTh } from '@fortawesome/sharp-solid-svg-icons'
+import { faUsers } from '@fortawesome/pro-solid-svg-icons'
 
 export default {
     title: 'Composite/SideMenu',
