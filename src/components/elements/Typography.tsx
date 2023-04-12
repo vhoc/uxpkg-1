@@ -28,9 +28,11 @@ export interface TypographyProps extends HTMLAttributes<HTMLDivElement> {
     className?: string | undefined
     /** Style override if needed. */
     style?: CSSProperties | undefined,
+    /** Callback function to run when clicking on the component. */
+    onClick?: React.MouseEventHandler<HTMLDivElement> | undefined
 }
 
-export const Typography = ({ children, variant, className, style }: TypographyProps): JSX.Element => {
+export const Typography = ({ children, variant, className, style, onClick }: TypographyProps): JSX.Element => {
 
     const stylesTable = {
         'body-regular': {...theme.font.body.regular, ...style},
@@ -61,6 +63,7 @@ export const Typography = ({ children, variant, className, style }: TypographyPr
             style={
                 {...stylesTable[selectedVariant]}
             }
+            onClick={onClick}
         >
             {children}
         </div>

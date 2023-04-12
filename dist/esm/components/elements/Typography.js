@@ -2,7 +2,7 @@ import { __assign } from "tslib";
 import React from "react";
 import { theme } from "../../theme";
 export var Typography = function (_a) {
-    var children = _a.children, variant = _a.variant, className = _a.className, style = _a.style;
+    var children = _a.children, variant = _a.variant, className = _a.className, style = _a.style, onClick = _a.onClick;
     var stylesTable = {
         'body-regular': __assign(__assign({}, theme.font.body.regular), style),
         'body-semiBold': __assign(__assign({}, theme.font.body.semiBold), style),
@@ -23,5 +23,5 @@ export var Typography = function (_a) {
         'button-sm': __assign(__assign({}, theme.font.buttonLabel.regular), style)
     };
     var selectedVariant = variant;
-    return (React.createElement("div", { className: className, style: __assign({}, stylesTable[selectedVariant]) }, children));
+    return (React.createElement("div", { className: className, style: __assign({}, stylesTable[selectedVariant]), onClick: onClick }, children));
 };

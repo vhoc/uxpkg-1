@@ -1,4 +1,4 @@
-import { CSSProperties, HTMLAttributes } from "react";
+import React, { CSSProperties, HTMLAttributes } from "react";
 import { ReactNode } from "react";
 export interface TypographyProps extends HTMLAttributes<HTMLDivElement> {
     /** ReactNode children or a text string */
@@ -9,5 +9,7 @@ export interface TypographyProps extends HTMLAttributes<HTMLDivElement> {
     className?: string | undefined;
     /** Style override if needed. */
     style?: CSSProperties | undefined;
+    /** Callback function to run when clicking on the component. */
+    onClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
 }
-export declare const Typography: ({ children, variant, className, style }: TypographyProps) => JSX.Element;
+export declare const Typography: ({ children, variant, className, style, onClick }: TypographyProps) => JSX.Element;
