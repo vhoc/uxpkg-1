@@ -5,15 +5,11 @@ export declare const ButtonAdd: {
     args: {
         title: string;
         button: string;
-        onClickAddAll: () => void;
-        onClickRemoveAll: () => void;
     };
 };
 export declare const ButtonRemove: {
     args: {
         title: string;
         button: string;
-        onClickAddAll: () => void;
-        onClickRemoveAll: () => void;
     };
 };

@@ -5,7 +5,7 @@ var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importDefault(require("react"));
 var theme_1 = require("../../theme");
 var Typography = function (_a) {
-    var children = _a.children, variant = _a.variant, className = _a.className, style = _a.style;
+    var children = _a.children, variant = _a.variant, className = _a.className, style = _a.style, onClick = _a.onClick;
     var stylesTable = {
         'body-regular': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.body.regular), style),
         'body-semiBold': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.body.semiBold), style),
@@ -26,6 +26,6 @@ var Typography = function (_a) {
         'button-sm': tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.buttonLabel.regular), style)
     };
     var selectedVariant = variant;
-    return (react_1["default"].createElement("div", { className: className, style: tslib_1.__assign({}, stylesTable[selectedVariant]) }, children));
+    return (react_1["default"].createElement("div", { className: className, style: tslib_1.__assign({}, stylesTable[selectedVariant]), onClick: onClick }, children));
 };
 exports.Typography = Typography;

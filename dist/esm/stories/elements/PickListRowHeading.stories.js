@@ -6,16 +6,12 @@ export default {
 export var ButtonAdd = {
     args: {
         title: 'eks:AccessKubernetesAPI',
-        button: 'add',
-        onClickAddAll: function () { return alert("Pressed the Add all button"); },
-        onClickRemoveAll: function () { return alert("Pressed the Remove all button"); }
+        button: 'add'
     }
 };
 export var ButtonRemove = {
     args: {
         title: 'eks:AccessKubernetesAPI',
-        button: 'remove',
-        onClickAddAll: function () { return alert("Pressed the Add all button"); },
-        onClickRemoveAll: function () { return alert("Pressed the Remove all button"); }
+        button: 'remove'
     }
 };
