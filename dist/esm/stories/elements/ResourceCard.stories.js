@@ -16,8 +16,7 @@ export var Primary = {
         dropDownItems: menuItems,
         dotMenuItems: menu2Items,
         onClickBookmark: function () { return alert('Bookmark button triggered.'); },
-        onClickMoreInfo: function () { return alert('More Info button triggered.'); },
-        onClickSingleSignIn: function () { return alert("Single sign in function."); }
+        onClickMoreInfo: function () { return alert('More Info button triggered.'); }
     }
 };
 export var SingleItemButton = {
