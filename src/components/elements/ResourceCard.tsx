@@ -184,7 +184,7 @@ export const ResourceCard = ({ accessState, resourceIcon, bookmarked, forPolicy 
                         forPolicy ?
                             <Button variant="grayBlue" onClick={onClickAccess} >Policy</Button>
                         :
-                            <Button variant="grayBlue" onClick={onClickSingleSignIn} >Sign In</Button>
+                            null
                     }
                     </div>
                 :
@@ -196,7 +196,10 @@ export const ResourceCard = ({ accessState, resourceIcon, bookmarked, forPolicy 
                                 forPolicy ?
                                     <Button variant="grayBlue" onClick={onClickAccess} >Policy</Button>
                                 :
-                                    <Button variant="grayBlue" onClick={onClickSingleSignIn} >Sign In</Button>
+                                    accessState === 'signIn' ?
+                                        <Button variant="grayBlue" onClick={onClickSingleSignIn} >Sign In</Button>
+                                    :
+                                        null
                             :
                                 <DropDownButton size="sm" variant="grayBlue" menuItems={dropDownItems}  />
                         }

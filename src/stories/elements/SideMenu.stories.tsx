@@ -1,7 +1,18 @@
 import { Meta } from '@storybook/react/types-6-0'
 import { SideMenu } from '../../components/elements/SideMenu'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faTasks, faGauge, faUser, faUsers, faLaptop, faAddressCard, faCloud, faLayerGroup, faWindowMaximize, faTh } from '@fortawesome/sharp-solid-svg-icons'
+import { faTasks, faGauge, faUser, faLaptop, faCloud, faLayerGroup, faWindowMaximize, faTh } from '@fortawesome/sharp-solid-svg-icons'
+//import { faUsers } from '@fortawesome/sharp-solid-svg-icons'
+//import { faUsers } from '@fortawesome/free-solid-svg-icons'
+import { faUsers } from '@fortawesome/pro-regular-svg-icons'
+//import { faIdCard } from '@fortawesome/pro-regular-svg-icons'
+//import { faIdCard } from '@fortawesome/pro-solid-svg-icons'
+//import { faIdCard } from '@fortawesome/free-solid-svg-icons'
+//import { faIdCard } from '@fortawesome/pro-duotone-svg-icons'
+//import { faIdCard } from '@fortawesome/pro-light-svg-icons'
+import { faIdCard } from '@fortawesome/pro-regular-svg-icons'
+import { faCodePullRequestClosed } from '@fortawesome/pro-regular-svg-icons'
+import { faChartNetwork } from '@fortawesome/pro-regular-svg-icons'
 
 export default {
     title: 'Composite/SideMenu',
@@ -47,7 +58,7 @@ export const Collapsed = {
                 variant: 'primary',
             },
             {
-                icon: faAddressCard,
+                icon: faIdCard,
                 label: 'identity providers',
                 variant: 'primary',
             },
@@ -56,13 +67,13 @@ export const Collapsed = {
                 label: 'cloud',
             },
             {
-                icon: faCloud,
-                label: 'clouds',
+                icon: faCodePullRequestClosed,
+                label: 'Filters',
                 variant: 'primary',
             },
             {
-                icon: faLayerGroup,
-                label: 'Targets',
+                icon: faChartNetwork,
+                label: 'Integrations',
                 variant: 'primary',
             },
             {
@@ -116,7 +127,7 @@ export const Expanded = {
                 variant: 'primary',
             },
             {
-                icon: faAddressCard,
+                icon: faIdCard,
                 label: 'identity providers',
                 variant: 'primary',
             },
@@ -125,13 +136,13 @@ export const Expanded = {
                 label: 'cloud',
             },
             {
-                icon: faCloud,
-                label: 'clouds',
+                icon: faCodePullRequestClosed,
+                label: 'Filters',
                 variant: 'primary',
             },
             {
-                icon: faLayerGroup,
-                label: 'Targets',
+                icon: faChartNetwork,
+                label: 'Integrations',
                 variant: 'primary',
             },
             {
@@ -154,9 +165,10 @@ library.add(
     faUser,
     faUsers,
     faLaptop,
-    faAddressCard,
+    faIdCard,
     faCloud,
     faLayerGroup,
     faWindowMaximize,
-    faTh
+    faTh,
+    faChartNetwork
 )

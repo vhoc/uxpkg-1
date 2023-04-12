@@ -68,7 +68,7 @@ var ResourceCard = function (_a) {
                 forPolicy ?
                     react_1["default"].createElement(Button_1.Button, { variant: "grayBlue", onClick: onClickAccess }, "Policy")
                     :
-                        react_1["default"].createElement(Button_1.Button, { variant: "grayBlue", onClick: onClickSingleSignIn }, "Sign In"))
+                        null)
             :
                 react_1["default"].createElement("div", { style: { display: 'flex', justifyContent: 'space-between' } },
                     react_1["default"].createElement("div", null,
@@ -78,7 +78,10 @@ var ResourceCard = function (_a) {
                             forPolicy ?
                                 react_1["default"].createElement(Button_1.Button, { variant: "grayBlue", onClick: onClickAccess }, "Policy")
                                 :
-                                    react_1["default"].createElement(Button_1.Button, { variant: "grayBlue", onClick: onClickSingleSignIn }, "Sign In")
+                                    accessState === 'signIn' ?
+                                        react_1["default"].createElement(Button_1.Button, { variant: "grayBlue", onClick: onClickSingleSignIn }, "Sign In")
+                                        :
+                                            null
                             :
                                 react_1["default"].createElement(DropDownButton_1.DropDownButton, { size: "sm", variant: "grayBlue", menuItems: dropDownItems }),
                         react_1["default"].createElement(DropDownButton_1.DropDownButton, { size: "sm", variant: "grayBlue", menuItems: dotMenuItems, hasDownArrow: false })))));
