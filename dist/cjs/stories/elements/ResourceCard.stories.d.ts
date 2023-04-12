@@ -14,7 +14,6 @@ export declare const Primary: {
         dotMenuItems: import("../../util/sample-data").IDropDownItem[];
         onClickBookmark: () => void;
         onClickMoreInfo: () => void;
-        onClickSingleSignIn: () => void;
     };
 };
 export declare const SingleItemButton: {

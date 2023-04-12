@@ -20,7 +20,7 @@ export const Primary = {
         dotMenuItems: menu2Items,
         onClickBookmark: () => alert('Bookmark button triggered.'),
         onClickMoreInfo: () => alert('More Info button triggered.'),
-        onClickSingleSignIn: () => alert(`Single sign in function.`),
+        //onClickSingleSignIn: () => alert(`Single sign in function.`),
         //onClickAccess: () => alert('Access button triggered.')
     }
 }

@@ -1,4 +1,4 @@
-import React, { CSSProperties, HTMLAttributes } from "react"
+import React, { CSSProperties, HTMLAttributes, useState, useEffect } from "react"
 import { View } from "../layout/View"
 import { IconButton } from "./IconButton"
 import { DropDownButton } from "./DropDownButton"
@@ -23,8 +23,12 @@ export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     showMoreInfoButton?: boolean
     /** Callback function to run when pressing the More Info button */
     onClickMoreInfo?: React.MouseEventHandler<HTMLButtonElement> | undefined
-    /** Callback function to run when pressing the Access/Policy button */
+    /** Callback function to run when pressing the Access button */
     onClickAccess?: React.MouseEventHandler<HTMLButtonElement> | undefined
+    /** Callback function to run when pressing the Policy button. */
+    onClickPolicy?: React.MouseEventHandler<HTMLButtonElement> | undefined
+    /** Callback function to run when pressing the Request button. */
+    onClickRequest?: React.MouseEventHandler<HTMLButtonElement> | undefined
     /** Callback function to run when pressing the SignIn button. */
     onClickSingleSignIn?: React.MouseEventHandler<HTMLButtonElement> | undefined
     /** The name of the resource */
@@ -45,8 +49,10 @@ export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     style?: CSSProperties | undefined
 }
 
-export const ResourceCard = ({ accessState, resourceIcon, bookmarked, forPolicy = false, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onClickBookmark, showMoreInfoButton = true, onClickMoreInfo, onClickAccess, onClickSingleSignIn, width, style, }: ResourceCardProps): JSX.Element => {
+export const ResourceCard = ({ accessState, resourceIcon, bookmarked, forPolicy = false, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onClickBookmark, showMoreInfoButton = true, onClickMoreInfo, onClickAccess, onClickPolicy, onClickRequest, onClickSingleSignIn = undefined, width, style, }: ResourceCardProps): JSX.Element => {
 
+    const [ButtonSet, setButtonSet] = useState<React.ReactNode | null>(null)
+    
     // Exclusive accessState styles for this component:
     const accessStateStyles: IVariant = {
         access: {
@@ -88,6 +94,106 @@ export const ResourceCard = ({ accessState, resourceIcon, bookmarked, forPolicy 
         maxWidth: width,
         ...style,
     })
+
+    useEffect(() => {
+        switch(accessState) {
+            case 'access':
+                setButtonSet(() => {
+                    return (
+                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        {
+                            showMoreInfoButton ?
+                                <Button variant="gray" onClick={onClickMoreInfo} >More Info</Button>
+                            :
+                                <div></div>
+                        }
+                        {
+                            forPolicy ?
+                                <Button variant="grayBlue" onClick={onClickPolicy} >Policy</Button>
+                            :
+                                <Button variant="grayBlue" onClick={onClickRequest} >Request</Button>
+                        }
+                        </div>
+                    )
+                })
+                break;
+            /** */
+            case 'requested':
+                setButtonSet(() => {
+                    return (
+                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        {
+                            showMoreInfoButton ?
+                                <Button variant="gray" onClick={onClickMoreInfo} >More Info</Button>
+                            :
+                                <div></div>
+                        }
+                        {
+                            forPolicy ?
+                                <Button variant="grayBlue" onClick={onClickPolicy} >Policy</Button>
+                            :
+                                <Button variant="grayBlue" onClick={onClickAccess} >Access</Button>
+                        }
+                        </div>
+                    )
+                })
+                break;
+            /** */
+            case 'signIn':
+                setButtonSet(() => {
+                    return (
+                        <div style={{ display: 'flex', justifyContent: 'space-between', }}>
+                            {
+                                showMoreInfoButton ?
+                                    <div><Button variant="gray" >More Info</Button></div>
+                                :
+                                    null
+                            }
+                            <div style={{ display: 'flex', gap: '8px' }}>
+                            {
+                                ( dropDownItems && dropDownItems?.length <= 1 && !dropDownItems[0].submenu) || onClickSingleSignIn ?
+                                    forPolicy ?
+                                        <Button variant="grayBlue" onClick={onClickPolicy} >Policy</Button>
+                                    :
+                                        accessState === 'signIn' ?
+                                            <Button variant="grayBlue" onClick={onClickSingleSignIn} >Sign In</Button>
+                                        :
+                                            null
+                                :
+                                    <DropDownButton size="sm" variant="grayBlue" menuItems={dropDownItems}  />
+                            }
+                                <DropDownButton size="sm" variant="grayBlue" menuItems={dotMenuItems} hasDownArrow={false} />
+                            </div>
+                        </div>
+                    )
+                })
+                break;
+            /** */
+            case 'waiting':
+                setButtonSet(() => {
+                    return (
+                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        {
+                            showMoreInfoButton ?
+                                <Button variant="gray" onClick={onClickMoreInfo} >More Info</Button>
+                            :
+                                <div></div>
+                        }
+                        {
+                            forPolicy ?
+                                <Button variant="grayBlue" onClick={onClickPolicy} >Policy</Button>
+                            :
+                                <Button variant="grayBlue" onClick={onClickRequest} >Request</Button>
+                        }
+                        </div>
+                    )
+                })
+                break;
+            default:
+                setButtonSet(null)
+                break;
+        }
+    }, [accessState, showMoreInfoButton, forPolicy, onClickMoreInfo, onClickPolicy, onClickAccess, onClickRequest, dotMenuItems, onClickSingleSignIn, dropDownItems])
 
     return (
         <View
@@ -171,43 +277,7 @@ export const ResourceCard = ({ accessState, resourceIcon, bookmarked, forPolicy 
             </div>
 
             {/** Row 3: Bottom buttons. Conditional render on signIn access state */}
-            {
-                accessState !== 'signIn' ?
-                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    {
-                        showMoreInfoButton ?
-                            <Button variant="gray" onClick={onClickMoreInfo} >More Info</Button>
-                        :
-                            <div></div>
-                    }
-                    {
-                        forPolicy ?
-                            <Button variant="grayBlue" onClick={onClickAccess} >Policy</Button>
-                        :
-                            null
-                    }
-                    </div>
-                :
-                    <div style={{ display: 'flex', justifyContent: 'space-between', }}>
-                        <div><Button variant="gray" >More Info</Button></div>
-                        <div style={{ display: 'flex', gap: '8px' }}>
-                        {
-                            ( dropDownItems && dropDownItems?.length <= 1 && !dropDownItems[0].submenu) || onClickSingleSignIn ?
-                                forPolicy ?
-                                    <Button variant="grayBlue" onClick={onClickAccess} >Policy</Button>
-                                :
-                                    accessState === 'signIn' ?
-                                        <Button variant="grayBlue" onClick={onClickSingleSignIn} >Sign In</Button>
-                                    :
-                                        null
-                            :
-                                <DropDownButton size="sm" variant="grayBlue" menuItems={dropDownItems}  />
-                        }
-                            <DropDownButton size="sm" variant="grayBlue" menuItems={dotMenuItems} hasDownArrow={false} />
-                        </div>
-                    </div>
-
-            }
+            {(ButtonSet)}
         </View>
     )
 

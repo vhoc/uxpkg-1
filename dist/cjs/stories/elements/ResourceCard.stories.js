@@ -19,8 +19,7 @@ exports.Primary = {
         dropDownItems: sample_data_1.menuItems,
         dotMenuItems: sample_data_1.menu2Items,
         onClickBookmark: function () { return alert('Bookmark button triggered.'); },
-        onClickMoreInfo: function () { return alert('More Info button triggered.'); },
-        onClickSingleSignIn: function () { return alert("Single sign in function."); }
+        onClickMoreInfo: function () { return alert('More Info button triggered.'); }
     }
 };
 exports.SingleItemButton = {

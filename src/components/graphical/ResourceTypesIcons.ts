@@ -149,9 +149,16 @@ import CloudStorage from '../../assets/icons/resource-types/gcp/cloud_storage.sv
 import ComputeEngine from '../../assets/icons/resource-types/gcp/compute_engine.svg'
 import Project from '../../assets/icons/resource-types/gcp/project.svg'
 import PubSub from '../../assets/icons/resource-types/gcp/pubsub.svg'
-
-
-
+/** Azure Icons */
+import AzureProviderMetadataType from '../../assets/icons/resource-types/azure/00025-icon-service-Service-Providers.svg'
+import AzureSQLServerType from '../../assets/icons/resource-types/azure/01850-icon-service-Arc-SQL-Server.svg'
+import AzureTenantType from '../../assets/icons/resource-types/azure/02679-icon-service-Tenant-Properties.svg'
+import AzureSubscriptionType from '../../assets/icons/resource-types/azure/10002-icon-service-Subscriptions.svg'
+import AzureResourceGroupType from '../../assets/icons/resource-types/azure/10007-icon-service-Resource-Groups.svg'
+import AzureVMType from '../../assets/icons/resource-types/azure/10021-icon-service-Virtual-Machine.svg'
+import AzureSQLServerDatabaseType from '../../assets/icons/resource-types/azure/10132-icon-service-SQL-Server.svg'
+import AzureSQLInstancePoolType from '../../assets/icons/resource-types/azure/10139-icon-service-Instance-Pools.svg'
+import AzureRoleDefinitionType from '../../assets/icons/resource-types/azure/10340-icon-service-Azure-AD-Roles-and-Administrators.svg'
 
 export const ResourceIcons = [
     User,// 0
@@ -316,4 +323,13 @@ export const DisplayTypeToIconMap = {
     GCP_PROJECT: Project,
     GCP_PUBSUB_SUSCRIPTION: PubSub,
     GCP_PUBSUB_TOPIC: PubSub,
+    AZURE_PROVIDER_METADATA_TYPE: AzureProviderMetadataType,
+    AZURE_SQL_SERVER_TYPE: AzureSQLServerType,
+    AZURE_TENANT_TYPE: AzureTenantType,
+    AZURE_SUBSCRIPTION_TYPE: AzureSubscriptionType,
+    AZURE_RESOURCE_GROUP_TYPE: AzureResourceGroupType,
+    AZURE_VM_TYPE: AzureVMType,
+    AZURE_SQL_SERVER_DATABASE_TYPE: AzureSQLServerDatabaseType,
+    AZURE_SQL_INSTANCE_POOL_TYPE: AzureSQLInstancePoolType,
+    AZURE_ROLE_DEFINITION_TYPE: AzureRoleDefinitionType,
 }

@@ -153,6 +153,16 @@ var cloud_storage_svg_1 = tslib_1.__importDefault(require("../../assets/icons/re
 var compute_engine_svg_1 = tslib_1.__importDefault(require("../../assets/icons/resource-types/gcp/compute_engine.svg"));
 var project_svg_1 = tslib_1.__importDefault(require("../../assets/icons/resource-types/gcp/project.svg"));
 var pubsub_svg_1 = tslib_1.__importDefault(require("../../assets/icons/resource-types/gcp/pubsub.svg"));
+/** Azure Icons */
+var _00025_icon_service_Service_Providers_svg_1 = tslib_1.__importDefault(require("../../assets/icons/resource-types/azure/00025-icon-service-Service-Providers.svg"));
+var _01850_icon_service_Arc_SQL_Server_svg_1 = tslib_1.__importDefault(require("../../assets/icons/resource-types/azure/01850-icon-service-Arc-SQL-Server.svg"));
+var _02679_icon_service_Tenant_Properties_svg_1 = tslib_1.__importDefault(require("../../assets/icons/resource-types/azure/02679-icon-service-Tenant-Properties.svg"));
+var _10002_icon_service_Subscriptions_svg_1 = tslib_1.__importDefault(require("../../assets/icons/resource-types/azure/10002-icon-service-Subscriptions.svg"));
+var _10007_icon_service_Resource_Groups_svg_1 = tslib_1.__importDefault(require("../../assets/icons/resource-types/azure/10007-icon-service-Resource-Groups.svg"));
+var _10021_icon_service_Virtual_Machine_svg_1 = tslib_1.__importDefault(require("../../assets/icons/resource-types/azure/10021-icon-service-Virtual-Machine.svg"));
+var _10132_icon_service_SQL_Server_svg_1 = tslib_1.__importDefault(require("../../assets/icons/resource-types/azure/10132-icon-service-SQL-Server.svg"));
+var _10139_icon_service_Instance_Pools_svg_1 = tslib_1.__importDefault(require("../../assets/icons/resource-types/azure/10139-icon-service-Instance-Pools.svg"));
+var _10340_icon_service_Azure_AD_Roles_and_Administrators_svg_1 = tslib_1.__importDefault(require("../../assets/icons/resource-types/azure/10340-icon-service-Azure-AD-Roles-and-Administrators.svg"));
 exports.ResourceIcons = [
     User_png_1["default"],
     Policy_png_1["default"],
@@ -314,5 +324,14 @@ exports.DisplayTypeToIconMap = {
     GCP_COMPUTE_INSTANCE: compute_engine_svg_1["default"],
     GCP_PROJECT: project_svg_1["default"],
     GCP_PUBSUB_SUSCRIPTION: pubsub_svg_1["default"],
-    GCP_PUBSUB_TOPIC: pubsub_svg_1["default"]
+    GCP_PUBSUB_TOPIC: pubsub_svg_1["default"],
+    AZURE_PROVIDER_METADATA_TYPE: _00025_icon_service_Service_Providers_svg_1["default"],
+    AZURE_SQL_SERVER_TYPE: _01850_icon_service_Arc_SQL_Server_svg_1["default"],
+    AZURE_TENANT_TYPE: _02679_icon_service_Tenant_Properties_svg_1["default"],
+    AZURE_SUBSCRIPTION_TYPE: _10002_icon_service_Subscriptions_svg_1["default"],
+    AZURE_RESOURCE_GROUP_TYPE: _10007_icon_service_Resource_Groups_svg_1["default"],
+    AZURE_VM_TYPE: _10021_icon_service_Virtual_Machine_svg_1["default"],
+    AZURE_SQL_SERVER_DATABASE_TYPE: _10132_icon_service_SQL_Server_svg_1["default"],
+    AZURE_SQL_INSTANCE_POOL_TYPE: _10139_icon_service_Instance_Pools_svg_1["default"],
+    AZURE_ROLE_DEFINITION_TYPE: _10340_icon_service_Azure_AD_Roles_and_Administrators_svg_1["default"]
 };
