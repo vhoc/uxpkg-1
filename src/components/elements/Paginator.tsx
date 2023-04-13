@@ -1,6 +1,12 @@
 import React from 'react'
 import { Pagination } from '@mui/material'
+import { PaginationItem } from '@mui/material'
 import { styled } from '@mui/material'
+import { colors } from '../../theme'
+//import ArrowLeftIcon from '@mui/icons-material';
+//import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretLeft, faCaretRight } from '@fortawesome/pro-solid-svg-icons'
 
 export interface PaginatorProps {
     /** Number of always visible pages at the beginning and end. */
@@ -29,7 +35,7 @@ export interface PaginatorProps {
      * _event: The event source of the callback._  
      * _page: The page selected._  
      */
-    onChange: (event: React.ChangeEvent<unknown>, page: number) => void
+    onChange?: (event: React.ChangeEvent<unknown>, page: number) => void | undefined
     /** If true, show the first-page button. */
     showFirstButton?: boolean
     /** If true, show the last-page button. */
@@ -41,8 +47,19 @@ export interface PaginatorProps {
 export const Paginator = ({ boundaryCount=1, classes, count=1, page=1, defaultPage=1, disabled=false, hideNextButton=false, hidePrevButton=false, showFirstButton=false, showLastButton=false, siblingCount=1, onChange }:PaginatorProps): JSX.Element => {
 
     const MyPagination = styled(Pagination)`
-        font-family: IBM Plex Sans;
+        .MuiPaginationItem-text {
+            font-family: IBM Plex Sans !important;
+            color: ${ colors.gray[70] }
+        }
+        .MuiPaginationItem-text:hover {
+            background-color: ${colors.blue[5]} !important;
+        }
+        .Mui-selected {
+            background-color: ${colors.blue[10]} !important;
+            color: ${colors.blue[60]} !important;
+        }
     `
+
 
     return (
         <MyPagination
@@ -58,6 +75,20 @@ export const Paginator = ({ boundaryCount=1, classes, count=1, page=1, defaultPa
             showFirstButton={showFirstButton}
             showLastButton={showLastButton}
             siblingCount={siblingCount}
+            shape={"rounded"}
+            renderItem={(item) => (
+                <PaginationItem
+                    slots={{
+                        previous: () => <FontAwesomeIcon icon={faCaretLeft} color={colors.gray[70]}/>,
+                        next: () => <FontAwesomeIcon icon={faCaretRight} color={colors.gray[70]}/>,
+                    }}
+                    {...item}
+                />
+            )}
+            style={{
+                backgroundColor: colors.white,
+                width: 'fit-content',
+            }}
         />
     )
 
