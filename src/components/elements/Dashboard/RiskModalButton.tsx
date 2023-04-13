@@ -56,6 +56,8 @@ export const RiskModalButton = ({ icon, iconContainerStyle, title, riskLevel = '
                 <div style={{
                     width: '18px',
                     height: '18px',
+                    display: 'flex',
+                    alignItems: 'center',
                     ...iconContainerStyle,
                 }}>
                 {

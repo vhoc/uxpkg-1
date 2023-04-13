@@ -1,6 +1,8 @@
 import { Meta } from "@storybook/react/types-6-0";
 import { RiskModalButton } from "../../../components/elements/Dashboard/RiskModalButton";
 import { CloudIcon } from "../../../components/graphical/CloudIcon";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faYinYang } from "@fortawesome/pro-regular-svg-icons";
 import React from "react";
 
 export default {
@@ -45,5 +47,13 @@ export const Azure = {
         icon: <CloudIcon type={'azure'}/>,
         title: 'Azure account',
         riskLevel: 'critical',
+    }
+}
+
+export const FontAwesome = {
+    args: {
+        icon: <FontAwesomeIcon icon={faYinYang}/>,
+        title: 'Custom',
+        riskLevel: 'high',
     }
 }
