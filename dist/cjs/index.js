@@ -73,3 +73,5 @@ tslib_1.__exportStar(require("./components/elements/Dashboard/SignalBars"), expo
 tslib_1.__exportStar(require("./components/elements/ServiceCard"), exports);
 tslib_1.__exportStar(require("./components/graphical/ResourceTypesIcons"), exports);
 tslib_1.__exportStar(require("./components/elements/Dashboard/RiskModalButton"), exports);
+tslib_1.__exportStar(require("./components/elements/Paginator"), exports);
+tslib_1.__exportStar(require("./components/elements/PaginationBar"), exports);
