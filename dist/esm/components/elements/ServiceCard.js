@@ -46,6 +46,10 @@ export var ServiceCard = function (_a) {
                 accessState === 'requested' ?
                     React.createElement(Label, { variant: "warning", text: "Request in progress" })
                     :
+                        null,
+                accessState === 'waiting' ?
+                    React.createElement(Label, { variant: "warning", text: "Awaiting for approval" })
+                    :
                         null),
             React.createElement(IconButton, { variant: bookmarked ? 'grayBlue' : 'tertiary', icon: faBookmark, onClick: onClickBookmark })),
         React.createElement("div", { style: { display: 'flex', justifyContent: 'space-between', marginBottom: '14px', width: '100%' } },

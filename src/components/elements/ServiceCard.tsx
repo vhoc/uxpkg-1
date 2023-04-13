@@ -122,6 +122,12 @@ export const ServiceCard = ({ serviceType, accessState, customIcon, isGranted = 
                         :
                             null
                     }
+                    {
+                        accessState === 'waiting' ?
+                            <Label variant="warning" text="Awaiting for approval" />
+                        :
+                            null    
+                    }
                 </div>
             
                 <IconButton
