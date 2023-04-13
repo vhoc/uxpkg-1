@@ -49,7 +49,7 @@ export var SummaryResourceCard = function (_a) {
                         textOverflow: 'ellipsis',
                         maxWidth: '100%',
                         textAlign: 'left'
-                    } }, "".concat(accountName, " / ").concat(region)))),
+                    } }, "".concat(accountName, " ").concat(region ? "/ ".concat(region) : '')))),
         React.createElement("div", { style: { display: 'flex', justifyContent: 'flex-end', gap: '14px' } },
             React.createElement(MyDiv, { style: {
                     display: 'flex',

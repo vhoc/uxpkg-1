@@ -118,7 +118,7 @@ export const SummaryResourceCard = ({resourceIcon, resourceName, resourceType, a
                             textAlign: 'left',
                         }}
                     >
-                        {`${accountName} / ${region}`}
+                        {`${accountName} ${ region ? `/ ${region}` : '' }`}
                     </Typography>
                 </div>
 
