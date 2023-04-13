@@ -72,3 +72,4 @@ tslib_1.__exportStar(require("./components/elements/Dashboard/RiskIndicator"), e
 tslib_1.__exportStar(require("./components/elements/Dashboard/SignalBars"), exports);
 tslib_1.__exportStar(require("./components/elements/ServiceCard"), exports);
 tslib_1.__exportStar(require("./components/graphical/ResourceTypesIcons"), exports);
+tslib_1.__exportStar(require("./components/elements/Dashboard/RiskModalButton"), exports);

@@ -1,7 +1,7 @@
 import React from 'react';
 export interface CloudIconProps {
     /** The type of the icon (Cloud service) */
-    type: 'aws' | 'gcp' | 'azure';
+    type: 'aws' | 'gcp' | 'azure' | 'private';
     /** Style overrides */
     style?: React.CSSProperties | undefined;
 }
