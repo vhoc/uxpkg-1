@@ -23,8 +23,6 @@ export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     showMoreInfoButton?: boolean
     /** Callback function to run when pressing the More Info button */
     onClickMoreInfo?: React.MouseEventHandler<HTMLButtonElement> | undefined
-    /** Callback function to run when pressing the Access button */
-    onClickAccess?: React.MouseEventHandler<HTMLButtonElement> | undefined
     /** Callback function to run when pressing the Policy button. */
     onClickPolicy?: React.MouseEventHandler<HTMLButtonElement> | undefined
     /** Callback function to run when pressing the Request button. */
@@ -49,7 +47,7 @@ export interface ResourceCardProps extends HTMLAttributes<HTMLDivElement> {
     style?: CSSProperties | undefined
 }
 
-export const ResourceCard = ({ accessState, resourceIcon, bookmarked, forPolicy = false, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onClickBookmark, showMoreInfoButton = true, onClickMoreInfo, onClickAccess, onClickPolicy, onClickRequest, onClickSingleSignIn = undefined, width, style, }: ResourceCardProps): JSX.Element => {
+export const ResourceCard = ({ accessState, resourceIcon, bookmarked, forPolicy = false, resourceName, resourceType, accountName, region, dropDownItems, dotMenuItems, onClickBookmark, showMoreInfoButton = true, onClickMoreInfo, onClickPolicy, onClickRequest, onClickSingleSignIn = undefined, width, style, }: ResourceCardProps): JSX.Element => {
 
     const [ButtonSet, setButtonSet] = useState<React.ReactNode | null>(null)
     
@@ -132,7 +130,7 @@ export const ResourceCard = ({ accessState, resourceIcon, bookmarked, forPolicy 
                             forPolicy ?
                                 <Button variant="grayBlue" onClick={onClickPolicy} >Policy</Button>
                             :
-                                <Button variant="grayBlue" onClick={onClickAccess} >Access</Button>
+                                <Button variant="grayBlue" onClick={onClickRequest} >Request</Button>
                         }
                         </div>
                     )
@@ -152,13 +150,11 @@ export const ResourceCard = ({ accessState, resourceIcon, bookmarked, forPolicy 
                             <div style={{ display: 'flex', gap: '8px' }}>
                             {
                                 ( dropDownItems && dropDownItems?.length <= 1 && !dropDownItems[0].submenu) || onClickSingleSignIn ?
-                                    forPolicy ?
-                                        <Button variant="grayBlue" onClick={onClickPolicy} >Policy</Button>
+                                    
+                                    accessState === 'signIn' ?
+                                        <Button variant="grayBlue" onClick={onClickSingleSignIn} >Sign In</Button>
                                     :
-                                        accessState === 'signIn' ?
-                                            <Button variant="grayBlue" onClick={onClickSingleSignIn} >Sign In</Button>
-                                        :
-                                            null
+                                        null
                                 :
                                     <DropDownButton size="sm" variant="grayBlue" menuItems={dropDownItems}  />
                             }
@@ -193,7 +189,7 @@ export const ResourceCard = ({ accessState, resourceIcon, bookmarked, forPolicy 
                 setButtonSet(null)
                 break;
         }
-    }, [accessState, showMoreInfoButton, forPolicy, onClickMoreInfo, onClickPolicy, onClickAccess, onClickRequest, dotMenuItems, onClickSingleSignIn, dropDownItems])
+    }, [accessState, showMoreInfoButton, forPolicy, onClickMoreInfo, onClickPolicy, onClickRequest, dotMenuItems, onClickSingleSignIn, dropDownItems])
 
     return (
         <View
@@ -271,7 +267,7 @@ export const ResourceCard = ({ accessState, resourceIcon, bookmarked, forPolicy 
                     <div
                         style={theme.font.caption.regular}
                     >
-                        {accountName} / {region}
+                        {accountName} { region ? `/ ${region}` : null }
                     </div>
                 </div>
             </div>

@@ -104,12 +104,26 @@ export const ServiceCard = ({ serviceType, accessState, customIcon, isGranted = 
 
             {/** Row 1: AWSIcon and Bookmark button */}
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '16px' }}>
-            {
-                customIcon ?
-                    <div>{customIcon}</div>
-                :
-                <img src={ServiceIcons[selectedServiceType]}/>
-            }                
+                <div
+                    style={{
+                        display: 'flex',
+                        gap: '8px',
+                    }}
+                >
+                    {
+                        customIcon ?
+                            <div>{customIcon}</div>
+                        :
+                        <img src={ServiceIcons[selectedServiceType]}/>
+                    }
+                    {
+                        accessState === 'requested' ?
+                            <Label variant="warning" text="Request in progress" />
+                        :
+                            null
+                    }
+                </div>
+            
                 <IconButton
                     variant={ bookmarked ? 'grayBlue' : 'tertiary' }
                     icon={faBookmark}
@@ -146,7 +160,7 @@ export const ServiceCard = ({ serviceType, accessState, customIcon, isGranted = 
                     <div
                         style={theme.font.caption.regular}
                     >
-                        {accountName} / {region}
+                        {accountName} { region ? `/ ${region}` : null }
                     </div>
                 </div>
             </div>

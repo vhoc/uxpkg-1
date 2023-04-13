@@ -8,7 +8,7 @@ import { Button } from "./Button";
 import { faBookmark } from "@fortawesome/sharp-solid-svg-icons";
 import { theme, colors } from "../../theme";
 export var ResourceCard = function (_a) {
-    var accessState = _a.accessState, resourceIcon = _a.resourceIcon, bookmarked = _a.bookmarked, _b = _a.forPolicy, forPolicy = _b === void 0 ? false : _b, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, dropDownItems = _a.dropDownItems, dotMenuItems = _a.dotMenuItems, onClickBookmark = _a.onClickBookmark, _c = _a.showMoreInfoButton, showMoreInfoButton = _c === void 0 ? true : _c, onClickMoreInfo = _a.onClickMoreInfo, onClickAccess = _a.onClickAccess, onClickPolicy = _a.onClickPolicy, onClickRequest = _a.onClickRequest, _d = _a.onClickSingleSignIn, onClickSingleSignIn = _d === void 0 ? undefined : _d, width = _a.width, style = _a.style;
+    var accessState = _a.accessState, resourceIcon = _a.resourceIcon, bookmarked = _a.bookmarked, _b = _a.forPolicy, forPolicy = _b === void 0 ? false : _b, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, dropDownItems = _a.dropDownItems, dotMenuItems = _a.dotMenuItems, onClickBookmark = _a.onClickBookmark, _c = _a.showMoreInfoButton, showMoreInfoButton = _c === void 0 ? true : _c, onClickMoreInfo = _a.onClickMoreInfo, onClickPolicy = _a.onClickPolicy, onClickRequest = _a.onClickRequest, _d = _a.onClickSingleSignIn, onClickSingleSignIn = _d === void 0 ? undefined : _d, width = _a.width, style = _a.style;
     var _e = useState(null), ButtonSet = _e[0], setButtonSet = _e[1];
     // Exclusive accessState styles for this component:
     var accessStateStyles = {
@@ -57,7 +57,7 @@ export var ResourceCard = function (_a) {
                         forPolicy ?
                             React.createElement(Button, { variant: "grayBlue", onClick: onClickPolicy }, "Policy")
                             :
-                                React.createElement(Button, { variant: "grayBlue", onClick: onClickAccess }, "Access")));
+                                React.createElement(Button, { variant: "grayBlue", onClick: onClickRequest }, "Request")));
                 });
                 break;
             /** */
@@ -71,13 +71,10 @@ export var ResourceCard = function (_a) {
                                 null,
                         React.createElement("div", { style: { display: 'flex', gap: '8px' } },
                             (dropDownItems && (dropDownItems === null || dropDownItems === void 0 ? void 0 : dropDownItems.length) <= 1 && !dropDownItems[0].submenu) || onClickSingleSignIn ?
-                                forPolicy ?
-                                    React.createElement(Button, { variant: "grayBlue", onClick: onClickPolicy }, "Policy")
+                                accessState === 'signIn' ?
+                                    React.createElement(Button, { variant: "grayBlue", onClick: onClickSingleSignIn }, "Sign In")
                                     :
-                                        accessState === 'signIn' ?
-                                            React.createElement(Button, { variant: "grayBlue", onClick: onClickSingleSignIn }, "Sign In")
-                                            :
-                                                null
+                                        null
                                 :
                                     React.createElement(DropDownButton, { size: "sm", variant: "grayBlue", menuItems: dropDownItems }),
                             React.createElement(DropDownButton, { size: "sm", variant: "grayBlue", menuItems: dotMenuItems, hasDownArrow: false }))));
@@ -101,7 +98,7 @@ export var ResourceCard = function (_a) {
                 setButtonSet(null);
                 break;
         }
-    }, [accessState, showMoreInfoButton, forPolicy, onClickMoreInfo, onClickPolicy, onClickAccess, onClickRequest, dotMenuItems, onClickSingleSignIn, dropDownItems]);
+    }, [accessState, showMoreInfoButton, forPolicy, onClickMoreInfo, onClickPolicy, onClickRequest, dotMenuItems, onClickSingleSignIn, dropDownItems]);
     return (React.createElement(View, { style: componentStyle(), padding: '16px 16px 16px 24px' },
         accessState !== 'requested' ?
             accessState === 'waiting' ?
@@ -126,7 +123,7 @@ export var ResourceCard = function (_a) {
                 React.createElement("div", { style: __assign(__assign({}, theme.font.body.regular), { marginBottom: '1px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', width: '100%' }) }, resourceType),
                 React.createElement("div", { style: theme.font.caption.regular },
                     accountName,
-                    " / ",
-                    region))),
+                    " ",
+                    region ? "/ ".concat(region) : null))),
         (ButtonSet)));
 };

@@ -11,7 +11,7 @@ var Button_1 = require("./Button");
 var sharp_solid_svg_icons_1 = require("@fortawesome/sharp-solid-svg-icons");
 var theme_1 = require("../../theme");
 var ResourceCard = function (_a) {
-    var accessState = _a.accessState, resourceIcon = _a.resourceIcon, bookmarked = _a.bookmarked, _b = _a.forPolicy, forPolicy = _b === void 0 ? false : _b, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, dropDownItems = _a.dropDownItems, dotMenuItems = _a.dotMenuItems, onClickBookmark = _a.onClickBookmark, _c = _a.showMoreInfoButton, showMoreInfoButton = _c === void 0 ? true : _c, onClickMoreInfo = _a.onClickMoreInfo, onClickAccess = _a.onClickAccess, onClickPolicy = _a.onClickPolicy, onClickRequest = _a.onClickRequest, _d = _a.onClickSingleSignIn, onClickSingleSignIn = _d === void 0 ? undefined : _d, width = _a.width, style = _a.style;
+    var accessState = _a.accessState, resourceIcon = _a.resourceIcon, bookmarked = _a.bookmarked, _b = _a.forPolicy, forPolicy = _b === void 0 ? false : _b, resourceName = _a.resourceName, resourceType = _a.resourceType, accountName = _a.accountName, region = _a.region, dropDownItems = _a.dropDownItems, dotMenuItems = _a.dotMenuItems, onClickBookmark = _a.onClickBookmark, _c = _a.showMoreInfoButton, showMoreInfoButton = _c === void 0 ? true : _c, onClickMoreInfo = _a.onClickMoreInfo, onClickPolicy = _a.onClickPolicy, onClickRequest = _a.onClickRequest, _d = _a.onClickSingleSignIn, onClickSingleSignIn = _d === void 0 ? undefined : _d, width = _a.width, style = _a.style;
     var _e = (0, react_1.useState)(null), ButtonSet = _e[0], setButtonSet = _e[1];
     // Exclusive accessState styles for this component:
     var accessStateStyles = {
@@ -60,7 +60,7 @@ var ResourceCard = function (_a) {
                         forPolicy ?
                             react_1["default"].createElement(Button_1.Button, { variant: "grayBlue", onClick: onClickPolicy }, "Policy")
                             :
-                                react_1["default"].createElement(Button_1.Button, { variant: "grayBlue", onClick: onClickAccess }, "Access")));
+                                react_1["default"].createElement(Button_1.Button, { variant: "grayBlue", onClick: onClickRequest }, "Request")));
                 });
                 break;
             /** */
@@ -74,13 +74,10 @@ var ResourceCard = function (_a) {
                                 null,
                         react_1["default"].createElement("div", { style: { display: 'flex', gap: '8px' } },
                             (dropDownItems && (dropDownItems === null || dropDownItems === void 0 ? void 0 : dropDownItems.length) <= 1 && !dropDownItems[0].submenu) || onClickSingleSignIn ?
-                                forPolicy ?
-                                    react_1["default"].createElement(Button_1.Button, { variant: "grayBlue", onClick: onClickPolicy }, "Policy")
+                                accessState === 'signIn' ?
+                                    react_1["default"].createElement(Button_1.Button, { variant: "grayBlue", onClick: onClickSingleSignIn }, "Sign In")
                                     :
-                                        accessState === 'signIn' ?
-                                            react_1["default"].createElement(Button_1.Button, { variant: "grayBlue", onClick: onClickSingleSignIn }, "Sign In")
-                                            :
-                                                null
+                                        null
                                 :
                                     react_1["default"].createElement(DropDownButton_1.DropDownButton, { size: "sm", variant: "grayBlue", menuItems: dropDownItems }),
                             react_1["default"].createElement(DropDownButton_1.DropDownButton, { size: "sm", variant: "grayBlue", menuItems: dotMenuItems, hasDownArrow: false }))));
@@ -104,7 +101,7 @@ var ResourceCard = function (_a) {
                 setButtonSet(null);
                 break;
         }
-    }, [accessState, showMoreInfoButton, forPolicy, onClickMoreInfo, onClickPolicy, onClickAccess, onClickRequest, dotMenuItems, onClickSingleSignIn, dropDownItems]);
+    }, [accessState, showMoreInfoButton, forPolicy, onClickMoreInfo, onClickPolicy, onClickRequest, dotMenuItems, onClickSingleSignIn, dropDownItems]);
     return (react_1["default"].createElement(View_1.View, { style: componentStyle(), padding: '16px 16px 16px 24px' },
         accessState !== 'requested' ?
             accessState === 'waiting' ?
@@ -129,8 +126,8 @@ var ResourceCard = function (_a) {
                 react_1["default"].createElement("div", { style: tslib_1.__assign(tslib_1.__assign({}, theme_1.theme.font.body.regular), { marginBottom: '1px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', width: '100%' }) }, resourceType),
                 react_1["default"].createElement("div", { style: theme_1.theme.font.caption.regular },
                     accountName,
-                    " / ",
-                    region))),
+                    " ",
+                    region ? "/ ".concat(region) : null))),
         (ButtonSet)));
 };
 exports.ResourceCard = ResourceCard;
